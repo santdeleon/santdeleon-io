@@ -6,9 +6,23 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/*=================================
+            Scroll Bar
+======================================*/
+::-webkit-scrollbar {
+  background-color: #ffffff;
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 10px;
+  background: linear-gradient(to bottom, #ff87e1 , #ca67e5, #83e0f7, #84ffaf, #fcca67, #fcfc83, #f76f6f);
 }

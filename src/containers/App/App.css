@@ -1,5 +1,33 @@
 /*=======================
     Global Stylings
 =======================*/
+.rainbow-top {background: linear-gradient(to right, #f76f6f , #fcfc83, #fcca67, #84ffaf, #83e0f7, #ca67e5, #ff87e1);padding: 2px;}
 .flex {display: flex;}
 .flex-column {flex-direction: column}
+
+/*=======================
+    Button Stylings
+=======================*/
+.btn {
+  padding: calc(.375em - 1px) .75em;
+  font-weight: 100;
+  font-size: 18px;
+  color: #FC4C8F;
+  border: 2px solid #FC4C8F;
+  border-radius: 20px;
+  transition: 0.2s all ease-in;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: white;
+  background-color: #FC4C8F;
+}
+
+/*=======================
+    Responsive Stylings
+=======================*/
+/* @media only screen and (min-width: 576px) {}
+@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 1200px) {} */
