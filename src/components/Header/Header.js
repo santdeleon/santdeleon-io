@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
+import Particles from 'particlesjs';
 import './Header.css';
 
 import Navbar from '../Navbar/Navbar';
+
+
+window.onload = function() {
+  Particles.init({
+    selector: '.background',
+  });
+};
 
 function Header(props) {
   const [roles] = useState(
@@ -18,6 +26,7 @@ function Header(props) {
 
   return (
     <header id="header" className="header flex flex-column">
+
       <Navbar logo={props.logo}/>
 
       <section className="hero flex text-center">
@@ -39,6 +48,8 @@ function Header(props) {
                   </div>
         })}
       </div>
+      
+      <canvas class="background"></canvas>
     </header>
   );
 }

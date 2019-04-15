@@ -1,6 +1,7 @@
 nav {
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
 }
 
 .navbar-brand {
@@ -10,6 +11,10 @@ nav {
 .nav-btn-container {
   align-items: center;
   justify-content: flex-end;
+}
+
+nav .btn {
+  background-color: transparent;
 }
 
 /*=======================
