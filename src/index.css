@@ -19,7 +19,7 @@ code {
 ======================================*/
 ::-webkit-scrollbar {
   background-color: #ffffff;
-  width: 5px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {

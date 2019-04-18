@@ -9,7 +9,13 @@ h3 {
   font-size: 1.5rem;
 }
 
-.rainbow-top {background: linear-gradient(to right, #f76f6f , #fcfc83, #fcca67, #84ffaf, #83e0f7, #ca67e5, #ff87e1);padding: 2px;}
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.rainbow-top {background: linear-gradient(to right, #f76f6f , #fcfc83, #fcca67, #84ffaf, #83e0f7, #ca67e5, #ff87e1);padding: 5px;}
+
 /*=======================
     Custom Stylings
 =======================*/
@@ -41,9 +47,11 @@ h3 {
 .has-top-buffer {margin-top: 4rem;}
 .has-bottom-buffer {margin-bottom: 4rem;}
 .lead {font-size: 1.15rem; line-height: 1.25em;}
+.has-text-primary {color: #FC4C8F;}
+
 .has-pattern-wallpaper {
   color: white;
-  background-color: #FF4F6D;
+  background-color: #FC4C8F;
   background-image: url('../../assets/img/pattern-wallpaper.svg');
   background-size: 44rem auto;
   background-attachment: fixed;
@@ -58,10 +66,6 @@ h3 {
   font-weight: 100;
   font-size: 18px;
   color: #FC4C8F;
-  /*
-  this color passes the accesibility google audit
-  color: #c1386a;
-  */
   border: 2px solid #FC4C8F;
   border-radius: 20px;
   transition: 0.2s all ease-in;

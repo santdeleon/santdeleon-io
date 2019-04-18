@@ -1,0 +1,89 @@
+.card {
+  padding: 60px 0;
+  margin-top: -2.5rem;
+  background-color: white;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 6px;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1),
+              0 0 0 1px rgba(10, 10, 10, 0.1);
+}
+
+.card-icon {
+  width: 50px;
+}
+
+.laptop-icon {
+  width: 80px;
+}
+
+.card-body {
+  align-items: center;
+}
+
+.card-title {
+  font-size: 1.6rem;
+}
+
+.card-title.has-text-primary {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.card-text {
+  line-height: 30px;
+  color: #5b5a5b;
+}
+
+.card-list li {
+  color: #5b5a5b;
+  margin-top: .875rem;
+}
+
+/*=======================
+    Media Queries
+=======================*/
+@media screen and (min-width: 768px) {
+  .cards {
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  .card {
+    flex-basis: 31%;
+  }
+
+  .card:nth-child(2) {
+    margin-top: -60px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cards {
+    flex-flow: row wrap;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+  }
+
+  .card:not(:first-child) {
+    margin-top: 35px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 922px) {
+  .card-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1088px) {
+  .cards {
+    max-width: 1200px;
+  }
+
+  .card-title {
+    font-size: 1.6rem;
+  }
+}
