@@ -8,6 +8,11 @@ nav {
   justify-content: flex-start;
 }
 
+.navbar-brand .logo {
+  width: 70px;
+  height: 100px;
+}
+
 .nav-btn-container {
   align-items: center;
   justify-content: flex-end;

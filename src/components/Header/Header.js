@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import InlineSVG from 'svg-inline-react';
 import Particles from 'particlesjs';
 import './Header.css';
 
@@ -36,11 +37,11 @@ function Header(props) {
             <h2 className="subtitle text-muted">With a knack for creating elegantly smooth and stylish products.</h2>
           </div>
 
-          <img src={require('../../assets/img/logo.svg')} className="avatar" alt="Cartoon Santiago"/>
+          <InlineSVG src={props.logo} className="logo"/>
         </div>
       </section>
 
-      <div className="roles flex has-bottom-buffer">
+      <div className="roles flex">
         {roles.map(role => {
           return  <div key={role.id} className="role flex column">
                     <div className="role-top flex" style={{backgroundColor: role.color}}></div>

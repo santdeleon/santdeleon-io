@@ -25,7 +25,7 @@ ul {
   height: auto;
 }
 .title {
-  font-size: 2.1rem;
+  font-size: 2.3rem;
   color: #363636;
   line-height: 1.125;
   font-weight: 600px;
@@ -33,7 +33,7 @@ ul {
 }
 .subtitle {
   color: #4a4a4a;
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   font-weight: 300;
   line-height: 1.25;
 }
@@ -80,26 +80,17 @@ ul {
 /*=======================
     Media Queries
 =======================*/
-/* @media only screen and (min-width: 576px) {} */
 
 @media only screen and (min-width: 768px) {
   h3 {
     font-size: 2rem;
   }
 
-  .title {font-size: 2.5rem;}
-  .subtitle {font-size: 1.35rem;}
+  .title {font-size: 3rem;}
+  .subtitle {font-size: 1.5rem;}
   .lead {font-size: 1.25rem;}
 }
 
-@media only screen and (min-width: 992px) {
-  .title {
-    font-size: 3rem;
-  }
-
-  .subtitle {
-    font-size: 1.5rem;
-  }
-}
+/* @media only screen and (min-width: 992px) {} */
 
 /* @media only screen and (min-width: 1200px) {} */

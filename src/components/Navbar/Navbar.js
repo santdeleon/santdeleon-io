@@ -9,7 +9,7 @@ function Navbar(props) {
     <nav className="nav navbar flex">
       <div className="navbar-brand flex">
         <a href="http://santdeleon.co">
-          <InlineSVG src={props.logo} className="logo"/>
+          <InlineSVG src={props.logo}/>
         </a>
       </div>
 
