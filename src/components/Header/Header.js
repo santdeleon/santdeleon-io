@@ -48,8 +48,8 @@ function Header(props) {
                   </div>
         })}
       </div>
-      
-      <canvas class="background"></canvas>
+
+      <canvas className="background"></canvas>
     </header>
   );
 }
