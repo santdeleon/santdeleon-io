@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import InlineSVG from 'svg-inline-react';
 import './Navbar.css';
 
 
@@ -9,7 +8,7 @@ function Navbar(props) {
     <nav className="nav navbar flex">
       <div className="navbar-brand flex">
         <a href="http://santdeleon.co">
-          <InlineSVG src={props.logo}/>
+          <img src={require('../../assets/img/logo.svg')} alt="logo"/>
         </a>
       </div>
 
