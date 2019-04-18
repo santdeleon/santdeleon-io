@@ -1,0 +1,15 @@
+.Hello {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.Hello-body {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 522px) {
+  .Hello-body {
+    max-width: 35em;
+  }
+}

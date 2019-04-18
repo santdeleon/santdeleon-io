@@ -25,13 +25,13 @@ function Header(props) {
 
 
   return (
-    <header id="header" className="header flex flex-column">
+    <header id="header" className="header flex column">
 
       <Navbar logo={props.logo}/>
 
       <section className="hero flex text-center">
-        <div className="hero-body flex flex-column">
-          <div className="hero-text flex flex-column">
+        <div className="hero-body flex column">
+          <div className="hero-text flex column">
             <h1 className="title">Front-end Developer & Blockchain Engineer</h1>
             <h2 className="subtitle text-muted">With a knack for creating elegantly smooth and stylish products.</h2>
           </div>
@@ -40,9 +40,9 @@ function Header(props) {
         </div>
       </section>
 
-      <div className="roles flex">
+      <div className="roles flex has-bottom-buffer">
         {roles.map(role => {
-          return  <div key={role.id} className="role flex flex-column">
+          return  <div key={role.id} className="role flex column">
                     <div className="role-top flex" style={{backgroundColor: role.color}}></div>
                     <p className="text-muted">{role.role}</p>
                   </div>
