@@ -1,3 +1,32 @@
 .Companies {
   background-color: #f5f5f5;
 }
+
+.Companies-content {
+  width: 100%;
+  border: 1px solid red;
+}
+
+.Companies-text {
+  text-align: center;
+}
+
+.Companies-text h1 {
+  margin-bottom: 10px;
+}
+
+
+/*=======================
+    Media Queries
+=======================*/
+@media only screen and (min-width: 768px) {
+  .Companies-text {
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .Companies-text {
+    margin: 0 auto;
+  }
+}

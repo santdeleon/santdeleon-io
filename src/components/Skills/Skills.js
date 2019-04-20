@@ -51,7 +51,7 @@ function Skills(props) {
 
   return (
     <section id="skills">
-      <div className="container flex">
+      <div className="container flex has-padding">
         <div className="cards flex has-desktop-margin">
 
         {Object.keys(allSkills).map(skills => {
