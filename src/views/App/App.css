@@ -4,6 +4,16 @@
 /*=======================
     Global Stylings
 =======================*/
+a {
+  text-decoration: none;
+  color: #3FCAE1;
+  transition: color 0.15s ease-in;
+}
+
+a:hover {
+  color: #FC4C8F;
+}
+
 h3 {
   font-size: 1.5rem;
 }
@@ -84,11 +94,11 @@ ul {
 /*=======================
     Media Queries
 =======================*/
-@media only screen and (min-width: 520px) {
+@media screen and (min-width: 520px) {
   .title {font-size: 2.3rem}
 }
 
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   h3 {
     font-size: 2rem;
   }
@@ -104,11 +114,11 @@ ul {
   .has-padding {padding-top: 6rem !important; padding-bottom: 6rem !important;}
 }
 
-@media only screen and (min-width: 1088px) {
+@media screen and (min-width: 1088px) {
   .title {font-size: 3rem;}
   .subtitle {font-size: 1.5rem;}
 }
 
-@media only screen and (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
   .has-desktop-margin {max-width: 1088px;}
 }
