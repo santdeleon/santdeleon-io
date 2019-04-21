@@ -10,26 +10,27 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 
 //imports font-awesome icons
 import {
-  faInstagram,
-  faYoutube,
   faGithub,
-  faFacebookF,
-  faTwitter,
-  faTelegramPlane,
+  faFreeCodeCamp,
+  faAngellist,
   faLinkedinIn,
-  faRedditAlien
+  faStackOverflow
 } from "@fortawesome/free-brands-svg-icons";
+
+import {
+  faEnvelope,
+  faHeart,
+  faCopyright
+} from "@fortawesome/free-solid-svg-icons";
 
 // merge the icon library
 library.add(
-  faInstagram,
-  faYoutube,
   faGithub,
-  faFacebookF,
-  faTwitter,
-  faTelegramPlane,
+  faFreeCodeCamp,
+  faAngellist,
   faLinkedinIn,
-  faRedditAlien,
+  faStackOverflow,
+  faEnvelope
 );
 
 
@@ -44,6 +45,13 @@ function App() {
           render={(props) => (
             <Layout
               github={faGithub}
+              fcc={faFreeCodeCamp}
+              angellist={faAngellist}
+              linkedin={faLinkedinIn}
+              stackO={faStackOverflow}
+              mail={faEnvelope}
+              heart={faHeart}
+              copyright={faCopyright}
             />
           )}
         />

@@ -23,7 +23,16 @@ function Layout(props) {
       <Skills />
       <Companies />
       <Projects github={props.github}/>
-      <Footer github={props.github}/>
+      <Footer
+        github={props.github}
+        fcc={props.fcc}
+        linkedin={props.linkedin}
+        angellist={props.angellist}
+        stackO={props.stackO}
+        mail={props.mail}
+        heart={props.heart}
+        copyright={props.copyright}
+      />
     </section>
   );
 }
