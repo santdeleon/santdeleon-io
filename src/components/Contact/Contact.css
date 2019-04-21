@@ -12,3 +12,26 @@
 .btn2 {
   margin-left: 20px;
 }
+
+.Contact-content {
+  border: 5px solid red;
+  width: 100%;
+}
+
+.Contact-text {
+  border: 1px solid red;
+  align-items: center;
+  justify-content: center;
+}
+
+.Contact .title {
+  max-width: 12em;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .Contact .title {
+    font-size: 2.5rem;
+  }
+}

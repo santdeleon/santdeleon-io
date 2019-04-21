@@ -10,11 +10,13 @@ function Contact(props) {
       <Navbar refresh={props.refresh} home={props.home}/>
       <div className="hyphens"></div>
 
-      <div className="Contact container flex">
+      <div className="Contact container flex has-padding">
         <div className="Contact-content flex column">
           <div className="Contact-text flex">
-            <h1>Hey, you made it! What can I do for you today?</h1>
+            <h1 className="title text-center">Hey, you made it! What can I do for you today?</h1>
           </div>
+
+          
         </div>
       </div>
     </section>
