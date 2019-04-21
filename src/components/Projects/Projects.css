@@ -27,7 +27,7 @@
 .Projects-grid img {
   transform: scale(1);
   transition: .25s ease-in-out;
-  height: 200px;
+  height: 100%;
   width: 100%;
   object-fit: cover;
 }
@@ -96,6 +96,12 @@
 .see-more a {
   padding: 1em 2.5em;
   border-radius: 60px;
+  align-items: center;
+}
+
+.see-more .icon {
+  font-size: 25px;
+  margin-right: 10px;
 }
 
 /*=======================

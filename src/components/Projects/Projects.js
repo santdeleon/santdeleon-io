@@ -1,51 +1,53 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import './Projects.css';
 
 
 function Projects(props) {
   const [projects] = useState({
-    portfolio: {
+    martian: {
       id: 0,
+      description: 'Website for the Amsterdam based Blockchain startup Martian Network',
+      url: 'https://martian.network',
+      src: require('../../assets/img/martian.png'),
+      buttonText: 'Launch'
+    },
+    portfolio: {
+      id: 1,
       description: 'The current version of this portfolio built on top of a living codebase.',
       url: 'https://github.com/santdeleon/portfolio',
       src: require('../../assets/img/portfolio.png'),
-      buttonText: 'View the GitHub'
+      buttonText: 'View on Github'
     },
     nirvana: {
-      id: 1,
+      id: 2,
       description: 'Colorfully Modern UI/UX design concept for blockchain startups.',
       url: 'https://sant-nirvana.herokuapp.com',
       src: require('../../assets/img/nirvana.png'),
       buttonText: 'Launch'
     },
     expensify: {
-      id: 2,
+      id: 3,
       description: 'A MERN stack expense software built for businesses.',
       url: 'https://github.com/santdeleon/MERN-Dashboard',
       src: require('../../assets/img/mern.png'),
-      buttonText: 'View on GitHub'
+      buttonText: 'View on Github'
     },
     udacimeals: {
-      id: 3,
+      id: 4,
       description: 'A productivity web app for discovering meals and creating grocery lists.',
       url: 'https://sant-udacimeals.herokuapp.com',
       src: require('../../assets/img/udacimeals.png'),
       buttonText: 'Launch'
     },
     rsvp: {
-      id: 4,
+      id: 5,
       description: 'An RSVP app for planning events, parties, and hangouts.',
       url: 'https://sant-rsvp.herokuapp.com',
       src: require('../../assets/img/rsvp-app.png'),
       buttonText: 'Launch'
-    },
-    frogger: {
-      id: 5,
-      description: 'A remake of the retro arcade game Frogger - with a royal twist.',
-      url: 'https://santdeleon.github.io/Udacity-Frogger-App',
-      src: require('../../assets/img/frogger.png'),
-      buttonText: 'Launch'
-    },
+    }
   });
 
 
@@ -77,8 +79,8 @@ function Projects(props) {
           </div>
 
           <div className="see-more flex">
-            <a className="btn" href="https://github.com/Santdeleon" target="_blank" rel="noopener noreferrer">
-              <span className="icon fab fa-github"></span>
+            <a className="btn flex" href="https://github.com/Santdeleon" target="_blank" rel="noopener noreferrer">
+              <span><FontAwesomeIcon className="icon" icon={props.github}/></span>
               <span>See more on Github </span>
             </a>
           </div>
