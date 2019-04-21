@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Companies.css';
 
 
 function Companies() {
+  const [images] = useState([
+    {name: 'Homies.io', id: 0, src: require('../../assets/img/homies.svg')},
+    {name: 'Code Ninjas', id: 1, src: require('../../assets/img/codeninjas.svg')},
+    {name: 'Terra ATS', id: 2, src: require('../../assets/img/terra.svg')},
+    {name: 'Host Gator', id: 3, src: require('../../assets/img/hostgator-logo.svg')}
+  ]);
+
+
   return (
     <section id="companies">
       <div className="Companies container flex has-padding has-wave">
@@ -15,10 +23,9 @@ function Companies() {
 
           <div className="Companies-body flex">
             <div className="Companies-image flex column">
-              <img src={require('../../assets/img/homies.svg')} alt="Homies.io"/>
-              <img src={require('../../assets/img/codeninjas.svg')} alt="Code Ninjas"/>
-              <img src={require('../../assets/img/terra.svg')} alt="Terra ATS"/>
-              <img src={require('../../assets/img/hostgator-logo.svg')} alt="HostGator"/>
+              {images.map(img => {
+                return <img key={img.id} src={img.src} alt={img.name}/>
+              })}
             </div>
           </div>
         </div>
