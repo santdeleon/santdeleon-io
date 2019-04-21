@@ -1,13 +1,19 @@
-/*=======================
-    Global Stylings
-=======================*/
 .App {
   overflow-x: hidden;
 }
-
-h4,h5,h6 {color: #4a4a4a; line-height: 20px;}
+/*=======================
+    Global Stylings
+=======================*/
 h3 {
   font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+}
+
+h4,h5,h6 {
+  color: #4a4a4a; line-height: 25px;
 }
 
 ul {
@@ -16,7 +22,6 @@ ul {
 }
 
 .rainbow-top {background: linear-gradient(to right, #f76f6f , #fcfc83, #fcca67, #84ffaf, #83e0f7, #ca67e5, #ff87e1);padding: 5px;}
-
 /*=======================
     Custom Stylings
 =======================*/
@@ -58,7 +63,6 @@ ul {
   background-attachment: fixed;
   background-position: center;
 }
-
 /*=======================
     Button Stylings
 =======================*/
@@ -77,7 +81,6 @@ ul {
   color: white;
   background-color: #FC4C8F;
 }
-
 /*=======================
     Media Queries
 =======================*/
@@ -86,13 +89,19 @@ ul {
 }
 
 @media only screen and (min-width: 768px) {
-  h3 {font-size: 2rem;}
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+  }
 
   .title {font-size: 2.6rem;}
   .subtitle {font-size: 1.35rem;}
   .lead {font-size: 1.25rem;}
-  .has-desktop-margin {margin: 0 auto !important;}
-  .has-padding {padding-top: 6rem; padding-bottom: 6rem;}
+  .has-desktop-margin {margin: 0 auto;}
+  .has-padding {padding-top: 6rem !important; padding-bottom: 6rem !important;}
 }
 
 @media only screen and (min-width: 1088px) {
