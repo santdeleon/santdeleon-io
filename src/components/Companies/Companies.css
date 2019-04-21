@@ -32,6 +32,7 @@
 }
 
 .Companies-image {
+  flex-flow: row wrap;
   margin-top: 2rem;
   width: 100%;
   height: auto;

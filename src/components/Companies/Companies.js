@@ -4,10 +4,12 @@ import './Companies.css';
 
 function Companies() {
   const [images] = useState([
-    {name: 'Homies.io', id: 0, src: require('../../assets/img/homies.svg')},
-    {name: 'Code Ninjas', id: 1, src: require('../../assets/img/codeninjas.svg')},
-    {name: 'Terra ATS', id: 2, src: require('../../assets/img/terra.svg')},
-    {name: 'Host Gator', id: 3, src: require('../../assets/img/hostgator-logo.svg')}
+    {name: 'Host Gator', id: 0, src: require('../../assets/img/hostgator-logo.svg')},
+    {name: 'Martian Network', id: 1, src: require('../../assets/img/mn.svg')},
+    {name: 'Code Ninjas', id: 2, src: require('../../assets/img/codeninjas.svg')},
+    {name: 'Terra ATS', id: 3, src: require('../../assets/img/terra.svg')},
+    {name: 'Homies.io', id: 4, src: require('../../assets/img/homies.svg')},
+
   ]);
 
 
