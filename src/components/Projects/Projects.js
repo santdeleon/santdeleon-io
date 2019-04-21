@@ -60,8 +60,6 @@ function Projects(props) {
             <h4 className="text-thin">These are a few of my recent projects. Want to see more? <a href="mailto:sant@santdeleon.co">Email me.</a></h4>
           </div>
 
-          <div className="hyphens"></div>
-
           <div className="Projects-grid flex">
             {Object.keys(projects).map(project => {
               return  <div key={projects[project].id} className="figure-container flex column">

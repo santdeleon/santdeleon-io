@@ -6,12 +6,6 @@
   margin-bottom: 0;
 }
 
-.hyphens {
-  background: url('../../assets/img/hyphens.svg');
-  height: 2px;
-  width: 100%;
-}
-
 .Projects-grid {
   margin: 25px 0;
   flex-flow: row wrap;

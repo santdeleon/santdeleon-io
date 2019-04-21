@@ -85,6 +85,7 @@ ul {
   border-radius: 20px;
   transition: 0.2s all ease-in;
   cursor: pointer;
+  outline: 0;
 }
 
 .btn:hover {

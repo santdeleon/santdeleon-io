@@ -1,0 +1,14 @@
+.hyphens {
+  background: url('../../assets/img/hyphens.svg');
+  height: 1px;
+  width: 100%;
+}
+
+.contact-btn {
+  border-radius: 5px;
+  padding: .5em .6em;
+}
+
+.btn2 {
+  margin-left: 20px;
+}

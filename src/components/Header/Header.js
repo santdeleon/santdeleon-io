@@ -28,7 +28,7 @@ function Header(props) {
   return (
     <header id="header" className="header flex column">
 
-      <Navbar logo={props.logo}/>
+      <Navbar logo={props.logo} home={props.home} refresh={props.refresh}/>
 
       <section className="hero flex text-center">
         <div className="hero-body flex column">

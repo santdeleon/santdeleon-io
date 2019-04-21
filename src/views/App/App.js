@@ -4,6 +4,7 @@ import './App.css';
 
 // import child Components
 import Layout from '../Layout/Layout';
+import Contact from '../../components/Contact/Contact';
 
 //import empty icon library
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -19,6 +20,8 @@ import {
 
 import {
   faEnvelope,
+  faHome,
+  faRedoAlt,
   faHeart,
   faCopyright
 } from "@fortawesome/free-solid-svg-icons";
@@ -30,7 +33,11 @@ library.add(
   faAngellist,
   faLinkedinIn,
   faStackOverflow,
-  faEnvelope
+  faEnvelope,
+  faHome,
+  faRedoAlt,
+  faHeart,
+  faCopyright
 );
 
 
@@ -52,6 +59,18 @@ function App() {
               mail={faEnvelope}
               heart={faHeart}
               copyright={faCopyright}
+              refresh={faRedoAlt}
+              home={faHome}
+            />
+          )}
+        />
+
+        <Route
+          path="/contact"
+          render={(props) => (
+            <Contact
+              refresh={faRedoAlt}
+              home={faHome}
             />
           )}
         />
