@@ -24,7 +24,6 @@ function Header(props) {
     ]
   );
 
-
   return (
     <header id="header" className="header flex column">
 
@@ -49,8 +48,6 @@ function Header(props) {
                   </div>
         })}
       </div>
-
-      <canvas className="background"></canvas>
     </header>
   );
 }

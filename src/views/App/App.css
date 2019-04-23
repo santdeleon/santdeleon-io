@@ -31,6 +31,11 @@ ul {
   padding: 0;
 }
 
+input,
+textarea {
+  outline: 0;
+}
+
 .rainbow-top {background: linear-gradient(to right, #f76f6f , #fcfc83, #fcca67, #84ffaf, #83e0f7, #ca67e5, #ff87e1);padding: 5px;}
 /*=======================
     Custom Stylings
@@ -70,7 +75,7 @@ ul {
   background-color: #FC4C8F;
   background-image: url('../../assets/img/pattern-wallpaper.svg');
   background-size: 44rem auto;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-position: center;
 }
 /*=======================

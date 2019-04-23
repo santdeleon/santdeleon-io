@@ -2,14 +2,10 @@ import React from 'react';
 import { Switch, Route } from 'react-router';
 import './App.css';
 
-// import child Components
 import Layout from '../Layout/Layout';
-import Contact from '../../components/Contact/Contact';
+import Contact from '../Contact/Contact.js';
 
-//import empty icon library
 import { library } from '@fortawesome/fontawesome-svg-core';
-
-//imports font-awesome icons
 import {
   faGithub,
   faFreeCodeCamp,
@@ -17,7 +13,6 @@ import {
   faLinkedinIn,
   faStackOverflow
 } from "@fortawesome/free-brands-svg-icons";
-
 import {
   faEnvelope,
   faHome,
@@ -26,7 +21,6 @@ import {
   faCopyright
 } from "@fortawesome/free-solid-svg-icons";
 
-// merge the icon library
 library.add(
   faGithub,
   faFreeCodeCamp,

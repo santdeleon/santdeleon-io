@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Header from '../../components/Header/Header';
 import Hello from '../../components/Hello/Hello';
@@ -13,6 +13,10 @@ const logo = `<?xml version="1.0" encoding="UTF-8"?><svg class="logo" viewBox="0
 
 
 function Layout(props) {
+
+  useEffect(() => {
+    document.title = "Sant Deleon | Front-end Developer & Blockchain Engineer";
+  });
   return (
     <section>
       <Header
