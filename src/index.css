@@ -14,9 +14,7 @@ code {
     monospace;
 }
 
-/*=================================
-            Scroll Bar
-======================================*/
+
 ::-webkit-scrollbar {
   background-color: #ffffff;
   width: 10px;
@@ -25,4 +23,8 @@ code {
 ::-webkit-scrollbar-thumb {
   height: 10px;
   background: linear-gradient(to bottom, #ff87e1 , #ca67e5, #83e0f7, #84ffaf, #fcca67, #fcfc83, #f76f6f);
+}
+
+::selection {
+  background: #ffb7b7; 
 }
