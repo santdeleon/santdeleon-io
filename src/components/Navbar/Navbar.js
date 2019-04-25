@@ -10,7 +10,7 @@ function Navbar(props) {
 
   if (url.includes("/contact")) {
     el =  <div>
-            <button className="btn contact-btn">
+            <button className="btn contact-btn" onClick={props.clearForm}>
               <FontAwesomeIcon icon={props.refresh} />
             </button>
 

@@ -1,10 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Contact.css';
 
 import Navbar from '../../components/Navbar/Navbar';
 
 
 function Contact(props) {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  function clearForm(e) {
+    setName('');
+    setEmail('');
+    setMessage('');
+  }
+
 
   useEffect(() => {
     document.title = "Sant Deleon | Contact";
@@ -12,7 +22,7 @@ function Contact(props) {
 
   return (
     <section id="hello">
-      <Navbar refresh={props.refresh} home={props.home}/>
+      <Navbar refresh={props.refresh} home={props.home} clearForm={clearForm}/>
       <div className="hyphens"></div>
 
       <div className="Contact container flex">
@@ -26,12 +36,12 @@ function Contact(props) {
               <div className="Contact-form-inputs flex column">
                 <div className="input-group flex column">
                   <label for="name">Name</label>
-                  <input type="text" name="name" />
+                  <input type="text" name="name" value={name} onChange={e => setName(e.target.value)} required/>
                 </div>
 
                 <div className="input-group flex column">
                   <label for="email">Email</label>
-                  <input type="text" name="email" />
+                  <input type="text" name="email" value={email} onChange={e => setEmail(e.target.value)} required />
                 </div>
               </div>
 
@@ -39,9 +49,12 @@ function Contact(props) {
                 <div className="input-group flex column">
                   <label for="message">Message</label>
                   <textarea
-                  type="text"
-                  name="message"
-                  rows={5}
+                    type="text"
+                    name="message"
+                    value={message}
+                    rows={5}
+                    onChange={e => setMessage(e.target.value)}
+                    required
                   />
                 </div>
               </div>
