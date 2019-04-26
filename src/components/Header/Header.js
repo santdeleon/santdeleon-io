@@ -32,11 +32,13 @@ function Header(props) {
       <section className="hero flex text-center">
         <div className="hero-body flex column">
           <div className="hero-text flex column">
-            <h1 className="title">Front-end Developer & Blockchain Engineer</h1>
+            <h1 className="title">Front-end Web Developer</h1>
             <h2 className="subtitle text-muted">With a knack for creating elegantly smooth and stylish products.</h2>
           </div>
 
-          <InlineSVG src={props.logo} className="logo"/>
+          <div className="hero-image">
+            <InlineSVG src={props.logo} className="logo"/>
+          </div>
         </div>
       </section>
 

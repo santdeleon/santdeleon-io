@@ -9,6 +9,10 @@
   margin-bottom: 2rem;
 }
 
+.Hello h3 {
+  margin-bottom: 0;
+}
+
 @media screen and (min-width: 522px) {
   .Hello-body {
     max-width: 35em;

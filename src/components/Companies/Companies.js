@@ -17,7 +17,7 @@ function Companies() {
       <div className="Companies container flex has-padding has-wave">
 
         <div className="Companies-content flex column has-desktop-margin">
-          <div className="Companies-text flex column">
+          <div className="Companies-text flex column text-center">
             <h1 className="title">Some of the <span className="has-text-primary">amazing</span> <br />companies i've worked with</h1>
             <h4 className="text-thin">In my career of web development,<br /> I've happened to meet some really cool people along the way.</h4>
           </div>
