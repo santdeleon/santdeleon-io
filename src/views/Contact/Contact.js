@@ -32,7 +32,12 @@ function Contact(props) {
           </div>
 
           <div className="Contact-form flex">
-            <form id="contactForm" className="form flex column">
+            <form
+              action="https://formspree.io/sant@santdeleon.co"
+              id="contactForm"
+              className="form flex column"
+              method="POST"
+            >
               <div className="Contact-form-inputs flex column">
                 <div className="input-group flex column">
                   <label for="name">Name</label>
@@ -60,7 +65,7 @@ function Contact(props) {
               </div>
 
               <div className="Contact-button flex">
-                <button className="btn" type="submit">Send</button>
+                <button className="btn" for="contactForm" type="submit">Send</button>
               </div>
             </form>
           </div>

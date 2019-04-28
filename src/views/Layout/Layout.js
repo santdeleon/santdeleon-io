@@ -15,7 +15,7 @@ const logo = `<?xml version="1.0" encoding="UTF-8"?><svg class="logo" viewBox="0
 function Layout(props) {
 
   useEffect(() => {
-    document.title = "Sant Deleon | Front-end Developer & Blockchain Engineer";
+    document.title = "Sant Deleon | Front-end Developer";
   });
   return (
     <section>
