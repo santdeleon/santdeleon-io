@@ -46,7 +46,7 @@ textarea {
   height: auto;
 }
 .title {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   color: #2A2825;
   line-height: 1.125;
   font-weight: 600px;
@@ -54,7 +54,7 @@ textarea {
 }
 .subtitle {
   color: #82817d;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 100;
   line-height: 1.25;
   margin-top: 5px;
@@ -69,7 +69,7 @@ textarea {
 .has-top-buffer {margin-top: 4rem;}
 .has-bottom-buffer {margin-bottom: 4rem;}
 .has-padding {padding: 4rem 1.5rem;}
-.lead {font-size: 1.15rem; line-height: 1.25em;}
+.lead {font-size: 1rem; line-height: 1.25em;}
 .has-text-primary {color: #FC4C8F;}
 .has-pattern-wallpaper {
   color: white;
@@ -83,7 +83,7 @@ textarea {
     Button Stylings
 =======================*/
 .btn {
-  padding: calc(.575em - 1px) 1.5em;
+  padding: calc(.375em - 1px) 1.5em;
   font-weight: 100;
   font-size: 1.2rem;
   color: #FC4C8F;
@@ -108,19 +108,19 @@ textarea {
   }
 
   h4 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
-  .title {font-size: 3rem;}
-  .subtitle {font-size: 1.5rem;}
+  .title {font-size: 2.5rem;}
+  .subtitle {font-size: 1.25rem;}
   .lead {font-size: 1.25rem;}
   .has-desktop-margin {margin: 0 auto;}
   .has-padding {padding-top: 6rem !important; padding-bottom: 6rem !important;}
 }
 
 @media screen and (min-width: 992px) {
-  .title {font-size: 3.5rem;}
-  .subtitle {font-size: 1.7rem;}
+  .title {font-size: 3rem;}
+  .subtitle {font-size: 1.5rem;}
 }
 
 @media screen and (min-width: 1088px) {
