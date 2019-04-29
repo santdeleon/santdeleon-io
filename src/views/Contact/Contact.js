@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useAlert } from 'react-alert';
 import './Contact.css';
 
 import Navbar from '../../components/Navbar/Navbar';
@@ -8,6 +9,7 @@ function Contact(props) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const alert= useAlert();
 
   function clearForm(e) {
     setName('');
@@ -65,7 +67,15 @@ function Contact(props) {
               </div>
 
               <div className="Contact-button flex">
-                <button className="btn" for="contactForm" type="submit">Send</button>
+                <button
+                className="btn"
+                type="submit"
+                onClick={() => {
+                  alert.show("Thanks for reaching out. I look forward to chatting!")
+                }}
+                >
+                Send
+                </button>
               </div>
             </form>
           </div>
