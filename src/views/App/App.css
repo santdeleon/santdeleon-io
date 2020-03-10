@@ -1,6 +1,9 @@
 .App {
   overflow-x: hidden;
 }
+
+.hyphens {background: url('../../assets/img/hyphens.svg');height: 1px;width: 100%;}
+
 /*=======================
     Global Stylings
 =======================*/
@@ -36,29 +39,12 @@ textarea {
   outline: 0;
 }
 
-.rainbow-top {background: linear-gradient(to right, #f76f6f , #fcfc83, #fcca67, #84ffaf, #83e0f7, #ca67e5, #ff87e1);padding: 5px;}
+.rainbow-top {background: linear-gradient(to right, #f76f6f , #fcfc83, #fcca67, #84ffaf, #83e0f7, #ca67e5, #ff87e1);padding: 3px;}
 /*=======================
     Custom Stylings
 =======================*/
-.avatar {
-  max-width: 100%;
-  width: 225px;
-  height: auto;
-}
-.title {
-  font-size: 1.8rem;
-  color: #2A2825;
-  line-height: 1.125;
-  font-weight: 600px;
-  margin-bottom: 0;
-}
-.subtitle {
-  color: #82817d;
-  font-size: 1.1rem;
-  font-weight: 100;
-  line-height: 1.25;
-  margin-top: 5px;
-}
+.title {}
+.subtitle {}
 .container {padding: 0 1rem;}
 .container-center {padding: 5rem 1.5rem;}
 .flex {display: flex;}
@@ -66,19 +52,10 @@ textarea {
 .text-center {text-align: center;}
 .text-muted {color: #5b5a5b;}
 .text-thin {font-weight: lighter;}
-.has-top-buffer {margin-top: 4rem;}
-.has-bottom-buffer {margin-bottom: 4rem;}
-.has-padding {padding: 4rem 1.5rem;}
 .lead {font-size: 1rem; line-height: 1.25em;}
-.has-text-primary {color: #FC4C8F;}
-.has-pattern-wallpaper {
-  color: white;
-  background-color: #FC4C8F;
-  background-image: url('../../assets/img/pattern-wallpaper.svg');
-  background-size: 44rem auto;
-  /* background-attachment: fixed; */
-  background-position: center;
-}
+.text-primary {color: #FC4C8F;}
+
+
 /*=======================
     Button Stylings
 =======================*/
@@ -102,27 +79,8 @@ textarea {
     Media Queries
 =======================*/
 
-@media screen and (min-width: 768px) {
-  h3 {
-    font-size: 2rem;
-  }
+@media screen and (min-width: 768px) {}
 
-  h4 {
-    font-size: 1.2rem;
-  }
+@media screen and (min-width: 992px) {}
 
-  .title {font-size: 2.5rem;}
-  .subtitle {font-size: 1.25rem;}
-  .lead {font-size: 1.25rem;}
-  .has-desktop-margin {margin: 0 auto;}
-  .has-padding {padding-top: 6rem !important; padding-bottom: 6rem !important;}
-}
-
-@media screen and (min-width: 992px) {
-  .title {font-size: 3rem;}
-  .subtitle {font-size: 1.5rem;}
-}
-
-@media screen and (min-width: 1088px) {
-  .has-desktop-margin {max-width: 1088px;}
-}
+@media screen and (min-width: 1088px) {}
