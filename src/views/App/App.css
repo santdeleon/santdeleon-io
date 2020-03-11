@@ -47,6 +47,7 @@ input, textarea { outline: 0; }
 .text-primary {color: #FC4C8F;}
 .align-items-center{align-items: center;}
 .w-100{width: 100%;}
+.d-none{display: none;}
 
 /*=======================
     Button Stylings

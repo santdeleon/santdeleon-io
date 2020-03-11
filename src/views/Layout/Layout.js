@@ -1,12 +1,6 @@
 import React, { useEffect } from 'react';
 
 import Navbar from '../../components/Navbar/Navbar';
-// import Header from '../../components/Header/Header';
-// import Hello from '../../components/Hello/Hello';
-// import Skills from '../../components/Skills/Skills';
-// import Companies from '../../components/Companies/Companies';
-// import Projects from '../../components/Projects/Projects';
-// import Footer from '../../components/Footer/Footer';
 
 
 function Layout(props) {
@@ -17,7 +11,11 @@ function Layout(props) {
 
   return (
     <section>
-      <Navbar />
+      <Navbar
+        linkedin={props.linkedin}
+        angellist={props.angellist}
+        mail={props.mail}
+      />
     </section>
   );
 }

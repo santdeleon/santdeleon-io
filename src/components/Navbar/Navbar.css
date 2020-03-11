@@ -1,4 +1,9 @@
-.navbar { padding: 1rem 1rem; }
+.navbar {
+  padding: 1rem 1rem;
+  background-image: url('../../assets/img/pattern-wallpaper.svg');
+  background-size: 20rem auto;
+  background-position: 50%;
+}
 
 .navbar-menu { margin: 0; }
 
@@ -40,11 +45,11 @@
 .search-bar {
   height: 1.5rem;
   border-radius: 10px;
-  color: black;
+  color: #222;
   margin-right: 1.3rem;
   font-size: 16px;
   padding-left: 10px;
-  border: 1px dotted purple;
+  border: 1px solid purple;
 }
 
 .search-icon {
@@ -60,10 +65,130 @@
 .github-link:hover #Github, .sun-icon:hover #Sun { stroke: #f446e3; }
 
 /*=======================
+        Sidebar
+=======================*/
+.show { display: contents; }
+
+.toggle-button {
+  display: none;
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+  transition: .25s;
+  z-index: 15;
+  margin-left: -50px;
+}
+
+.toggle-button:hover {
+  cursor: pointer;
+}
+
+.toggle-button .menu-bar {
+  position: absolute;
+  border-radius: 2px;
+  width: 80%;
+  transition: .2s;
+}
+
+.toggle-button .menu-bar-top {
+  border: 3px solid #222;
+  border-bottom: none;
+  top: 0;
+}
+
+.toggle-button .menu-bar-middle {
+  height: 3px;
+  background-color: #222;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  top: 4px;
+  width: 100%;
+}
+
+.toggle-button .menu-bar-bottom {
+  border: 3px solid #222;
+  border-top: none;
+  top: 22px;
+}
+
+.button-open .menu-bar-top {
+  transform: rotate(45deg) translate(8px, 8px);
+  transition: .2s;
+}
+
+.button-open .menu-bar-middle {
+  transform: translate(230px);
+  transition: .1s ease-in;
+  opacity: 0;
+}
+
+.button-open .menu-bar-bottom {
+  transform: rotate(-45deg) translate(8px, -7px);
+  transition: .2s;
+  top: 22px;
+}
+
+.menu-wrap {
+  font-size: 1.14rem;
+  color: #9D9D9D;
+  position: fixed;
+  height: 100%;
+  width: 0%;
+  overflow: auto;
+  transition: .25s;
+  z-index: 10;
+}
+
+.menu-show {
+  width: 100%;
+}
+
+.sidebar-links a {
+  margin-top: 2.4rem;
+  margin-right: 0;
+}
+
+.sidebar-links a:nth-child(4) {
+  margin-bottom: 5rem;
+}
+
+.sidebar-wolf-logo {
+  margin: 0 0 5rem 0;
+  filter: sepia(.40);
+}
+
+.social-icon {
+  font-size: 1.44rem;
+}
+
+.social-icon:nth-child(1) {
+  margin: 0 20px;
+}
+
+.social-icon:hover {
+  color: #f446e3;
+}
+
+/*=======================
     Media Queries
 =======================*/
 @media only screen and (max-width: 768px) {
+  .toggle-button {
+    display: block;
+  }
+
   .search-wrapper { display: none; }
 
   .nav-links-wrapper { display: none; }
+
+  .dropdown {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .menu-wrap {
+    display: none;
+  }
 }
