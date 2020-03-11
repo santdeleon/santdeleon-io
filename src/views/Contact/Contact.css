@@ -8,7 +8,12 @@ input {height: 54px;}
 input[name="name"] {  border-color: #48ABE4;}
 input[name="email"] {border-color: #FED055;}
 textarea {height: 212px;border-color: #58E2C2;}
+
 /*======================
       Media Queries
 =======================*/
 @media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 992px) {}
+
+@media screen and (min-width: 1088px) {}

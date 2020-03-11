@@ -1,6 +1,4 @@
-.App {
-  overflow-x: hidden;
-}
+.App { overflow-x: hidden; }
 
 .hyphens {background: url('../../assets/img/hyphens.svg');height: 1px;width: 100%;}
 
@@ -9,52 +7,46 @@
 =======================*/
 a {
   text-decoration: none;
-  color: #3FCAE1;
-  transition: color 0.15s ease-in;
+  color: inherit;
 }
 
-a:hover {
-  color: #FC4C8F;
-}
+h3 { font-size: 1.5rem; }
 
-h3 {
-  font-size: 1.5rem;
-}
+h4 { font-size: 1.1rem; }
 
-h4 {
-  font-size: 1.1rem;
-}
-
-h4,h5,h6 {
-  color: #4a4a4a; line-height: 25px;
-}
+h4,h5,h6 { color: #4a4a4a; line-height: 25px; }
 
 ul {
   list-style: none;
   padding: 0;
 }
 
-input,
-textarea {
-  outline: 0;
-}
+input, textarea { outline: 0; }
 
 .rainbow-top {background: linear-gradient(to right, #f76f6f , #fcfc83, #fcca67, #84ffaf, #83e0f7, #ca67e5, #ff87e1);padding: 3px;}
+
 /*=======================
     Custom Stylings
 =======================*/
 .title {}
 .subtitle {}
 .container {padding: 0 1rem;}
-.container-center {padding: 5rem 1.5rem;}
 .flex {display: flex;}
-.column {flex-direction: column;}
+.flex-column {flex-direction: column;}
+.justify-content-start{justify-content: flex-start;}
+.justify-content-center{justify-content: center;}
+.justify-content-between{justify-content: space-between;}
+.justify-content-around{justify-content: space-around;}
+.justify-content-end{justify-content: flex-end;}
+.text-right{text-align: right;}
+.text-left{text-align: left;}
 .text-center {text-align: center;}
 .text-muted {color: #5b5a5b;}
 .text-thin {font-weight: lighter;}
 .lead {font-size: 1rem; line-height: 1.25em;}
 .text-primary {color: #FC4C8F;}
-
+.align-items-center{align-items: center;}
+.w-100{width: 100%;}
 
 /*=======================
     Button Stylings
@@ -75,6 +67,7 @@ textarea {
   color: white;
   background-color: #FC4C8F;
 }
+
 /*=======================
     Media Queries
 =======================*/

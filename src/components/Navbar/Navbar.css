@@ -1,0 +1,69 @@
+.navbar { padding: 1rem 1rem; }
+
+.navbar-menu { margin: 0; }
+
+.nav-links-wrapper { display: inherit; }
+
+.nav-left {margin-top: .2rem;}
+
+.nav-item {
+  display: inline-block;
+  line-height: 30px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.nav-item:after {
+  display: block;
+  content: '';
+  border-bottom: solid 2px #f446e3;
+  transform: scaleX(0);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.nav-item:hover { color: #f446e3; }
+
+.nav-item:hover:after { transform: scaleX(1); }
+
+.nav-item.fromLeft:after{  transform-origin:  0% 50%; }
+
+.app-logo { margin: 0; }
+
+.search-wrapper {
+  position:relative;
+  padding:0;
+  margin:0;
+}
+
+.search-bar {
+  height: 1.5rem;
+  border-radius: 10px;
+  color: black;
+  margin-right: 1.3rem;
+  font-size: 16px;
+  padding-left: 10px;
+  border: 1px dotted purple;
+}
+
+.search-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 30px;
+}
+
+.github-link { margin-right: 1rem; }
+
+.sun-icon { cursor: pointer; margin-bottom: 3px; }
+
+.github-link:hover #Github, .sun-icon:hover #Sun { stroke: #f446e3; }
+
+/*=======================
+    Media Queries
+=======================*/
+@media only screen and (max-width: 768px) {
+  .search-wrapper { display: none; }
+
+  .nav-links-wrapper { display: none; }
+}
