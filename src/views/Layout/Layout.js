@@ -34,11 +34,13 @@ function Layout(props) {
     document.title = "Sant | Front-end & Blockchain Developer";
   });
 
-  function toggleSidebar() { setShowSidebar(!showSidebar); }
+  const toggleSidebar = () => { setShowSidebar(!showSidebar); }
 
   return (
     <section>
       <Navbar
+        theme={props.theme}
+        toggleTheme={props.toggleTheme}
         showSidebar={showSidebar}
         toggleSidebar={toggleSidebar}
         navLinks={navLinks}
