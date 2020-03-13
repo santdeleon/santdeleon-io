@@ -1,23 +1,31 @@
 .navbar {
-  padding: 1rem 1rem;
+  padding: .6rem 1rem;
   background-image: url('../../assets/img/pattern-wallpaper.svg');
   background-size: 20rem auto;
   background-position: 50%;
 }
 
-.navbar-menu { margin: 0; }
+.nav-left {
+  margin-top: .2rem;
+}
 
-.nav-links-wrapper { display: inherit; }
+.app-logo {
+  margin: 0;
+}
 
-.nav-left { margin-top: .2rem; }
+.nav-links-wrapper {
+  display: inherit;
+}
+
+.navbar-menu {
+  margin: 0;
+}
 
 .nav-item {
-  display: inline-block;
-  line-height: 30px;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
   margin-right: 1rem;
+  border-bottom: 2px solid transparent;
   cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
 }
 
 .nav-item:after {
@@ -28,13 +36,18 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
 }
 
-.nav-item:hover { color: #f446e3; }
+.nav-item:hover {
+  color: #f446e3;
+}
 
-.nav-item:hover:after { transform: scaleX(1); }
+.nav-item:hover:after {
+  transform: scaleX(1);
+}
 
-.nav-item.fromLeft:after{  transform-origin:  0% 50%; }
+.nav-item.fromLeft:after {
+  transform-origin:  0% 50%;
+}
 
-.app-logo { margin: 0; }
 
 .search-wrapper {
   position:relative;
@@ -58,16 +71,24 @@
   right: 30px;
 }
 
-.github-link { margin-right: 1rem; }
+.github-link {
+  margin-right: 1rem;
+}
 
-.sun-icon { cursor: pointer; margin-bottom: 3px; }
+.github-link:hover #Github, .sun-icon:hover #Sun {
+  stroke: #f446e3;
+}
 
-.github-link:hover #Github, .sun-icon:hover #Sun { stroke: #f446e3; }
+.sun-icon {
+  cursor: pointer; margin-bottom: 3px;
+}
 
 /*=======================
         Sidebar
 =======================*/
-.show { display: contents; }
+.show {
+  display: contents;
+}
 
 .toggle-button {
   display: none;
@@ -136,10 +157,11 @@
 }
 
 .menu-wrap {
+  display: none;
   font-size: 1.14rem;
   color: #9D9D9D;
   position: fixed;
-  height: 100%;
+  height: 90%;
   width: 0%;
   overflow: auto;
   transition: .25s;
@@ -159,8 +181,11 @@
   margin-bottom: 5rem;
 }
 
+.sidebar-wolf-logo-wrapper {
+  margin-top: -100px;
+}
+
 .sidebar-wolf-logo {
-  margin: 0 0 5rem 0;
   filter: sepia(.40);
 }
 
@@ -184,17 +209,19 @@
     display: block;
   }
 
-  .search-wrapper { display: none; }
+  .search-wrapper {
+    display: none;
+  }
 
-  .nav-links-wrapper { display: none; }
+  .nav-links-wrapper {
+    display: none;
+  }
 
   .dropdown {
     display: block;
   }
-}
 
-@media only screen and (min-width: 768px) {
   .menu-wrap {
-    display: none;
+    display: flex;
   }
 }
