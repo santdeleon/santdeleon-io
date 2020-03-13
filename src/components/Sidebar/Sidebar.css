@@ -1,0 +1,61 @@
+.show {
+  display: contents;
+}
+
+.menu-wrap {
+  display: none;
+  font-size: 1.14rem;
+  color: #9D9D9D;
+  position: fixed;
+  height: 90%;
+  width: 0%;
+  overflow: auto;
+  transition: .25s;
+  z-index: 10;
+}
+
+.menu-show {
+  width: 100%;
+}
+
+.sidebar-menu li {
+  margin-top: 2.4rem;
+  margin-right: 0;
+}
+
+.sidebar-links li:nth-child(4) {
+  margin-bottom: 5rem;
+}
+
+.sidebar-wolf-logo-wrapper {
+  margin-top: -100px;
+}
+
+.sidebar-wolf-logo {
+  filter: sepia(.40);
+}
+
+.social-icon {
+  font-size: 1.44rem;
+}
+
+.social-icon:nth-child(1) {
+  margin: 0 20px;
+}
+
+.social-icon:hover {
+  color: #f446e3;
+}
+
+/*=======================
+    Media Queries
+=======================*/
+@media only screen and (max-width: 768px) {
+  .dropdown {
+    display: block;
+  }
+
+  .menu-wrap {
+    display: flex;
+  }
+}

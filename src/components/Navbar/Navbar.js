@@ -1,42 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { Search } from 'react-feather';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import NavLink from '../NavLink/NavLink';
 
 import Logo from "../../assets/img/logo.svg";
-import Wolf from "../../assets/img/wolf.svg";
 
 import './Navbar.css';
 
 
 function Navbar(props) {
-  const [showSidebar, setShowSidebar] = useState(false);
-  const socialIcons = {
-    linkedin: {
-      id: 0,
-      icon: props.linkedin,
-      url: 'https://www.linkedin.com/in/sant-deleon/'
-    },
-    angellist: {
-      id: 1,
-      icon: props.angellist,
-      url: 'https://angel.co/santdeleon'
-    },
-    mail: {
-      id: 2,
-      icon: props.mail,
-      url: 'mailto:sant@santdeleon.co'
-    },
-  };
-  const navLinks = [
-    { id: 0, name: 'Bio', href: "" },
-    { id: 1, name: 'Portfolio', href: "" },
-    { id: 2, name: 'Technologies', href: "" },
-    { id: 3, name: 'Get in touch', href: "" }
-  ];
-
-  function toggleSidebar() { setShowSidebar(!showSidebar); }
 
   return (
     <div id="Navbar" className="Navbar">
@@ -47,14 +19,15 @@ function Navbar(props) {
 
           <div className="nav-links-wrapper navbar-nav flex align-items-center">
             <ul className="navbar-menu flex align-items-center">
-              {navLinks.map(link => <NavLink key={link.id} name={link.name} href={link.href} />)}
+              {props.navLinks.map(link => <NavLink key={link.id} name={link.name} href={link.href} />)}
             </ul>
           </div>
         </div>
+        {/* End Nav Left */}
 
         {/* Nav Right */}
         <div className="nav-right flex align-items-center">
-          <span className={`toggle-button ${(showSidebar === true) ? "button-open" : ""}`} onClick={toggleSidebar}>
+          <span className={`toggle-button ${(props.showSidebar === true) ? "button-open" : ""}`} onClick={props.toggleSidebar}>
             <div className="menu-bar menu-bar-top"></div>
             <div className="menu-bar menu-bar-middle"></div>
             <div className="menu-bar menu-bar-bottom"></div>
@@ -93,31 +66,10 @@ function Navbar(props) {
             </g>
           </svg>
         </div>
+        {/* End Nav Right */}
       </nav>
 
       <div className="hyphens"></div>
-
-      {/* SIDEBAR */}
-      <div className={`flex flex-column align-items-center justify-content-around menu-wrap ${(showSidebar === true) ? "menu-show" : ""}`}>
-        <div className="sidebar-links flex flex-column align-items-center justify-content-center text-center">
-          <a href="#" className="nav-link fromLeft" aria-label="Biography">Bio</a>
-          <a href="#" className="nav-link fromLeft" aria-label="Portfolio">Portfolio</a>
-          <a href="#" className="nav-link fromLeft" aria-label="Technologies">Technologies</a>
-          <a href="#" className="nav-link fromLeft" aria-label="Contact">Get in touch</a>
-        </div>
-
-        <div className="sidebar-wolf-logo-wrapper flex align-items-center justify-content-center">
-          <img className="sidebar-wolf-logo" src={Wolf} alt="Wolf"/>
-        </div>
-
-        <div className="sidebar-social-links flex align-items-center justify-content-center">
-          {Object.keys(socialIcons).map(icon => {
-            return  <a href={socialIcons[icon].url} key={socialIcons[icon].id} className="social-icon-container flex" target="_blank" rel="noopener noreferrer" aria-label={icon}>
-                      <FontAwesomeIcon className="social-icon" icon={socialIcons[icon].icon}/>
-                    </a>
-          })}
-        </div>
-      </div>
     </div>
   )
 }
