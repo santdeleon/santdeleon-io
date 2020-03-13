@@ -21,34 +21,6 @@
   margin: 0;
 }
 
-.nav-item {
-  margin-right: 1rem;
-  border-bottom: 2px solid transparent;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-}
-
-.nav-item:after {
-  display: block;
-  content: '';
-  border-bottom: solid 2px #f446e3;
-  transform: scaleX(0);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-}
-
-.nav-item:hover {
-  color: #f446e3;
-}
-
-.nav-item:hover:after {
-  transform: scaleX(1);
-}
-
-.nav-item.fromLeft:after {
-  transform-origin:  0% 50%;
-}
-
-
 .search-wrapper {
   position:relative;
   padding:0;
@@ -75,13 +47,15 @@
   margin-right: 1rem;
 }
 
-.github-link:hover #Github, .sun-icon:hover #Sun {
-  stroke: #f446e3;
-}
-
 .sun-icon {
   cursor: pointer; margin-bottom: 3px;
 }
+
+.github-link:hover .github-icon-dimensions,
+.sun-icon:hover .sun {
+  stroke: #f446e3;
+}
+
 
 /*=======================
         Sidebar
