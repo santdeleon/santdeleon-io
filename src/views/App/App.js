@@ -45,11 +45,8 @@ function App() {
           exact path="/"
           render={(props) => (
             <Layout
-              github={faGithub}
-              fcc={faFreeCodeCamp}
               angellist={faAngellist}
               linkedin={faLinkedinIn}
-              stackO={faStackOverflow}
               mail={faEnvelope}
               heart={faHeart}
               copyright={faCopyright}
