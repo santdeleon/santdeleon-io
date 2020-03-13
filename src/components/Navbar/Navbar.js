@@ -36,6 +36,7 @@ function Navbar(props) {
         <div className="nav-left flex align-items-center">
           <a className="app-logo" href="http://santdeleon.co"><img src={Logo} alt="Wolf + Sant" aria-label="App Title Logo"/></a>
 
+          {/* NAV LINKS */}
           <div className="nav-links-wrapper navbar-nav flex align-items-center">
             <ul className="navbar-menu flex align-items-center">
               <li className="nav-item fromLeft"><a href="#" aria-label="Biography">Bio</a></li>
@@ -47,12 +48,14 @@ function Navbar(props) {
         </div>
 
         <div className="nav-right flex align-items-center">
+          {/* TOGGLE BUTTON */}
           <span className={`toggle-button ${(showSidebar === true) ? "button-open" : ""}`} onClick={toggleSidebar}>
             <div className="menu-bar menu-bar-top"></div>
             <div className="menu-bar menu-bar-middle"></div>
             <div className="menu-bar menu-bar-bottom"></div>
           </span>
 
+          {/* SEARCH BAR */}
           <div className="search-wrapper flex align-items-center">
             <input id="search" type="text" className="search-bar" />
             <Search className="search-icon" size={18}/>
@@ -87,6 +90,7 @@ function Navbar(props) {
 
       <div className="hyphens"></div>
 
+      {/* SIDEBAR */}
       <div className={`flex flex-column align-items-center menu-wrap ${(showSidebar === true) ? "menu-show" : ""}`}>
         <div className="sidebar-links flex flex-column align-items-center justify-content-center text-center">
           <a href="#" className="nav-item fromLeft" aria-label="Biography">Bio</a>
@@ -99,6 +103,7 @@ function Navbar(props) {
           <img className="sidebar-wolf-logo" src={Wolf} alt="Wolf"/>
         </div>
 
+        {/* SIDEBAR LINKS */}
         <div className="sidebar-social-links flex align-items-center justify-content-center">
           {Object.keys(socialIcons).map(icon => {
             return  <a href={socialIcons[icon].url} key={socialIcons[icon].id} className="social-icon-container flex" target="_blank" rel="noopener noreferrer" aria-label={icon}>
@@ -107,23 +112,6 @@ function Navbar(props) {
           })}
         </div>
       </div>
-
-      {/* <div className="sidebar flex justify-content-center">
-        <div className="sidebar-links flex flex-column align-items-center justify-content-center">
-          <a href="#" aria-label="Biography">Bio</a>
-          <a href="#" aria-label="Portfolio">Portfolio</a>
-          <a href="#" aria-label="Technologies">Technologies</a>
-          <a href="#" aria-label="Contact">Get in touch</a>
-        </div>
-
-        <div className="sidebar-social-links flex align-items-center justify-content-center w-100">
-          {Object.keys(socialIcons).map(icon => {
-            return  <a href={socialIcons[icon].url} key={socialIcons[icon].id} className="social-icon-container flex" target="_blank" rel="noopener noreferrer" aria-label={icon}>
-                      <FontAwesomeIcon className="social-icon" icon={socialIcons[icon].icon}/>
-                    </a>
-          })}
-        </div>
-      </div> */}
     </div>
   )
 }
