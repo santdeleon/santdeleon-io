@@ -39,7 +39,7 @@ function Navbar(props) {
           </div>
 
           <a href="https://github.com/santdeleon" className="github-link" target="_blank" rel="noopener noreferrer">
-            <svg id="githubIcon" width="19" height="22" version="1.1" viewBox="0 0 19 22">
+            <svg id="githubIcon" width="22" height="30" version="1.1" viewBox="0 0 19 22">
               <g fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
                 <g fillRule="nonzero" stroke="#000" transform="translate(-46.000000, -2.000000)">
                   <g transform="translate(0.000000, 2.000000)">
@@ -50,7 +50,7 @@ function Navbar(props) {
             </svg>
           </a>
 
-          <svg id="sunIcon" className="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="23" version="1.1" viewBox="0 0 24 23">
+          <svg id="sunIcon" className="sun-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="30" version="1.1" viewBox="0 0 24 23">
             <g fill="none" fillRule="evenodd" stroke="#222" strokeWidth="1">
               <g stroke="#222" transform="translate(1.000000, 0.000000)">
                 <circle className="sun" cx="11" cy="11.507" r="5" />

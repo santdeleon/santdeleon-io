@@ -1,5 +1,5 @@
 .navbar {
-  padding: .6rem 1rem;
+  padding: 1rem 1rem;
   background-image: url('../../assets/img/pattern-wallpaper.svg');
   background-size: 20rem auto;
   background-position: 50%;
@@ -48,7 +48,7 @@
 }
 
 .sun-icon {
-  cursor: pointer; margin-bottom: 3px;
+  cursor: pointer; margin-bottom: 4px;
 }
 
 .github-link:hover .github-icon-dimensions,
