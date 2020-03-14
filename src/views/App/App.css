@@ -23,7 +23,7 @@ ul {
 
 input, textarea { outline: 0; }
 
-.rainbow-top { background: linear-gradient(to right, #f76f6f , #fcfc83, #fcca67, #84ffaf, #83e0f7, #ca67e5, #ff87e1); padding: 3px; }
+.rainbow-top { background: linear-gradient(to right, #f76f6f , #fcfc83, #fcca67, #84ffaf, #83e0f7, #ca67e5, #ff87e1); padding: 5px; }
 
 /*=======================
     Custom Stylings
@@ -55,17 +55,19 @@ input, textarea { outline: 0; }
 .d-none{display: none;}
 .m-0{margin: 0;}
 .my-1{margin-top: .5rem; margin-bottom: .5rem}
-.my-2{margin-top: 2rem; margin-bottom: 2rem}
-.my-3{margin-top: 3rem; margin-bottom: 3rem}
+.my-2{margin-top: 1rem; margin-bottom: 1rem}
+.my-3{margin-top: 1.5rem; margin-bottom: 1.5rem}
+.my-4{margin-top: 2rem; margin-bottom: 2rem}
+.my-5{margin-top: 2.5rem; margin-bottom: 2.5rem}
 .mx-1{margin-left: .5rem; margin-right: .5rem}
-.mx-2{margin-left: 2rem; margin-right: 2rem}
-.mx-3{margin-left: 3rem; margin-right: 3rem}
+.mx-2{margin-left: 1rem; margin-right: 1rem}
+.mx-3{margin-left: 1.5rem; margin-right: 1.5rem}
 .mb-1{margin-bottom: .5rem;}
-.mb-2{margin-bottom: 2rem;}
-.mb-3{margin-bottom: 3rem;}
+.mb-2{margin-bottom: 1rem;}
+.mb-3{margin-bottom: 1.5rem;}
 .mt-1{margin-top: .5rem;}
-.mt-2{margin-top: 2rem;}
-.mt-3{margin-top: 3rem;}
+.mt-2{margin-top: 1rem;}
+.mt-3{margin-top: 1.5rem;}
 .p-0{padding: 0;}
 
 /*=======================
@@ -94,6 +96,6 @@ input, textarea { outline: 0; }
 
 @media screen and (min-width: 768px) {}
 
-@media screen and (min-width: 992px) {}
-
-@media screen and (min-width: 1088px) {}
+@media screen and (min-width: 992px) {
+  .container {padding: 0 3.5rem;}
+}

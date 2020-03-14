@@ -1,6 +1,5 @@
 .portfolio-wrapper {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin: 4rem 0;
   font-family: 'ITC Avant Garde Gothic LT';
 }
 
@@ -13,13 +12,13 @@
 }
 
 .project {
+  color: white;
+  padding: 1.5rem 0;
   max-width: 600px;
-  width: 100%;
-  min-height: 400px;
+  flex-basis: 48.6%;
   border-radius: 4px;
-  background-image: linear-gradient(yellow, pink);
+  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.3);
   background-repeat: no-repeat;
-  background-position: right;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
 }
 
@@ -29,11 +28,9 @@
 
 .project-details {
   margin-left: 3rem;
-  padding: 1.5rem 0;
 }
 
 .project-text {
-  max-width: 55%;
   line-height: 35px;
   font-size: 20px;
 }
@@ -43,43 +40,47 @@
 }
 
 .project-industry {
-  font-size: .84rem;
+  font-size: .82rem;
 }
 
 /*=======================
       Project Cards
 =======================*/
 .hostgator-project-card {
-  color: white;
   background-color: #1F90C6;
   background-image: url('../../assets/img/hostgator-snappy.png');
-  background-size: 45% 70%;
+  background-position: 120% 250%;
+  background-size: 40% 80%;
 }
 
 .martian-project-card {
-  color: white;
   background-color: #050100;
   background-image: url('../../assets/img/martian-logo.svg');
-  background-size: 50% 100%;
-}
-
-.homies-project-card {
-  color: white;
-  background-color: #d74b7c;
-  background-image: url('../../assets/img/desktop.png');
-  background-size: 50% 90%;
+  background-position: 110% 200%;
+  background-size: 40% 80%;
 }
 
 .terra-project-card {
   color: black;
   background-color: #FEEEF2;
   background-image: url('../../assets/img/watch.png');
-  background-size: 50% 70%;
+  background-position: 160% 300%;
+  background-size: 60% 85%;
 }
+
+.homies-project-card {
+  background-color: #d74b7c;
+  background-image: url('../../assets/img/desktop.png');
+  background-position: 125% 300%;
+  background-size: 45% 90%;
+}
+
 
 /*=======================
       Media Queries
 =======================*/
+@media only screen and (max-width: 1200px)  {}
+
 @media only screen and (max-width: 992px) {
   .project-row {
     flex-direction: column;
@@ -99,25 +100,28 @@
     width: 100%;
   }
 
-  .project-text {
-    max-width: 45%;
-    margin-top: 3.2rem;
-    margin-bottom: 3rem;
+  .hostgator-project-card {
+    background-size: inherit;
   }
 
-  .project {
-    background-size: 30% 80%;
+  .martian-project-card {
+    background-position: 118% 180%;
   }
+
+  .terra-project-card {
+    background-size: 55% 82%;
+  }
+
+  .homies-project-card {
+    background-size: 40% 95%;
+  }
+
 }
 
 
 @media only screen and (max-width: 768px) {}
 
 @media only screen and (max-width: 576px) {
-  .project-text {
-    max-width: 60%;
-  }
-
   .project {
     background-image: none;
   }
