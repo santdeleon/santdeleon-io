@@ -34,7 +34,7 @@ function Navbar(props) {
           </span>
 
           <div className="search-wrapper flex align-items-center">
-            <input id="search" type="text" className="search-bar" style={(props.theme === "light") ? { color: "#000" } : { color: "#9D9D9D" }}/>
+            <input id="search" type="text" className="search-bar" style={(props.theme === "light") ? { backgroundColor: "#fee78d" } : { borderColor: '#6d2e6b', backgroundColor: "#e375e2", boxShadow: 'inset 0 0 0 0.04em #6f1db7, 0px 3px 0px 0px rgba(40, 40, 40, 0.4)' }}/>
             <Search className="search-icon" size={18} />
           </div>
 
@@ -82,7 +82,7 @@ function Navbar(props) {
         {/* End Nav Right */}
       </nav>
 
-      <div className="hyphens"></div>
+      {/* <div className="hyphens"></div> */}
     </div>
   )
 }

@@ -33,8 +33,6 @@ function Portfolio(props) {
   return (
     <div id="Portfolio" className="Portfolio container">
       <div className="portfolio-wrapper flex flex-column align-items-center">
-
-
         <div className="project-row w-100 flex align-items-center justify-content-center">
           {Object.keys(projects).map((project, index) => {
             if (index < 2) {

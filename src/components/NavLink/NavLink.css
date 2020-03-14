@@ -1,10 +1,9 @@
 .nav-link {
-  margin-left: 2rem;
   border-bottom: 2px solid transparent;
   cursor: pointer;
   line-height: 30px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-  font-size: 1rem;
+  font-size: 1.14rem;
 }
 
 .nav-link:after {
