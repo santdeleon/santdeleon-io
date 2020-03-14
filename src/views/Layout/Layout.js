@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Navbar from '../../components/Navbar/Navbar';
 import Sidebar from '../../components/Sidebar/Sidebar';
+import Portfolio from '../../components/Portfolio/Portfolio';
 
 
 function Layout(props) {
@@ -48,10 +49,13 @@ function Layout(props) {
       />
 
       <Sidebar
+        theme={props.theme}
         showSidebar={showSidebar}
         navLinks={navLinks}
         socialIcons={socialIcons}
       />
+
+      <Portfolio />
     </section>
   );
 }

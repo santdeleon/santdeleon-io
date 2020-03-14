@@ -1,0 +1,108 @@
+.portfolio-wrapper {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.project-row {
+  border: 1px solid green;
+}
+
+.project-row .project:nth-child(2) {
+  margin-left: 2rem;
+}
+
+.project {
+  max-width: 550px;
+  width: 100%;
+  border-radius: 5px;
+  background-image: linear-gradient(yellow, pink);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.project:hover {
+  transform: translateY(-.70rem);
+}
+
+.project-details {
+  margin-left: 2rem;
+  padding: 1.5rem 0;
+}
+
+.project-text {
+  max-width: 60%;
+  line-height: 35px;
+}
+
+.project-industry-title {
+  font-size: 1rem;
+}
+
+.project-industry {
+  font-size: .9rem;
+}
+
+/*=======================
+      HostGator Card
+=======================*/
+.hostgator-project-card {
+  color: white;
+  background-color: #0467D6;
+  background-image: url('../../assets/img/hostgator-snappy.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  /* background-size: 50%; */
+  background-size: 45% 90%;
+}
+
+/*=======================
+      Media Queries
+=======================*/
+@media only screen and (max-width: 992px) {
+  .project-row {
+    flex-direction: column;
+  }
+
+  .project-row .project:nth-child(2) {
+    margin-left: inherit;
+  }
+
+  .project {
+    margin: 1rem 0;
+    max-width: none;
+    width: 100%;
+    border: 5px solid purple;
+  }
+
+  .project-text {
+    max-width: 40%;
+    margin-top: 3.2rem;
+    margin-bottom: 3rem;
+  }
+
+  .hostgator-project-card {
+    color: white;
+    background-color: #0467D6;
+    background-image: url('../../assets/img/hostgator-snappy.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    /* background-size: 50%; */
+    background-size: 30% 80%;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .project-text {
+    max-width: 50%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .project-text {
+    max-width: 60%;
+  }
+
+  .hostgator-project-card {
+    background-image: none;
+  }
+}
