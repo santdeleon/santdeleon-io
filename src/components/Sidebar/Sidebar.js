@@ -14,7 +14,7 @@ function Sidebar(props) {
     <div id="Sidebar" className="Sidebar">
       <div
         className={`flex flex-column align-items-center justify-content-around menu-wrap ${(props.showSidebar === true) ? "menu-show" : ""}`}
-        style={(props.theme === "light") ? { backgroundColor: "#fff" } : { backgroundColor: "#17171A" }}
+        style={(props.theme === "light") ? { backgroundColor: "#fff" } : { backgroundColor: "#131313" }}
       >
         <div className="sidebar-links flex flex-column align-items-center justify-content-center text-center">
           <ul className="sidebar-menu flex flex-column align-items-center">

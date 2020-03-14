@@ -87,10 +87,10 @@
       <stop offset="0.223" stop-color="#761600"/>
       <stop offset="0.328" stop-color="#520f00"/>
       <stop offset="0.438" stop-color="#340a00"/>
-      <stop offset="0.553" stop-color="#1d0500"/>
-      <stop offset="0.677" stop-color="#0c0200"/>
-      <stop offset="0.815" stop-color="#030000"/>
-      <stop offset="0.995"/>
+      <stop offset="0.553" stop-color="#000"/>
+      <stop offset="0.677" stop-color="#000"/>
+      <stop offset="0.815" stop-color="transparent"/>
+      <stop offset="0.995" stop-color="transparent"/>
     </radialGradient>
     <radialGradient id="radial-gradient-2" cx="232.692" cy="431.107" r="507.77" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#radial-gradient"/>
     <radialGradient id="radial-gradient-3" cx="227.076" cy="425.493" r="507.767" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#radial-gradient"/>
