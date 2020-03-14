@@ -19,9 +19,9 @@
 }
 
 .search-wrapper {
-  position:relative;
-  padding:0;
-  margin:0;
+  position: relative;
+  padding: 0;
+  margin: 0;
 }
 
 .search-bar {
@@ -64,7 +64,7 @@
 =======================*/
 .toggle-button {
   display: none;
-  position: fixed;
+  position: absolute;
   width: 20px;
   height: 22px;
   transition: .25s;
