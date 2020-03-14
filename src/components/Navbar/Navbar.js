@@ -28,13 +28,13 @@ function Navbar(props) {
         {/* Nav Right */}
         <div className="nav-right flex align-items-center">
           <span className={`toggle-button ${(props.showSidebar === true) ? "button-open" : ""}`} onClick={props.toggleSidebar}>
-            <div className="menu-bar menu-bar-top" style={(props.theme === "light") ? { borderColor: "black" } : { borderColor: "white" }}></div>
-            <div className="menu-bar menu-bar-middle" style={(props.theme === "light") ? { backgroundColor: "black" } : { backgroundColor: "white" }}></div>
-            <div className="menu-bar menu-bar-bottom" style={(props.theme === "light") ? { borderColor: "black" } : { borderColor: "white" }}></div>
+            <div className="menu-bar menu-bar-top" style={(props.theme === "light") ? { borderColor: "#000" } : { borderColor: "#9D9D9D" }}></div>
+            <div className="menu-bar menu-bar-middle" style={(props.theme === "light") ? { backgroundColor: "#000" } : { backgroundColor: "#9D9D9D" }}></div>
+            <div className="menu-bar menu-bar-bottom" style={(props.theme === "light") ? { borderColor: "#000" } : { borderColor: "#9D9D9D" }}></div>
           </span>
 
           <div className="search-wrapper flex align-items-center">
-            <input id="search" type="text" className="search-bar" />
+            <input id="search" type="text" className="search-bar" style={(props.theme === "light") ? { color: "#000" } : { color: "#9D9D9D" }}/>
             <Search className="search-icon" size={18} />
           </div>
 

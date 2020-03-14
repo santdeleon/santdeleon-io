@@ -1,8 +1,5 @@
 .navbar {
   padding: 1rem 1rem;
-  background-image: url('../../assets/img/pattern-wallpaper.svg');
-  background-size: 20rem auto;
-  background-position: 50%;
 }
 
 .nav-left {
@@ -34,7 +31,7 @@
   margin-right: 1.3rem;
   font-size: 16px;
   padding-left: 10px;
-  border: 1px solid purple;
+  border: 1px dotted purple;
 }
 
 .search-icon {
