@@ -1,10 +1,7 @@
 import React from "react";
 import { Search } from 'react-feather';
-
 import NavLink from '../NavLink/NavLink';
-
 import Logo from "../../assets/img/logo.svg";
-
 import './Navbar.css';
 
 
@@ -13,19 +10,16 @@ function Navbar(props) {
   return (
     <div id="Navbar" className="Navbar">
       <nav className="navbar flex align-items-center justify-content-between">
-        {/* Nav Left */}
         <div className="nav-left flex align-items-center">
           <a className="app-logo" href="http://santdeleon.co"><img src={Logo} alt="Wolf & Sant" aria-label="App Title Logo"/></a>
 
           <div className="nav-links-wrapper navbar-nav flex align-items-center">
             <ul className="navbar-menu flex align-items-center">
-              {props.navLinks.map(link => <NavLink key={link.id} name={link.name} href={link.href} />)}
+              {props.navLinks.map(link => <NavLink key={link.id} name={link.name} href={link.href} icon={link.icon} />)}
             </ul>
           </div>
         </div>
-        {/* End Nav Left */}
 
-        {/* Nav Right */}
         <div className="nav-right flex align-items-center">
           <span className={`toggle-button ${(props.showSidebar === true) ? "button-open" : ""}`} onClick={props.toggleSidebar}>
             <div className="menu-bar menu-bar-top" style={(props.theme === "light") ? { borderColor: "#000" } : { borderColor: "#9D9D9D" }}></div>
@@ -70,16 +64,14 @@ function Navbar(props) {
             </svg>
           :
             <svg id="moonIcon" className="moon-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" version="1.1" viewBox="0 0 24 23" aria-label="dark mode button" onClick={props.toggleTheme}>
-              <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+              <g fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
                 <g stroke="#000" transform="translate(4.000000, 4.000000)">
                   <path className="moon" d="M5.05590899,-5.24580379e-14 C4.98906163,0.403462803 4.95433153,0.817286714 4.95433153,1.23894741 C4.95433153,5.5346106 8.55879242,9.01693366 13.0051203,9.01693366 C14.0635388,9.01693366 15.0742532,8.81960918 16,8.46096116 C15.3858407,12.1677707 12.0606667,15 8.05078873,15 C3.60446089,15 0,11.5176769 0,7.22201375 C0,3.94890437 2.09267079,1.14800239 5.05590899,1.05082609e-13 Z"/>
                 </g>
               </g>
             </svg>
           }
-
         </div>
-        {/* End Nav Right */}
       </nav>
 
       {/* <div className="hyphens"></div> */}

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-
 import Navbar from '../../components/Navbar/Navbar';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import Portfolio from '../../components/Portfolio/Portfolio';
 
 
 function Layout(props) {
+
   const [showSidebar, setShowSidebar] = useState(false);
   const socialIcons = {
     linkedin: {
@@ -25,10 +25,10 @@ function Layout(props) {
     },
   };
   const navLinks = [
-    { id: 0, name: 'Bio', href: "" },
-    { id: 1, name: 'Portfolio', href: "" },
-    { id: 2, name: 'Technologies', href: "" },
-    { id: 3, name: 'Get in touch', href: "" }
+    { id: 0, name: 'Bio', href: "", icon: 'Book' },
+    { id: 1, name: 'Portfolio', href: "", icon: 'Folder' },
+    { id: 2, name: 'Technologies', href: "", icon: 'Code' },
+    { id: 3, name: 'Get in touch', href: "", icon: 'MessageCircle' }
   ];
 
   useEffect(() => {
