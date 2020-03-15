@@ -62,6 +62,11 @@
   background: url('../../assets/img/desktop.png') no-repeat -155% 70%, linear-gradient(#d74b7c, #591d31) no-repeat;
 }
 
+.coinflip-project-card {
+  color: black;
+  background: url('../../assets/img/ethereum.svg') no-repeat 20%, linear-gradient(#fade7e, #F89C92) no-repeat;
+}
+
 /*=======================
       Media Queries
 =======================*/
@@ -100,6 +105,10 @@
     background-position: 200% 70%;
   }
 
+  .coinflip-project-card {
+    background-size: inherit;
+  }
+
 }
 
 @media only screen and (max-width: 576px) {
@@ -117,5 +126,9 @@
 
   .homies-project-card {
     background: linear-gradient(#d74b7c, #591d31);
+  }
+
+  .coinflip-project-card {
+    background: linear-gradient(#fade7e, #F89C92);
   }
 }
