@@ -14,11 +14,11 @@ import './Portfolio.css';
 function Portfolio(props) {
   const projects = {
     hostgator: {
-      id: 'hostgatorProjectCard', class: 'hostgator-project-card', url: '#', img: HostGator,
+      id: 'hostgatorProjectCard', class: 'hostgator-project-card', url: 'https://www.hostgator.com/', img: HostGator,
       width: 120, height: 50, text: 'Platform for entrepeuners <br /> & businesses to create,<br /> host & manage websites', industry: 'Domain & Web Hosting'
     },
     terra: {
-      id: 'terraProjectCard', class: 'terra-project-card', url: '#', img: Terra,
+      id: 'terraProjectCard', class: 'terra-project-card', url: 'https://www.terraats.com/', img: Terra,
       width: 90, height: 50, text: 'Small in-house tech <br /> solution for custom <br /> software applications', industry: 'Software Services & IT Solutions'
     },
     homies: {
@@ -26,11 +26,11 @@ function Portfolio(props) {
       width: 70, height: 50, text: 'Grassroots startup helping <br /> brands get off the ground <br /> & sell online', industry: 'Branding & E-Commerce'
     },
     martian: {
-      id: 'martianProjectCard', class: 'martian-project-card', url: '#', img: Martian,
+      id: 'martianProjectCard', class: 'martian-project-card', url: 'http://martian.network/', img: Martian,
       width: 120, height: 50, text: 'Blockchain solution for <br /> monetizing, distributing <br /> & hosting content', industry: 'Blockchain & Content Management'
     },
     coinflip: {
-      id: 'coinflipProjectCard', class: 'coinflip-project-card', url: '#', img: Ethereum,
+      id: 'coinflipProjectCard', class: 'coinflip-project-card', url: 'https://github.com/santdeleon/coinflip', img: Ethereum,
       width: 40, height: 40, text: 'Decentralized gambling <br /> application built on the <br /> Ethereum Network', industry: 'Blockchain, Gambling & Gaming'
     }
   }
