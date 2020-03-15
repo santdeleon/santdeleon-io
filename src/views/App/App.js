@@ -9,13 +9,7 @@ import Layout from '../Layout/Layout';
 import Contact from '../Contact/Contact.js';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import {
-  faGithub,
-  faFreeCodeCamp,
-  faAngellist,
-  faLinkedinIn,
-  faStackOverflow
-} from "@fortawesome/free-brands-svg-icons";
+import { faAngellist, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import {
   faEnvelope,
   faHome,
@@ -25,11 +19,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
-  faGithub,
-  faFreeCodeCamp,
   faAngellist,
   faLinkedinIn,
-  faStackOverflow,
   faEnvelope,
   faHome,
   faRedoAlt,
@@ -40,10 +31,8 @@ library.add(
 
 function App() {
   const [theme, setTheme] = useState('light');
+  const toggleTheme = () => { (theme === 'light') ? setTheme('dark') : setTheme('light'); }
 
-  const toggleTheme = () => {
-    (theme === 'light') ? setTheme('dark') : setTheme('light');
-  }
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>

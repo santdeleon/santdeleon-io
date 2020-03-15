@@ -1,7 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import NavLink from '../NavLink/NavLink';
+
 import Wolf from "../../assets/img/wolf.svg";
+
 import './Sidebar.css';
 
 

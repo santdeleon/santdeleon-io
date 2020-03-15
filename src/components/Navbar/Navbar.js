@@ -1,7 +1,10 @@
 import React from "react";
 import { Search } from 'react-feather';
+
 import NavLink from '../NavLink/NavLink';
+
 import Logo from "../../assets/img/logo.svg";
+
 import './Navbar.css';
 
 
