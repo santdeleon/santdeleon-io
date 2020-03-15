@@ -15,7 +15,7 @@ function Navbar(props) {
 
           <div className="nav-links-wrapper navbar-nav flex align-items-center">
             <ul className="navbar-menu flex align-items-center">
-              {props.navLinks.map(link => <NavLink key={link.id} name={link.name} href={link.href} icon={link.icon} />)}
+              {props.navLinks.map(link => <NavLink key={link.id} name={link.name} href={link.href} icon={link.icon} theme={props.theme}/>)}
             </ul>
           </div>
         </div>
@@ -28,7 +28,7 @@ function Navbar(props) {
           </span>
 
           <div className="search-wrapper flex align-items-center">
-            <input id="search" type="text" className="search-bar" style={(props.theme === "light") ? { backgroundColor: "#fee78d" } : { borderColor: '#6d2e6b', backgroundColor: "#e375e2", boxShadow: 'inset 0 0 0 0.04em #6f1db7, 0px 3px 0px 0px rgba(40, 40, 40, 0.4)' }}/>
+            <input id="search" type="text" className="search-bar" style={(props.theme === "light") ? { backgroundColor: "#fee78d" } : { borderColor: '#9e558a', backgroundColor: "#e375e2", boxShadow: 'inset 0 0 0 0.04em #6f1db7, 0px 3px 0px 0px rgba(40, 40, 40, 0.4)' }}/>
             <Search className="search-icon" size={18} />
           </div>
 
