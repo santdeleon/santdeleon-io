@@ -3,11 +3,12 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import Portfolio from '../../components/Portfolio/Portfolio';
+import Footer from '../../components/Footer/Footer';
 
 
 function Layout(props) {
   const [showSidebar, setShowSidebar] = useState(false);
-  
+
   const socialIcons = {
     linkedin: {
       id: 0,
@@ -58,6 +59,12 @@ function Layout(props) {
       />
 
       <Portfolio />
+
+      <Footer
+        heart={props.heart}
+        copyright={props.copyright}
+        socialIcons={socialIcons}
+      />
     </section>
   );
 }

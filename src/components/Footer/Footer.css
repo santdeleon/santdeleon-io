@@ -1,0 +1,42 @@
+.footer-wrapper {
+  margin-top: 1rem;
+  line-height: 45px;
+}
+
+.footer-social-icons .social-icon:nth-child(1) {
+  margin-left: 0;
+}
+
+.footer-social-icons svg {
+  font-size: 1.2rem;
+}
+
+.heart {
+  color: red;
+  margin: 0 10px !important;
+  cursor: inherit;
+}
+
+.heart:hover {
+  color: pink;
+}
+
+.copyright {
+  font-size: 18px;
+  margin: 0 !important;
+  margin-right: 10px !important;
+  cursor: inherit;
+}
+
+.copyright:hover {
+  color: inherit;
+}
+
+/*=======================
+      Media Queries
+=======================*/
+@media only screen and (max-width: 768px) {
+  .copyright-wrapper {
+    display: none;
+  }
+}

@@ -76,8 +76,6 @@ function Navbar(props) {
           }
         </div>
       </nav>
-
-      {/* <div className="hyphens"></div> */}
     </div>
   )
 }
