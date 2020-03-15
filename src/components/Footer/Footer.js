@@ -21,12 +21,12 @@ function Footer(props) {
           })}
         </div>
 
-        <div className="flex align-items-center">
-          <h4 className="m-0 flex align-items-center fw-normal">Made with <FontAwesomeIcon className="social-icon heart" icon={props.heart} /> by Sant</h4>
+        <div className="flex align-items-center copyright-wrapper">
+          <h4 className="m-0 flex align-items-center fw-normal">santdeleon. 2020</h4>
         </div>
 
-        <div className="flex align-items-center copyright-wrapper">
-          <h4 className="m-0 flex align-items-center fw-normal"><FontAwesomeIcon className="social-icon copyright" icon={props.copyright} /> <span>Copyright 2020</span></h4>
+        <div className="flex align-items-center heart-wrapper">
+          <h4 className="m-0 flex align-items-center fw-normal">Made with <FontAwesomeIcon className="social-icon heart" icon={props.heart} /> by Sant</h4>
         </div>
       </div>
     </footer>

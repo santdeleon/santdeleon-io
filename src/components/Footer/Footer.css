@@ -1,5 +1,5 @@
 .footer-wrapper {
-  margin-top: 1rem;
+  margin: 1rem 0;
   line-height: 45px;
 }
 
@@ -8,7 +8,11 @@
 }
 
 .footer-social-icons svg {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+}
+
+.heart-wrapper h4 {
+  font-size: 1rem;
 }
 
 .heart {
@@ -19,17 +23,6 @@
 
 .heart:hover {
   color: pink;
-}
-
-.copyright {
-  font-size: 18px;
-  margin: 0 !important;
-  margin-right: 10px !important;
-  cursor: inherit;
-}
-
-.copyright:hover {
-  color: inherit;
 }
 
 /*=======================
