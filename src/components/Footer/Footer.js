@@ -6,7 +6,7 @@ import NavLink from '../NavLink/NavLink';
 import './Footer.css';
 
 
-function Footer(props) {
+const Footer = props => {
 
   return (
     <footer className="Footer container">

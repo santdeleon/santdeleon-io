@@ -3,7 +3,7 @@ import React from 'react';
 import './ProjectCard.css';
 
 
-function ProjectCard(props) {
+const ProjectCard = props => {
 
   return (
     <a id={props.id} className={`${props.class} project flex align-items-center`} href={props.url} target="_blank" rel="noopener noreferrer" aria-label={props.name}>

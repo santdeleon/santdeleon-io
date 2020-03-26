@@ -8,7 +8,7 @@ import Wolf from "../../assets/img/wolf.svg";
 import './Sidebar.css';
 
 
-function Sidebar(props) {
+const Sidebar = props => {
 
   return (
     <div id="Sidebar" className="Sidebar">

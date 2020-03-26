@@ -8,7 +8,7 @@ import Logo from "../../assets/img/logo.svg";
 import './Navbar.css';
 
 
-function Navbar(props) {
+const Navbar = props => {
 
   return (
     <div id="Navbar" className="Navbar">
