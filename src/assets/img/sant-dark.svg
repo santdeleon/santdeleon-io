@@ -48,7 +48,7 @@
       </g>
 
       <g fill-rule="evenodd" transform="translate(0 265.928571)"><use fill="#e6e6e6" xlink:href="#c"/>
-        <g fill="#FCE073" mask="url(#l)"><path d="m0 0h413v172h-413z"/></g>
+        <g fill="#82E1F3" mask="url(#l)"><path d="m0 0h413v172h-413z"/></g>
         <g fill="#000" fill-opacity=".16" mask="url(#l)" opacity=".6">
           <ellipse cx="63.357955" cy="43.543559" rx="62.004918" ry="42.083439" transform="translate(143.924242 6.254545)"/>
         </g>

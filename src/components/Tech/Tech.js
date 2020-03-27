@@ -8,8 +8,8 @@ const technologies = {
     id: 1,
     name: 'Blockchain Stack',
     color: '#f76f6e',
-    tech: [ 'Solidity', 'Web3', 'React', 'JavaScript', 'HTML/CSS' ],
-    tools: [ 'Remix IDE', 'OpenZepplin', 'Provable', 'Chai', 'Mocha', 'Truffle Suite', 'Ethereum mainnet and testnets' ]
+    tech: [ 'Solidity', 'Web3', 'React', 'JavaScript', 'HTML/CSS', 'Chai', 'Mocha', ],
+    tools: [ 'Remix IDE', 'OpenZepplin', 'Provable', 'Truffle Suite', 'Ethereum mainnet and testnets' ]
   },
   frontend: {
     id: 2,

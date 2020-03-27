@@ -11,7 +11,7 @@ import Footer from '../../components/Footer/Footer';
 
 const Layout = ({theme, toggleTheme, showSidebar, toggleSidebar, navLinks, socialIcons, github, heart, copyright}) => {
   useEffect(() => {
-    document.title = "Sant | Front-end & Blockchain Developer";
+    document.title = "Sant - Blockchain Engineer & Front-end Developer";
   });
 
   return (

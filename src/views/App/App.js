@@ -13,6 +13,7 @@ import { faEnvelope, faHome, faRedoAlt, faHeart, faCopyright } from "@fortawesom
 
 
 function App() {
+  // data
   const [theme, setTheme] = useState('light');
   const [showSidebar, setShowSidebar] = useState(false);
   const socialIcons = {
@@ -32,7 +33,6 @@ function App() {
       url: 'mailto:sant@santdeleon.co'
     },
   };
-
   const navLinks = [
     { id: 0, name: 'Bio', href: "#Bio", icon: 'Book' },
     { id: 1, name: 'Portfolio', href: "#Portfolio", icon: 'Folder' },
@@ -40,6 +40,7 @@ function App() {
     { id: 3, name: 'Get in touch', href: "/contact", icon: 'MessageCircle' }
   ];
 
+  // functions
   const toggleTheme = () => { (theme === 'light') ? setTheme('dark') : setTheme('light'); }
 
   const toggleSidebar = () => { setShowSidebar(!showSidebar); }

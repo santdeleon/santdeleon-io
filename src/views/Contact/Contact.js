@@ -21,7 +21,7 @@ function Contact(props) {
 
 
   useEffect(() => {
-    document.title = "Sant Deleon - Contact";
+    document.title = "Sant - Contact";
   });
 
   return (
