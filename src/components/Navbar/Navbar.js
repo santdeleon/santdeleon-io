@@ -41,7 +41,8 @@ const Navbar = ({navLinks, showSidebar, theme, toggleTheme, toggleSidebar, socia
           </span>
 
           <div className="search-wrapper flex align-items-center">
-            <input id="search" type="text" className="search-bar" style={(theme === "light") ? { backgroundColor: "#fee78d" } : { borderColor: '#9e558a', backgroundColor: "#e375e2", boxShadow: 'inset 0 0 0 0.04em #6f1db7, 0px 3px 0px 0px rgba(40, 40, 40, 0.4)' }}/>
+            <label htmlFor="search-bar"></label>
+            <input id="search" type="text" name="search-bar" className="search-bar" style={(theme === "light") ? { backgroundColor: "#fee78d" } : { borderColor: '#9e558a', backgroundColor: "#e375e2", boxShadow: 'inset 0 0 0 0.04em #6f1db7, 0px 3px 0px 0px rgba(40, 40, 40, 0.4)' }}/>
             <Search className="search-icon" size={18} />
           </div>
 

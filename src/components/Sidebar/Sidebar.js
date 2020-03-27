@@ -1,5 +1,5 @@
 import React from 'react';
-import { array, bool, string, func, object } from 'prop-types';
+import { array, bool, string, object } from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import NavLink from '../NavLink/NavLink';
