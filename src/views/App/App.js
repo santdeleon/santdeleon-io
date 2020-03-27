@@ -97,8 +97,6 @@ function App() {
                 // icons
                 refresh={faRedoAlt}
                 home={faHome}
-                socialIcons={socialIcons}
-                navLinks={navLinks}
               />
             )}
           />
