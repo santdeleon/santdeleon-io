@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useAlert } from 'react-alert';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import Logo from "../../assets/img/logo.svg";
+
 import './Contact.css';
 
 import Navbar from '../../components/Navbar/Navbar';
@@ -9,7 +12,6 @@ function Contact(props) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const alert= useAlert();
 
   function clearForm(e) {
     setName('');
@@ -19,70 +21,72 @@ function Contact(props) {
 
 
   useEffect(() => {
-    document.title = "Sant Deleon | Contact";
+    document.title = "Sant Deleon - Contact";
   });
 
   return (
-    <section id="hello">
-      <Navbar refresh={props.refresh} home={props.home} clearForm={clearForm}/>
-      <div className="hyphens"></div>
+    <>
+    <div id="Contact" className="Contact container">
+      <div className="flex contact-nav justify-content-between my-2">
+        <div className="nav-logo flex">
+          <img src={Logo} alt="App Logo"/>
+        </div>
 
-      <div className="Contact container flex">
-        <div className="Contact-content flex column">
-          <div className="Contact-text flex">
-            <h1 className="title text-center">Hey, you made it! What can I do for you today?</h1>
-          </div>
+        <div className="flexcontact-nav-links">
+          <a href="/">
+            <button className="home-btn btn">
+              <FontAwesomeIcon icon={props.home} />
+            </button>
+          </a>
 
-          <div className="Contact-form flex">
-            <form
-              action="https://formspree.io/sant@santdeleon.co"
-              id="contactForm"
-              className="form flex column"
-              method="POST"
-            >
-              <div className="Contact-form-inputs flex column">
-                <div className="input-group flex column">
-                  <label for="name">Name</label>
-                  <input type="text" name="name" value={name} onChange={e => setName(e.target.value)} required/>
-                </div>
-
-                <div className="input-group flex column">
-                  <label for="email">Email</label>
-                  <input type="text" name="email" value={email} onChange={e => setEmail(e.target.value)} required />
-                </div>
-              </div>
-
-              <div className="Contact-form-textarea">
-                <div className="input-group flex column">
-                  <label for="message">Message</label>
-                  <textarea
-                    type="text"
-                    name="message"
-                    value={message}
-                    rows={5}
-                    onChange={e => setMessage(e.target.value)}
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="Contact-button flex">
-                <button
-                className="btn"
-                type="submit"
-                onClick={() => {
-                  alert.show("Thanks for reaching out. I look forward to chatting!")
-                }}
-                >
-                Send
-                </button>
-              </div>
-            </form>
-          </div>
-
+          <button className="refresh-btn btn ml-2" onClick={clearForm}>
+            <FontAwesomeIcon icon={props.refresh} />
+          </button>
         </div>
       </div>
-    </section>
+
+      <div className="hyphens"></div>
+
+
+      <div className="contact-nav-header flex flex-column align-items-center my-5">
+        <div className="Contact-text flex">
+          <h2 className="text-center">Hey, you made it! <br/> What can I do for you today?</h2>
+        </div>
+      </div>
+
+      <form action="https://formspree.io/sant@santdeleon.co" id="contactForm" className="form flex flex-column mx-auto" method="POST">
+        <div className="Contact-form-inputs flex flex-column">
+          <div className="input-group flex flex-column">
+            <label for="name">Name</label>
+            <input type="text" name="name" value={name} onChange={e => setName(e.target.value)} required />
+          </div>
+
+          <div className="input-group flex flex-column">
+            <label for="email">Email</label>
+            <input type="text" name="email" value={email} onChange={e => setEmail(e.target.value)} required />
+          </div>
+        </div>
+
+        <div className="Contact-form-textarea">
+          <div className="input-group flex flex-column">
+            <label for="message">Message</label>
+            <textarea
+              type="text"
+              name="message"
+              value={message}
+              rows={5}
+              onChange={e => setMessage(e.target.value)}
+              required
+            />
+          </div>
+        </div>
+
+        <div className="flex justify-content-center mt-4">
+          <button className="contact-button btn" type="submit">Send</button>
+        </div>
+      </form>
+    </div>
+    </>
   );
 }
 

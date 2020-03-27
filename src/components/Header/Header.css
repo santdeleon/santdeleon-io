@@ -1,80 +1,76 @@
-.background {
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  z-index: -1;
+.Header {
+  margin: 5rem 0;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  position: relative;
 }
 
-header {
-  height: 100vh;
+.header-wrapper {
+  max-width: 1230px;
+  margin: 0 auto;
 }
 
-.hero  {
-  justify-content: center;
-  z-index: 1;
+.header-text {
+  max-width: 500px;
 }
 
-.hero-body {
-  align-items: center;
-  height: 100%;
-}
-
-.hero-text {
-  margin-bottom: 2rem;
-}
-
-.hero-body .logo {
-  width: 225px;
-  height: 100%;
-}
-
-.roles {
-  position: absolute;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  margin-top: 4rem;
-}
-
-.role {
-  flex: 1 1 auto;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  box-shadow: 0 7px 22px 1px rgba(0, 0, 0, .07);
+.header-name {
+  font-family: Helvetica;
+  font-size: 20px;
   font-weight: lighter;
-  margin: 0 2px;
-  height: 65px;
 }
 
-.role-top {
-  border-radius: 6px;
-  width: 100%;
-  height: 5px;
+.skill {
+  flex-basis: 18%;
 }
 
-.role p {
-  font-size: .875rem;
-  text-align: center;
+.skill-header {
+  height: 4px;
+  border-radius: 10px 10px 0 0 ;
+}
+
+.skill-body {
+  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-btn-wrapper {
+  animation: MoveUpDown 1.5s linear infinite;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 15px;
+  }
+}
+
+.scroll-down {
+  padding-top: 2px;
+  font-size: 14px;
+  cursor: default;
 }
 
 /*=======================
-    Media Queries
+      Media Queries
 =======================*/
-@media screen and (min-width: 768px) {
-  .hero-body .logo {
-    width: 225px;
+@media only screen and (max-width: 992px) {
+  .header-wrapper {
+    max-width: 100%;
+  }
+
+  .header-text {
+    max-width: 400px;
   }
 }
 
-@media screen and (min-width: 992px) {
-  .hero-body .logo {
-    width: 250px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .role p {
-    font-size: 11px;
+@media only screen and (max-width: 768px) {
+  .Header {
+    background: inherit;
   }
 }

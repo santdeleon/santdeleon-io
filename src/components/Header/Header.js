@@ -1,57 +1,48 @@
-import React, { useState } from 'react';
-import InlineSVG from 'svg-inline-react';
-import Particles from 'particlesjs';
+import React from 'react';
+import { ArrowDownCircle } from 'react-feather';
 import './Header.css';
 
-import Navbar from '../Navbar/Navbar';
+import Sant from '../../assets/img/sant.svg';
+
+const skills = [
+  {id: 0, name: 'Blockchain Engineer', color: "#F76F6E"},
+  {id: 1, name: 'Front-end Developer', color: "#FBC07A"},
+  {id: 2, name: 'UI/UX Designer-ish', color: "#FCE073"},
+  {id: 3, name: 'Tech Enthusiast', color: "#A5F29F"},
+  {id: 4, name: 'Aspiring Cypherpunk', color: "#82E1F3"},
+];
 
 
-window.onload = function() {
-  Particles.init({
-    selector: '.background',
-  });
-};
-
-function Header(props) {
-  const [roles] = useState(
-    [
-      {id: 1, role: 'Software Engineer', color: '#77EAC5'},
-      {id: 2, role: 'Web Developer', color: '#FED66A'},
-      {id: 3, role: 'Full-Stack Developer', color: '#2CC9E1'},
-      {id: 4, role: 'Blockchain Engineer', color: '#FC5AA4'},
-      {id: 5, role: 'Technology Enthusiast', color: '#BC7FFC'},
-      {id: 6, role: 'Coding Sensei', color: '#E14627'}
-    ]
-  );
-
+const Header = () => {
   return (
-    <header id="header" className="header flex column">
+    <div id="Header" className="Header container">
+      <div className="header-wrapper flex flex-column justify-content-between">
+        <div className="header-text flex flex-column">
+          <img src={Sant} className="m-0 p-0" alt="Sant Cartoon" />
+          <h1 className="header-title mb-0 mt-0">Hello, I'm Sant. Blockchain Engineer and front-end developer.</h1>
+          <h3 className="header-name text-muted mt-3 fw-normal">with a knack for creating cutting edge products with elegance and style.</h3>
+        </div>
 
-      <Navbar logo={props.logo} home={props.home} refresh={props.refresh}/>
+        <div className="skills-wrapper flex w-100 justify-content-between my-4">
+          {skills.map(skill => {
+              return <div key={skill.id} className="skill flex flex-column mt-5">
+                       <div className="skill-header p-1" style={{backgroundColor: skill.color}}></div>
+                       <div className="skill-body text-center py-3"><p className="p-0 m-0">{skill.name}</p></div>
+                     </div>
+          })}
+        </div>
 
-      <section className="hero flex text-center">
-        <div className="hero-body flex column">
-          <div className="hero-text flex column">
-            <h1 className="title">Front-end Web Developer</h1>
-            <h2 className="subtitle text-muted">With a knack for creating elegantly smooth and stylish products.</h2>
-          </div>
-
-          <div className="hero-image">
-            <InlineSVG src={props.logo} className="logo"/>
+        <div className="scroll-btn-wrapper flex justify-content-center">
+          <div className="flex flex-column justify-content-center align-items-center">
+            <ArrowDownCircle className="arrow-down" />
+            <p className="scroll-down m-0 p-0">Scroll down</p>
           </div>
         </div>
-      </section>
 
-      <div className="roles flex">
-        {roles.map(role => {
-          return  <div key={role.id} className="role flex column">
-                    <div className="role-top flex" style={{backgroundColor: role.color}}></div>
-                    <p className="text-muted">{role.role}</p>
-                  </div>
-        })}
       </div>
-    </header>
+    </div>
   );
-}
+};
+
 
 export default Header;

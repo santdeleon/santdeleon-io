@@ -7,11 +7,11 @@ Requirements:
 
 ## Setup
 
-Run `npm install` in the root directory to install the current dependencies.
+Run `yarn install` in the root directory to install the current dependencies.
 
-Run `npm start` to run the application on your localhost.
+Run `yarn start` to run the application on your localhost.
 
-Run `npm build` to build a production ready version of the app.
+Run `yarn build` to build a production ready version of the app.
 
 ## Technologies used
 

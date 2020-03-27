@@ -4,34 +4,6 @@
   width: 100%;
 }
 
-nav .contact-btn {
-  border-radius: 5px;
-  padding: .5em .6em;
-}
-
-nav .btn2 {
-  margin-left: 20px;
-}
-
-.Contact-content {
-  width: 100%;
-}
-
-.Contact-text {
-  align-items: center;
-  justify-content: center;
-}
-
-.Contact .title {
-  max-width: 12em;
-  font-size: 2rem;
-  margin-bottom: 40px;
-}
-
-.Contact-form {
-  justify-content: center;
-}
-
 .Contact form {
   width: 640px;
   max-width: 100%;
@@ -64,19 +36,27 @@ input[name="name"] {  border-color: #48ABE4;}
 input[name="email"] {border-color: #FED055;}
 textarea {height: 212px;border-color: #58E2C2;}
 
-.Contact-button {
-  margin: 25px 0;
-  justify-content: center;
+.home-btn {
+  background-color: #C76CE5;
+  box-shadow: inset 0 0 0 0.14em #864089, 0px 3px 0px 0px rgba(40, 40, 40, 0.4);
 }
 
-.Contact-button .btn {
-  width: 100%;
-  background-color: transparent;
+.home-btn:hover {
+  box-shadow: inset 0 0 0 0.14em #864089, 0px 3px 0px 0px rgba(40, 40, 40, 0.4);
 }
 
-.Contact-button .btn:hover {
-  background-color: #FC4C8F;
+.refresh-btn {
+  background-color: #F480E1;
+  box-shadow: inset 0 0 0 0.14em #a05193, 0px 3px 0px 0px rgba(40, 40, 40, 0.4);
 }
+
+.refresh-btn:hover {
+  box-shadow: inset 0 0 0 0.14em #a05193, 0px 3px 0px 0px rgba(40, 40, 40, 0.4);
+}
+
+.contact-button {
+}
+
 /*======================
       Media Queries
 =======================*/
@@ -96,8 +76,10 @@ textarea {height: 212px;border-color: #58E2C2;}
   .Contact-form-inputs .input-group:nth-child(1) {
     margin-right: 25px;
   }
+}
 
-  .Contact-button .btn {
-    width: 30%;
+@media screen and (max-width: 768px) {
+  .contact-button {
+    width: 100%;
   }
 }
