@@ -8,25 +8,8 @@ import './App.css';
 import Layout from '../Layout/Layout';
 import Contact from '../Contact/Contact.js';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faAngellist, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import {
-  faEnvelope,
-  faHome,
-  faRedoAlt,
-  faHeart,
-  faCopyright
-} from "@fortawesome/free-solid-svg-icons";
-
-library.add(
-  faAngellist,
-  faLinkedinIn,
-  faEnvelope,
-  faHome,
-  faRedoAlt,
-  faHeart,
-  faCopyright
-);
+import { faGithub, faAngellist, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope, faHome, faRedoAlt, faHeart, faCopyright } from "@fortawesome/free-solid-svg-icons";
 
 
 function App() {
@@ -48,6 +31,7 @@ function App() {
               <Layout
                 theme={theme}
                 toggleTheme={toggleTheme}
+                github={faGithub}
                 angellist={faAngellist}
                 linkedin={faLinkedinIn}
                 mail={faEnvelope}

@@ -1,4 +1,6 @@
 import React from 'react';
+import { object } from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import ProjectCard from '../ProjectCard/ProjectCard';
 
@@ -10,30 +12,31 @@ import Ethereum from '../../assets/img/ethereum-logo.png';
 
 import './Portfolio.css';
 
-
-function Portfolio(props) {
-  const projects = {
-    hostgator: {
-      id: 'hostgatorProjectCard', class: 'hostgator-project-card', url: 'https://www.hostgator.com/', img: HostGator,
-      width: 120, height: 50, text: 'Platform for entrepeuners <br /> & businesses to create,<br /> host & manage websites', industry: 'Domain & Web Hosting'
-    },
-    terra: {
-      id: 'terraProjectCard', class: 'terra-project-card', url: 'https://www.terraats.com/', img: Terra,
-      width: 90, height: 50, text: 'Small in-house tech <br /> solution for custom <br /> software applications', industry: 'Software Services & IT Solutions'
-    },
-    homies: {
-      id: 'homiesProjectCard', class: 'homies-project-card', url: '#', img: Homies,
-      width: 70, height: 50, text: 'Grassroots startup helping <br /> brands get off the ground <br /> & sell online', industry: 'Branding & E-Commerce'
-    },
-    martian: {
-      id: 'martianProjectCard', class: 'martian-project-card', url: 'http://martian.network/', img: Martian,
-      width: 120, height: 50, text: 'Blockchain solution for <br /> monetizing, distributing <br /> & hosting content', industry: 'Blockchain & Content Management'
-    },
-    coinflip: {
-      id: 'coinflipProjectCard', class: 'coinflip-project-card', url: 'https://github.com/santdeleon/coinflip', img: Ethereum,
-      width: 40, height: 40, text: 'Decentralized gambling <br /> application built on the <br /> Ethereum Network', industry: 'Blockchain, Gambling & Gaming'
-    }
+const projects = {
+  hostgator: {
+    id: 'hostgatorProjectCard', class: 'hostgator-project-card', url: 'https://www.hostgator.com/', img: HostGator,
+    width: 120, height: 50, text: 'Platform for entrepeuners <br /> & businesses to create,<br /> host & manage websites', industry: 'Domain & Web Hosting'
+  },
+  terra: {
+    id: 'terraProjectCard', class: 'terra-project-card', url: 'https://www.terraats.com/', img: Terra,
+    width: 90, height: 50, text: 'Small in-house tech <br /> solution for custom <br /> software applications', industry: 'Software Services & IT Solutions'
+  },
+  homies: {
+    id: 'homiesProjectCard', class: 'homies-project-card', url: '#', img: Homies,
+    width: 70, height: 50, text: 'Grassroots startup helping <br /> brands get off the ground <br /> & sell online', industry: 'Branding & E-Commerce'
+  },
+  martian: {
+    id: 'martianProjectCard', class: 'martian-project-card', url: 'http://martian.network/', img: Martian,
+    width: 120, height: 50, text: 'Blockchain solution for <br /> monetizing, distributing <br /> & hosting content', industry: 'Blockchain & Content Management'
+  },
+  coinflip: {
+    id: 'coinflipProjectCard', class: 'coinflip-project-card', url: 'https://github.com/santdeleon/coinflip', img: Ethereum,
+    width: 40, height: 40, text: 'Decentralized gambling <br /> application built on the <br /> Ethereum Network', industry: 'Blockchain, Gambling & Gaming'
   }
+}
+
+
+const Portfolio = ({github}) => {
 
   return (
     <div id="Portfolio" className="Portfolio container">
@@ -78,7 +81,7 @@ function Portfolio(props) {
 
         <div className="project-row w-100 flex align-items-center justify-content-center">
           <ProjectCard
-            name={projects['coinflip'].name}
+            name='coinflip'
             key={projects['coinflip'].id}
             id={projects['coinflip'].id}
             class={projects['coinflip'].class}
@@ -90,9 +93,19 @@ function Portfolio(props) {
             industry={projects['coinflip'].industry}
           />
         </div>
+
+        <div className="flex justify-content-center mt-5 w-100">
+          <button className="btn">
+            <a href="https://github.com/santdeleon" target="_blank" rel="noopener noreferrer" aria-label="Github" title="Github">See more work <FontAwesomeIcon className="ml-1" icon={github}/></a>
+          </button>
+        </div>
       </div>
     </div>
   );
 }
+
+Portfolio.propTypes = {
+  github: object.isRequired
+};
 
 export default Portfolio;

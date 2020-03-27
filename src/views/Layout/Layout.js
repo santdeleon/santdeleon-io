@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Navbar from '../../components/Navbar/Navbar';
 import Sidebar from '../../components/Sidebar/Sidebar';
+import Header from '../../components/Header/Header';
 import Portfolio from '../../components/Portfolio/Portfolio';
 import Footer from '../../components/Footer/Footer';
 
@@ -58,7 +59,9 @@ function Layout(props) {
         socialIcons={socialIcons}
       />
 
-      <Portfolio />
+      <Header />
+
+      <Portfolio github={props.github}/>
 
       <Footer
         heart={props.heart}

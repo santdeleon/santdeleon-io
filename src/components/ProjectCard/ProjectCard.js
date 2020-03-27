@@ -1,9 +1,10 @@
 import React from 'react';
+import { number, string, object } from 'prop-types';
 
 import './ProjectCard.css';
 
 
-const ProjectCard = props => {
+const ProjectCard = (props) => {
 
   return (
     <a id={props.id} className={`${props.class} project flex align-items-center`} href={props.url} target="_blank" rel="noopener noreferrer" aria-label={props.name}>
@@ -22,5 +23,17 @@ const ProjectCard = props => {
     </a>
   );
 }
+
+ProjectCard.propTypes = {
+  id: string.isRequired,
+  url: string.isRequired,
+  class: string.isRequired,
+  name: string.isRequired,
+  img: string.isRequired,
+  width: number.isRequired,
+  height: number.isRequired,
+  text: string.isRequired,
+  industry: string.isRequired
+};
 
 export default ProjectCard;
