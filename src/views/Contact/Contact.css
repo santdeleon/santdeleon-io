@@ -9,6 +9,10 @@
   max-width: 100%;
 }
 
+.Contact .app-logo h2 {
+  margin-top: 10px;
+}
+
 .input-group {
   padding: .75rem 0;
 }
@@ -27,9 +31,10 @@ label:not(:last-child) {
 
 input,textarea {
   background-color: transparent;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border-radius: 4px;
   border: 1px solid;
+  font-family: monospace;
 }
 input {height: 54px;}
 input[name="name"] {  border-color: #48ABE4;}

@@ -46,8 +46,10 @@ const Header = ({theme, particles}) => {
 
         <div className="scroll-btn-wrapper flex justify-content-center">
           <div className="flex flex-column justify-content-center align-items-center">
-            <ArrowDownCircle className="arrow-down" />
-            <p className="scroll-down m-0 p-0">Scroll down</p>
+            <a className="text-center" href="#Portfolio">
+              <ArrowDownCircle className="arrow-down" />
+              <p className="scroll-down m-0 p-0">Scroll down</p>
+            </a>
           </div>
         </div>
 

@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import NavLink from '../NavLink/NavLink';
 
-import Wolf from "../../assets/img/wolf.svg";
+import SantLight from '../../assets/img/sant-light.svg';
+import SantDark from '../../assets/img/sant-dark.svg';
 
 import './Sidebar.css';
 
@@ -23,7 +24,13 @@ const Sidebar = ({ theme, showSidebar, navLinks, socialIcons }) => {
         </div>
 
         <div className="sidebar-wolf-logo-wrapper flex align-items-center justify-content-center">
-          <img className="sidebar-wolf-logo" src={Wolf} alt="Wolf"/>
+          <div className="sidebar-logo-wrapper flex justify-content-center align-items-center">
+            {(theme === 'light') ?
+            <img src={SantLight} className="m-0 p-0" alt="Lightmode Header Cartoon" />
+            :
+            <img src={SantDark} className="m-0 p-0" alt="Darkmode Header Cartoon" />
+            }
+          </div>
         </div>
 
         <div className="sidebar-social-links flex align-items-center justify-content-center">

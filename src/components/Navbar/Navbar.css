@@ -10,8 +10,12 @@
   margin-top: .2rem;
 }
 
-.app-logo {
-  margin: 0;
+.app-logo h2 {
+  margin-bottom: 12px;
+}
+
+.app-logo h2:hover {
+  color: #f446e3;
 }
 
 .nav-links-wrapper {

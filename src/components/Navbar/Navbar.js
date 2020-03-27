@@ -4,8 +4,6 @@ import { Search } from 'react-feather';
 
 import NavLink from '../NavLink/NavLink';
 
-import Logo from "../../assets/img/logo.svg";
-
 import './Navbar.css';
 
 
@@ -24,7 +22,7 @@ const Navbar = ({navLinks, showSidebar, theme, toggleTheme, toggleSidebar, socia
     <div id="Navbar" className="Navbar">
       <nav className="navbar flex align-items-center justify-content-between">
         <div className="nav-left flex align-items-center">
-          <a className="app-logo" href="http://santdeleon.co" aria-label="Home" title="Home"><img src={Logo} alt="Wolf & Sant" /></a>
+          <a className="app-logo" href="http://santdeleon.co" aria-label="Home" title="Home"><h2 className="m-0">santdeleon.</h2></a>
 
           <div className="nav-links-wrapper navbar-nav flex align-items-center">
             <ul className="navbar-menu flex align-items-center">

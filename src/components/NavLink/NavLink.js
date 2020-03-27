@@ -1,6 +1,6 @@
 import React from 'react';
 import { string } from 'prop-types';
-import { Book, Folder, Code, MessageCircle } from 'react-feather';
+import { Folder, Code, MessageCircle } from 'react-feather';
 
 import './NavLink.css';
 
@@ -8,8 +8,7 @@ import './NavLink.css';
 const NavLink = ({icon, name, theme, href}) => {
   let el;
 
-  if (icon === 'Book') { el = <Book size="20" height={16} /> }
-  else if (icon === 'Folder') { el = <Folder size="20" height={16} /> }
+  if (icon === 'Folder') { el = <Folder size="20" height={16} /> }
   else if (icon === 'Code') { el = <Code size="20" height={16} /> }
   else { el = <MessageCircle size="20" height={16} /> }
 

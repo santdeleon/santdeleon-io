@@ -36,10 +36,9 @@ function App() {
     },
   };
   const navLinks = [
-    { id: 0, name: 'Bio', href: "#Bio", icon: 'Book' },
-    { id: 1, name: 'Portfolio', href: "#Portfolio", icon: 'Folder' },
-    { id: 2, name: 'Technologies', href: "#Tech", icon: 'Code' },
-    { id: 3, name: 'Get in touch', href: "/contact", icon: 'MessageCircle' }
+    { id: 0, name: 'Portfolio', href: "#Portfolio", icon: 'Folder' },
+    { id: 1, name: 'Technologies', href: "#Tech", icon: 'Code' },
+    { id: 2, name: 'Get in touch', href: "/contact", icon: 'MessageCircle' }
   ];
 
   // functions
