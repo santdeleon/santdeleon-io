@@ -1,4 +1,4 @@
-# Portfolio * https://github.com/santdeleon/portfolio.svg
+# Portfolio
 > UI/UX Developer Portfolio for Sant Deleon
 
 
