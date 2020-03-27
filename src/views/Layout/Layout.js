@@ -31,6 +31,7 @@ const Layout = ({theme, toggleTheme, showSidebar, toggleSidebar, navLinks, socia
         showSidebar={showSidebar}
         navLinks={navLinks}
         socialIcons={socialIcons}
+        toggleSidebar={toggleSidebar}
       />
 
       <Header theme={theme} particles={particles}/>
