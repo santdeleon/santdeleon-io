@@ -8,6 +8,10 @@ import Footer from '../../components/Footer/Footer';
 
 
 function Layout(props) {
+  useEffect(() => {
+    document.title = "Sant | Front-end & Blockchain Developer";
+  });
+  
   const [showSidebar, setShowSidebar] = useState(false);
 
   const socialIcons = {
@@ -34,10 +38,6 @@ function Layout(props) {
     { id: 2, name: 'Technologies', href: "", icon: 'Code' },
     { id: 3, name: 'Get in touch', href: "", icon: 'MessageCircle' }
   ];
-
-  useEffect(() => {
-    document.title = "Sant | Front-end & Blockchain Developer";
-  });
 
   const toggleSidebar = () => { setShowSidebar(!showSidebar); }
 

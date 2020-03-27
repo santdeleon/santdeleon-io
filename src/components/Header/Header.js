@@ -23,7 +23,7 @@ const Header = () => {
           <h3 className="header-name text-muted mt-3 fw-normal">with a knack for creating cutting edge products with elegance and style.</h3>
         </div>
 
-        <div className="skills-wrapper flex w-100 justify-content-between mt-5">
+        <div className="skills-wrapper flex w-100 justify-content-between my-4">
           {skills.map(skill => {
               return <div key={skill.id} className="skill flex flex-column mt-5">
                        <div className="skill-header p-1" style={{backgroundColor: skill.color}}></div>
@@ -33,8 +33,12 @@ const Header = () => {
         </div>
 
         <div className="scroll-btn-wrapper flex justify-content-center">
-          <ArrowDownCircle className="arrow-down" />
+          <div className="flex flex-column justify-content-center align-items-center">
+            <ArrowDownCircle className="arrow-down" />
+            <p className="scroll-down m-0 p-0">Scroll down</p>
+          </div>
         </div>
+
       </div>
     </div>
   );

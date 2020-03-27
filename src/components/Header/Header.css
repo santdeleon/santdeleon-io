@@ -34,19 +34,28 @@
 }
 
 .scroll-btn-wrapper {
+  animation: MoveUpDown 1.5s linear infinite;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
 }
 
-.arrow-down {
-  cursor: pointer;
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 15px;
+  }
 }
 
-.arrow-down:hover {
-  color: pink;
+.scroll-down {
+  padding-top: 2px;
+  font-size: 14px;
+  cursor: default;
 }
+
 /*=======================
       Media Queries
 =======================*/
