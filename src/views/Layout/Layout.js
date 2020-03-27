@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import Navbar from '../../components/Navbar/Navbar';
 import Sidebar from '../../components/Sidebar/Sidebar';
@@ -9,56 +9,27 @@ import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 
 
-function Layout(props) {
+const Layout = props => {
   useEffect(() => {
     document.title = "Sant | Front-end & Blockchain Developer";
   });
-
-  const [showSidebar, setShowSidebar] = useState(false);
-
-  const socialIcons = {
-    linkedin: {
-      id: 0,
-      icon: props.linkedin,
-      url: 'https://www.linkedin.com/in/sant-deleon/'
-    },
-    angellist: {
-      id: 1,
-      icon: props.angellist,
-      url: 'https://angel.co/santdeleon'
-    },
-    mail: {
-      id: 2,
-      icon: props.mail,
-      url: 'mailto:sant@santdeleon.co'
-    },
-  };
-
-  const navLinks = [
-    { id: 0, name: 'Bio', href: "#Bio", icon: 'Book' },
-    { id: 1, name: 'Portfolio', href: "#Portfolio", icon: 'Folder' },
-    { id: 2, name: 'Technologies', href: "#Tech", icon: 'Code' },
-    { id: 3, name: 'Get in touch', href: "/contact", icon: 'MessageCircle' }
-  ];
-
-  const toggleSidebar = () => { setShowSidebar(!showSidebar); }
 
   return (
     <>
       <Navbar
         theme={props.theme}
         toggleTheme={props.toggleTheme}
-        showSidebar={showSidebar}
-        toggleSidebar={toggleSidebar}
-        navLinks={navLinks}
-        socialIcons={socialIcons}
+        showSidebar={props.showSidebar}
+        toggleSidebar={props.toggleSidebar}
+        navLinks={props.navLinks}
+        socialIcons={props.socialIcons}
       />
 
       <Sidebar
         theme={props.theme}
-        showSidebar={showSidebar}
-        navLinks={navLinks}
-        socialIcons={socialIcons}
+        showSidebar={props.showSidebar}
+        navLinks={props.navLinks}
+        socialIcons={props.socialIcons}
       />
 
       <Header />
@@ -72,7 +43,7 @@ function Layout(props) {
       <Footer
         heart={props.heart}
         copyright={props.copyright}
-        socialIcons={socialIcons}
+        socialIcons={props.socialIcons}
         theme={props.theme}
       />
     </>
