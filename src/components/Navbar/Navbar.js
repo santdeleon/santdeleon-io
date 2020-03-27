@@ -4,17 +4,25 @@ import { Search } from 'react-feather';
 
 import NavLink from '../NavLink/NavLink';
 
-import Logo from "../../assets/img/logo.svg";
-
 import './Navbar.css';
 
 
-const Navbar = ({navLinks, showSidebar, theme, toggleTheme, toggleSidebar, socialIcons}) => {
+const Navbar = ({navLinks, showSidebar, theme, toggleTheme, toggleSidebar, socialIcons, particles}) => {
+
+  const refreshParticles = () => {
+    const color = (theme === "dark") ? "#222" : "#B8BABE";
+
+    particles.init({
+      color: color,
+      speed: 0.2
+    });
+  }
+
   return (
     <div id="Navbar" className="Navbar">
       <nav className="navbar flex align-items-center justify-content-between">
         <div className="nav-left flex align-items-center">
-          <a className="app-logo" href="http://santdeleon.co" aria-label="Home" title="Home"><img src={Logo} alt="Wolf & Sant" /></a>
+          <a className="app-logo" href="http://santdeleon.co" aria-label="Home" title="Home"><h2 className="m-0">santdeleon.</h2></a>
 
           <div className="nav-links-wrapper navbar-nav flex align-items-center">
             <ul className="navbar-menu flex align-items-center">
@@ -31,7 +39,8 @@ const Navbar = ({navLinks, showSidebar, theme, toggleTheme, toggleSidebar, socia
           </span>
 
           <div className="search-wrapper flex align-items-center">
-            <input id="search" type="text" className="search-bar" style={(theme === "light") ? { backgroundColor: "#fee78d" } : { borderColor: '#9e558a', backgroundColor: "#e375e2", boxShadow: 'inset 0 0 0 0.04em #6f1db7, 0px 3px 0px 0px rgba(40, 40, 40, 0.4)' }}/>
+            <label htmlFor="search-bar"></label>
+            <input id="search" type="text" name="search-bar" className="search-bar" style={(theme === "light") ? { backgroundColor: "#fee78d" } : { borderColor: '#9e558a', backgroundColor: "#e375e2", boxShadow: 'inset 0 0 0 0.04em #6f1db7, 0px 3px 0px 0px rgba(40, 40, 40, 0.4)' }}/>
             <Search className="search-icon" size={18} />
           </div>
 
@@ -50,7 +59,7 @@ const Navbar = ({navLinks, showSidebar, theme, toggleTheme, toggleSidebar, socia
           {
           (theme === "dark")
           ?
-            <svg id="sunIcon" className="sun-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="25" version="1.1" viewBox="0 0 24 23" aria-label="light mode button" onClick={toggleTheme}>
+            <svg id="sunIcon" className="sun-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="25" version="1.1" viewBox="0 0 24 23" aria-label="light mode button" onClick={() => {toggleTheme(); refreshParticles();}}>
               <g fill="none" fillRule="evenodd" stroke="#fff" strokeWidth="1">
                 <g stroke="#fff" transform="translate(1.000000, 0.000000)">
                   <circle className="sun" cx="11" cy="11.507" r="5" />
@@ -66,7 +75,7 @@ const Navbar = ({navLinks, showSidebar, theme, toggleTheme, toggleSidebar, socia
               </g>
             </svg>
           :
-            <svg id="moonIcon" className="moon-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" version="1.1" viewBox="0 0 24 23" aria-label="dark mode button" onClick={toggleTheme}>
+            <svg id="moonIcon" className="moon-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" version="1.1" viewBox="0 0 24 23" aria-label="dark mode button" onClick={() => {toggleTheme(); refreshParticles();}}>
               <g fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
                 <g stroke="#000" transform="translate(4.000000, 4.000000)">
                   <path className="moon" d="M5.05590899,-5.24580379e-14 C4.98906163,0.403462803 4.95433153,0.817286714 4.95433153,1.23894741 C4.95433153,5.5346106 8.55879242,9.01693366 13.0051203,9.01693366 C14.0635388,9.01693366 15.0742532,8.81960918 16,8.46096116 C15.3858407,12.1677707 12.0606667,15 8.05078873,15 C3.60446089,15 0,11.5176769 0,7.22201375 C0,3.94890437 2.09267079,1.14800239 5.05590899,1.05082609e-13 Z"/>

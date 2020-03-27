@@ -3,6 +3,8 @@ import { Switch, Route } from 'react-router';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from '../../theme';
 import { GlobalStyles } from '../../global';
+import Particles from 'particlesjs';
+
 import './App.css';
 
 import Layout from '../Layout/Layout';
@@ -13,6 +15,7 @@ import { faEnvelope, faHome, faRedoAlt, faHeart, faCopyright } from "@fortawesom
 
 
 function App() {
+  // data
   const [theme, setTheme] = useState('light');
   const [showSidebar, setShowSidebar] = useState(false);
   const socialIcons = {
@@ -32,14 +35,13 @@ function App() {
       url: 'mailto:sant@santdeleon.co'
     },
   };
-
   const navLinks = [
-    { id: 0, name: 'Bio', href: "#Bio", icon: 'Book' },
-    { id: 1, name: 'Portfolio', href: "#Portfolio", icon: 'Folder' },
-    { id: 2, name: 'Technologies', href: "#Tech", icon: 'Code' },
-    { id: 3, name: 'Get in touch', href: "/contact", icon: 'MessageCircle' }
+    { id: 0, name: 'Portfolio', href: "#Portfolio", icon: 'Folder' },
+    { id: 1, name: 'Technologies', href: "#Tech", icon: 'Code' },
+    { id: 2, name: 'Get in touch', href: "/contact", icon: 'MessageCircle' }
   ];
 
+  // functions
   const toggleTheme = () => { (theme === 'light') ? setTheme('dark') : setTheme('light'); }
 
   const toggleSidebar = () => { setShowSidebar(!showSidebar); }
@@ -76,6 +78,8 @@ function App() {
                 copyright={faCopyright}
                 refresh={faRedoAlt}
                 home={faHome}
+
+                particles={Particles}
               />
             )}
           />
@@ -97,6 +101,8 @@ function App() {
                 // icons
                 refresh={faRedoAlt}
                 home={faHome}
+
+                particles={Particles}
               />
             )}
           />

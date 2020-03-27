@@ -1,20 +1,19 @@
 import React from 'react';
 import { string } from 'prop-types';
-import { Book, Folder, Code, MessageCircle } from 'react-feather';
+import { Folder, Code, MessageCircle } from 'react-feather';
 
 import './NavLink.css';
 
 
-const NavLink = ({icon, name, theme, href}) => {
+const NavLink = ({icon, name, theme, href, toggleSidebar, isSidebarLink}) => {
   let el;
 
-  if (icon === 'Book') { el = <Book size="20" height={16} /> }
-  else if (icon === 'Folder') { el = <Folder size="20" height={16} /> }
+  if (icon === 'Folder') { el = <Folder size="20" height={16} /> }
   else if (icon === 'Code') { el = <Code size="20" height={16} /> }
   else { el = <MessageCircle size="20" height={16} /> }
 
   return (
-    <li className="nav-link fromLeft">
+    <li className="nav-link fromLeft" onClick={(isSidebarLink) ? toggleSidebar : null}>
       {el}
       <a href={href} style={(theme === "light") ? { color: "#000" } : { color: "#fff" }} aria-label={name} title={name}>{name}</a>
     </li>

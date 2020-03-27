@@ -100,9 +100,11 @@ const Portfolio = ({github}) => {
         </div>
 
         <div className="flex justify-content-center mt-5 w-100">
-          <button className="btn">
-            <a href="https://github.com/santdeleon" target="_blank" rel="noopener noreferrer" aria-label="Github" title="Github">See more work <FontAwesomeIcon className="ml-1" icon={github}/></a>
-          </button>
+          <a href="https://github.com/santdeleon" target="_blank" rel="noopener noreferrer" aria-label="Github" title="Github">
+            <button className="btn">
+              See more work <FontAwesomeIcon className="ml-1" icon={github}/>
+            </button>
+          </a>
         </div>
       </div>
     </div>
