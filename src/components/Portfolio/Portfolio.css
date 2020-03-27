@@ -1,0 +1,149 @@
+.Portfolio {
+  margin: 6rem 0;
+}
+
+.portfolio-header {
+  margin-bottom: 1rem;
+}
+
+.portfolio-header h3 {
+  font-size: 1.7rem;
+}
+
+.portfolio-header h4 {
+  font-size: 1.1rem;
+}
+
+.project-row {
+  font-family: 'ITC Avant Garde Gothic LT';
+}
+
+.project-row:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.project-row .project:nth-child(2) {
+  margin-left: 2rem;
+}
+
+.project {
+  color: white;
+  padding: 1.5rem 0;
+  max-width: 600px;
+  flex-basis: 48.6%;
+  border-radius: 4px;
+  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.3);
+  background-repeat: no-repeat;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.project:hover {
+  transform: translateY(-.70rem);
+}
+
+.project-details {
+  margin-left: 3rem;
+}
+
+.project-text {
+  line-height: 35px;
+  font-size: 20px;
+}
+
+.project-industry-title {
+  font-size: .9rem;
+}
+
+.project-industry {
+  font-size: .82rem;
+}
+
+/*=======================
+      Project Cards
+=======================*/
+.hostgator-project-card {
+  background: url('../../assets/img/hostgator-snappy.png') no-repeat 120% 250%, linear-gradient(#1F90C6, #104c68) no-repeat;
+}
+
+.martian-project-card {
+  background: url('../../assets/img/martian-logo.svg') no-repeat -150% 40%, linear-gradient(#791600, #000) no-repeat;
+}
+
+.terra-project-card {
+  background: url('../../assets/img/watch.png') no-repeat 205% -20%, linear-gradient(#B55672, #8D392B) no-repeat;
+}
+
+.homies-project-card {
+  background: url('../../assets/img/desktop.png') no-repeat -155% 70%, linear-gradient(#d74b7c, #591d31) no-repeat;
+}
+
+.coinflip-project-card {
+  color: black;
+  background: url('../../assets/img/ethereum.svg') no-repeat 20%, linear-gradient(#fade7e, #F89C92) no-repeat;
+}
+
+/*=======================
+      Media Queries
+=======================*/
+@media only screen and (max-width: 992px) {
+  .project-row {
+    flex-direction: column;
+  }
+
+  .project-row:not(:first-child) {
+    margin-top: 0;
+  }
+
+  .project-row .project:nth-child(2) {
+    margin-left: inherit;
+  }
+
+  .project {
+    margin: 1rem 0;
+    max-width: none;
+    width: 100%;
+  }
+
+  .hostgator-project-card {
+    background-size: inherit;
+  }
+
+  .martian-project-card {
+    background-size: 118% 180%;
+  }
+
+  .terra-project-card {
+    background-position: 100% -10%;
+  }
+
+  .homies-project-card {
+    background-position: 200% 70%;
+  }
+
+  .coinflip-project-card {
+    background-size: inherit;
+  }
+
+}
+
+@media only screen and (max-width: 576px) {
+  .hostgator-project-card {
+    background: linear-gradient(#1F90C6, #104c68);
+  }
+
+  .martian-project-card {
+    background: linear-gradient(#791600, #000);
+  }
+
+  .terra-project-card {
+    background: linear-gradient(#B55672, #8D392B);
+  }
+
+  .homies-project-card {
+    background: linear-gradient(#d74b7c, #591d31);
+  }
+
+  .coinflip-project-card {
+    background: linear-gradient(#fade7e, #F89C92);
+  }
+}

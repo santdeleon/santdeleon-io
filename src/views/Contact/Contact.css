@@ -1,3 +1,30 @@
+.hyphens {
+  background: url('../../assets/img/hyphens.svg');
+  height: 1px;
+  width: 100%;
+}
+
+.Contact form {
+  width: 640px;
+  max-width: 100%;
+}
+
+.input-group {
+  padding: .75rem 0;
+}
+
+label {
+  text-align: left;
+  font-weight: 100;
+  font-size: 17px;
+  color: #747A87;
+  margin-bottom: .5rem;
+}
+
+label:not(:last-child) {
+  margin-bottom: .5em;
+}
+
 input,textarea {
   background-color: transparent;
   font-size: 1.5rem;
@@ -9,11 +36,50 @@ input[name="name"] {  border-color: #48ABE4;}
 input[name="email"] {border-color: #FED055;}
 textarea {height: 212px;border-color: #58E2C2;}
 
+.home-btn {
+  background-color: #C76CE5;
+  box-shadow: inset 0 0 0 0.14em #864089, 0px 3px 0px 0px rgba(40, 40, 40, 0.4);
+}
+
+.home-btn:hover {
+  box-shadow: inset 0 0 0 0.14em #864089, 0px 3px 0px 0px rgba(40, 40, 40, 0.4);
+}
+
+.refresh-btn {
+  background-color: #F480E1;
+  box-shadow: inset 0 0 0 0.14em #a05193, 0px 3px 0px 0px rgba(40, 40, 40, 0.4);
+}
+
+.refresh-btn:hover {
+  box-shadow: inset 0 0 0 0.14em #a05193, 0px 3px 0px 0px rgba(40, 40, 40, 0.4);
+}
+
+.contact-button {
+}
+
 /*======================
       Media Queries
 =======================*/
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+  .Contact .title {
+    font-size: 2.5rem;
+  }
 
-@media screen and (min-width: 992px) {}
+  .Contact-form-inputs {
+    flex-direction: row;
+  }
 
-@media screen and (min-width: 1088px) {}
+  .Contact-form-inputs .input-group {
+    width: 50%;
+  }
+
+  .Contact-form-inputs .input-group:nth-child(1) {
+    margin-right: 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-button {
+    width: 100%;
+  }
+}

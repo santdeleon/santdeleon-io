@@ -1,0 +1,35 @@
+.footer-wrapper {
+  margin: 1rem 0;
+  line-height: 45px;
+}
+
+.footer-social-icons .social-icon:nth-child(1) {
+  margin-left: 0;
+}
+
+.footer-social-icons svg {
+  font-size: 1.1rem;
+}
+
+.heart-wrapper h4 {
+  font-size: 1rem;
+}
+
+.heart {
+  color: red;
+  margin: 0 10px !important;
+  cursor: inherit;
+}
+
+.heart:hover {
+  color: pink;
+}
+
+/*=======================
+      Media Queries
+=======================*/
+@media only screen and (max-width: 768px) {
+  .copyright-wrapper {
+    display: none;
+  }
+}

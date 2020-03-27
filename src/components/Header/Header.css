@@ -1,0 +1,76 @@
+.Header {
+  margin: 5rem 0;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  position: relative;
+}
+
+.header-wrapper {
+  max-width: 1230px;
+  margin: 0 auto;
+}
+
+.header-text {
+  max-width: 500px;
+}
+
+.header-name {
+  font-family: Helvetica;
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.skill {
+  flex-basis: 18%;
+}
+
+.skill-header {
+  height: 4px;
+  border-radius: 10px 10px 0 0 ;
+}
+
+.skill-body {
+  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-btn-wrapper {
+  animation: MoveUpDown 1.5s linear infinite;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 15px;
+  }
+}
+
+.scroll-down {
+  padding-top: 2px;
+  font-size: 14px;
+  cursor: default;
+}
+
+/*=======================
+      Media Queries
+=======================*/
+@media only screen and (max-width: 992px) {
+  .header-wrapper {
+    max-width: 100%;
+  }
+
+  .header-text {
+    max-width: 400px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .Header {
+    background: inherit;
+  }
+}

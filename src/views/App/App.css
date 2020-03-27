@@ -1,7 +1,5 @@
 .App { overflow-x: hidden; }
 
-.hyphens {background: url('../../assets/img/hyphens.svg');height: 1px;width: 100%;}
-
 /*=======================
     Global Stylings
 =======================*/
@@ -10,29 +8,28 @@ a {
   color: inherit;
 }
 
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
 h3 { font-size: 1.5rem; }
-
-h4 { font-size: 1.1rem; }
-
-h4,h5,h6 { color: #4a4a4a; line-height: 25px; }
+h4 { font-size: 1.2rem; }
 
 ul {
   list-style: none;
-  padding: 0;
 }
 
 input, textarea { outline: 0; }
 
-.rainbow-top {background: linear-gradient(to right, #f76f6f , #fcfc83, #fcca67, #84ffaf, #83e0f7, #ca67e5, #ff87e1);padding: 3px;}
+.rainbow-top { background: linear-gradient(to right, #f76f6f , #fcfc83, #fcca67, #84ffaf, #83e0f7, #ca67e5, #ff87e1); padding: 5px; }
 
 /*=======================
     Custom Stylings
 =======================*/
-.title {}
-.subtitle {}
-.container {padding: 0 1rem;}
+.container {padding: 0 1.5rem;}
 .flex {display: flex;}
 .flex-column {flex-direction: column;}
+.align-items-center{align-items: center;}
+.align-items-start{align-items: flex-start;}
+.align-items-end{align-items: flex-end;}
 .justify-content-start{justify-content: flex-start;}
 .justify-content-center{justify-content: center;}
 .justify-content-between{justify-content: space-between;}
@@ -41,40 +38,93 @@ input, textarea { outline: 0; }
 .text-right{text-align: right;}
 .text-left{text-align: left;}
 .text-center {text-align: center;}
-.text-muted {color: #5b5a5b;}
-.text-thin {font-weight: lighter;}
-.lead {font-size: 1rem; line-height: 1.25em;}
+.text-muted {color: gray;}
 .text-primary {color: #FC4C8F;}
-.align-items-center{align-items: center;}
+.fw-light {font-weight: 400;}
+.fw-lighter {font-weight: lighter;}
+.fw-normal{font-weight: 500;}
+.fw-bold{font-weight: 700;}
 .w-100{width: 100%;}
 .d-none{display: none;}
+.m-0{margin: 0;}
+.my-0{margin-top: 0; margin-bottom: 0}
+.my-1{margin-top: .5rem; margin-bottom: .5rem}
+.my-2{margin-top: 1rem; margin-bottom: 1rem}
+.my-3{margin-top: 1.5rem; margin-bottom: 1.5rem}
+.my-4{margin-top: 2rem; margin-bottom: 2rem}
+.my-5{margin-top: 2.5rem; margin-bottom: 2.5rem}
+.mx-0{margin-left: 0; margin-right: 0}
+.mx-1{margin-left: .5rem; margin-right: .5rem}
+.mx-2{margin-left: 1rem; margin-right: 1rem}
+.mx-3{margin-left: 1.5rem; margin-right: 1.5rem}
+.mx-auto {margin-left: auto; margin-right: auto;}
+.ml-0{margin-left: 0;}
+.ml-1{margin-left: .5rem;}
+.ml-2{margin-left: 1rem;}
+.ml-3{margin-left: 1.5rem;}
+.mr-0{margin-right: 0;}
+.mr-1{margin-right: .5rem;}
+.mr-2{margin-right: 1rem;}
+.mr-3{margin-right: 1.5rem;}
+.mb-0{margin-bottom: 0}
+.mb-1{margin-bottom: .5rem;}
+.mb-2{margin-bottom: 1rem;}
+.mb-3{margin-bottom: 1.5rem;}
+.mb-4{margin-bottom: 2rem;}
+.mb-5{margin-bottom: 2.5rem;}
+.mt-0{margin-top: 0}
+.mt-1{margin-top: .5rem;}
+.mt-2{margin-top: 1rem;}
+.mt-3{margin-top: 1.5rem;}
+.mt-3{margin-top: 1.5rem;}
+.mt-4{margin-top: 2rem;}
+.mt-5{margin-top: 2.5rem;}
+.p-0{padding: 0;}
+.py-0{padding-top: 0; padding-bottom: 0}
+.py-1{padding-top: .5rem; padding-bottom: .5rem}
+.py-2{padding-top: 1rem; padding-bottom: 1rem}
+.py-3{padding-top: 1.5rem; padding-bottom: 1.5rem}
+.py-4{padding-top: 2rem; padding-bottom: 2rem}
+.py-5{padding-top: 2.5rem; padding-bottom: 2.5rem}
 
 /*=======================
     Button Stylings
 =======================*/
 .btn {
+  height: 60px;
+  border: 1.4px solid #222;
+  border-radius: 5px;
+  color: #000;
+  font-size: 16px;
+  background: #fee78d;
+  box-shadow: inset 0 0 0 0.14em #f7d147, 0px 3px 0px 0px rgba(40, 40, 40, 0.4);
   padding: calc(.375em - 1px) 1.5em;
   font-weight: 100;
   font-size: 1.2rem;
-  color: #FC4C8F;
-  border: 2px solid #FC4C8F;
-  border-radius: 25px;
   transition: 0.2s all ease-in;
   cursor: pointer;
   outline: 0;
+  font-weight: bold;
 }
 
 .btn:hover {
-  color: white;
-  background-color: #FC4C8F;
+  transform: translateY(-0.24rem);
+  box-shadow: inset 0 0 0 0.14em #f7d147, 0px 3px 0px 0px rgba(40, 40, 40, 0.6);
 }
 
 /*=======================
     Media Queries
 =======================*/
+@media screen and (max-width: 992px) {
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.7rem; }
+  h3 { font-size: 1.3rem; }
+  h4 { font-size: 1.1rem; }
+}
 
-@media screen and (min-width: 768px) {}
+@media screen and (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+}
 
-@media screen and (min-width: 992px) {}
-
-@media screen and (min-width: 1088px) {}
+@media screen and (max-width: 576px) {}
