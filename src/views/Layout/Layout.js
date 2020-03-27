@@ -5,6 +5,7 @@ import Sidebar from '../../components/Sidebar/Sidebar';
 import Header from '../../components/Header/Header';
 import Portfolio from '../../components/Portfolio/Portfolio';
 import Tech from '../../components/Tech/Tech';
+import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 
 
@@ -65,6 +66,8 @@ function Layout(props) {
       <Portfolio github={props.github} />
 
       <Tech theme={props.theme}/>
+
+      <PreFooter theme={props.theme}/>
 
       <Footer
         heart={props.heart}

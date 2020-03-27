@@ -8,8 +8,6 @@ import './Footer.css';
 const Footer = ({socialIcons, copyright, heart, theme }) => {
   return (
     <footer className="Footer container">
-      <div className={`hyphens ${(theme === "light") ? '' : 'd-none'}`}></div>
-
       <div className="footer-wrapper flex align-items-center justify-content-between">
         <div className="footer-social-icons flex align-items-center">
           {Object.keys(socialIcons).map(icon => {

@@ -1,6 +1,5 @@
 import React from 'react';
-// import { string } from 'prop-types';
-// import { Book, Folder, Code, MessageCircle } from 'react-feather';
+import { string } from 'prop-types';
 
 import './Tech.css';
 
@@ -83,7 +82,7 @@ const Tech = ({ theme }) => {
 }
 
 Tech.propTypes = {
-
+  theme: string.isRequired
 };
 
 export default Tech;
