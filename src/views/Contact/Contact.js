@@ -5,13 +5,17 @@ import Logo from "../../assets/img/logo.svg";
 
 import './Contact.css';
 
-import Navbar from '../../components/Navbar/Navbar';
 
-
-function Contact(props) {
+function Contact({home, refresh, particles}) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+
+  window.onload = function() {
+    particles.init({
+      selector: '.background',
+    });
+  };
 
   function clearForm(e) {
     setName('');
@@ -35,12 +39,12 @@ function Contact(props) {
         <div className="flexcontact-nav-links">
           <a href="/">
             <button className="home-btn btn">
-              <FontAwesomeIcon icon={props.home} />
+              <FontAwesomeIcon icon={home} />
             </button>
           </a>
 
           <button className="refresh-btn btn ml-2" onClick={clearForm}>
-            <FontAwesomeIcon icon={props.refresh} />
+            <FontAwesomeIcon icon={refresh} />
           </button>
         </div>
       </div>

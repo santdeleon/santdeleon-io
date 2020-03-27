@@ -14,7 +14,14 @@ const skills = [
 ];
 
 
-const Header = ({theme}) => {
+const Header = ({theme, particles}) => {
+  window.onload = function() {
+    particles.init({
+      selector: '.background',
+      color: "#222"
+    });
+  };
+
   return (
     <div id="Header" className="Header container">
       <div className="header-wrapper flex flex-column justify-content-between">
@@ -30,7 +37,7 @@ const Header = ({theme}) => {
 
         <div className="skills-wrapper flex w-100 justify-content-between my-4">
           {skills.map(skill => {
-              return <div key={skill.id} className="skill flex flex-column mt-5">
+              return <div key={skill.id} className="skill flex flex-column mt-5" style={(theme === "light") ? { backgroundColor: "#fff" } : { backgroundColor: "#212121" }}>
                        <div className="skill-header p-1" style={{backgroundColor: skill.color}}></div>
                        <div className="skill-body text-center py-3"><p className="p-0 m-0">{skill.name}</p></div>
                      </div>

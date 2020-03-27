@@ -9,7 +9,7 @@ import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 
 
-const Layout = ({theme, toggleTheme, showSidebar, toggleSidebar, navLinks, socialIcons, github, heart, copyright}) => {
+const Layout = ({theme, toggleTheme, showSidebar, toggleSidebar, navLinks, socialIcons, github, heart, copyright, particles}) => {
   useEffect(() => {
     document.title = "Sant - Blockchain Engineer & Front-end Developer";
   });
@@ -23,6 +23,7 @@ const Layout = ({theme, toggleTheme, showSidebar, toggleSidebar, navLinks, socia
         toggleSidebar={toggleSidebar}
         navLinks={navLinks}
         socialIcons={socialIcons}
+        particles={particles}
       />
 
       <Sidebar
@@ -32,7 +33,7 @@ const Layout = ({theme, toggleTheme, showSidebar, toggleSidebar, navLinks, socia
         socialIcons={socialIcons}
       />
 
-      <Header theme={theme}/>
+      <Header theme={theme} particles={particles}/>
 
       <Portfolio github={github} />
 

@@ -3,6 +3,8 @@ import { Switch, Route } from 'react-router';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from '../../theme';
 import { GlobalStyles } from '../../global';
+import Particles from 'particlesjs';
+
 import './App.css';
 
 import Layout from '../Layout/Layout';
@@ -77,6 +79,8 @@ function App() {
                 copyright={faCopyright}
                 refresh={faRedoAlt}
                 home={faHome}
+
+                particles={Particles}
               />
             )}
           />
@@ -98,6 +102,8 @@ function App() {
                 // icons
                 refresh={faRedoAlt}
                 home={faHome}
+
+                particles={Particles}
               />
             )}
           />
