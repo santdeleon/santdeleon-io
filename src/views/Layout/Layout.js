@@ -9,7 +9,7 @@ import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 
 
-const Layout = props => {
+const Layout = ({theme, toggleTheme, showSidebar, toggleSidebar, navLinks, socialIcons, github, heart, copyright}) => {
   useEffect(() => {
     document.title = "Sant | Front-end & Blockchain Developer";
   });
@@ -17,34 +17,34 @@ const Layout = props => {
   return (
     <>
       <Navbar
-        theme={props.theme}
-        toggleTheme={props.toggleTheme}
-        showSidebar={props.showSidebar}
-        toggleSidebar={props.toggleSidebar}
-        navLinks={props.navLinks}
-        socialIcons={props.socialIcons}
+        theme={theme}
+        toggleTheme={toggleTheme}
+        showSidebar={showSidebar}
+        toggleSidebar={toggleSidebar}
+        navLinks={navLinks}
+        socialIcons={socialIcons}
       />
 
       <Sidebar
-        theme={props.theme}
-        showSidebar={props.showSidebar}
-        navLinks={props.navLinks}
-        socialIcons={props.socialIcons}
+        theme={theme}
+        showSidebar={showSidebar}
+        navLinks={navLinks}
+        socialIcons={socialIcons}
       />
 
-      <Header />
+      <Header theme={theme}/>
 
-      <Portfolio github={props.github} />
+      <Portfolio github={github} />
 
-      <Tech theme={props.theme}/>
+      <Tech theme={theme}/>
 
-      <PreFooter theme={props.theme}/>
+      <PreFooter theme={theme}/>
 
       <Footer
-        heart={props.heart}
-        copyright={props.copyright}
-        socialIcons={props.socialIcons}
-        theme={props.theme}
+        heart={heart}
+        copyright={copyright}
+        socialIcons={socialIcons}
+        theme={theme}
       />
     </>
   );
