@@ -2,7 +2,19 @@
   margin: 6rem 0;
 }
 
-.portfolio-wrapper {
+.portfolio-header {
+  margin-bottom: 1rem;
+}
+
+.portfolio-header h3 {
+  font-size: 1.7rem;
+}
+
+.portfolio-header h4 {
+  font-size: 1.1rem;
+}
+
+.project-row {
   font-family: 'ITC Avant Garde Gothic LT';
 }
 

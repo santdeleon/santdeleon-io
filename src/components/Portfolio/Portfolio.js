@@ -41,6 +41,11 @@ const Portfolio = ({github}) => {
   return (
     <div id="Portfolio" className="Portfolio container">
       <div className="portfolio-wrapper flex flex-column align-items-center">
+        <div className="portfolio-header text-center flex flex-column">
+          <h4 className="m-0 fw-light text-muted">Meet some companies</h4>
+          <h3 className="mb-5">I've had the pleasure <br/> to work with</h3>
+        </div>
+
         <div className="project-row w-100 flex align-items-center justify-content-center">
           {Object.keys(projects).map((project, index) => {
             if (index < 2) {

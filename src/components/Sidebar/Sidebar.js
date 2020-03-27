@@ -17,7 +17,7 @@ const Sidebar = ({ theme, showSidebar, navLinks, socialIcons }) => {
         style={(theme === "light") ? { backgroundColor: "#fff" } : { backgroundColor: "#212121" }}
       >
         <div className="sidebar-links flex flex-column align-items-center justify-content-center text-center">
-          <ul className="sidebar-menu flex flex-column align-items-center">
+          <ul className="sidebar-menu flex flex-column align-items-center p-0">
             {navLinks.map(link => <NavLink key={link.id} name={link.name} href={link.href} icon={link.icon} theme={theme}/>)}
           </ul>
         </div>

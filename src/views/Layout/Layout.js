@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import Header from '../../components/Header/Header';
 import Portfolio from '../../components/Portfolio/Portfolio';
+import Tech from '../../components/Tech/Tech';
 import Footer from '../../components/Footer/Footer';
 
 
@@ -11,7 +12,7 @@ function Layout(props) {
   useEffect(() => {
     document.title = "Sant | Front-end & Blockchain Developer";
   });
-  
+
   const [showSidebar, setShowSidebar] = useState(false);
 
   const socialIcons = {
@@ -33,16 +34,16 @@ function Layout(props) {
   };
 
   const navLinks = [
-    { id: 0, name: 'Bio', href: "", icon: 'Book' },
-    { id: 1, name: 'Portfolio', href: "", icon: 'Folder' },
-    { id: 2, name: 'Technologies', href: "", icon: 'Code' },
-    { id: 3, name: 'Get in touch', href: "", icon: 'MessageCircle' }
+    { id: 0, name: 'Bio', href: "#Bio", icon: 'Book' },
+    { id: 1, name: 'Portfolio', href: "#Portfolio", icon: 'Folder' },
+    { id: 2, name: 'Technologies', href: "#Tech", icon: 'Code' },
+    { id: 3, name: 'Get in touch', href: "/contact", icon: 'MessageCircle' }
   ];
 
   const toggleSidebar = () => { setShowSidebar(!showSidebar); }
 
   return (
-    <section>
+    <>
       <Navbar
         theme={props.theme}
         toggleTheme={props.toggleTheme}
@@ -61,14 +62,17 @@ function Layout(props) {
 
       <Header />
 
-      <Portfolio github={props.github}/>
+      <Portfolio github={props.github} />
+
+      <Tech theme={props.theme}/>
 
       <Footer
         heart={props.heart}
         copyright={props.copyright}
         socialIcons={socialIcons}
+        theme={props.theme}
       />
-    </section>
+    </>
   );
 }
 
