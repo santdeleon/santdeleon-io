@@ -1,41 +1,56 @@
 /*=======================
           Fonts
 =======================*/
-/* calibre-medium - latin */
-@font-face {
-  font-family: 'Calibre';
-  font-style: bold;
-  font-weight: 600;
-  src: local('Calibre'), local('Calibre-Medium'),
-       url('./assets/fonts/calibre-medium.woff2') format('woff2'),
-       url('./assets/fonts/calibre-medium.ttf') format('truetype'),
-}
-/* calibre-regular - latin */
-@font-face {
-  font-family: 'Calibre';
+/* Calibre */
+/* @font-face {
+  font-family: 'Calibre-Regular';
   font-style: normal;
-  font-weight: 400;
-  src: local('Calibre'), local('Calibre-Regular'),
-       url('./assets/fonts/calibre-regular.woff2') format('woff2'),
-       url('./assets/fonts/calibre-regular.ttf') format('truetype'),
+  font-weight: normal;
+  src: local('Calibre-Regular'), url('./assets/fonts/calibre-regular.woff') format('woff');
 }
 
-/* ITC Avant Garde Gothic LT Bold - latin */
 @font-face {
-  font-family: 'ITC Avant Garde Gothic LT';
-  font-style: bold;
-  font-weight: 600;
-  src: local('ITC Avant Garde Gothic LT'), local('ITC-Avant-Garde-Gothic-LT'),
-       url('./assets/fonts/itc-avant-garde-gothic-lt-bold.otf') format('otf'),
-}
-/* ITC Avant Garde Gothic LT Regular - latin */
-@font-face {
-  font-family: 'ITC Avant Garde Gothic LT';
+  font-family: 'Calibre-Thin';
   font-style: normal;
-  font-weight: 400;
-  src: local('ITC Avant Garde Gothic LT'), local('ITC-Avant-Garde-Gothic-LT'),
-       url('./assets/fonts/itc-avant-garde-gothic-lt-book-regular.otf') format('otf'),
+  font-weight: normal;
+  src: local('Calibre-Thin'), url('./assets/fonts/calibre-thin.woff') format('woff');
 }
+
+@font-face {
+  font-family: 'Calibre-Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Calibre-Light'), url('./assets/fonts/calibre-light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Calibre-Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Calibre-Medium'), url('./assets/fonts/calibre-medium.woff') format('woff');
+} */
+
+@font-face {
+  font-family: 'Calibre-Semibold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Calibre-Semibold'), url('./assets/fonts/calibre-semibold.woff') format('woff');
+}
+
+/* @font-face {
+  font-family: 'Calibre-Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Calibre-Bold'), url('./assets/fonts/calibre-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Calibre-Black';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Calibre-Black'), url('./assets/fonts/calibre-black.woff') format('woff');
+} */
+
 
 html {
   scroll-behavior: smooth;
@@ -45,7 +60,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  font-family: 'Calibre', Arial, "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: Arial, "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     sans-serif;
   -webkit-font-smoothing: antialiased;
