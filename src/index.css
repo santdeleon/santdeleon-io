@@ -6,19 +6,35 @@
   font-family: 'Calibre';
   font-style: bold;
   font-weight: 600;
-  src: local('ABeeZee Regular'), local('Calibre-Medium'),
-       url('./assets/fonts/Calibre-Medium.woff2') format('woff2'), /* Super Modern Browsers */
-       url('./assets/fonts/Calibre-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
+  src: local('Calibre'), local('Calibre-Medium'),
+       url('./assets/fonts/calibre-medium.woff2') format('woff2'),
+       url('./assets/fonts/calibre-medium.ttf') format('truetype'),
 }
-
 /* calibre-regular - latin */
 @font-face {
   font-family: 'Calibre';
   font-style: normal;
   font-weight: 400;
-  src: local('ABeeZee Regular'), local('Calibre-Regular'),
-       url('./assets/fonts/Calibre-Regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('./assets/fonts/Calibre-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  src: local('Calibre'), local('Calibre-Regular'),
+       url('./assets/fonts/calibre-regular.woff2') format('woff2'),
+       url('./assets/fonts/calibre-regular.ttf') format('truetype'),
+}
+
+/* ITC Avant Garde Gothic LT Bold - latin */
+@font-face {
+  font-family: 'ITC Avant Garde Gothic LT';
+  font-style: bold;
+  font-weight: 600;
+  src: local('ITC Avant Garde Gothic LT'), local('ITC-Avant-Garde-Gothic-LT'),
+       url('./assets/fonts/itc-avant-garde-gothic-lt-bold.otf') format('otf'),
+}
+/* ITC Avant Garde Gothic LT Regular - latin */
+@font-face {
+  font-family: 'ITC Avant Garde Gothic LT';
+  font-style: normal;
+  font-weight: 400;
+  src: local('ITC Avant Garde Gothic LT'), local('ITC-Avant-Garde-Gothic-LT'),
+       url('./assets/fonts/itc-avant-garde-gothic-lt-book-regular.otf') format('otf'),
 }
 
 html {
@@ -29,8 +45,8 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  font-family: 'Calibre', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: 'Calibre', Arial, "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
