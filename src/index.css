@@ -1,3 +1,26 @@
+/*=======================
+          Fonts
+=======================*/
+/* calibre-medium - latin */
+@font-face {
+  font-family: 'Calibre';
+  font-style: bold;
+  font-weight: 600;
+  src: local('ABeeZee Regular'), local('Calibre-Medium'),
+       url('./assets/fonts/Calibre-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./assets/fonts/Calibre-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+/* calibre-regular - latin */
+@font-face {
+  font-family: 'Calibre';
+  font-style: normal;
+  font-weight: 400;
+  src: local('ABeeZee Regular'), local('Calibre-Regular'),
+       url('./assets/fonts/Calibre-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./assets/fonts/Calibre-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
 html {
   scroll-behavior: smooth;
 }
