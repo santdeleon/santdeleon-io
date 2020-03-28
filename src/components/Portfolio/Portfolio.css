@@ -129,6 +129,12 @@
 }
 
 @media only screen and (max-width: 576px) {
+  .project-details {
+    margin: 0;
+    padding-left: .8rem;
+    padding-right: .8rem;
+  }
+
   .hostgator-project-card {
     background: linear-gradient(#1F90C6, #104c68);
   }

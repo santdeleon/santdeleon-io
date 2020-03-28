@@ -8,6 +8,7 @@
   left: 0;
   right: 0;
   bottom: 50%;
+  top: 50%;
 }
 
 .coffee {
@@ -28,3 +29,14 @@
 .green {color: #a5f29f;}
 .blue {color: #82e1f3;}
 .purple {color: #c17ae8;}
+
+/*=======================
+      Media Queries
+=======================*/
+
+@media only screen and (max-width: 576px) {
+  .PreFooter h1 {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
