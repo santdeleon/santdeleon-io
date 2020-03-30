@@ -31,7 +31,7 @@ const Header = ({theme, particles}) => {
         :
         <img src={SantDark} className="m-0 p-0" alt="Darkmode Header Cartoon" />
         }
-        <h1 className="header-title mb-0 mt-0">Hello, I'm Sant. Blockchain Engineer and front-end developer.</h1>
+        <h1 className="header-title mb-0 mt-0">Hello, I'm Sant. Blockchain engineer and front-end developer.</h1>
         <h3 className="header-name text-muted mt-3 fw-normal">with a knack for creating cutting edge products with elegance and style.</h3>
       </div>
 

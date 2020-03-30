@@ -1,5 +1,3 @@
-
-
 .show {
   display: contents;
 }
@@ -38,6 +36,10 @@
 
 .sidebar-wolf-logo {
   filter: sepia(.40);
+}
+
+.sidebar-logo-wrapper {
+  margin-left: 10px;
 }
 
 .social-icon-container {
