@@ -16,7 +16,7 @@
 }
 
 .project-row {
-  font-family: 'ITC Avant Garde Gothic LT';
+  font-family: "ITC Avant Garde Gothic LT";
 }
 
 .project-row:not(:first-child) {
@@ -40,7 +40,7 @@
 }
 
 .project:hover {
-  transform: translateY(-.70rem);
+  transform: translateY(-0.7rem);
 }
 
 .project-details {
@@ -53,35 +53,41 @@
 }
 
 .project-industry-title {
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .project-industry {
-  font-size: .82rem;
+  font-size: 0.82rem;
 }
 
 /*=======================
       Project Cards
 =======================*/
 .hostgator-project-card {
-  background: url('../../assets/img/hostgator-snappy.png') no-repeat 120% 250%, linear-gradient(#1F90C6, #104c68) no-repeat;
+  background: url("../../../../assets/img/hostgator-snappy.png") no-repeat 120%
+      250%,
+    linear-gradient(#1f90c6, #104c68) no-repeat;
 }
 
 .martian-project-card {
-  background: url('../../assets/img/martian-logo.svg') no-repeat -150% 40%, linear-gradient(#791600, #000) no-repeat;
+  background: url("../../../../assets/img/martian-logo.svg") no-repeat -150% 40%,
+    linear-gradient(#791600, #000) no-repeat;
 }
 
 .terra-project-card {
-  background: url('../../assets/img/watch.png') no-repeat 205% -20%, linear-gradient(#B55672, #8D392B) no-repeat;
+  background: url("../../../../assets/img/watch.png") no-repeat 205% -20%,
+    linear-gradient(#b55672, #8d392b) no-repeat;
 }
 
 .homies-project-card {
-  background: url('../../assets/img/desktop.png') no-repeat -155% 70%, linear-gradient(#d74b7c, #591d31) no-repeat;
+  background: url("../../../../assets/img/desktop.png") no-repeat -155% 70%,
+    linear-gradient(#d74b7c, #591d31) no-repeat;
 }
 
 .coinflip-project-card {
   color: black;
-  background: url('../../assets/img/ethereum.svg') no-repeat 20%, linear-gradient(#fade7e, #F89C92) no-repeat;
+  background: url("../../../../assets/img/ethereum.svg") no-repeat 20%,
+    linear-gradient(#fade7e, #f89c92) no-repeat;
 }
 
 /*=======================
@@ -125,18 +131,17 @@
   .coinflip-project-card {
     background-size: inherit;
   }
-
 }
 
 @media only screen and (max-width: 576px) {
   .project-details {
     margin: 0;
-    padding-left: .8rem;
-    padding-right: .8rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
   }
 
   .hostgator-project-card {
-    background: linear-gradient(#1F90C6, #104c68);
+    background: linear-gradient(#1f90c6, #104c68);
   }
 
   .martian-project-card {
@@ -144,7 +149,7 @@
   }
 
   .terra-project-card {
-    background: linear-gradient(#B55672, #8D392B);
+    background: linear-gradient(#b55672, #8d392b);
   }
 
   .homies-project-card {
@@ -152,6 +157,6 @@
   }
 
   .coinflip-project-card {
-    background: linear-gradient(#fade7e, #F89C92);
+    background: linear-gradient(#fade7e, #f89c92);
   }
 }

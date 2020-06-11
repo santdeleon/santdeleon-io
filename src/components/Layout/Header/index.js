@@ -1,9 +1,10 @@
 import React from "react";
 import { ArrowDownCircle } from "react-feather";
-import "./Header.css";
 
-import SantLight from "../../assets/img/sant-light.svg";
-import SantDark from "../../assets/img/sant-dark.svg";
+import "./index.css";
+
+import SantLight from "../../../assets/img/sant-light.svg";
+import SantDark from "../../../assets/img/sant-dark.svg";
 
 const skills = [
   { id: 0, name: "Blockchain Engineer", color: "#F76F6E" },

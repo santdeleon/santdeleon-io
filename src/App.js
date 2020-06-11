@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Switch, Route } from "react-router";
 import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme } from "../../theme";
-import { GlobalStyles } from "../../global";
 import Particles from "particlesjs";
 
 import "./App.css";
 
-import Layout from "../Layout/Layout";
-import Contact from "../Contact/Contact.js";
+import { lightTheme, darkTheme } from "./utils/theme";
+import { GlobalStyles } from "./utils/global";
+import Layout from "./components/Layout";
+import Contact from "./pages/Contact";
 
 import {
   faGithub,
@@ -24,7 +24,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
-  // data
   const [theme, setTheme] = useState("light");
   const [showSidebar, setShowSidebar] = useState(false);
   const socialIcons = {
@@ -50,7 +49,6 @@ function App() {
     { id: 2, name: "Get in touch", href: "/contact", icon: "MessageCircle" }
   ];
 
-  // functions
   const toggleTheme = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
   };
@@ -72,15 +70,12 @@ function App() {
             path="/"
             render={props => (
               <Layout
-                // functions
                 toggleTheme={toggleTheme}
                 toggleSidebar={toggleSidebar}
                 showSidebar={showSidebar}
-                // data
                 theme={theme}
                 socialIcons={socialIcons}
                 navLinks={navLinks}
-                // icons
                 github={faGithub}
                 angellist={faAngellist}
                 linkedin={faLinkedinIn}
@@ -98,15 +93,12 @@ function App() {
             path="/contact"
             render={props => (
               <Contact
-                // functions
                 toggleTheme={toggleTheme}
                 toggleSidebar={toggleSidebar}
                 showSidebar={showSidebar}
-                // data
                 theme={theme}
                 socialIcons={socialIcons}
                 navLinks={navLinks}
-                // icons
                 refresh={faRedoAlt}
                 home={faHome}
                 particles={Particles}

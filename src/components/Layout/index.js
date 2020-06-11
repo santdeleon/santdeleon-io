@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 
-import Navbar from "../../components/Navbar/Navbar";
-import Sidebar from "../../components/Sidebar/Sidebar";
-import Header from "../../components/Header/Header";
-import Portfolio from "../../components/Portfolio/Portfolio";
-import Tech from "../../components/Tech/Tech";
-import PreFooter from "../../components/PreFooter/PreFooter";
-import Footer from "../../components/Footer/Footer";
+import NavMenu from "./NavMenu";
+import Sidebar from "./Sidebar";
+import Header from "./Header";
+import Portfolio from "./Main/Portfolio";
+import Tech from "./Main/Tech";
+import PreFooter from "./Main/PreFooter";
+import Footer from "./Footer";
 
 const Layout = ({
   theme,
@@ -26,7 +26,7 @@ const Layout = ({
 
   return (
     <>
-      <Navbar
+      <NavMenu
         theme={theme}
         toggleTheme={toggleTheme}
         showSidebar={showSidebar}

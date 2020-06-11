@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import "./Contact.css";
+import "./index.css";
 
 function Contact({ home, refresh, particles }) {
   const [name, setName] = useState("");

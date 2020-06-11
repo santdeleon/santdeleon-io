@@ -1,56 +1,13 @@
 /*=======================
           Fonts
 =======================*/
-/* Calibre */
-/* @font-face {
-  font-family: 'Calibre-Regular';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Calibre-Regular'), url('./assets/fonts/calibre-regular.woff') format('woff');
-}
-
 @font-face {
-  font-family: 'Calibre-Thin';
+  font-family: "Calibre-Semibold";
   font-style: normal;
   font-weight: normal;
-  src: local('Calibre-Thin'), url('./assets/fonts/calibre-thin.woff') format('woff');
+  src: local("Calibre-Semibold"),
+    url("./assets/fonts/calibre-semibold.woff") format("woff");
 }
-
-@font-face {
-  font-family: 'Calibre-Light';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Calibre-Light'), url('./assets/fonts/calibre-light.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Calibre-Medium';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Calibre-Medium'), url('./assets/fonts/calibre-medium.woff') format('woff');
-} */
-
-@font-face {
-  font-family: 'Calibre-Semibold';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Calibre-Semibold'), url('./assets/fonts/calibre-semibold.woff') format('woff');
-}
-
-/* @font-face {
-  font-family: 'Calibre-Bold';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Calibre-Bold'), url('./assets/fonts/calibre-bold.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Calibre-Black';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Calibre-Black'), url('./assets/fonts/calibre-black.woff') format('woff');
-} */
-
 
 html {
   scroll-behavior: smooth;
@@ -60,9 +17,9 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  font-family: Arial, "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    sans-serif;
+  font-family: Arial, "Helvetica Neue", Helvetica, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-overflow-scrolling: touch;
@@ -71,18 +28,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-::-webkit-scrollbar {
-  background-color: #ff87e1;
-  width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  height: 10px;
-  background: linear-gradient(to bottom, #ff87e1 , #ca67e5, #83e0f7, #84ffaf, #fcca67, #fcfc83, #f76f6f);
-}
-
-::selection {
-  background: #84FBB8;
 }

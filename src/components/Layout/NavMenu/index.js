@@ -1,11 +1,11 @@
 import React from "react";
 import { array, bool, func, string, object } from "prop-types";
 
-import NavLink from "../NavLink/NavLink";
+import NavLink from "./NavLink";
 
-import "./Navbar.css";
+import "./index.css";
 
-const Navbar = ({
+const NavMenu = ({
   navLinks,
   showSidebar,
   theme,
@@ -215,7 +215,7 @@ const Navbar = ({
   );
 };
 
-Navbar.propTypes = {
+NavMenu.propTypes = {
   navLinks: array.isRequired,
   showSidebar: bool.isRequired,
   theme: string.isRequired,
@@ -224,4 +224,4 @@ Navbar.propTypes = {
   socialIcons: object.isRequired
 };
 
-export default Navbar;
+export default NavMenu;
