@@ -1,54 +1,66 @@
-import React, { useState } from 'react';
-import { Switch, Route } from 'react-router';
-import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme } from '../../theme';
-import { GlobalStyles } from '../../global';
-import Particles from 'particlesjs';
+import React, { useState } from "react";
+import { Switch, Route } from "react-router";
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "../../theme";
+import { GlobalStyles } from "../../global";
+import Particles from "particlesjs";
 
-import './App.css';
+import "./App.css";
 
-import Layout from '../Layout/Layout';
-import Contact from '../Contact/Contact.js';
+import Layout from "../Layout/Layout";
+import Contact from "../Contact/Contact.js";
 
-import { faGithub, faAngellist, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faHome, faRedoAlt, faHeart, faCopyright } from "@fortawesome/free-solid-svg-icons";
-
+import {
+  faGithub,
+  faAngellist,
+  faLinkedinIn
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faEnvelope,
+  faHome,
+  faRedoAlt,
+  faHeart,
+  faCopyright
+} from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   // data
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState("light");
   const [showSidebar, setShowSidebar] = useState(false);
   const socialIcons = {
     linkedin: {
       id: 0,
       icon: faLinkedinIn,
-      url: 'https://www.linkedin.com/in/sant-deleon/'
+      url: "https://www.linkedin.com/in/sant-deleon/"
     },
     angellist: {
       id: 1,
       icon: faAngellist,
-      url: 'https://angel.co/santdeleon'
+      url: "https://angel.co/santdeleon"
     },
     mail: {
       id: 2,
       icon: faEnvelope,
-      url: 'mailto:sant@santdeleon.co'
-    },
+      url: "mailto:sant@santdeleon.co"
+    }
   };
   const navLinks = [
-    { id: 0, name: 'Portfolio', href: "#Portfolio", icon: 'Folder' },
-    { id: 1, name: 'Technologies', href: "#Tech", icon: 'Code' },
-    { id: 2, name: 'Get in touch', href: "/contact", icon: 'MessageCircle' }
+    { id: 0, name: "Portfolio", href: "#Portfolio", icon: "Folder" },
+    { id: 1, name: "Technologies", href: "#Tech", icon: "Code" },
+    { id: 2, name: "Get in touch", href: "/contact", icon: "MessageCircle" }
   ];
 
   // functions
-  const toggleTheme = () => { (theme === 'light') ? setTheme('dark') : setTheme('light'); }
+  const toggleTheme = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
 
-  const toggleSidebar = () => { setShowSidebar(!showSidebar); }
-
+  const toggleSidebar = () => {
+    setShowSidebar(!showSidebar);
+  };
 
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <div className="App">
         <div className="rainbow-top"></div>
 
@@ -56,19 +68,18 @@ function App() {
 
         <Switch>
           <Route
-            exact path="/"
-            render={(props) => (
+            exact
+            path="/"
+            render={props => (
               <Layout
                 // functions
                 toggleTheme={toggleTheme}
                 toggleSidebar={toggleSidebar}
                 showSidebar={showSidebar}
-
                 // data
                 theme={theme}
                 socialIcons={socialIcons}
                 navLinks={navLinks}
-
                 // icons
                 github={faGithub}
                 angellist={faAngellist}
@@ -78,7 +89,6 @@ function App() {
                 copyright={faCopyright}
                 refresh={faRedoAlt}
                 home={faHome}
-
                 particles={Particles}
               />
             )}
@@ -86,22 +96,19 @@ function App() {
 
           <Route
             path="/contact"
-            render={(props) => (
+            render={props => (
               <Contact
                 // functions
                 toggleTheme={toggleTheme}
                 toggleSidebar={toggleSidebar}
                 showSidebar={showSidebar}
-
                 // data
                 theme={theme}
                 socialIcons={socialIcons}
                 navLinks={navLinks}
-
                 // icons
                 refresh={faRedoAlt}
                 home={faHome}
-
                 particles={Particles}
               />
             )}

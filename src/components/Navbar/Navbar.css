@@ -1,6 +1,5 @@
 .navbar {
   padding: 1rem 1.5rem;
-
 }
 
 .navbar .nav-link {
@@ -12,11 +11,8 @@
 }
 
 .app-logo h2 {
+  font-size: 1.34rem;
   margin-bottom: 12px;
-}
-
-.app-logo h2:hover {
-  color: #f446e3;
 }
 
 .nav-links-wrapper {

@@ -43,6 +43,11 @@ input[name="name"] {  border-color: #48ABE4;}
 input[name="email"] {border-color: #FED055;}
 textarea {height: 212px;border-color: #58E2C2;}
 
+.home-btn,
+.refresh-btn {
+  height: auto;
+}
+
 .home-btn {
   background-color: #C76CE5;
   box-shadow: inset 0 0 0 0.14em #864089;

@@ -14,11 +14,11 @@ const Sidebar = ({ theme, showSidebar, navLinks, socialIcons, toggleSidebar, }) 
   return (
     <div id="Sidebar" className="Sidebar">
       <div
-        className={`flex flex-column align-items-center justify-content-around menu-wrap ${(showSidebar === true) ? "menu-show" : ""}`}
+        className={`sidebar-wrapper flex flex-column align-items-center justify-content-around menu-wrap ${(showSidebar === true) ? "menu-show" : ""}`}
         style={(theme === "light") ? { backgroundColor: "#fff" } : { backgroundColor: "#212121" }}
       >
-        <div className="sidebar-links flex flex-column align-items-center justify-content-center text-center">
-          <ul className="sidebar-menu flex flex-column align-items-center p-0">
+        <div className="sidebar-links flex flex-column">
+          <ul className="sidebar-menu flex flex-column text-left p-0">
             {navLinks.map(link => <NavLink key={link.id} name={link.name} href={link.href} icon={link.icon} theme={theme} toggleSidebar={toggleSidebar} isSidebarLink={true}/>)}
           </ul>
         </div>

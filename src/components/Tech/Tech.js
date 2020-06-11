@@ -35,7 +35,7 @@ const Tech = ({ theme }) => {
       <div className="tech-wrapper flex flex-column justify-content-between">
         <div className="tech-header mb-5 text-center flex flex-column">
           <h4 className="m-0 fw-light text-muted">With these technologies</h4>
-          <h3 className="mb-5">I can make <span className="magic">magic</span> <br/> and do the thing</h3>
+          <h3 className="mb-5">I can make magic <br/> and do the thing</h3>
         </div>
 
         <div className="tech-body flex justify-content-between">
