@@ -11,9 +11,7 @@ import {
 import NavMenu from "./NavMenu";
 import Sidebar from "./Sidebar";
 // import Header from "./Header";
-// import Portfolio from "./Main/Portfolio";
-// import Tech from "./Main/Tech";
-import Interested from "./Main/Interested";
+import Main from "./Main";
 import Footer from "./Footer";
 
 import "./index.css";
@@ -105,15 +103,10 @@ const Layout = ({
         socialIcons={socialIcons}
         navData={navData}
       />
-      {/*
-      <Header theme={theme} particles={particles} />
 
-      <Portfolio github={github} />
+      {/* <Header theme={theme} particles={particles} /> */}
 
-      <Tech theme={theme} />
-      */}
-
-      <Interested theme={theme} />
+      <Main theme={theme} />
 
       <Footer
         heart={faHeart}

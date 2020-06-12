@@ -1,7 +1,16 @@
 import React from "react";
+import { Row, Col } from "react-bootstrap";
 import { string } from "prop-types";
 
 import "./index.css";
+
+const propTypes = {
+  theme: string.isRequired
+};
+
+const defaultProps = {
+  theme: "light"
+};
 
 const technologies = {
   blockchain: {
@@ -33,9 +42,12 @@ const technologies = {
       "HTML/CSS",
       "JavaScript",
       "React",
+      "Redux",
+      "GatsbyJS",
       "NodeJS",
       "jQuery",
       "KnockoutJS",
+      "Jest",
       "Mocha",
       "Chai",
       "SCSS",
@@ -43,7 +55,8 @@ const technologies = {
       "Template Toolkit",
       "Bootstrap",
       "Bulma",
-      "Materialize"
+      "Materialize",
+      "Storybook"
     ],
     tools: ["Atom Editor", "iTerm", "Yarn", "NPM"],
     additional: [
@@ -61,7 +74,7 @@ const technologies = {
     id: 3,
     name: "Backend Stack",
     color: "#ffdc74",
-    tech: ["Java", "Perl", "VIM", "MongoDB"],
+    tech: ["Java", "Perl", "VIM", "MongoDB", "Express"],
     tools: ["IntelliJ", "Spring Boot", "CPAN"]
   }
 };
@@ -69,28 +82,25 @@ const technologies = {
 const Tech = ({ theme }) => {
   return (
     <div
-      id="Tech"
-      className="Tech container"
+      className="Tech px-5"
       style={
         theme === "light"
           ? { backgroundColor: "#f9f9f9" }
-          : { backgroundColor: "#000" }
+          : { backgroundColor: "#212121" }
       }
     >
-      <div className="tech-wrapper flex flex-column justify-content-between">
-        <div className="tech-header mb-5 text-center flex flex-column">
-          <h4 className="m-0 fw-light text-muted">With these technologies</h4>
-          <h3 className="mb-5">
-            I can make magic <br /> and do the thing
-          </h3>
-        </div>
+      <Row className="py-5 text-center flex-column">
+        <h5 className="text-muted">Some cool technologies</h5>
+        <h3>That i'm pretty good with</h3>
+      </Row>
 
-        <div className="tech-body flex justify-content-between">
-          {Object.keys(technologies).map(obj => {
-            return (
+      <Row className="flex-column flex-md-row justify-content-between pb-5">
+        {Object.keys(technologies).map(obj => {
+          return (
+            <Col>
               <div
                 key={technologies[obj].id}
-                className={`${technologies[obj].name} stack flex flex-column`}
+                className={`${technologies[obj].name} flex-column rounded p-4 my-3`}
                 style={
                   theme === "light"
                     ? { backgroundColor: "#fff" }
@@ -101,7 +111,7 @@ const Tech = ({ theme }) => {
                   0{technologies[obj].id}
                 </h3>
                 <h3
-                  className="mt-0 stack-name"
+                  className="mt-0 mb-3"
                   style={{
                     borderBottom: `3px solid ${technologies[obj].color}`
                   }}
@@ -109,55 +119,57 @@ const Tech = ({ theme }) => {
                   {technologies[obj].name}
                 </h3>
 
-                <div className="flex flex-column">
-                  <h4 className="mb-1 fw-light">Technologies:</h4>
-                  <ul className="flex flex-column font-light">
-                    {technologies[obj].tech.map((tech, i) => {
-                      return (
-                        <li key={i} className="text-muted">
-                          {tech}
-                        </li>
-                      );
-                    })}
-                  </ul>
-
-                  <h4 className="mb-1 fw-light">Tools:</h4>
-                  <ul className="flex flex-column font-light">
-                    {technologies[obj].tools.map((tool, i) => {
-                      return (
-                        <li key={i} className="text-muted">
-                          {tool}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-
-                {technologies[obj].additional ? (
-                  <>
-                    <h4 className="mb-1 fw-light">Additional:</h4>
+                <Row className="flex flex-column">
+                  <Col>
+                    <h4 className="mb-1 fw-light">Technologies:</h4>
                     <ul className="flex flex-column font-light">
-                      {technologies[obj].additional.map((a, i) => {
+                      {technologies[obj].tech.map((tech, i) => {
                         return (
                           <li key={i} className="text-muted">
-                            {a}
+                            {tech}
                           </li>
                         );
                       })}
                     </ul>
-                  </>
-                ) : null}
+
+                    <h4 className="mb-1 fw-light">Tools:</h4>
+                    <ul className="flex flex-column font-light">
+                      {technologies[obj].tools.map((tool, i) => {
+                        return (
+                          <li key={i} className="text-muted">
+                            {tool}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </Col>
+                </Row>
+
+                {technologies[obj].additional && (
+                  <Row>
+                    <Col>
+                      <h4 className="mb-1 fw-light">Additional:</h4>
+                      <ul className="flex flex-column font-light">
+                        {technologies[obj].additional.map((a, i) => {
+                          return (
+                            <li key={i} className="text-muted">
+                              {a}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </Col>
+                  </Row>
+                )}
               </div>
-            );
-          })}
-        </div>
-      </div>
+            </Col>
+          );
+        })}
+      </Row>
     </div>
   );
 };
 
-Tech.propTypes = {
-  theme: string.isRequired
-};
-
+Tech.propTypes = propTypes;
+Tech.defaultProps = defaultProps;
 export default Tech;
