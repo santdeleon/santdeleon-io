@@ -82,6 +82,7 @@ const technologies = {
 const Tech = ({ theme }) => {
   return (
     <div
+      id="Tech"
       className="Tech px-5"
       style={
         theme === "light"

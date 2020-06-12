@@ -3,6 +3,8 @@ import { Row, Col } from "react-bootstrap";
 import { object } from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import "./index.css";
+
 const propTypes = {
   theme: object.isRequired,
   socialIcons: object.isRequired,
@@ -19,7 +21,7 @@ const defaultProps = {
 
 const Footer = ({ theme, socialIcons, copyright, heart }) => {
   return (
-    <footer>
+    <footer className="Footer pb-3">
       <Row className="px-3">
         <Col xs={6} md={4}>
           {Object.keys(socialIcons).map(icon => {

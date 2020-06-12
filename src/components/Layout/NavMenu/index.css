@@ -1,3 +1,7 @@
+.NavMenu {
+  font-family: "Calibre-Semibold";
+}
+
 .toggle-button {
   position: absolute;
   width: 20px;

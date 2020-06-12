@@ -1,3 +1,7 @@
+.Sidebar {
+  font-family: "Calibre-Semibold";
+}
+
 .menu-wrap {
   position: fixed;
   height: 100%;

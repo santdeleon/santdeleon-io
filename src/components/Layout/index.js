@@ -10,11 +10,9 @@ import {
 
 import NavMenu from "./NavMenu";
 import Sidebar from "./Sidebar";
-// import Header from "./Header";
+import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
-
-import "./index.css";
 
 const propTypes = {
   theme: string.isRequired,
@@ -104,7 +102,7 @@ const Layout = ({
         navData={navData}
       />
 
-      {/* <Header theme={theme} particles={particles} /> */}
+      <Header theme={theme} particles={particles} />
 
       <Main theme={theme} />
 
