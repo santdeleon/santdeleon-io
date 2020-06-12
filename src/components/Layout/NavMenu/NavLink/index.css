@@ -1,23 +1,13 @@
 .nav-link {
-  border-bottom: 2px solid transparent;
-  cursor: pointer;
-  line-height: 30px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-  font-size: 1.08rem;
-  font-family: 'Calibre-Semibold';
 }
 
 .nav-link:after {
   display: block;
-  content: '';
+  content: "";
   border-bottom: solid 2px #f446e3;
   transform: scaleX(0);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-}
-
-.nav-link:hover,
-.nav-link svg:hover {
-  color: #f446e3;
 }
 
 .nav-link:hover:after {
@@ -25,9 +15,5 @@
 }
 
 .nav-link.fromLeft:after {
-  transform-origin:  0% 50%;
-}
-
-.nav-link a {
-  margin-left: 5px;
+  transform-origin: 0% 50%;
 }

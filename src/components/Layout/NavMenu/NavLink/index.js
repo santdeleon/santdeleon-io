@@ -16,20 +16,15 @@ const NavLink = ({ icon, name, theme, href, toggleSidebar, isSidebarLink }) => {
   }
 
   return (
-    <li
-      className="nav-link fromLeft"
-      onClick={isSidebarLink ? toggleSidebar : null}
+    <a
+      href={href}
+      className="nav-link fromLeft align-items-center"
+      style={theme === "light" ? { color: "#000" } : { color: "#fff" }}
+      onClick={isSidebarLink && toggleSidebar}
     >
-      {el}
-      <a
-        href={href}
-        style={theme === "light" ? { color: "#000" } : { color: "#fff" }}
-        aria-label={name}
-        title={name}
-      >
-        {name}
-      </a>
-    </li>
+      <span className="mr-1">{el}</span>
+      {name}
+    </a>
   );
 };
 
