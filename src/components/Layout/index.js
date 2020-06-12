@@ -13,7 +13,7 @@ import Sidebar from "./Sidebar";
 // import Header from "./Header";
 // import Portfolio from "./Main/Portfolio";
 // import Tech from "./Main/Tech";
-// import PreFooter from "./Main/PreFooter";
+import Interested from "./Main/Interested";
 import Footer from "./Footer";
 
 import "./index.css";
@@ -111,9 +111,9 @@ const Layout = ({
       <Portfolio github={github} />
 
       <Tech theme={theme} />
-
-      <PreFooter theme={theme} />
       */}
+
+      <Interested theme={theme} />
 
       <Footer
         heart={faHeart}
