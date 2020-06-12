@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { func, string, object } from "prop-types";
 import { Folder, Code, MessageCircle } from "react-feather";
-import { faAngellist, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import {
+  faAngellist,
+  faLinkedinIn,
+  faGithub
+} from "@fortawesome/free-brands-svg-icons";
 import {
   faEnvelope,
   faHeart,
@@ -104,7 +108,7 @@ const Layout = ({
 
       <Header theme={theme} particles={particles} />
 
-      <Main theme={theme} />
+      <Main theme={theme} github={faGithub} />
 
       <Footer
         heart={faHeart}

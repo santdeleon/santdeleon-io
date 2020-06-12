@@ -1,8 +1,9 @@
 import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import { object } from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import ProjectCard from "../ProjectCard";
+import ProjectCard from "./ProjectCard";
 
 import HostGator from "../../../../assets/img/hostgator-logo.svg";
 import Martian from "../../../../assets/img/martian-text-logo.svg";
@@ -12,152 +13,116 @@ import Ethereum from "../../../../assets/img/ethereum-logo.png";
 
 import "./index.css";
 
+const propTypes = {
+  github: object.isRequired
+};
+
+const defaultProps = {
+  github: {}
+};
+
 const projects = {
+  coinflip: {
+    id: "coinflipProjectCard",
+    className: "coinflip-project-card",
+    url: "https://github.com/santdeleon/coinflip",
+    img: Ethereum,
+    width: 40,
+    text:
+      "Decentralized gambling <br /> application built on the <br /> Ethereum Network",
+    industry: "Blockchain, Gambling & Gaming"
+  },
   hostgator: {
     id: "hostgatorProjectCard",
-    class: "hostgator-project-card",
+    className: "hostgator-project-card",
     url: "https://www.hostgator.com/",
     img: HostGator,
     width: 120,
-    height: 50,
     text:
       "Platform for entrepeuners <br /> & businesses to create,<br /> host & manage websites",
     industry: "Domain & Web Hosting"
   },
   terra: {
     id: "terraProjectCard",
-    class: "terra-project-card",
+    className: "terra-project-card",
     url: "https://www.terraats.com/",
     img: Terra,
     width: 90,
-    height: 50,
     text:
       "Small in-house tech <br /> solution for custom <br /> software applications",
     industry: "Software Services & IT Solutions"
   },
   homies: {
     id: "homiesProjectCard",
-    class: "homies-project-card",
+    className: "homies-project-card",
     url: "#",
     img: Homies,
     width: 70,
-    height: 50,
     text:
       "Grassroots startup helping <br /> brands get off the ground <br /> & sell online",
     industry: "Branding & E-Commerce"
   },
   martian: {
     id: "martianProjectCard",
-    class: "martian-project-card",
+    className: "martian-project-card",
     url: "http://martian.network/",
     img: Martian,
     width: 120,
-    height: 50,
     text:
       "Blockchain solution for <br /> monetizing, distributing <br /> & hosting content",
     industry: "Blockchain & Content Management"
-  },
-  coinflip: {
-    id: "coinflipProjectCard",
-    class: "coinflip-project-card",
-    url: "https://github.com/santdeleon/coinflip",
-    img: Ethereum,
-    width: 40,
-    height: 40,
-    text:
-      "Decentralized gambling <br /> application built on the <br /> Ethereum Network",
-    industry: "Blockchain, Gambling & Gaming"
   }
 };
 
 const Portfolio = ({ github }) => {
   return (
-    <div id="Portfolio" className="Portfolio container">
-      <div className="portfolio-wrapper flex flex-column align-items-center">
-        <div className="portfolio-header text-center flex flex-column">
-          <h4 className="m-0 fw-light text-muted">Meet some companies</h4>
-          <h3 className="mb-5">
+    <Container id="Portfolio" className="Portfolio py-5" fluid>
+      <Row className="mb-5">
+        <Col className="text-center">
+          <h4 className="font-weight-light text-muted">Meet some companies</h4>
+          <h5>
             I've had the pleasure <br /> to work with
-          </h3>
-        </div>
+          </h5>
+        </Col>
+      </Row>
 
-        <div className="project-row w-100 flex align-items-center justify-content-center">
-          {Object.keys(projects).map((project, index) => {
-            if (index < 2) {
-              return (
-                <ProjectCard
-                  name={project}
-                  key={projects[project].id}
-                  id={projects[project].id}
-                  class={projects[project].class}
-                  url={projects[project].url}
-                  img={projects[project].img}
-                  width={projects[project].width}
-                  height={projects[project].height}
-                  text={projects[project].text}
-                  industry={projects[project].industry}
-                />
-              );
-            }
-          })}
-        </div>
+      <Row className="my-3">
+        {Object.keys(projects).map((project, index) => (
+          <Col xs={12} lg={6} key={projects[project].id}>
+            <ProjectCard
+              name={project}
+              id={projects[project].id}
+              className={projects[project].className}
+              url={projects[project].url}
+              img={projects[project].img}
+              width={projects[project].width}
+              height={50}
+              text={projects[project].text}
+              industry={projects[project].industry}
+            />
+          </Col>
+        ))}
+      </Row>
 
-        <div className="project-row w-100 flex align-items-center justify-content-center">
-          {Object.keys(projects).map((project, index) => {
-            if (index >= 2 && index < 4) {
-              return (
-                <ProjectCard
-                  name={project}
-                  key={projects[project].id}
-                  id={projects[project].id}
-                  class={projects[project].class}
-                  url={projects[project].url}
-                  img={projects[project].img}
-                  width={projects[project].width}
-                  height={projects[project].height}
-                  text={projects[project].text}
-                  industry={projects[project].industry}
-                />
-              );
-            }
-          })}
-        </div>
-
-        <div className="project-row w-100 flex align-items-center justify-content-center">
-          <ProjectCard
-            name="coinflip"
-            key={projects["coinflip"].id}
-            id={projects["coinflip"].id}
-            class={projects["coinflip"].class}
-            url={projects["coinflip"].url}
-            img={projects["coinflip"].img}
-            width={projects["coinflip"].width}
-            height={projects["coinflip"].height}
-            text={projects["coinflip"].text}
-            industry={projects["coinflip"].industry}
-          />
-        </div>
-
-        <div className="flex justify-content-center mt-5 w-100">
+      <Row className="mt-5 mb-3 px-5">
+        <Col className="text-center">
           <a
             href="https://github.com/santdeleon"
             target="_blank"
             rel="noopener noreferrer"
+            className="text-dark custom-button"
             aria-label="Github"
             title="Github"
+            style={{ textDecoration: "none" }}
           >
-            <button className="btn">
-              See more work <FontAwesomeIcon className="ml-1" icon={github} />
-            </button>
+            See more work <FontAwesomeIcon icon={github} />
           </a>
-        </div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
-Portfolio.propTypes = {
-  github: object.isRequired
-};
-
+Portfolio.propTypes = propTypes;
+Portfolio.defaultProps = defaultProps;
 export default Portfolio;

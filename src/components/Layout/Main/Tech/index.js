@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { string } from "prop-types";
 
 import "./index.css";
@@ -81,93 +81,88 @@ const technologies = {
 
 const Tech = ({ theme }) => {
   return (
-    <div
+    <Container
+      fluid
       id="Tech"
-      className="Tech px-5"
+      className="Tech"
       style={
         theme === "light"
           ? { backgroundColor: "#f9f9f9" }
           : { backgroundColor: "#212121" }
       }
     >
-      <Row className="py-5 text-center flex-column">
-        <h5 className="text-muted">Some cool technologies</h5>
-        <h3>That i'm pretty good with</h3>
+      <Row className="py-5">
+        <Col className="text-center">
+          <h4 className="font-weight-light text-muted">
+            Check out some technologies
+          </h4>
+          <h5>That I'm pretty good with</h5>
+        </Col>
       </Row>
 
-      <Row className="flex-column flex-md-row justify-content-between pb-5">
-        {Object.keys(technologies).map(obj => {
-          return (
-            <Col>
-              <div
-                key={technologies[obj].id}
-                className={`${technologies[obj].name} flex-column rounded p-4 my-3`}
-                style={
-                  theme === "light"
-                    ? { backgroundColor: "#fff" }
-                    : { backgroundColor: "" }
-                }
+      <Row className="tech-cards flex-column flex-md-row justify-content-between pb-5">
+        {Object.keys(technologies).map(obj => (
+          <Col xs={12} lg={4} key={technologies[obj].id}>
+            <div
+              className={`${technologies[obj].name} rounded p-4 my-3`}
+              style={
+                theme === "light"
+                  ? { backgroundColor: "#fff" }
+                  : { backgroundColor: "" }
+              }
+            >
+              <h3 style={{ color: technologies[obj].color }}>
+                0{technologies[obj].id}
+              </h3>
+              <h3
+                className="mb-5"
+                style={{
+                  borderBottom: `3px solid ${technologies[obj].color}`
+                }}
               >
-                <h3 className="m-0" style={{ color: technologies[obj].color }}>
-                  0{technologies[obj].id}
-                </h3>
-                <h3
-                  className="mt-0 mb-3"
-                  style={{
-                    borderBottom: `3px solid ${technologies[obj].color}`
-                  }}
-                >
-                  {technologies[obj].name}
-                </h3>
+                {technologies[obj].name}
+              </h3>
 
-                <Row className="flex flex-column">
+              <Row className="flex-column">
+                <Col>
+                  <h4>Technologies:</h4>
+                  <ul>
+                    {technologies[obj].tech.map((tech, i) => (
+                      <li key={i} className="text-muted">
+                        {tech}
+                      </li>
+                    ))}
+                  </ul>
+                  <h4>Tools:</h4>
+                  <ul>
+                    {technologies[obj].tools.map((tool, i) => (
+                      <li key={i} className="text-muted">
+                        {tool}
+                      </li>
+                    ))}
+                  </ul>
+                </Col>
+              </Row>
+
+              {technologies[obj].additional && (
+                <Row>
                   <Col>
-                    <h4 className="mb-1 fw-light">Technologies:</h4>
+                    <h4 className="mb-1 fw-light">Additional:</h4>
                     <ul className="flex flex-column font-light">
-                      {technologies[obj].tech.map((tech, i) => {
-                        return (
-                          <li key={i} className="text-muted">
-                            {tech}
-                          </li>
-                        );
-                      })}
-                    </ul>
-
-                    <h4 className="mb-1 fw-light">Tools:</h4>
-                    <ul className="flex flex-column font-light">
-                      {technologies[obj].tools.map((tool, i) => {
-                        return (
-                          <li key={i} className="text-muted">
-                            {tool}
-                          </li>
-                        );
-                      })}
+                      {technologies[obj].additional.map((a, i) => (
+                        <li key={i} className="text-muted">
+                          {a}
+                        </li>
+                      ))}
                     </ul>
                   </Col>
                 </Row>
-
-                {technologies[obj].additional && (
-                  <Row>
-                    <Col>
-                      <h4 className="mb-1 fw-light">Additional:</h4>
-                      <ul className="flex flex-column font-light">
-                        {technologies[obj].additional.map((a, i) => {
-                          return (
-                            <li key={i} className="text-muted">
-                              {a}
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </Col>
-                  </Row>
-                )}
-              </div>
-            </Col>
-          );
-        })}
+              )}
+            </div>
+          </Col>
+        ))}
       </Row>
-    </div>
+    </Container>
   );
 };
 

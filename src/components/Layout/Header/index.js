@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { string, object } from "prop-types";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowDownCircle } from "react-feather";
@@ -67,9 +67,8 @@ const Header = ({ theme, particles }) => {
         <Row className="mb-5 d-none d-md-flex">
           {skills.map(skill => {
             return (
-              <Col>
+              <Col key={skill.id}>
                 <div
-                  key={skill.id}
                   className="mt-5"
                   style={
                     theme === "light"
@@ -93,14 +92,13 @@ const Header = ({ theme, particles }) => {
         <Row className="scroll-btn-wrapper" noGutters>
           <Col>
             <a
-              className={`d-flex flex-column align-items-center ${
+              className={`d-flex justify-content-center ${
                 theme === "light" ? "text-dark" : "text-light"
               }`}
               href="#Portfolio"
               style={{ textDecoration: "none" }}
             >
               <ArrowDownCircle className="arrow-down" />
-              <p className="scroll-down m-0 p-0">Scroll down</p>
             </a>
           </Col>
         </Row>

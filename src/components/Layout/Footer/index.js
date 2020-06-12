@@ -1,19 +1,19 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import { object } from "prop-types";
+import { string, object } from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./index.css";
 
 const propTypes = {
-  theme: object.isRequired,
+  theme: string.isRequired,
   socialIcons: object.isRequired,
   copyright: object.isRequired,
   heart: object.isRequired
 };
 
 const defaultProps = {
-  theme: {},
+  theme: "",
   socialIcons: {},
   copyright: {},
   heart: {}

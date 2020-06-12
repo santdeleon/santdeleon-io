@@ -2,5 +2,8 @@
   background-image: url("../../../../assets/img/pattern-wallpaper.svg");
   background-size: 44rem auto;
   background-position: 50%;
+}
+
+.tech-cards {
   font-family: "Calibre-Semibold";
 }

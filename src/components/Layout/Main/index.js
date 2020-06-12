@@ -1,21 +1,23 @@
 import React from "react";
-import { array, bool, string, object, func } from "prop-types";
+import { string, object } from "prop-types";
 
-// import Portfolio from "./Portfolio";
+import Portfolio from "./Portfolio";
 import Tech from "./Tech";
 import Interested from "./Interested";
 
 const propTypes = {
-  theme: string.isRequired
+  theme: string.isRequired,
+  github: object.isRequired
 };
 
 const defaultProps = {
-  theme: "light"
+  theme: "light",
+  github: {}
 };
 
-const Main = ({ theme }) => (
+const Main = ({ theme, github }) => (
   <main>
-    {/* <Portfolio github={github} /> */}
+    <Portfolio github={github} />
     <Tech theme={theme} />
     <Interested theme={theme} />
   </main>
