@@ -1,5 +1,9 @@
+.Contact {
+  font-family: "Calibre-Semibold";
+}
+
 .hyphens {
-  background: url('../../assets/img/hyphens.svg');
+  background: url("../../assets/img/hyphens.svg");
   height: 1px;
   width: 100%;
 }
@@ -7,90 +11,37 @@
 .Contact form {
   width: 640px;
   max-width: 100%;
-}
-
-.Contact .app-logo h2 {
-  margin-top: 10px;
-}
-
-.input-group {
-  padding: .75rem 0;
+  margin: auto;
 }
 
 label {
-  text-align: left;
-  font-weight: 100;
-  font-size: 17px;
-  color: #747A87;
-  margin-bottom: .5rem;
+  color: #747a87;
 }
 
-label:not(:last-child) {
-  margin-bottom: .5em;
-}
-
-input,textarea {
-  background-color: transparent;
-  font-size: 1.2rem;
-  border-radius: 4px;
-  border: 1px solid;
+input,
+textarea {
   font-family: monospace;
-  box-shadow: 0;
-  outline: 0;
-}
-input {height: 54px;}
-input[name="name"] {  border-color: #48ABE4;}
-input[name="email"] {border-color: #FED055;}
-textarea {height: 212px;border-color: #58E2C2;}
-
-.home-btn,
-.refresh-btn {
-  height: auto;
 }
 
-.home-btn {
-  background-color: #C76CE5;
-  box-shadow: inset 0 0 0 0.14em #864089;
+input[name="name"] {
+  border-color: #48abe4;
 }
 
-.home-btn:hover {
-  box-shadow: inset 0 0 0 0.14em #864089, 0px 3px 0px 0px rgba(40, 40, 40, 0.6);
+input[name="email"] {
+  border-color: #fed055;
 }
 
-.refresh-btn {
-  background-color: #F480E1;
-  box-shadow: inset 0 0 0 0.14em #a05193;
+.contact-textarea {
+  border-color: #58e2c2;
 }
 
-.refresh-btn:hover {
-  box-shadow: inset 0 0 0 0.14em #a05193, 0px 3px 0px 0px rgba(40, 40, 40, 0.6);
+.contact-button {
+  color: black;
+  background: #ff77ff !important;
+  box-shadow: inset 0 0 0 0.14em #ba53ba, 0 3px 0 0 rgba(40, 40, 40, 0.4);
 }
 
-.contact-button {}
-
-/*======================
-      Media Queries
-=======================*/
-@media screen and (min-width: 768px) {
-  .Contact .title {
-    font-size: 2.5rem;
-  }
-
-  .Contact-form-inputs {
-    flex-direction: row;
-  }
-
-  .Contact-form-inputs .input-group {
-    width: 50%;
-  }
-
-  .Contact-form-inputs .input-group:nth-child(1) {
-    margin-right: 25px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .contact-button {
-    width: 100%;
-  }
+.contact-button:hover {
+  color: black;
+  box-shadow: inset 0 0 0 0.14em #ba53ba, 0 4px 0 0 rgba(40, 40, 40, 0.6);
 }

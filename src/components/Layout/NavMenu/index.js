@@ -1,6 +1,8 @@
 import React from "react";
 import { array, bool, func, string, object } from "prop-types";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, Button } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faRedoAlt } from "@fortawesome/free-solid-svg-icons";
 
 import NavLink from "./NavLink";
 
@@ -17,7 +19,9 @@ const propTypes = {
   particles: object.isRequired,
   showSidebar: bool.isRequired,
   toggleSidebar: func.isRequired,
-  navData: array.isRequired
+  navData: array.isRequired,
+  isOnContactPage: bool.isRequired,
+  clearForm: func.isRequired
 };
 
 const defaultProps = {
@@ -26,7 +30,9 @@ const defaultProps = {
   particles: {},
   showSidebar: false,
   toggleSidebar: () => {},
-  navData: []
+  navData: [],
+  isOnContactPage: false,
+  clearForm: () => {}
 };
 
 const NavMenu = ({
@@ -35,7 +41,9 @@ const NavMenu = ({
   particles,
   showSidebar,
   toggleSidebar,
-  navData
+  navData,
+  isOnContactPage,
+  clearForm
 }) => {
   const refreshParticles = () => {
     const particleColor = theme === "light" ? "#B8BABE" : "#222";
@@ -83,10 +91,11 @@ const NavMenu = ({
             />
           ))}
         </Nav>
-        <Nav className="ml-auto">
+        <Nav className="ml-auto align-items-center">
           <span
-            className={`toggle-button d-block d-md-none ${showSidebar &&
-              "button-open"}`}
+            className={`toggle-button ${showSidebar && "button-open"}  ${
+              isOnContactPage ? "d-none" : "d-block d-md-none"
+            }`}
             onClick={toggleSidebar}
           >
             <div className="menu-bar menu-bar-top" style={menuBarColor}></div>
@@ -99,11 +108,29 @@ const NavMenu = ({
               style={menuBarColor}
             ></div>
           </span>
+
+          <div className={`mr-2 ${isOnContactPage ? "d-flex" : "d-none"}`}>
+            <a href="/" title="Home" aria-label="Home">
+              <Button className="custom-btn custom-home-btn rounded px-3">
+                <FontAwesomeIcon icon={faHome} className="mt-2" />
+              </Button>
+            </a>
+
+            <Button
+              className="custom-btn custom-refresh-btn rounded ml-2 px-3"
+              title="Refresh"
+              aria-label="Refresh Form"
+              onClick={clearForm}
+            >
+              <FontAwesomeIcon icon={faRedoAlt} className="mt-2" />
+            </Button>
+          </div>
+
           <a
             href="https://github.com/santdeleon"
             target="_blank"
             rel="noopener noreferrer"
-            className="mr-2"
+            className={`mr-2 ${isOnContactPage && "d-none"}`}
             title="Github"
             aria-label="Github"
           >
@@ -113,23 +140,22 @@ const NavMenu = ({
               <img src={GithubDark} alt="Github" />
             )}
           </a>
-          <div>
-            <span
-              role="button"
-              onClick={() => {
-                toggleTheme();
-                refreshParticles();
-              }}
-              title="Dark/Light Mode"
-              aria-label="Dark/Light Mode"
-            >
-              {theme === "dark" ? (
-                <img src={Sun} alt="Light Mode" />
-              ) : (
-                <img src={Moon} alt="Dark Mode" />
-              )}
-            </span>
-          </div>
+
+          <span
+            role="button"
+            onClick={() => {
+              toggleTheme();
+              console.log(theme);
+            }}
+            title="Dark/Light Mode"
+            aria-label="Dark/Light Mode"
+          >
+            {theme === "dark" ? (
+              <img src={Sun} alt="Light Mode" />
+            ) : (
+              <img src={Moon} alt="Dark Mode" />
+            )}
+          </span>
         </Nav>
       </Navbar>
     </div>

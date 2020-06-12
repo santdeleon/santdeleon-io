@@ -52,7 +52,6 @@ const Sidebar = ({
                 theme={theme}
                 toggleSidebar={toggleSidebar}
                 isSidebarLink={true}
-                className="mt-4"
               />
             ))}
           </ul>
@@ -73,7 +72,7 @@ const Sidebar = ({
         </Col>
       </Row>
 
-      <Row>
+      <Row className="mt-5">
         <Col>
           {Object.keys(socialIcons).map(icon => {
             return (

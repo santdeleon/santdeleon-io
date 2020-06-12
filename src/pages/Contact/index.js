@@ -1,10 +1,24 @@
-import React, { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faRedoAlt } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from "react";
+import { string, object, func } from "prop-types";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 import "./index.css";
 
-const Contact = ({ particles }) => {
+import NavMenu from "../../components/Layout/NavMenu";
+
+const propTypes = {
+  theme: string.isRequired,
+  toggleTheme: func.isRequired,
+  particles: object.isRequired
+};
+
+const defaultProps = {
+  theme: "",
+  toggleTheme: () => {},
+  particles: {}
+};
+
+const Contact = ({ theme, toggleTheme, particles }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -15,75 +29,50 @@ const Contact = ({ particles }) => {
     setMessage("");
   };
 
-  useEffect(() => {
+  window.onload = () => {
     document.title = "Sant | Contact";
 
     particles.init({
       selector: ".background"
     });
-  });
+  };
 
   return (
-    <div id="Contact" className="Contact container">
-      <div className="flex contact-nav justify-content-between my-2">
-        <div className="nav-logo flex">
-          <a
-            className="app-logo"
-            href="http://santdeleon.co"
-            aria-label="Home"
-            title="Home"
-          >
-            <h2 className="m-0">santdeleon.</h2>
-          </a>
-        </div>
-
-        <div className="flexcontact-nav-links">
-          <a href="/">
-            <button className="home-btn btn">
-              <FontAwesomeIcon icon={faHome} />
-            </button>
-          </a>
-
-          <button className="refresh-btn btn ml-2" onClick={clearForm}>
-            <FontAwesomeIcon icon={faRedoAlt} />
-          </button>
-        </div>
-      </div>
+    <>
+      <NavMenu isOnContactPage={true} clearForm={clearForm} />
 
       <div className="hyphens"></div>
 
-      <div className="contact-nav-header flex flex-column align-items-center my-5">
-        <div className="Contact-text flex">
-          <h2 className="text-center">
-            Hey, you made it! <br /> What can I do for you today?
-          </h2>
-        </div>
-      </div>
+      <Container id="Contact" className="Contact" fluid>
+        <Row className="mt-5">
+          <Col>
+            <h2 className="text-center">
+              Hey, you made it! <br /> What can I do for you today?
+            </h2>
+          </Col>
+        </Row>
 
-      <form
-        action="https://formspree.io/sant@santdeleon.co"
-        id="contactForm"
-        className="form flex flex-column mx-auto"
-        method="POST"
-      >
-        <div className="Contact-form-inputs flex flex-column">
-          <div className="input-group flex flex-column">
-            <label for="name">Name:</label>
-            <input
+        <Form
+          action="https://formspree.io/sant@santdeleon.co"
+          id="contactForm"
+          method="POST"
+        >
+          <Form.Group controlId="name">
+            <Form.Label>Name:</Form.Label>
+            <Form.Control
               type="text"
               name="name"
-              className="pl-2"
+              placeholder="Your name"
               value={name}
               onChange={e => setName(e.target.value)}
-              placeholder="Your name"
               required
             />
-          </div>
+          </Form.Group>
 
-          <div className="input-group flex flex-column">
-            <label for="email">Email:</label>
-            <input
-              type="text"
+          <Form.Group controlId="email">
+            <Form.Label>Email:</Form.Label>
+            <Form.Control
+              type="email"
               name="email"
               className="pl-2"
               value={email}
@@ -91,33 +80,42 @@ const Contact = ({ particles }) => {
               placeholder="Your email"
               required
             />
-          </div>
-        </div>
+            <Form.Text className="text-muted">
+              No worries! I won't share your email with anyone.
+            </Form.Text>
+          </Form.Group>
 
-        <div className="Contact-form-textarea">
-          <div className="input-group flex flex-column">
-            <label for="message">Message:</label>
-            <textarea
+          <Form.Group controlId="message">
+            <Form.Label>Message:</Form.Label>
+            <Form.Control
+              as="textarea"
               type="text"
               name="message"
-              className="pl-2 pt-2"
+              className="pl-2 pt-2 contact-textarea"
               value={message}
               rows={5}
               onChange={e => setMessage(e.target.value)}
               placeholder="Tell me what you're thinking..."
               required
             />
-          </div>
-        </div>
+          </Form.Group>
 
-        <div className="flex justify-content-center mt-4">
-          <button className="contact-button btn" type="submit">
-            Send
-          </button>
-        </div>
-      </form>
-    </div>
+          <Row className="mt-4">
+            <Col className="text-center">
+              <Button
+                className="custom-button contact-button pt-2 btn-block"
+                type="submit"
+              >
+                Send
+              </Button>
+            </Col>
+          </Row>
+        </Form>
+      </Container>
+    </>
   );
 };
 
+Contact.propTypes = propTypes;
+Contact.defaultProps = defaultProps;
 export default Contact;
