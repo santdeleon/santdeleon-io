@@ -7,20 +7,31 @@ const propTypes = {
   icon: object.isRequired,
   name: string.isRequired,
   theme: string.isRequired,
-  href: string.isRequired
+  href: string.isRequired,
+  className: string.isRequired
 };
 
 const defaultProps = {
   icon: {},
   name: "",
   theme: "",
-  href: ""
+  href: "",
+  className: ""
 };
 
-const NavLink = ({ icon, name, theme, href, toggleSidebar, isSidebarLink }) => (
+const NavLink = ({
+  icon,
+  name,
+  theme,
+  href,
+  toggleSidebar,
+  isSidebarLink,
+  className
+}) => (
   <a
     href={href}
-    className="nav-link fromLeft align-items-center"
+    className={`nav-link fromLeft align-items-center ${isSidebarLink &&
+      className}`}
     style={theme === "light" ? { color: "#000" } : { color: "#fff" }}
     onClick={isSidebarLink && toggleSidebar}
   >

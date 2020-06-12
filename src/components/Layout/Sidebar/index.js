@@ -32,7 +32,7 @@ const Sidebar = ({
 }) => {
   return (
     <div
-      className={`Sidebar d-flex d-md-none flex-column align-items-center justify-content-around menu-wrap ${showSidebar &&
+      className={`Sidebar d-flex d-md-none flex-column align-items-center justify-content-center menu-wrap ${showSidebar &&
         "menu-show"}`}
       style={
         theme === "light"
@@ -52,13 +52,26 @@ const Sidebar = ({
                 theme={theme}
                 toggleSidebar={toggleSidebar}
                 isSidebarLink={true}
+                className="mt-4"
               />
             ))}
           </ul>
         </Col>
       </Row>
 
-      <Row className="hyphens"></Row>
+      <Row className="my-5">
+        <Col>
+          <div className="rainbow-top" style={{ height: "5px" }}>
+            this is not a bug
+          </div>
+          <div className="rainbow-top" style={{ height: "5px" }}>
+            this is not a bug
+          </div>
+          <div className="rainbow-top" style={{ height: "5px" }}>
+            this is not a bug
+          </div>
+        </Col>
+      </Row>
 
       <Row>
         <Col>
