@@ -1,31 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar, Nav } from "react-bootstrap";
-import { array, bool, func, string, object } from "prop-types";
+import { array, bool, func, string } from "prop-types";
+import { Folder, Code, MessageCircle } from "react-feather";
 
 import NavLink from "./NavLink";
+
+import "./index.css";
 
 import GithubLight from "../../../assets/img/github-light.svg";
 import GithubDark from "../../../assets/img/github-dark.svg";
 import Sun from "../../../assets/img/sun.svg";
 import Moon from "../../../assets/img/moon.svg";
 
-import "./index.css";
+const propTypes = {
+  navLinks: array.isRequired,
+  showSidebar: bool.isRequired,
+  theme: string.isRequired,
+  toggleTheme: func.isRequired
+};
 
-const NavMenu = ({
-  navLinks,
-  showSidebar,
-  theme,
-  toggleTheme,
-  toggleSidebar,
-  socialIcons,
-  particles
-}) => {
+const defaultProps = {
+  navLinks: [],
+  showSidebar: false,
+  theme: "light",
+  toggleTheme: () => {}
+};
+
+const navData = [
+  {
+    id: 0,
+    name: "Portfolio",
+    href: "#Portfolio",
+    icon: <Folder size="20" height={16} />
+  },
+  {
+    id: 1,
+    name: "Technologies",
+    href: "#Tech",
+    icon: <Code size="20" height={16} />
+  },
+  {
+    id: 2,
+    name: "Get in touch",
+    href: "/contact",
+    icon: <MessageCircle size="20" height={16} />
+  }
+];
+
+const NavMenu = ({ theme, toggleTheme, particles }) => {
+  const [showSidebar, setShowSidebar] = useState(false);
+
+  const toggleSidebar = () => setShowSidebar(!showSidebar);
+
   const menuTopBottomColor =
     theme === "light" ? { borderColor: "#000" } : { borderColor: "#fff" };
+
   const menuMiddleColor =
     theme === "light"
       ? { backgroundColor: "#000" }
       : { backgroundColor: "#fff" };
+
   const textColor = theme === "light" ? { color: "#000" } : { color: "#fff" };
 
   const refreshParticles = () => {
@@ -38,7 +72,7 @@ const NavMenu = ({
   };
 
   return (
-    <div id="NavMenu" className="NavMenu">
+    <div className="NavMenu">
       <Navbar>
         <Navbar.Brand
           href="https://santdeleon.io"
@@ -52,7 +86,7 @@ const NavMenu = ({
           Sant Deleon
         </Navbar.Brand>
         <Nav className="mr-auto d-none d-md-flex">
-          {navLinks.map(link => (
+          {navData.map(link => (
             <NavLink
               className="mr-2"
               key={link.id}
@@ -84,11 +118,11 @@ const NavMenu = ({
           </span>
           <a
             href="https://github.com/santdeleon"
-            className="mr-2"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Github"
+            className="mr-2"
             title="Github"
+            aria-label="Github"
           >
             {theme === "light" ? (
               <img src={GithubLight} alt="Github" />
@@ -119,13 +153,6 @@ const NavMenu = ({
   );
 };
 
-NavMenu.propTypes = {
-  navLinks: array.isRequired,
-  showSidebar: bool.isRequired,
-  theme: string.isRequired,
-  toggleTheme: func.isRequired,
-  toggleSidebar: func.isRequired,
-  socialIcons: object.isRequired
-};
-
+NavMenu.propTypes = propTypes;
+NavMenu.defaultProps = defaultProps;
 export default NavMenu;

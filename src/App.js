@@ -25,7 +25,7 @@ import {
 
 function App() {
   const [theme, setTheme] = useState("light");
-  const [showSidebar, setShowSidebar] = useState(false);
+
   const socialIcons = {
     linkedin: {
       id: 0,
@@ -43,18 +43,9 @@ function App() {
       url: "mailto:sant@santdeleon.co"
     }
   };
-  const navLinks = [
-    { id: 0, name: "Portfolio", href: "#Portfolio", icon: "Folder" },
-    { id: 1, name: "Technologies", href: "#Tech", icon: "Code" },
-    { id: 2, name: "Get in touch", href: "/contact", icon: "MessageCircle" }
-  ];
 
   const toggleTheme = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
-  };
-
-  const toggleSidebar = () => {
-    setShowSidebar(!showSidebar);
   };
 
   return (
@@ -71,11 +62,8 @@ function App() {
             render={props => (
               <Layout
                 toggleTheme={toggleTheme}
-                toggleSidebar={toggleSidebar}
-                showSidebar={showSidebar}
                 theme={theme}
                 socialIcons={socialIcons}
-                navLinks={navLinks}
                 github={faGithub}
                 angellist={faAngellist}
                 linkedin={faLinkedinIn}
@@ -94,11 +82,8 @@ function App() {
             render={props => (
               <Contact
                 toggleTheme={toggleTheme}
-                toggleSidebar={toggleSidebar}
-                showSidebar={showSidebar}
                 theme={theme}
                 socialIcons={socialIcons}
-                navLinks={navLinks}
                 refresh={faRedoAlt}
                 home={faHome}
                 particles={Particles}

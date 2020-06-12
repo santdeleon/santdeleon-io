@@ -1,19 +1,37 @@
 import React, { useEffect } from "react";
+import { func, string, object } from "prop-types";
 
 import NavMenu from "./NavMenu";
-import Sidebar from "./Sidebar";
-import Header from "./Header";
-import Portfolio from "./Main/Portfolio";
-import Tech from "./Main/Tech";
-import PreFooter from "./Main/PreFooter";
-import Footer from "./Footer";
+// import Sidebar from "./Sidebar";
+// import Header from "./Header";
+// import Portfolio from "./Main/Portfolio";
+// import Tech from "./Main/Tech";
+// import PreFooter from "./Main/PreFooter";
+// import Footer from "./Footer";
+
+const propTypes = {
+  theme: string.isRequired,
+  toggleTheme: func.isRequired,
+  socialIcons: object.isRequired,
+  github: object.isRequired,
+  heart: object.isRequired,
+  copyright: object.isRequired,
+  particles: object.isRequired
+};
+
+const defaultProps = {
+  theme: "light",
+  toggleTheme: () => {},
+  socialIcons: {},
+  github: {},
+  heart: {},
+  copyright: {},
+  particles: {}
+};
 
 const Layout = ({
   theme,
   toggleTheme,
-  showSidebar,
-  toggleSidebar,
-  navLinks,
   socialIcons,
   github,
   heart,
@@ -26,15 +44,7 @@ const Layout = ({
 
   return (
     <>
-      <NavMenu
-        theme={theme}
-        toggleTheme={toggleTheme}
-        showSidebar={showSidebar}
-        toggleSidebar={toggleSidebar}
-        navLinks={navLinks}
-        socialIcons={socialIcons}
-        particles={particles}
-      />
+      <NavMenu theme={theme} toggleTheme={toggleTheme} particles={particles} />
 
       {/* <Sidebar
         theme={theme}
@@ -62,4 +72,6 @@ const Layout = ({
   );
 };
 
+Layout.propTypes = propTypes;
+Layout.defaultProps = defaultProps;
 export default Layout;
