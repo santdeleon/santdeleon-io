@@ -72,9 +72,7 @@ const Sidebar = ({
                 key={socialIcons[icon].id}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`social-icon ${
-                  theme === "light" ? "text-dark" : "text-light"
-                }`}
+                className={`${theme === "light" ? "text-dark" : "text-light"}`}
                 icon={socialIcons[icon].icon}
               />
             </a>

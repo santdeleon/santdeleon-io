@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { func, string, object } from "prop-types";
 import { Folder, Code, MessageCircle } from "react-feather";
+import { faAngellist, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import {
+  faEnvelope,
+  faHeart,
+  faCopyright
+} from "@fortawesome/free-solid-svg-icons";
 
 import NavMenu from "./NavMenu";
 import Sidebar from "./Sidebar";
@@ -8,14 +14,13 @@ import Sidebar from "./Sidebar";
 // import Portfolio from "./Main/Portfolio";
 // import Tech from "./Main/Tech";
 // import PreFooter from "./Main/PreFooter";
-// import Footer from "./Footer";
+import Footer from "./Footer";
 
 import "./index.css";
 
 const propTypes = {
   theme: string.isRequired,
   toggleTheme: func.isRequired,
-  socialIcons: object.isRequired,
   github: object.isRequired,
   heart: object.isRequired,
   copyright: object.isRequired,
@@ -25,7 +30,6 @@ const propTypes = {
 const defaultProps = {
   theme: "light",
   toggleTheme: () => {},
-  socialIcons: {},
   github: {},
   heart: {},
   copyright: {},
@@ -53,10 +57,27 @@ const navData = [
   }
 ];
 
+const socialIcons = {
+  linkedin: {
+    id: 0,
+    icon: faLinkedinIn,
+    url: "https://www.linkedin.com/in/sant-deleon/"
+  },
+  angellist: {
+    id: 1,
+    icon: faAngellist,
+    url: "https://angel.co/santdeleon"
+  },
+  mail: {
+    id: 2,
+    icon: faEnvelope,
+    url: "mailto:sant@santdeleon.co"
+  }
+};
+
 const Layout = ({
   theme,
   toggleTheme,
-  socialIcons,
   github,
   heart,
   copyright,
@@ -92,13 +113,14 @@ const Layout = ({
       <Tech theme={theme} />
 
       <PreFooter theme={theme} />
+      */}
 
       <Footer
-        heart={heart}
-        copyright={copyright}
+        heart={faHeart}
+        copyright={faCopyright}
         socialIcons={socialIcons}
         theme={theme}
-      /> */}
+      />
     </div>
   );
 };
