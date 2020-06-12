@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+import { array, bool, func, string, object } from "prop-types";
 import { Navbar, Nav } from "react-bootstrap";
-import { array, bool, func, string } from "prop-types";
-import { Folder, Code, MessageCircle } from "react-feather";
 
 import NavLink from "./NavLink";
 
@@ -13,63 +12,50 @@ import Sun from "../../../assets/img/sun.svg";
 import Moon from "../../../assets/img/moon.svg";
 
 const propTypes = {
-  navLinks: array.isRequired,
-  showSidebar: bool.isRequired,
   theme: string.isRequired,
-  toggleTheme: func.isRequired
+  toggleTheme: func.isRequired,
+  particles: object.isRequired,
+  showSidebar: bool.isRequired,
+  toggleSidebar: func.isRequired,
+  navData: array.isRequired
 };
 
 const defaultProps = {
-  navLinks: [],
-  showSidebar: false,
   theme: "light",
-  toggleTheme: () => {}
+  toggleTheme: () => {},
+  particles: {},
+  showSidebar: false,
+  toggleSidebar: () => {},
+  navData: []
 };
 
-const navData = [
-  {
-    id: 0,
-    name: "Portfolio",
-    href: "#Portfolio",
-    icon: <Folder size="20" height={16} />
-  },
-  {
-    id: 1,
-    name: "Technologies",
-    href: "#Tech",
-    icon: <Code size="20" height={16} />
-  },
-  {
-    id: 2,
-    name: "Get in touch",
-    href: "/contact",
-    icon: <MessageCircle size="20" height={16} />
-  }
-];
-
-const NavMenu = ({ theme, toggleTheme, particles }) => {
-  const [showSidebar, setShowSidebar] = useState(false);
-
-  const toggleSidebar = () => setShowSidebar(!showSidebar);
-
-  const menuTopBottomColor =
-    theme === "light" ? { borderColor: "#000" } : { borderColor: "#fff" };
-
-  const menuMiddleColor =
-    theme === "light"
-      ? { backgroundColor: "#000" }
-      : { backgroundColor: "#fff" };
-
-  const textColor = theme === "light" ? { color: "#000" } : { color: "#fff" };
-
+const NavMenu = ({
+  theme,
+  toggleTheme,
+  particles,
+  showSidebar,
+  toggleSidebar,
+  navData
+}) => {
   const refreshParticles = () => {
-    const particleColor = theme === "dark" ? "#222" : "#B8BABE";
+    const particleColor = theme === "light" ? "#B8BABE" : "#222";
 
     particles.init({
       color: particleColor,
       speed: 0.2
     });
   };
+
+  const menuBarColor =
+    theme === "light"
+      ? {
+          backgroundColor: "#000",
+          borderColor: "#000"
+        }
+      : {
+          backgroundColor: "#fff",
+          borderColor: "#fff"
+        };
 
   return (
     <div className="NavMenu">
@@ -78,7 +64,7 @@ const NavMenu = ({ theme, toggleTheme, particles }) => {
           href="https://santdeleon.io"
           aria-label="Home"
           title="Home"
-          style={textColor}
+          style={theme === "light" ? { color: "#000" } : { color: "#fff" }}
         >
           <span role="img" aria-label="Rainbow Emoji">
             🌈
@@ -103,17 +89,14 @@ const NavMenu = ({ theme, toggleTheme, particles }) => {
               "button-open"}`}
             onClick={toggleSidebar}
           >
-            <div
-              className="menu-bar menu-bar-top"
-              style={menuTopBottomColor}
-            ></div>
+            <div className="menu-bar menu-bar-top" style={menuBarColor}></div>
             <div
               className="menu-bar menu-bar-middle"
-              style={menuMiddleColor}
+              style={menuBarColor}
             ></div>
             <div
               className="menu-bar menu-bar-bottom"
-              style={menuTopBottomColor}
+              style={menuBarColor}
             ></div>
           </span>
           <a

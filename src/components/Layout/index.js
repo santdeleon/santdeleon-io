@@ -1,13 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { func, string, object } from "prop-types";
+import { Folder, Code, MessageCircle } from "react-feather";
 
 import NavMenu from "./NavMenu";
-// import Sidebar from "./Sidebar";
+import Sidebar from "./Sidebar";
 // import Header from "./Header";
 // import Portfolio from "./Main/Portfolio";
 // import Tech from "./Main/Tech";
 // import PreFooter from "./Main/PreFooter";
 // import Footer from "./Footer";
+
+import "./index.css";
 
 const propTypes = {
   theme: string.isRequired,
@@ -29,6 +32,27 @@ const defaultProps = {
   particles: {}
 };
 
+const navData = [
+  {
+    id: 0,
+    name: "Portfolio",
+    href: "#Portfolio",
+    icon: <Folder size="20" height={16} />
+  },
+  {
+    id: 1,
+    name: "Technologies",
+    href: "#Tech",
+    icon: <Code size="20" height={16} />
+  },
+  {
+    id: 2,
+    name: "Get in touch",
+    href: "/contact",
+    icon: <MessageCircle size="20" height={16} />
+  }
+];
+
 const Layout = ({
   theme,
   toggleTheme,
@@ -38,22 +62,29 @@ const Layout = ({
   copyright,
   particles
 }) => {
-  useEffect(() => {
-    document.title = "Sant - Blockchain Engineer & Front-end Developer";
-  });
+  const [showSidebar, setShowSidebar] = useState(false);
+
+  const toggleSidebar = () => setShowSidebar(!showSidebar);
 
   return (
-    <>
-      <NavMenu theme={theme} toggleTheme={toggleTheme} particles={particles} />
-
-      {/* <Sidebar
+    <div className="Layout">
+      <NavMenu
         theme={theme}
+        toggleTheme={toggleTheme}
+        particles={particles}
         showSidebar={showSidebar}
-        navLinks={navLinks}
-        socialIcons={socialIcons}
         toggleSidebar={toggleSidebar}
+        navData={navData}
       />
 
+      <Sidebar
+        theme={theme}
+        showSidebar={showSidebar}
+        toggleSidebar={toggleSidebar}
+        socialIcons={socialIcons}
+        navData={navData}
+      />
+      {/*
       <Header theme={theme} particles={particles} />
 
       <Portfolio github={github} />
@@ -68,7 +99,7 @@ const Layout = ({
         socialIcons={socialIcons}
         theme={theme}
       /> */}
-    </>
+    </div>
   );
 };
 

@@ -21,7 +21,7 @@ function Contact({ home, refresh, particles }) {
   }
 
   useEffect(() => {
-    document.title = "Sant - Contact";
+    document.title = "Sant | Contact";
   });
 
   return (
