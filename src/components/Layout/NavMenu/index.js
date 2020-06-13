@@ -86,7 +86,7 @@ const NavMenu = ({
               key={link.id}
               name={link.name}
               href={link.href}
-              icon={link.icon}
+              icon={link.Icon}
               theme={theme}
             />
           ))}

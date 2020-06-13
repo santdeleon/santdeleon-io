@@ -1,16 +1,10 @@
 import React, { useState } from "react";
 import { func, string, object } from "prop-types";
-import { Folder, Code, MessageCircle } from "react-feather";
-import {
-  faAngellist,
-  faLinkedinIn,
-  faGithub
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faEnvelope,
-  faHeart,
-  faCopyright
-} from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faHeart, faCopyright } from "@fortawesome/free-solid-svg-icons";
+
+import user from "../../api/user";
+import brand from "../../api/brand";
 
 import NavMenu from "./NavMenu";
 import Sidebar from "./Sidebar";
@@ -36,45 +30,6 @@ const defaultProps = {
   particles: {}
 };
 
-const navData = [
-  {
-    id: 0,
-    name: "Portfolio",
-    href: "#Portfolio",
-    icon: <Folder size="20" height={16} />
-  },
-  {
-    id: 1,
-    name: "Technologies",
-    href: "#Tech",
-    icon: <Code size="20" height={16} />
-  },
-  {
-    id: 2,
-    name: "Get in touch",
-    href: "/contact",
-    icon: <MessageCircle size="20" height={16} />
-  }
-];
-
-const socialIcons = {
-  linkedin: {
-    id: 0,
-    icon: faLinkedinIn,
-    url: "https://www.linkedin.com/in/sant-deleon/"
-  },
-  angellist: {
-    id: 1,
-    icon: faAngellist,
-    url: "https://angel.co/santdeleon"
-  },
-  mail: {
-    id: 2,
-    icon: faEnvelope,
-    url: "mailto:sant@santdeleon.co"
-  }
-};
-
 const Layout = ({
   theme,
   toggleTheme,
@@ -95,25 +50,25 @@ const Layout = ({
         particles={particles}
         showSidebar={showSidebar}
         toggleSidebar={toggleSidebar}
-        navData={navData}
+        navData={brand.navData}
       />
 
       <Sidebar
         theme={theme}
         showSidebar={showSidebar}
         toggleSidebar={toggleSidebar}
-        socialIcons={socialIcons}
-        navData={navData}
+        socialIcons={brand.socialIcons}
+        navData={brand.navData}
       />
 
-      <Header theme={theme} particles={particles} />
+      <Header theme={theme} particles={particles} user={user} />
 
-      <Main theme={theme} github={faGithub} />
+      <Main theme={theme} github={faGithub} user={user} />
 
       <Footer
         heart={faHeart}
         copyright={faCopyright}
-        socialIcons={socialIcons}
+        socialIcons={brand.socialIcons}
         theme={theme}
       />
     </div>

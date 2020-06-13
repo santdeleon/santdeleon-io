@@ -9,9 +9,9 @@ import Layout from "./components/Layout";
 import Contact from "./pages/Contact";
 
 import { lightTheme, darkTheme } from "./utils/theme";
-import { GlobalStyles } from "./utils/global";
+import { GlobalStyles } from "./utils/globalStyles";
 
-function App() {
+const App = () => {
   const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => {
@@ -21,8 +21,12 @@ function App() {
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <div className="App">
+        {/* rainbow top border on all pages */}
         <div className="rainbow-top"></div>
+
+        {/* provides globalStyles to entire app */}
         <GlobalStyles />
+
         <Switch>
           <Route
             exact
@@ -50,6 +54,6 @@ function App() {
       </div>
     </ThemeProvider>
   );
-}
+};
 
 export default App;

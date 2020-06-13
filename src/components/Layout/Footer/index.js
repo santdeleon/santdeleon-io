@@ -41,24 +41,20 @@ const Footer = ({ theme, socialIcons, copyright, heart }) => {
 
       <Row className="px-3">
         <Col xs={6} md={4}>
-          {Object.keys(socialIcons).map(icon => {
-            return (
-              <a
-                href={socialIcons[icon].url}
-                key={socialIcons[icon].id}
-                className={`${socialIcons[icon].id !== 0 && "ml-3"}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon
-                  className={`${
-                    theme === "light" ? "text-dark" : "text-light"
-                  }`}
-                  icon={socialIcons[icon].icon}
-                />
-              </a>
-            );
-          })}
+          {Object.keys(socialIcons).map(icon => (
+            <a
+              href={socialIcons[icon].url}
+              key={socialIcons[icon].id}
+              className={`${socialIcons[icon].id !== 0 && "ml-3"}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon
+                className={`${theme === "light" ? "text-dark" : "text-light"}`}
+                icon={socialIcons[icon].icon}
+              />
+            </a>
+          ))}
         </Col>
         <Col md={4} className="text-center d-none d-md-block">
           <p className="m-0">
@@ -81,5 +77,4 @@ const Footer = ({ theme, socialIcons, copyright, heart }) => {
 
 Footer.propTypes = propTypes;
 Footer.defaultProps = defaultProps;
-
 export default Footer;

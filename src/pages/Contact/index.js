@@ -51,7 +51,6 @@ const Contact = ({ theme, toggleTheme, particles }) => {
         theme={theme}
         toggleTheme={toggleTheme}
       />
-      <div className="hyphens"></div>
 
       <Container id="Contact" className="Contact" fluid>
         <Row className="mt-5">

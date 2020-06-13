@@ -10,23 +10,17 @@ import SantDark from "../../../assets/img/sant-dark.svg";
 
 const propTypes = {
   theme: string.isRequired,
-  particles: object.isRequired
+  particles: object.isRequired,
+  user: object.isRequired
 };
 
 const defaultProps = {
   theme: "light",
-  particles: {}
+  particles: {},
+  user: []
 };
 
-const skills = [
-  { id: 0, name: "Blockchain Engineer", color: "#F76F6E" },
-  { id: 1, name: "Front-end Developer", color: "#FBC07A" },
-  { id: 2, name: "UI/UX Designer-ish", color: "#FCE073" },
-  { id: 3, name: "Tech Enthusiast", color: "#A5F29F" },
-  { id: 4, name: "Coffee Drinker", color: "#82E1F3" }
-];
-
-const Header = ({ theme, particles }) => {
+const Header = ({ theme, particles, user }) => {
   window.onload = () => {
     particles.init({
       selector: ".background",
@@ -65,7 +59,7 @@ const Header = ({ theme, particles }) => {
         </Row>
 
         <Row className="mb-5 d-none d-md-flex">
-          {skills.map(skill => {
+          {user.skills.map(skill => {
             return (
               <Col key={skill.id}>
                 <div

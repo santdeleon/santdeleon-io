@@ -2,13 +2,7 @@
   font-family: "Calibre-Semibold";
 }
 
-.hyphens {
-  background: url("../../assets/img/hyphens.svg");
-  height: 1px;
-  width: 100%;
-}
-
-.Contact form {
+form {
   width: 640px;
   max-width: 100%;
   margin: auto;
