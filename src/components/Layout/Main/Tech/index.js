@@ -29,7 +29,7 @@ const Tech = ({ theme, user }) => {
       <Row className="py-5">
         <Col className="text-center">
           <h4 className="font-weight-light text-muted">
-            Check out some user.technologies
+            Check out some technologies
           </h4>
           <h5>That I'm pretty good with</h5>
         </Col>
