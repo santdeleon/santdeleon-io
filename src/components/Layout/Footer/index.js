@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { string, object } from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
 
 import "./index.css";
 
@@ -21,7 +22,22 @@ const defaultProps = {
 
 const Footer = ({ theme, socialIcons, copyright, heart }) => {
   return (
-    <footer className="Footer pb-3">
+    <footer id="Footer" className="Footer pb-3">
+      <Row>
+        <Col className="text-right mr-3">
+          <a
+            href="#NavMenu"
+            title="To the top of the page"
+            aria-label="To the top of the page"
+          >
+            <FontAwesomeIcon
+              className={`${theme === "light" ? "text-warning" : "text-light"}`}
+              icon={faArrowCircleUp}
+            />
+          </a>
+        </Col>
+      </Row>
+
       <Row className="px-3">
         <Col xs={6} md={4}>
           {Object.keys(socialIcons).map(icon => {

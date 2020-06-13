@@ -66,7 +66,7 @@ const NavMenu = ({
         };
 
   return (
-    <div className="NavMenu">
+    <div id="NavMenu" className="NavMenu">
       <Navbar>
         <Navbar.Brand
           href="https://santdeleon.io"
