@@ -31,8 +31,9 @@ const Footer = ({ theme, socialIcons, copyright, heart }) => {
             aria-label="To the top of the page"
           >
             <FontAwesomeIcon
-              className={`${theme === "light" ? "text-warning" : "text-light"}`}
+              className={`${theme === "light" ? "green" : "yellow"}`}
               icon={faArrowCircleUp}
+              style={{ fontSize: "24px" }}
             />
           </a>
         </Col>
