@@ -38,7 +38,7 @@ export default {
     mail: {
       id: 2,
       icon: faEnvelope,
-      url: "mailto:sant@santdeleon.co"
+      url: "mailto:sant@santdeleon.io"
     }
   }
 };

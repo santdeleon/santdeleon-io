@@ -62,7 +62,7 @@ const Contact = ({ theme, toggleTheme, particles }) => {
         </Row>
 
         <Form
-          action="https://formspree.io/sant@santdeleon.co"
+          action="https://formspree.io/sant@santdeleon.io"
           id="contactForm"
           method="POST"
         >
