@@ -18,15 +18,17 @@ const defaultProps = {
 };
 
 const NavLink = ({ icon, name, theme, href, toggleSidebar, isSidebarLink }) => (
-  <a
-    href={href}
-    className="nav-link fromLeft align-items-center"
-    style={theme === "light" ? { color: "#000" } : { color: "#fff" }}
-    onClick={isSidebarLink && toggleSidebar}
-  >
-    <span className="mr-1">{icon}</span>
-    {name}
-  </a>
+  <li>
+    <a
+      href={href}
+      className="nav-link fromLeft align-items-center"
+      style={theme === "light" ? { color: "#000" } : { color: "#fff" }}
+      onClick={isSidebarLink && toggleSidebar}
+    >
+      <span className="mr-1">{icon}</span>
+      {name}
+    </a>
+  </li>
 );
 
 NavLink.propTypes = propTypes;
