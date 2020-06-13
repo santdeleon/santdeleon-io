@@ -145,6 +145,7 @@ const NavMenu = ({
             role="button"
             onClick={() => {
               toggleTheme();
+              refreshParticles();
               console.log(theme);
             }}
             title="Dark/Light Mode"

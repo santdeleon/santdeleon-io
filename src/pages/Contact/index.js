@@ -23,7 +23,12 @@ const Contact = ({ theme, toggleTheme, particles }) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const whichTheme = {
+    backgroundColor: theme === "light" ? "#fff" : "#212121"
+  };
+
   const clearForm = e => {
+    e.preventDefault();
     setName("");
     setEmail("");
     setMessage("");
@@ -39,8 +44,13 @@ const Contact = ({ theme, toggleTheme, particles }) => {
 
   return (
     <>
-      <NavMenu isOnContactPage={true} clearForm={clearForm} />
-
+      <NavMenu
+        isOnContactPage={true}
+        clearForm={clearForm}
+        particles={particles}
+        theme={theme}
+        toggleTheme={toggleTheme}
+      />
       <div className="hyphens"></div>
 
       <Container id="Contact" className="Contact" fluid>
@@ -65,6 +75,7 @@ const Contact = ({ theme, toggleTheme, particles }) => {
               placeholder="Your name"
               value={name}
               onChange={e => setName(e.target.value)}
+              style={whichTheme}
               required
             />
           </Form.Group>
@@ -78,6 +89,7 @@ const Contact = ({ theme, toggleTheme, particles }) => {
               value={email}
               onChange={e => setEmail(e.target.value)}
               placeholder="Your email"
+              style={whichTheme}
               required
             />
             <Form.Text className="text-muted">
@@ -96,6 +108,7 @@ const Contact = ({ theme, toggleTheme, particles }) => {
               rows={5}
               onChange={e => setMessage(e.target.value)}
               placeholder="Tell me what you're thinking..."
+              style={whichTheme}
               required
             />
           </Form.Group>
