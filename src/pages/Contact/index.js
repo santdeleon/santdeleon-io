@@ -62,12 +62,13 @@ const Contact = ({ theme, toggleTheme, particles }) => {
         </Row>
 
         <Form
+          className="mt-4"
           action="https://formspree.io/sant@santdeleon.io"
           id="contactForm"
           method="POST"
         >
           <Form.Group controlId="name">
-            <Form.Label>Name:</Form.Label>
+            <Form.Label className="text-dark">Name:</Form.Label>
             <Form.Control
               type="text"
               name="name"
@@ -80,7 +81,7 @@ const Contact = ({ theme, toggleTheme, particles }) => {
           </Form.Group>
 
           <Form.Group controlId="email">
-            <Form.Label>Email:</Form.Label>
+            <Form.Label className="text-dark">Email:</Form.Label>
             <Form.Control
               type="email"
               name="email"
@@ -91,13 +92,10 @@ const Contact = ({ theme, toggleTheme, particles }) => {
               style={whichTheme}
               required
             />
-            <Form.Text className="text-muted">
-              No worries! I won't share your email with anyone.
-            </Form.Text>
           </Form.Group>
 
           <Form.Group controlId="message">
-            <Form.Label>Message:</Form.Label>
+            <Form.Label className="text-dark">Message:</Form.Label>
             <Form.Control
               as="textarea"
               type="text"

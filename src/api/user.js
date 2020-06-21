@@ -18,7 +18,7 @@ export default {
       className: "coinflip-project-card",
       url: "https://github.com/santdeleon/coinflip",
       img: Ethereum,
-      width: 40,
+      width: 50,
       text:
         "Decentralized gambling <br /> application built on the <br /> Ethereum Network",
       industry: "Blockchain, Gambling & Gaming"

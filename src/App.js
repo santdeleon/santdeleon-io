@@ -29,7 +29,7 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <div className="App">
+      <div id="App" className="App">
         {/* rainbow top border on all pages */}
         <div className="rainbow-top"></div>
 

@@ -19,9 +19,9 @@ const defaultProps = {
 
 const Main = ({ theme, github, user }) => (
   <main>
-    {/* <Portfolio github={github} user={user} /> */}
+    <Portfolio github={github} user={user} />
     <Tech theme={theme} user={user} />
-    {/* <Interested theme={theme} /> */}
+    <Interested theme={theme} />
   </main>
 );
 

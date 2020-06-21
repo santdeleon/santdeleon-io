@@ -29,10 +29,22 @@ const Tech = ({ theme, user }) => {
       : { backgroundColor: "#212121" };
 
   return (
-    <Container fluid id="Tech" className="Tech py-5" style={themeBgColor}>
-      <Row className="justify-content-center px-4">
-        <Col md={6} className={`tech-container pb-4 px-0`} style={themeBgColor}>
+    <Container id="Tech" className="Tech py-5" style={themeBgColor}>
+      <Row>
+        <Col>
+          <h4 className="text-muted mb-0">Technologies and Skills</h4>
+          <h3 className="font-weight-bold">I've developed</h3>
+        </Col>
+      </Row>
+      <Row className="justify-content-center px-3 my-5">
+        <Col
+          md={10}
+          lg={6}
+          className={`tech-container pb-4 px-0`}
+          style={themeBgColor}
+        >
           <div className="rainbow-rounded-top px-5 py-3"></div>
+
           <Row className="mt-3">
             <Col md={6} className="ml-3">
               <FontAwesomeIcon icon={faCode} className="text-dark" />

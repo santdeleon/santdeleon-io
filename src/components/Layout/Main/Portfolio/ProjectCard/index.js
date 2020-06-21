@@ -40,7 +40,7 @@ const ProjectCard = ({
   return (
     <a
       id={id}
-      className={`${className} project d-flex flex-column align-items-start my-3 px-4 py-5 rounded`}
+      className={`${className} project d-flex flex-column align-items-start my-3 px-4 py-3 rounded`}
       href={url}
       target="_blank"
       rel="noopener noreferrer"

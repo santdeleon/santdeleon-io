@@ -6,8 +6,8 @@
   background: linear-gradient(
     to right,
     #f76f6f,
-    #fcfc83,
     #fcca67,
+    #fcfc83,
     #84ffaf,
     #83e0f7,
     #ca67e5,
@@ -16,11 +16,11 @@
   padding: 5px;
 }
 
-/* .hyphens {
-  background: url("/assets/img/hyphens.svg");
+.hyphens {
+  background: url("./assets/img/hyphens.svg");
   height: 1px;
   width: 100%;
-} */
+}
 
 ::-webkit-scrollbar {
   background-color: #ff87e1;
@@ -35,8 +35,8 @@
     #ca67e5,
     #83e0f7,
     #84ffaf,
-    #fcca67,
     #fcfc83,
+    #fcca67,
     #f76f6f
   );
 }

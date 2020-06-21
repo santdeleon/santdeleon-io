@@ -26,12 +26,12 @@ const Footer = ({ theme, socialIcons, copyright, heart }) => {
       <Row>
         <Col className="text-right mr-3">
           <a
-            href="#NavMenu"
+            href="#App"
             title="To the top of the page"
             aria-label="To the top of the page"
           >
             <FontAwesomeIcon
-              className={`${theme === "light" ? "green" : "yellow"}`}
+              className={`${theme === "light" ? "red" : "yellow"}`}
               icon={faArrowCircleUp}
               style={{ fontSize: "24px" }}
             />

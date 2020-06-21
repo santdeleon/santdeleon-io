@@ -45,7 +45,10 @@ const Header = ({ theme, user }) => {
               </h1>
               <h5 className="text-muted font-weight-light mt-4">
                 with a knack for creating cutting edge products with elegance
-                and style.
+                and style.{" "}
+                <span role="img" aria-label="Sparkle Emoji">
+                  ✨
+                </span>
               </h5>
             </div>
           </Col>
