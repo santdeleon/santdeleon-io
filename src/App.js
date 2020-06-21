@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router";
-import { Row, Col } from "react-bootstrap";
 import { ThemeProvider } from "styled-components";
 import Particles from "particlesjs";
 
 import "./App.css";
-
-import Loader from "./assets/img/rainbow-loader-1.gif";
 
 import Layout from "./components/Layout";
 import Contact from "./pages/Contact";
@@ -16,7 +13,6 @@ import { GlobalStyles } from "./utils/globalStyles";
 
 const App = () => {
   const [theme, setTheme] = useState("light");
-  const [isLoading, setIsLoading] = useState(true);
 
   const toggleTheme = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
@@ -29,21 +25,7 @@ const App = () => {
     });
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-  });
-
-  if (isLoading) {
-    return (
-      <Row>
-        <Col className="text-center" style={{ backgroundColor: "#042260" }}>
-          <img src={Loader} alt="Loading Screen" style={{ height: "100vh" }} />
-        </Col>
-      </Row>
-    );
-  }
+  useEffect(() => {});
 
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
