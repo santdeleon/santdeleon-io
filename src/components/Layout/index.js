@@ -61,7 +61,7 @@ const Layout = ({
         navData={brand.navData}
       />
 
-      <Header theme={theme} particles={particles} user={user} />
+      <Header theme={theme} user={user} />
 
       <Main theme={theme} github={faGithub} user={user} />
 

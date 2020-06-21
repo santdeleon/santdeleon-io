@@ -16,18 +16,10 @@ const propTypes = {
 
 const defaultProps = {
   theme: "light",
-  particles: {},
   user: []
 };
 
-const Header = ({ theme, particles, user }) => {
-  window.onload = () => {
-    particles.init({
-      selector: ".background",
-      color: "#222"
-    });
-  };
-
+const Header = ({ theme, user }) => {
   return (
     <header id="Header" className="Header">
       <Container>
@@ -47,9 +39,10 @@ const Header = ({ theme, particles, user }) => {
                   alt="Darkmode Header Cartoon"
                 />
               )}
-              <h2>
-                Hello, I'm Sant. Blockchain engineer and front-end developer
-              </h2>
+              <h1>
+                Hello, I'm Sant. <br />
+                Blockchain engineer and front-end developer
+              </h1>
               <h5 className="text-muted font-weight-light mt-4">
                 with a knack for creating cutting edge products with elegance
                 and style.
@@ -62,14 +55,7 @@ const Header = ({ theme, particles, user }) => {
           {user.skills.map(skill => {
             return (
               <Col key={skill.id}>
-                <div
-                  className="mt-5"
-                  style={
-                    theme === "light"
-                      ? { backgroundColor: "#fff" }
-                      : { backgroundColor: "#212121" }
-                  }
-                >
+                <div className="mt-5 bg-transparent">
                   <div
                     className="skill-header"
                     style={{ backgroundColor: skill.color }}

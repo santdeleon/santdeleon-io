@@ -68,7 +68,7 @@ export default {
     blockchain: {
       id: 1,
       name: "Blockchain Stack",
-      color: "#f76f6e",
+      tab: "Blockchain",
       tech: [
         "Solidity",
         "Web3",
@@ -89,7 +89,7 @@ export default {
     frontend: {
       id: 2,
       name: "Front-End Stack",
-      color: "#fbc07a",
+      tab: "Front-end",
       tech: [
         "HTML/CSS",
         "JavaScript",
@@ -125,7 +125,7 @@ export default {
     backend: {
       id: 3,
       name: "Backend Stack",
-      color: "#ffdc74",
+      tab: "Backend",
       tech: ["Java", "Perl", "VIM", "MongoDB", "Express"],
       tools: ["IntelliJ", "Spring Boot", "CPAN"]
     }
