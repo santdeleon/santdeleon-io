@@ -1,6 +1,7 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
 import { array, bool, string, object, func } from "prop-types";
+import cx from "classnames";
+import { Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import NavLink from "../NavMenu/NavLink";
@@ -10,30 +11,28 @@ import "./index.css";
 const propTypes = {
   theme: string.isRequired,
   showSidebar: bool.isRequired,
-  toggleSidebar: func.isRequired,
+  setShowSidebar: func.isRequired,
   socialIcons: object.isRequired,
   navData: array.isRequired
 };
 
 const defaultProps = {
-  theme: "",
-  showSidebar: false,
-  toggleSidebar: () => {},
-  socialIcons: {},
-  navData: []
+  showSidebar: false
 };
 
 const Sidebar = ({
   theme,
   showSidebar,
-  toggleSidebar,
+  setShowSidebar,
   socialIcons,
   navData
 }) => {
   return (
     <div
-      className={`Sidebar d-flex d-md-none flex-column align-items-center justify-content-center menu-wrap ${showSidebar &&
-        "menu-show"}`}
+      className={cx(
+        "Sidebar d-flex d-md-none flex-column align-items-center justify-content-center menu-wrap",
+        { "menu-show": showSidebar }
+      )}
       style={
         theme === "light"
           ? { backgroundColor: "#fff" }
@@ -50,7 +49,7 @@ const Sidebar = ({
                 href={link.href}
                 icon={link.Icon}
                 theme={theme}
-                toggleSidebar={toggleSidebar}
+                setShowSidebar={setShowSidebar}
                 isSidebarLink={true}
               />
             ))}
@@ -60,42 +59,36 @@ const Sidebar = ({
 
       <Row className="my-5">
         <Col>
-          <div className="rainbow-top" style={{ height: "5px" }}>
-            this is not a bug
-          </div>
-          <div className="rainbow-top" style={{ height: "5px" }}>
-            this is not a bug
-          </div>
-          <div className="rainbow-top" style={{ height: "5px" }}>
-            this is not a bug
-          </div>
+          {["this is not a bug", "this is not a bug", "this is not a bug"].map(
+            (str, i) => (
+              <div key={i} className="rainbow-top" style={{ height: "5px" }}>
+                {str}
+              </div>
+            )
+          )}
         </Col>
       </Row>
 
       <Row className="mt-5">
         <Col>
-          {Object.keys(socialIcons).map(icon => {
-            return (
-              <a
-                key={socialIcons[icon].id}
+          {Object.keys(socialIcons).map(icon => (
+            <a
+              key={socialIcons[icon].id}
+              href={socialIcons[icon].url}
+              className={cx({ "ml-4": socialIcons[icon].id !== 0 })}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon
                 href={socialIcons[icon].url}
-                className={`${socialIcons[icon].id !== 0 && "ml-4"}`}
+                key={socialIcons[icon].id}
                 target="_blank"
                 rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon
-                  href={socialIcons[icon].url}
-                  key={socialIcons[icon].id}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${
-                    theme === "light" ? "text-dark" : "text-light"
-                  }`}
-                  icon={socialIcons[icon].icon}
-                />
-              </a>
-            );
-          })}
+                className={`${theme === "light" ? "text-dark" : "text-light"}`}
+                icon={socialIcons[icon].icon}
+              />
+            </a>
+          ))}
         </Col>
       </Row>
     </div>

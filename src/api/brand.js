@@ -20,7 +20,7 @@ export default {
     {
       id: 2,
       name: "Get in touch",
-      href: "/contact",
+      href: "mailto:sant@santdeleon.io",
       Icon: <MessageCircle size="20" height={16} />
     }
   ],

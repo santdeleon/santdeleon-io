@@ -1,4 +1,5 @@
 import React from "react";
+import cx from "classnames";
 import { string, object } from "prop-types";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowDownCircle } from "react-feather";
@@ -10,13 +11,7 @@ import SantDark from "../../../assets/img/sant-dark.svg";
 
 const propTypes = {
   theme: string.isRequired,
-  particles: object.isRequired,
   user: object.isRequired
-};
-
-const defaultProps = {
-  theme: "light",
-  user: []
 };
 
 const Header = ({ theme, user }) => {
@@ -25,7 +20,7 @@ const Header = ({ theme, user }) => {
       <Container>
         <Row className="my-4">
           <Col xs={12} md={6}>
-            <div className="">
+            <div>
               {theme === "light" ? (
                 <img
                   src={SantLight}
@@ -55,31 +50,34 @@ const Header = ({ theme, user }) => {
         </Row>
 
         <Row className="mb-5 d-none d-md-flex">
-          {user.skills.map(skill => {
-            return (
-              <Col key={skill.id}>
-                <div className="mt-5 bg-transparent">
-                  <div
-                    className="skill-header"
-                    style={{ backgroundColor: skill.color }}
-                  ></div>
-                  <div className="skill-body text-center py-3">
-                    <p className="p-0 m-0">{skill.name}</p>
-                  </div>
+          {user.skills.map(skill => (
+            <Col key={skill.id}>
+              <div className="mt-5 bg-transparent">
+                <div
+                  className="skill-header"
+                  style={{ backgroundColor: skill.color }}
+                />
+                <div className="skill-body text-center py-3">
+                  <p className="p-0 m-0">{skill.name}</p>
                 </div>
-              </Col>
-            );
-          })}
+              </div>
+            </Col>
+          ))}
         </Row>
 
         <Row className="scroll-btn-wrapper" noGutters>
           <Col>
             <a
-              className={`d-flex justify-content-center ${
-                theme === "light" ? "text-dark" : "text-light"
-              }`}
               href="#Portfolio"
-              style={{ textDecoration: "none" }}
+              title="Scroll to Portfolio"
+              aria-label="Scroll to Portfolio"
+              className={cx(
+                "d-flex justify-content-center text-decoration-none",
+                {
+                  "text-dark": theme === "light",
+                  "text-light": theme === "dark"
+                }
+              )}
             >
               <ArrowDownCircle className="arrow-down" />
             </a>
@@ -91,5 +89,4 @@ const Header = ({ theme, user }) => {
 };
 
 Header.propTypes = propTypes;
-Header.defaultProps = defaultProps;
 export default Header;

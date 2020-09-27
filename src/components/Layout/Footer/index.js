@@ -1,26 +1,18 @@
 import React from "react";
+import cx from "classnames";
 import { Row, Col } from "react-bootstrap";
 import { string, object } from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
+import { faArrowCircleUp, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 import "./index.css";
 
 const propTypes = {
   theme: string.isRequired,
-  socialIcons: object.isRequired,
-  copyright: object.isRequired,
-  heart: object.isRequired
+  socialIcons: object.isRequired
 };
 
-const defaultProps = {
-  theme: "",
-  socialIcons: {},
-  copyright: {},
-  heart: {}
-};
-
-const Footer = ({ theme, socialIcons, copyright, heart }) => {
+const Footer = ({ theme, socialIcons }) => {
   return (
     <footer id="Footer" className="Footer pb-3">
       <Row>
@@ -31,7 +23,10 @@ const Footer = ({ theme, socialIcons, copyright, heart }) => {
             aria-label="To the top of the page"
           >
             <FontAwesomeIcon
-              className={`${theme === "light" ? "red" : "yellow"}`}
+              className={cx({
+                red: theme === "light",
+                yellow: theme === "dark"
+              })}
               icon={faArrowCircleUp}
               style={{ fontSize: "24px" }}
             />
@@ -45,12 +40,17 @@ const Footer = ({ theme, socialIcons, copyright, heart }) => {
             <a
               href={socialIcons[icon].url}
               key={socialIcons[icon].id}
-              className={`${socialIcons[icon].id !== 0 && "ml-3"}`}
+              className={cx({
+                "ml-3": socialIcons[icon].id !== 0
+              })}
               target="_blank"
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon
-                className={`${theme === "light" ? "text-dark" : "text-light"}`}
+                className={cx({
+                  "text-dark": theme === "light",
+                  "text-light": theme === "dark"
+                })}
                 icon={socialIcons[icon].icon}
               />
             </a>
@@ -66,7 +66,7 @@ const Footer = ({ theme, socialIcons, copyright, heart }) => {
         </Col>
         <Col xs={6} md={4}>
           <p className="m-0 text-right">
-            Made with <FontAwesomeIcon className="text-danger" icon={heart} />{" "}
+            Made with <FontAwesomeIcon className="text-danger" icon={faHeart} />{" "}
             by Sant
           </p>
         </Col>
@@ -76,5 +76,4 @@ const Footer = ({ theme, socialIcons, copyright, heart }) => {
 };
 
 Footer.propTypes = propTypes;
-Footer.defaultProps = defaultProps;
 export default Footer;

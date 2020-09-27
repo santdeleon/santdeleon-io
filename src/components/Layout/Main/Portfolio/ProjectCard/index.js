@@ -1,6 +1,7 @@
 import React from "react";
+import cx from "classnames";
 import { Row, Col } from "react-bootstrap";
-import { number, string } from "prop-types";
+import { number, string, object } from "prop-types";
 
 const propTypes = {
   id: string.isRequired,
@@ -10,20 +11,13 @@ const propTypes = {
   img: string.isRequired,
   width: number.isRequired,
   height: number.isRequired,
-  text: string.isRequired,
+  text: object.isRequired,
   industry: string.isRequired
 };
 
 const defaultProps = {
-  id: "",
-  url: "",
-  className: "",
-  name: "",
-  img: "",
   width: 0,
-  height: 50,
-  text: "",
-  industry: ""
+  height: 50
 };
 
 const ProjectCard = ({
@@ -36,40 +30,34 @@ const ProjectCard = ({
   height,
   text,
   industry
-}) => {
-  return (
-    <a
-      id={id}
-      className={`${className} project d-flex flex-column align-items-start my-3 px-4 py-3 rounded`}
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      title={name}
-      aria-label={name}
-    >
-      <Row>
-        <Col>
-          <img src={img} width={width} height={height} alt={name} />
-        </Col>
-      </Row>
-      <Row className="my-4">
-        <Col>
-          <p
-            className="font-weight-bold m-0"
-            dangerouslySetInnerHTML={{ __html: text }}
-          ></p>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <p className="mb-0 font-weight-bold">Industry</p>
-          <p className="m-0 font-weight-lighter">{industry}</p>
-        </Col>
-      </Row>
-    </a>
-  );
-};
-
+}) => (
+  <a
+    id={id}
+    className={cx(
+      `${className} project d-flex flex-column align-items-start my-3 px-4 py-3 rounded`
+    )}
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    title={name}
+    aria-label={name}
+  >
+    <Row>
+      <Col>
+        <img src={img} width={width} height={height} alt={name} />
+      </Col>
+    </Row>
+    <Row className="my-4">
+      <Col>{text}</Col>
+    </Row>
+    <Row>
+      <Col>
+        <p className="mb-0 font-weight-bold">Industry</p>
+        <p className="m-0 font-weight-lighter">{industry}</p>
+      </Col>
+    </Row>
+  </a>
+);
 ProjectCard.propTypes = propTypes;
 ProjectCard.defaultProps = defaultProps;
 export default ProjectCard;

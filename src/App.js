@@ -1,65 +1,34 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route } from "react-router";
 import { ThemeProvider } from "styled-components";
 import Particles from "particlesjs";
 
 import "./App.css";
 
 import Layout from "./components/Layout";
-import Contact from "./pages/Contact";
 
-import { lightTheme, darkTheme } from "./utils/theme";
-import { GlobalStyles } from "./utils/globalStyles";
+import { GlobalStyles, LightTheme, DarkTheme } from "./theme/";
 
 const App = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
-  const toggleTheme = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
-  };
+  const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
 
-  window.onload = () => {
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+
     Particles.init({
       selector: ".background",
-      color: "#222"
+      color: theme === "light" ? "#222" : "#B8BABE",
+      speed: 0.2
     });
-  };
-
-  useEffect(() => {});
+  }, [theme]);
 
   return (
-    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+    <ThemeProvider theme={theme === "light" ? LightTheme : DarkTheme}>
       <div id="App" className="App">
-        {/* rainbow top border on all pages */}
-        <div className="rainbow-top"></div>
-
-        {/* provides globalStyles to entire app */}
+        <div className="rainbow-top" />
         <GlobalStyles />
-
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={props => (
-              <Layout
-                toggleTheme={toggleTheme}
-                theme={theme}
-                particles={Particles}
-              />
-            )}
-          />
-
-          <Route
-            path="/contact"
-            render={props => (
-              <Contact
-                toggleTheme={toggleTheme}
-                theme={theme}
-                particles={Particles}
-              />
-            )}
-          />
-        </Switch>
+        <Layout theme={theme} toggleTheme={toggleTheme} />
       </div>
     </ThemeProvider>
   );

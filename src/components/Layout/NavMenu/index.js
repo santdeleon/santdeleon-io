@@ -1,8 +1,7 @@
 import React from "react";
-import { array, bool, func, string, object } from "prop-types";
-import { Navbar, Nav, Button } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faRedoAlt } from "@fortawesome/free-solid-svg-icons";
+import { array, bool, func, string } from "prop-types";
+import cx from "classnames";
+import { Navbar, Nav } from "react-bootstrap";
 
 import NavLink from "./NavLink";
 
@@ -16,44 +15,18 @@ import Moon from "../../../assets/img/moon.svg";
 const propTypes = {
   theme: string.isRequired,
   toggleTheme: func.isRequired,
-  particles: object.isRequired,
   showSidebar: bool.isRequired,
-  toggleSidebar: func.isRequired,
-  navData: array.isRequired,
-  isOnContactPage: bool.isRequired,
-  clearForm: func.isRequired
-};
-
-const defaultProps = {
-  theme: "light",
-  toggleTheme: () => {},
-  particles: {},
-  showSidebar: false,
-  toggleSidebar: () => {},
-  navData: [],
-  isOnContactPage: false,
-  clearForm: () => {}
+  setShowSidebar: func.isRequired,
+  navData: array.isRequired
 };
 
 const NavMenu = ({
   theme,
   toggleTheme,
-  particles,
   showSidebar,
-  toggleSidebar,
-  navData,
-  isOnContactPage,
-  clearForm
+  setShowSidebar,
+  navData
 }) => {
-  const refreshParticles = () => {
-    const particleColor = theme === "light" ? "#B8BABE" : "#222";
-
-    particles.init({
-      color: particleColor,
-      speed: 0.2
-    });
-  };
-
   const menuBarColor =
     theme === "light"
       ? {
@@ -93,44 +66,21 @@ const NavMenu = ({
         </Nav>
         <Nav className="ml-auto align-items-center">
           <span
-            className={`toggle-button ${showSidebar && "button-open"}  ${
-              isOnContactPage ? "d-none" : "d-block d-md-none"
-            }`}
-            onClick={toggleSidebar}
+            className={cx("toggle-button d-md-none d-flex", {
+              "button-open": showSidebar
+            })}
+            onClick={() => setShowSidebar(!showSidebar)}
           >
-            <div className="menu-bar menu-bar-top" style={menuBarColor}></div>
-            <div
-              className="menu-bar menu-bar-middle"
-              style={menuBarColor}
-            ></div>
-            <div
-              className="menu-bar menu-bar-bottom"
-              style={menuBarColor}
-            ></div>
+            <div className="menu-bar menu-bar-top" style={menuBarColor} />
+            <div className="menu-bar menu-bar-middle" style={menuBarColor} />
+            <div className="menu-bar menu-bar-bottom" style={menuBarColor} />
           </span>
-
-          <div className={`mr-2 ${isOnContactPage ? "d-flex" : "d-none"}`}>
-            <a href="/" title="Home" aria-label="Home">
-              <Button className="custom-btn custom-home-btn rounded px-3">
-                <FontAwesomeIcon icon={faHome} className="mt-2" />
-              </Button>
-            </a>
-
-            <Button
-              className="custom-btn custom-refresh-btn rounded ml-2 px-3"
-              title="Refresh"
-              aria-label="Refresh Form"
-              onClick={clearForm}
-            >
-              <FontAwesomeIcon icon={faRedoAlt} className="mt-2" />
-            </Button>
-          </div>
 
           <a
             href="https://github.com/santdeleon"
             target="_blank"
             rel="noopener noreferrer"
-            className={`mr-2 ${isOnContactPage && "d-none"}`}
+            className="mr-2"
             title="Github"
             aria-label="Github"
           >
@@ -143,11 +93,7 @@ const NavMenu = ({
 
           <span
             role="button"
-            onClick={() => {
-              toggleTheme();
-              refreshParticles();
-              console.log(theme);
-            }}
+            onClick={toggleTheme}
             title="Dark/Light Mode"
             aria-label="Dark/Light Mode"
           >
@@ -164,5 +110,4 @@ const NavMenu = ({
 };
 
 NavMenu.propTypes = propTypes;
-NavMenu.defaultProps = defaultProps;
 export default NavMenu;

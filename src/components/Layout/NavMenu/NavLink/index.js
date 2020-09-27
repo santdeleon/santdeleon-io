@@ -10,20 +10,20 @@ const propTypes = {
   href: string.isRequired
 };
 
-const defaultProps = {
-  icon: {},
-  name: "",
-  theme: "",
-  href: ""
-};
-
-const NavLink = ({ icon, name, theme, href, toggleSidebar, isSidebarLink }) => (
+const NavLink = ({
+  icon,
+  name,
+  theme,
+  href,
+  setShowSidebar,
+  isSidebarLink
+}) => (
   <li>
     <a
       href={href}
       className="nav-link fromLeft align-items-center"
       style={theme === "light" ? { color: "#000" } : { color: "#fff" }}
-      onClick={isSidebarLink && toggleSidebar}
+      onClick={() => setShowSidebar(false)}
     >
       <span className="mr-1">{icon}</span>
       {name}
@@ -32,5 +32,4 @@ const NavLink = ({ icon, name, theme, href, toggleSidebar, isSidebarLink }) => (
 );
 
 NavLink.propTypes = propTypes;
-NavLink.defaultProps = defaultProps;
 export default NavLink;

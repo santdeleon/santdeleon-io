@@ -1,3 +1,5 @@
+import React from "react";
+
 import HostGator from "../assets/img/hostgator-logo.svg";
 import Martian from "../assets/img/martian-text-logo.svg";
 import Homies from "../assets/img/homies-logo.png";
@@ -19,8 +21,12 @@ export default {
       url: "https://github.com/santdeleon/coinflip",
       img: Ethereum,
       width: 50,
-      text:
-        "Decentralized gambling <br /> application built on the <br /> Ethereum Network",
+      text: (
+        <p className="font-weight-bold m-0">
+          Decentralized gambling <br /> application built on the <br /> Ethereum
+          Network
+        </p>
+      ),
       industry: "Blockchain, Gambling & Gaming"
     },
     hostgator: {
@@ -29,8 +35,12 @@ export default {
       url: "https://www.hostgator.com/",
       img: HostGator,
       width: 120,
-      text:
-        "Platform for entrepeuners <br /> & businesses to create,<br /> host & manage websites",
+      text: (
+        <p className="font-weight-bold m-0">
+          Platform for entrepeuners <br /> & businesses to create,
+          <br /> host & manage websites
+        </p>
+      ),
       industry: "Domain & Web Hosting"
     },
     terra: {
@@ -39,8 +49,12 @@ export default {
       url: "https://www.terraats.com/",
       img: Terra,
       width: 90,
-      text:
-        "Small in-house tech <br /> solution for custom <br /> software applications",
+      text: (
+        <p className="font-weight-bold m-0">
+          Small in-house tech <br /> solution for custom <br /> software
+          applications
+        </p>
+      ),
       industry: "Software Services & IT Solutions"
     },
     homies: {
@@ -49,8 +63,12 @@ export default {
       url: "#",
       img: Homies,
       width: 70,
-      text:
-        "Grassroots startup helping <br /> brands get off the ground <br /> & sell online",
+      text: (
+        <p className="font-weight-bold m-0">
+          Grassroots startup helping <br /> brands get off the ground <br /> &
+          sell online
+        </p>
+      ),
       industry: "Branding & E-Commerce"
     },
     martian: {
@@ -59,8 +77,12 @@ export default {
       url: "http://martian.network/",
       img: Martian,
       width: 120,
-      text:
-        "Blockchain solution for <br /> monetizing, distributing <br /> & hosting content",
+      text: (
+        <p className="font-weight-bold m-0">
+          Blockchain solution for <br /> monetizing, distributing <br /> &
+          hosting content
+        </p>
+      ),
       industry: "Blockchain & Content Management"
     }
   },

@@ -7,24 +7,16 @@ import Interested from "./Interested";
 
 const propTypes = {
   theme: string.isRequired,
-  github: object.isRequired,
   user: object.isRequired
 };
 
-const defaultProps = {
-  theme: "light",
-  github: {},
-  array: {}
-};
-
-const Main = ({ theme, github, user }) => (
+const Main = ({ theme, user }) => (
   <main>
-    <Portfolio github={github} user={user} />
+    <Portfolio user={user} />
     <Tech theme={theme} user={user} />
     <Interested theme={theme} />
   </main>
 );
 
 Main.propTypes = propTypes;
-Main.defaultProps = defaultProps;
 export default Main;
