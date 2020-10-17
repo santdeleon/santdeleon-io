@@ -14,11 +14,16 @@ const App = () => {
   const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
 
   useEffect(() => {
-    Particles.init({
+    const particles = Particles.init({
       selector: ".background",
       color: theme === "light" ? "#222" : "#B8BABE",
-      speed: 0.2
+      speed: 0.3
     });
+
+    // cleanup function to prevent Particles animation from compounding in speed
+    return () => {
+      particles.pauseAnimation();
+    };
   }, [theme]);
 
   return (

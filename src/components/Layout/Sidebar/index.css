@@ -1,5 +1,6 @@
 .Sidebar {
   font-family: "Calibre-Semibold";
+  font-size: 1.2rem;
 }
 
 .menu-wrap {
@@ -13,8 +14,4 @@
 
 .menu-show {
   width: 100%;
-}
-
-.social-icon:hover {
-  color: #f446e3;
 }

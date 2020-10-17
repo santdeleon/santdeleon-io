@@ -1,8 +1,7 @@
 import React from "react";
-import cx from "classnames";
 import { string, object } from "prop-types";
+import cx from "classnames";
 import { Container, Row, Col } from "react-bootstrap";
-import { ArrowDownCircle } from "react-feather";
 
 import "./index.css";
 
@@ -21,22 +20,14 @@ const Header = ({ theme, user }) => {
         <Row className="my-4">
           <Col xs={12} md={6}>
             <div>
-              {theme === "light" ? (
-                <img
-                  src={SantLight}
-                  className="m-0 p-0"
-                  alt="Lightmode Header Cartoon"
-                />
-              ) : (
-                <img
-                  src={SantDark}
-                  className="m-0 p-0"
-                  alt="Darkmode Header Cartoon"
-                />
-              )}
+              <img
+                src={theme === "light" ? SantLight : SantDark}
+                className="m-0 p-0"
+                alt={`${theme === "light" ? "Lightmode" : "Darkmode"} Avatar`}
+              />
               <h1>
                 Hello, I'm Sant. <br />
-                Blockchain engineer and front-end developer
+                Blockchain & Front-end Developer
               </h1>
               <h5 className="text-muted font-weight-light mt-4">
                 with a knack for creating cutting edge products with elegance
@@ -57,31 +48,17 @@ const Header = ({ theme, user }) => {
                   className="skill-header"
                   style={{ backgroundColor: skill.color }}
                 />
-                <div className="skill-body text-center py-3">
+                <div
+                  className={cx("skill-body text-center py-3", {
+                    "bg-white": theme === "light",
+                    "bg-dark": theme === "dark"
+                  })}
+                >
                   <p className="p-0 m-0">{skill.name}</p>
                 </div>
               </div>
             </Col>
           ))}
-        </Row>
-
-        <Row className="scroll-btn-wrapper" noGutters>
-          <Col>
-            <a
-              href="#Portfolio"
-              title="Scroll to Portfolio"
-              aria-label="Scroll to Portfolio"
-              className={cx(
-                "d-flex justify-content-center text-decoration-none",
-                {
-                  "text-dark": theme === "light",
-                  "text-light": theme === "dark"
-                }
-              )}
-            >
-              <ArrowDownCircle className="arrow-down" />
-            </a>
-          </Col>
         </Row>
       </Container>
     </header>

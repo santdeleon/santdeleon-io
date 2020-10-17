@@ -130,7 +130,8 @@ export default {
         "Bootstrap",
         "Bulma",
         "Materialize",
-        "Storybook"
+        "Storybook",
+        "Lerna"
       ],
       tools: ["Atom Editor", "iTerm", "Yarn", "NPM"],
       additional: [

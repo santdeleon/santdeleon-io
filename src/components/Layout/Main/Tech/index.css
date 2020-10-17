@@ -1,10 +1,5 @@
 .Tech {
-  /* background-image: linear-gradient(to bottom, white, rgb(253, 234, 241)); */
   font-family: "Calibre-Semibold";
-  background-image: url("../../../../assets/img/pattern-dots.svg");
-  background-repeat: no-repeat;
-  background-size: 150% 60%;
-  background-position: right;
 }
 
 .rainbow-rounded-top {
@@ -49,10 +44,4 @@
 
 .btn-primary:not(:disabled):not(.disabled).active:focus {
   box-shadow: none;
-}
-
-@media screen and (max-width: 768px) {
-  .Tech {
-    background-image: none;
-  }
 }

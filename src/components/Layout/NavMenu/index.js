@@ -75,7 +75,6 @@ const NavMenu = ({
             <div className="menu-bar menu-bar-middle" style={menuBarColor} />
             <div className="menu-bar menu-bar-bottom" style={menuBarColor} />
           </span>
-
           <a
             href="https://github.com/santdeleon"
             target="_blank"
@@ -84,24 +83,21 @@ const NavMenu = ({
             title="Github"
             aria-label="Github"
           >
-            {theme === "light" ? (
-              <img src={GithubLight} alt="Github" />
-            ) : (
-              <img src={GithubDark} alt="Github" />
-            )}
+            <img
+              src={theme === "light" ? GithubLight : GithubDark}
+              alt="Github"
+            />
           </a>
-
           <span
             role="button"
             onClick={toggleTheme}
             title="Dark/Light Mode"
             aria-label="Dark/Light Mode"
           >
-            {theme === "dark" ? (
-              <img src={Sun} alt="Light Mode" />
-            ) : (
-              <img src={Moon} alt="Dark Mode" />
-            )}
+            <img
+              src={theme === "light" ? Moon : Sun}
+              alt={theme === "light" ? "Dark Mode" : "Light Mode"}
+            />
           </span>
         </Nav>
       </Navbar>

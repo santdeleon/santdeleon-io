@@ -15,10 +15,6 @@ const propTypes = {
   toggleTheme: func.isRequired
 };
 
-const defaultProps = {
-  theme: localStorage.getItem("theme")
-};
-
 const Layout = ({ theme, toggleTheme }) => {
   const [showSidebar, setShowSidebar] = useState(false);
 
@@ -50,5 +46,4 @@ const Layout = ({ theme, toggleTheme }) => {
 };
 
 Layout.propTypes = propTypes;
-Layout.defaultProps = defaultProps;
 export default Layout;

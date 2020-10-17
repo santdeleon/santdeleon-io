@@ -24,21 +24,23 @@ export default {
       Icon: <MessageCircle size="20" height={16} />
     }
   ],
-  socialIcons: {
-    linkedin: {
+  socialIcons: [
+    {
       id: 0,
       icon: faLinkedinIn,
       url: "https://www.linkedin.com/in/sant-deleon/"
     },
-    angellist: {
+    {
       id: 1,
+      name: "Angel List",
       icon: faAngellist,
       url: "https://angel.co/santdeleon"
     },
-    mail: {
+    {
       id: 2,
+      name: "Contact",
       icon: faEnvelope,
       url: "mailto:sant@santdeleon.io"
     }
-  }
+  ]
 };

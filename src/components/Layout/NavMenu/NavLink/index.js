@@ -1,5 +1,5 @@
 import React from "react";
-import { string, object } from "prop-types";
+import { string, object, func, bool } from "prop-types";
 
 import "./index.css";
 
@@ -7,7 +7,13 @@ const propTypes = {
   icon: object.isRequired,
   name: string.isRequired,
   theme: string.isRequired,
-  href: string.isRequired
+  href: string.isRequired,
+  setShowSidebar: func,
+  isSidebarLink: bool.isRequired
+};
+
+const defaultProps = {
+  isSidebarLink: false
 };
 
 const NavLink = ({
@@ -32,4 +38,5 @@ const NavLink = ({
 );
 
 NavLink.propTypes = propTypes;
+NavLink.defaultProps = defaultProps;
 export default NavLink;

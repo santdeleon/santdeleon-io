@@ -10,27 +10,3 @@
 .skill-body {
   box-shadow: 0 7px 22px rgba(0, 0, 0, 0.2);
 }
-
-.scroll-btn-wrapper {
-  animation: MoveUpDown 1.5s linear infinite;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-@keyframes MoveUpDown {
-  0%,
-  100% {
-    bottom: 0;
-  }
-  50% {
-    bottom: 15px;
-  }
-}
-
-.scroll-down {
-  padding-top: 2px;
-  font-size: 14px;
-  cursor: default;
-}
