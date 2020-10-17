@@ -1,8 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 
+// modifie a touch to handle themeing
 export const useLocalStorage = (
   key,
-  defaultValue = "",
+  defaultValue = "light",
   { serialize = JSON.stringify, deserialize = JSON.parse } = {}
 ) => {
   const [state, setState] = useState(() => {
