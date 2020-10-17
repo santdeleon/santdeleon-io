@@ -1,6 +1,5 @@
 import React from "react";
 import { string, object } from "prop-types";
-import cx from "classnames";
 import { Container, Row, Col } from "react-bootstrap";
 
 import "./index.css";

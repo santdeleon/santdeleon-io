@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import Particles from "particlesjs";
 
@@ -7,13 +7,16 @@ import "./App.css";
 import Layout from "./components/Layout";
 
 import { GlobalStyles, LightTheme, DarkTheme } from "./theme/";
-import { useLocalStorage } from "./utils/useLocalStorage";
+// import { useLocalStorage } from "./utils/useLocalStorage";
 
 const App = () => {
-  const [theme, setTheme] = useLocalStorage("theme", "light");
+  // const [theme, setTheme] = useLocalStorage("theme", "light");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
 
   useEffect(() => {
+    localStorage.setItem("theme", theme);
+
     const particles = Particles.init({
       selector: ".background",
       color: theme === "light" ? "#222" : "#B8BABE",
