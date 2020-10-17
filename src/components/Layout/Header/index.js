@@ -48,12 +48,7 @@ const Header = ({ theme, user }) => {
                   className="skill-header"
                   style={{ backgroundColor: skill.color }}
                 />
-                <div
-                  className={cx("skill-body text-center py-3", {
-                    "bg-white": theme === "light",
-                    "bg-dark": theme === "dark"
-                  })}
-                >
+                <div className="skill-body text-center py-3">
                   <p className="p-0 m-0">{skill.name}</p>
                 </div>
               </div>
