@@ -12,7 +12,7 @@
     "classnames": "^2.2.6",
     "particlesjs": "^2.2.3",
     "prop-types": "^15.7.2",
-    "react": "^0.0.0-experimental-4ead6b530",
+    "react": "^0.14.0",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^0.0.0-experimental-4ead6b530",
     "react-error-boundary": "^3.0.2",
