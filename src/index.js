@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
 
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,13 +8,13 @@ import App from "./App";
 
 import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(
+// Enable React in Concurrent Mode (an experimental feature)
+const rootNode = document.getElementById("root");
+const root = ReactDOM.unstable_createRoot(rootNode);
+root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById("root")
+    <App />
+  </React.StrictMode>
 );
 
 serviceWorker.register();
