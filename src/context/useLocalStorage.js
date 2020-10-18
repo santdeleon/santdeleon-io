@@ -10,7 +10,7 @@ export const useLocalStorage = (
     const valueInLocalStorage = window.localStorage.getItem(key);
 
     if (valueInLocalStorage) {
-      return deserialize(valueInLocalStorage);
+      return valueInLocalStorage;
     }
     return typeof defaultValue === "function" ? defaultValue() : defaultValue;
   });
@@ -25,7 +25,7 @@ export const useLocalStorage = (
     }
 
     prevKeyRef.current = key;
-    window.localStorage.setItem(key, serialize(state));
+    window.localStorage.setItem(key, state);
   }, [key, serialize, state]);
 
   return [state, setState];
