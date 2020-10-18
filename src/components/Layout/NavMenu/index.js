@@ -1,11 +1,13 @@
-import React from "react";
-import { array, bool, func, string } from "prop-types";
-import cx from "classnames";
-import { Navbar, Nav } from "react-bootstrap";
+import React, { useContext } from "react";
+import { func, string } from "prop-types";
+import { Navbar, Nav, Button } from "react-bootstrap";
+import { ThemeContext } from "styled-components";
+
+import "./index.css";
 
 import NavLink from "./NavLink";
 
-import "./index.css";
+import { useBrand } from "../../../context/useBrand";
 
 import GithubLight from "../../../assets/img/github-light.svg";
 import GithubDark from "../../../assets/img/github-dark.svg";
@@ -14,38 +16,27 @@ import Moon from "../../../assets/img/moon.svg";
 
 const propTypes = {
   theme: string.isRequired,
-  toggleTheme: func.isRequired,
-  showSidebar: bool.isRequired,
-  setShowSidebar: func.isRequired,
-  navData: array.isRequired
+  toggleTheme: func.isRequired
 };
 
-const NavMenu = ({
-  theme,
-  toggleTheme,
-  showSidebar,
-  setShowSidebar,
-  navData
-}) => {
-  const menuBarColor =
-    theme === "light"
-      ? {
-          backgroundColor: "#000",
-          borderColor: "#000"
-        }
-      : {
-          backgroundColor: "#fff",
-          borderColor: "#fff"
-        };
+const NavMenu = ({ theme, toggleTheme }) => {
+  const { navData } = useBrand();
+  const themeContext = useContext(ThemeContext);
+
+  const themeVariables = {
+    githubIcon: theme === "light" ? GithubLight : GithubDark,
+    toggleThemeIcon: theme === "light" ? Moon : Sun,
+    altText: theme === "light" ? "Dark Mode" : "Light Mode"
+  };
 
   return (
-    <div id="NavMenu" className="NavMenu">
-      <Navbar>
+    <>
+      <Navbar className="NavMenu">
         <Navbar.Brand
           href="https://santdeleon.io"
           aria-label="Home"
           title="Home"
-          style={theme === "light" ? { color: "#000" } : { color: "#fff" }}
+          style={{ color: themeContext.color }}
         >
           <span role="img" aria-label="Rainbow Emoji">
             🌈
@@ -53,55 +44,44 @@ const NavMenu = ({
           Sant Deleon
         </Navbar.Brand>
         <Nav className="mr-auto d-none d-md-flex">
-          {navData.map(link => (
+          {navData.map(({ id, name, href, Icon }) => (
             <NavLink
-              className="mr-2"
-              key={link.id}
-              name={link.name}
-              href={link.href}
-              icon={link.Icon}
+              key={id}
+              name={name}
+              href={href}
+              icon={Icon}
               theme={theme}
+              color={themeContext.color}
             />
           ))}
         </Nav>
         <Nav className="ml-auto align-items-center">
-          <span
-            className={cx("toggle-button d-md-none d-flex", {
-              "button-open": showSidebar
-            })}
-            onClick={() => setShowSidebar(!showSidebar)}
-          >
-            <div className="menu-bar menu-bar-top" style={menuBarColor} />
-            <div className="menu-bar menu-bar-middle" style={menuBarColor} />
-            <div className="menu-bar menu-bar-bottom" style={menuBarColor} />
-          </span>
-          <a
+          <Button
+            variant="link"
             href="https://github.com/santdeleon"
             target="_blank"
             rel="noopener noreferrer"
-            className="mr-2"
+            className="p-0 mr-2"
             title="Github"
             aria-label="Github"
           >
-            <img
-              src={theme === "light" ? GithubLight : GithubDark}
-              alt="Github"
-            />
-          </a>
-          <span
-            role="button"
-            onClick={toggleTheme}
+            <img src={themeVariables.githubIcon} alt="Github" />
+          </Button>
+          <Button
+            variant="link"
+            className="p-0"
             title="Dark/Light Mode"
             aria-label="Dark/Light Mode"
+            onClick={toggleTheme}
           >
             <img
-              src={theme === "light" ? Moon : Sun}
-              alt={theme === "light" ? "Dark Mode" : "Light Mode"}
+              src={themeVariables.toggleThemeIcon}
+              alt={themeVariables.altText}
             />
-          </span>
+          </Button>
         </Nav>
       </Navbar>
-    </div>
+    </>
   );
 };
 
