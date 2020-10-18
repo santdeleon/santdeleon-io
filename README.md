@@ -1,10 +1,9 @@
 # Portfolio
-> Front-end & Blockchain Developer Portfolio for Sant Deleon
 
+> Personal Front-end & Blockchain Developer Portfolio
 
+## Built with
 
-## Built with 
-  * [React](https://reactjs.org/)
-  * JavaScript
-  * HTML5/CSS3
-
+- [React](https://reactjs.org/)
+- JavaScript
+- HTML5/CSS3

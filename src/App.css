@@ -1,7 +1,3 @@
-.App {
-  overflow-x: hidden;
-}
-
 .rainbow-top {
   background: linear-gradient(
     to right,
@@ -16,43 +12,7 @@
   padding: 5px;
 }
 
-.hyphens {
-  background: url("./assets/img/hyphens.svg");
-  height: 1px;
-  width: 100%;
-}
-
-::-webkit-scrollbar {
-  background-color: #ff87e1;
-  width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  height: 10px;
-  background: linear-gradient(
-    to bottom,
-    #ff87e1,
-    #ca67e5,
-    #83e0f7,
-    #84ffaf,
-    #fcfc83,
-    #fcca67,
-    #f76f6f
-  );
-}
-
-::selection {
-  background: #84fbb8;
-}
-
-.box-shadow {
-  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.2);
-}
-
-.background {
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
+.particles-background {
   z-index: -1;
+  position: absolute;
 }

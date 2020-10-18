@@ -1,47 +1,26 @@
 .Tech {
-  font-family: "Calibre-Semibold";
+  background-image: url("../../../../assets/img/pattern-tile.svg");
+  background-repeat: repeat;
+  background-size: 50%;
 }
 
-.rainbow-rounded-top {
+.tech-container {
+  font-family: "Calibre-Semibold";
+  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.2);
+
   background: linear-gradient(
     to right,
     #f76f6f,
-    #fcfc83,
     #fcca67,
+    #fcfc83,
     #84ffaf,
     #83e0f7,
     #ca67e5,
     #ff87e1
   );
-  border-radius: 20px 20px 0 0;
 }
 
-.tech-container {
-  border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 4px 8px,
-    rgba(0, 0, 0, 0.04) 0px 16px 24px, rgba(0, 0, 0, 0.01) 0px 24px 32px;
-}
-
-.tech-col {
-  border-radius: 20px;
-  border: 1px solid rgb(247, 248, 250) !important;
-}
-
-.tab-button {
-  background-color: #fdeaf1 !important;
-  border-radius: 30px;
-  color: #e6006e !important;
-  border: 1px solid #fdeaf1;
-  transition: 0.1s all ease-in;
-}
-
-.tab-button:hover,
-.tab-button.active {
-  color: #fff !important;
-  background-color: #e6006e !important;
-  border: 1px solid #e6006e !important;
-}
-
-.btn-primary:not(:disabled):not(.disabled).active:focus {
+.tech-container button:focus,
+.tech-container button:active {
   box-shadow: none;
 }

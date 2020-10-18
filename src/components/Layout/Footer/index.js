@@ -1,54 +1,36 @@
 import React from "react";
-import cx from "classnames";
-import { Row, Col } from "react-bootstrap";
-import { string, array } from "prop-types";
+import { Row, Col, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
-import "./index.css";
+import { useBrand } from "../../../context/useBrand";
 
-const propTypes = {
-  theme: string.isRequired,
-  socialIcons: array.isRequired
-};
+const Footer = () => {
+  const { socialIcons } = useBrand();
 
-const Footer = ({ theme, socialIcons }) => {
   return (
-    <footer id="Footer" className="Footer">
-      <Row className="px-3">
-        <Col>
-          {socialIcons.map(icon => (
-            <a
-              href={icon.url}
-              key={icon.id}
-              className={cx({
-                "ml-3": icon.id !== 0
-              })}
-              target="_blank"
-              rel="noopener noreferrer"
-              title={icon.name}
-              aria-label={icon.name}
-            >
-              <FontAwesomeIcon
-                className={cx({
-                  "text-dark": theme === "light",
-                  "text-light": theme === "dark"
-                })}
-                icon={icon.icon}
-              />
-            </a>
-          ))}
-        </Col>
-        <Col>
-          <p className="m-0 text-right">
-            Made with <FontAwesomeIcon className="text-danger" icon={faHeart} />{" "}
-            by Sant
-          </p>
-        </Col>
-      </Row>
-    </footer>
+    <Row className="Footer text-center">
+      <Col>
+        {socialIcons.map(({ id, name, href, Icon }) => (
+          <Button
+            variant="link"
+            key={id}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted"
+          >
+            {Icon}
+          </Button>
+        ))}
+        <p className="text-muted">
+          Made with{" "}
+          <FontAwesomeIcon className="text-danger mx-1" icon={faHeart} /> by
+          Sant
+        </p>
+      </Col>
+    </Row>
   );
 };
 
-Footer.propTypes = propTypes;
 export default Footer;

@@ -1,5 +1,6 @@
 import React from "react";
-import { string, object, func, bool } from "prop-types";
+import { Button } from "react-bootstrap";
+import { string, object } from "prop-types";
 
 import "./index.css";
 
@@ -8,35 +9,22 @@ const propTypes = {
   name: string.isRequired,
   theme: string.isRequired,
   href: string.isRequired,
-  setShowSidebar: func,
-  isSidebarLink: bool.isRequired
+  color: string.isRequired
 };
 
-const defaultProps = {
-  isSidebarLink: false
-};
-
-const NavLink = ({
-  icon,
-  name,
-  theme,
-  href,
-  setShowSidebar,
-  isSidebarLink
-}) => (
+const NavLink = ({ icon, name, theme, href, color }) => (
   <li>
-    <a
+    <Button
+      variant="link"
       href={href}
-      className="nav-link fromLeft align-items-center"
-      style={theme === "light" ? { color: "#000" } : { color: "#fff" }}
-      onClick={() => setShowSidebar(false)}
+      className="custom-nav-link text-decoration-none align-items-center"
+      style={{ color: color }}
     >
       <span className="mr-1">{icon}</span>
       {name}
-    </a>
+    </Button>
   </li>
 );
 
 NavLink.propTypes = propTypes;
-NavLink.defaultProps = defaultProps;
 export default NavLink;

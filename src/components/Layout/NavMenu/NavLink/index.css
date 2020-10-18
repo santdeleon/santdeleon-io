@@ -1,19 +1,7 @@
-.nav-link {
+.custom-nav-link {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
 }
 
-.nav-link:after {
-  display: block;
-  content: "";
-  border-bottom: solid 2px #f446e3;
-  transform: scaleX(0);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-}
-
-.nav-link:hover:after {
-  transform: scaleX(1);
-}
-
-.nav-link.fromLeft:after {
-  transform-origin: 0% 50%;
+.custom-nav-link:hover {
+  color: #f446e3 !important;
 }
