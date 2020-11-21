@@ -8,13 +8,11 @@ import App from "./App";
 
 import * as serviceWorker from "./serviceWorker";
 
-// Enable React in Concurrent Mode (an experimental feature)
-const rootNode = document.getElementById("root");
-const root = ReactDOM.unstable_createRoot(rootNode);
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
 
 serviceWorker.register();
