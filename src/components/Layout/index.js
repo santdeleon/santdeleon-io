@@ -1,22 +1,22 @@
 import React from "react";
-import { func, string } from "prop-types";
+import { Container } from "react-bootstrap";
 
 import NavMenu from "./NavMenu";
 import Header from "./Header";
-import Main from "./Main";
+// import Main from "./Main";
+import Footer from "./Footer";
 
-const propTypes = {
-  theme: string.isRequired,
-  toggleTheme: func.isRequired
+const Layout = () => {
+  return (
+    <>
+      <NavMenu />
+      <Container>
+        <Header />
+        {/* <Main theme={theme} /> */}
+        <Footer />
+      </Container>
+    </>
+  );
 };
 
-const Layout = ({ theme, toggleTheme }) => (
-  <>
-    <NavMenu theme={theme} toggleTheme={toggleTheme} />
-    <Header theme={theme} />
-    {/* <Main theme={theme} /> */}
-  </>
-);
-
-Layout.propTypes = propTypes;
 export default Layout;

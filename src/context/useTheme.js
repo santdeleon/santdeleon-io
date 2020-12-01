@@ -1,6 +1,10 @@
-import { useLocalStorage } from "./useLocalStorage";
+import React, { createContext, useContext } from "react";
+import {
+  ThemeProvider as StyledComponentsThemeProvider,
+  createGlobalStyle
+} from "styled-components";
 
-import { createGlobalStyle } from "styled-components";
+import { useLocalStorage } from "./useLocalStorage";
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -12,24 +16,41 @@ const GlobalStyles = createGlobalStyle`
 
 const LightTheme = {
   color: "#000",
-  backgroundColor: "#ffffff"
+  backgroundColor: "#fff"
 };
 
 const DarkTheme = {
   color: "#fff",
-  backgroundColor: "#212121"
+  backgroundColor: "#222"
 };
 
-const useTheme = () => {
+const ThemeContext = createContext();
+
+const ThemeProvider = ({ children }) => {
   const hasOSDarkTheme =
     window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
 
   const [theme, setTheme] = useLocalStorage(
     "theme",
-    hasOSDarkTheme ? "dark" : "light"
+    hasOSDarkTheme ? "light" : "dark"
   );
+
   const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
-  return [theme, toggleTheme];
+
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <StyledComponentsThemeProvider
+        theme={theme === "light" ? LightTheme : DarkTheme}
+        children={children}
+      />
+    </ThemeContext.Provider>
+  );
 };
 
-export { GlobalStyles, LightTheme, DarkTheme, useTheme };
+const useTheme = () => {
+  const context = useContext(ThemeContext);
+  if (!context) throw new Error("You must useTheme within a <ThemeProvider />");
+  return context;
+};
+
+export { ThemeProvider, GlobalStyles, LightTheme, DarkTheme, useTheme };

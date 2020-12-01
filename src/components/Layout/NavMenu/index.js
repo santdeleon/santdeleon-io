@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { func, string } from "prop-types";
 import { Navbar, Nav, Button } from "react-bootstrap";
 import { ThemeContext } from "styled-components";
 
@@ -8,19 +7,16 @@ import "./index.css";
 import NavLink from "./NavLink";
 
 import { useBrand } from "../../../context/useBrand";
+import { useTheme } from "../../../context/useTheme";
 
 import GithubLight from "../../../assets/img/github-light.svg";
 import GithubDark from "../../../assets/img/github-dark.svg";
 import Sun from "../../../assets/img/sun.svg";
 import Moon from "../../../assets/img/moon.svg";
 
-const propTypes = {
-  theme: string.isRequired,
-  toggleTheme: func.isRequired
-};
-
-const NavMenu = ({ theme, toggleTheme }) => {
+const NavMenu = () => {
   const { navData } = useBrand();
+  const { theme, toggleTheme } = useTheme();
   const themeContext = useContext(ThemeContext);
 
   const themeVariables = {
@@ -85,5 +81,4 @@ const NavMenu = ({ theme, toggleTheme }) => {
   );
 };
 
-NavMenu.propTypes = propTypes;
 export default NavMenu;

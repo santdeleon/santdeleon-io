@@ -1,27 +1,24 @@
 import React, { useContext } from "react";
-import { string } from "prop-types";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { ThemeContext } from "styled-components";
 import cx from "classnames";
 
 import "./index.css";
 
 import { useBrand } from "../../../context/useBrand";
+import { useTheme } from "../../../context/useTheme";
 
 import SantLight from "../../../assets/img/sant-light.svg";
 import SantDark from "../../../assets/img/sant-dark.svg";
 
-const propTypes = {
-  theme: string.isRequired
-};
-
-const Header = ({ theme }) => {
+const Header = () => {
   const { skills } = useBrand();
+  const { theme } = useTheme();
   const themeContext = useContext(ThemeContext);
 
   return (
-    <Container as="header" id="Header" className="Header my-md-5">
-      <Row>
+    <>
+      <Row as="header" id="Header" className="Header">
         <Col>
           <div>
             <img
@@ -73,9 +70,8 @@ const Header = ({ theme }) => {
           </Col>
         ))}
       </Row>
-    </Container>
+    </>
   );
 };
 
-Header.propTypes = propTypes;
 export default Header;

@@ -1,16 +1,19 @@
 import { useEffect, useState, useRef } from "react";
 
-// modifie a touch to handle themeing
-export const useLocalStorage = (
+export function useLocalStorage(
   key,
   defaultValue = "",
   { serialize = JSON.stringify, deserialize = JSON.parse } = {}
-) => {
+) {
   const [state, setState] = useState(() => {
     const valueInLocalStorage = window.localStorage.getItem(key);
 
     if (valueInLocalStorage) {
-      return valueInLocalStorage;
+      try {
+        return deserialize(valueInLocalStorage);
+      } catch (error) {
+        window.localStorage.removeItem(key);
+      }
     }
     return typeof defaultValue === "function" ? defaultValue() : defaultValue;
   });
@@ -25,8 +28,8 @@ export const useLocalStorage = (
     }
 
     prevKeyRef.current = key;
-    window.localStorage.setItem(key, state);
-  }, [key, serialize, state]);
+    window.localStorage.setItem(key, serialize(state));
+  }, [key, state, serialize]);
 
   return [state, setState];
-};
+}

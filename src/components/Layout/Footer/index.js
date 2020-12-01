@@ -1,35 +1,50 @@
 import React from "react";
-import { Row, Col, Button } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { Navbar, Nav } from "react-bootstrap";
+import cx from "classnames";
 
-import { useBrand } from "../../../context/useBrand";
+import "./index.css";
+
+import { useBrand } from "../../../context/useBrand.js";
+import { useTheme } from "../../../context/useTheme.js";
 
 const Footer = () => {
+  const { theme } = useTheme();
   const { socialIcons } = useBrand();
 
   return (
-    <Row className="Footer text-center">
-      <Col>
-        {socialIcons.map(({ id, name, href, Icon }) => (
-          <Button
-            variant="link"
+    <Navbar as="footer" fixed="bottom" className="Footer">
+      <Nav className="mr-auto">
+        <p
+          className={cx("font-weight-light mb-0", {
+            "Footer__P--rainbow-text": theme === "dark"
+          })}
+        >
+          Made with
+          <span role="img" aria-label="Two Hearts Emoji" className="mx-2">
+            💕
+          </span>
+          by Sant
+        </p>
+      </Nav>
+      <Nav className="ml-auto">
+        {socialIcons.map(({ id, name, color, href, Icon }) => (
+          <Nav.Link
             key={id}
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted"
+            className={cx({
+              "text-secondary": theme === "light",
+              "text-light": theme === "dark"
+            })}
+            title={name}
+            aria-label={name}
           >
             {Icon}
-          </Button>
+          </Nav.Link>
         ))}
-        <p className="text-muted">
-          Made with{" "}
-          <FontAwesomeIcon className="text-danger mx-1" icon={faHeart} /> by
-          Sant
-        </p>
-      </Col>
-    </Row>
+      </Nav>
+    </Navbar>
   );
 };
 
