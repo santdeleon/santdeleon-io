@@ -1,22 +1,3 @@
-/* .Header {
-  height: 100vh;
-} */
-
-.Header__H1--rainbow-text {
-  color: transparent;
-  background: linear-gradient(
-    to right,
-    #f76f6f,
-    #fcfc83,
-    #fcca67,
-    #84ffaf,
-    #83e0f7,
-    #ca67e5,
-    #ff87e1
-  );
-  background-clip: text;
-}
-
 .Header--skill-header {
   height: 4px;
   border-radius: 8px 8px 0 0;

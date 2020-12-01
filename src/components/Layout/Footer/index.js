@@ -2,8 +2,6 @@ import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import cx from "classnames";
 
-import "./index.css";
-
 import { useBrand } from "../../../context/useBrand.js";
 import { useTheme } from "../../../context/useTheme.js";
 
@@ -16,7 +14,7 @@ const Footer = () => {
       <Nav className="mr-auto">
         <p
           className={cx("font-weight-light mb-0", {
-            "Footer__P--rainbow-text": theme === "dark"
+            "rainbow-text": theme === "dark"
           })}
         >
           Made with

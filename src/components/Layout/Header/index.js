@@ -20,15 +20,16 @@ const Header = () => {
     <>
       <Row as="header" id="Header" className="Header">
         <Col>
-          <div>
+          <div className="border">
             <img
               src={theme === "light" ? SantLight : SantDark}
               alt={theme === "light" ? "Sant & Sun" : "Sant & Moon"}
+              className="border border-danger"
             />
             <h1 className="display-4">
               <span
                 className={cx({
-                  "Header__H1--rainbow-text": theme === "dark"
+                  "rainbow-text": theme === "dark"
                 })}
               >
                 Hello,{" "}
