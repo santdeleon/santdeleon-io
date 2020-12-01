@@ -18,38 +18,36 @@ const Header = () => {
 
   return (
     <>
-      <Row as="header" id="Header" className="Header">
+      <Row as="header" id="Header" className="Header mt-md-5">
         <Col>
-          <div className="border">
-            <img
-              src={theme === "light" ? SantLight : SantDark}
-              alt={theme === "light" ? "Sant & Sun" : "Sant & Moon"}
-              className="border border-danger"
-            />
-            <h1 className="display-4">
-              <span
-                className={cx({
-                  "rainbow-text": theme === "dark"
-                })}
-              >
-                Hello,{" "}
-              </span>
-              I'm Sant. <br />
-              <span className="d-none d-md-block">
-                Front-end & Blockchain Developer
-              </span>
-            </h1>
-            <h4 className="d-none d-md-block text-muted font-weight-light mt-3 mb-5">
-              with a knack for creating cutting edge products with elegance and
-              style.{" "}
-              <span role="img" aria-label="Sparkle Emoji">
-                ✨
-              </span>
-            </h4>
-            <h4 className="d-block d-md-none text-muted font-weight-light mb-4">
-              front-end developer and blockchain engineer{" "}
-            </h4>
-          </div>
+          <img
+            src={theme === "light" ? SantLight : SantDark}
+            alt={theme === "light" ? "Sant & Sun" : "Sant & Moon"}
+            className="Header__Img--avatar"
+          />
+          <h1 className="display-4">
+            <span
+              className={cx({
+                "rainbow-text": theme === "dark"
+              })}
+            >
+              Hello,{" "}
+            </span>
+            I'm Sant. <br />
+            <span className="d-none d-md-block">
+              Front-end & Blockchain Developer
+            </span>
+          </h1>
+          <h4 className="d-none d-md-block text-muted font-weight-light mt-3 mb-5">
+            with a knack for creating cutting edge products with elegance and
+            style.{" "}
+            <span role="img" aria-label="Sparkle Emoji">
+              ✨
+            </span>
+          </h4>
+          <h4 className="d-block d-md-none text-muted font-weight-light mb-4">
+            front-end developer and blockchain engineer{" "}
+          </h4>
         </Col>
       </Row>
       <Row>
