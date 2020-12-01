@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Navbar, Nav, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { ThemeContext } from "styled-components";
 
 import "./index.css";
@@ -17,7 +18,7 @@ import Moon from "../../../assets/img/moon.svg";
 const NavMenu = () => {
   const { navData } = useBrand();
   const { theme, toggleTheme } = useTheme();
-  const themeContext = useContext(ThemeContext);
+  const { color } = useContext(ThemeContext);
 
   const themeVariables = {
     githubIcon: theme === "light" ? GithubLight : GithubDark,
@@ -26,58 +27,57 @@ const NavMenu = () => {
   };
 
   return (
-    <>
-      <Navbar className="NavMenu">
-        <Navbar.Brand
-          href="https://santdeleon.io"
-          aria-label="Home"
-          title="Home"
-          style={{ color: themeContext.color }}
+    <Navbar className="NavMenu">
+      <Navbar.Brand
+        as={Link}
+        to="/"
+        aria-label="Home"
+        title="Home"
+        style={{ color: color }}
+      >
+        <span role="img" aria-label="Rainbow Emoji">
+          🌈
+        </span>{" "}
+        Sant Deleon
+      </Navbar.Brand>
+      <Nav className="mr-auto d-none d-md-flex">
+        {navData.map(({ id, name, href, Icon }) => (
+          <NavLink
+            key={id}
+            name={name}
+            href={href}
+            icon={Icon}
+            theme={theme}
+            color={color}
+          />
+        ))}
+      </Nav>
+      <Nav className="ml-auto align-items-center">
+        <Button
+          variant="link"
+          href="https://github.com/santdeleon"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-0 mr-2"
+          title="Github"
+          aria-label="Github"
         >
-          <span role="img" aria-label="Rainbow Emoji">
-            🌈
-          </span>{" "}
-          Sant Deleon
-        </Navbar.Brand>
-        <Nav className="mr-auto d-none d-md-flex">
-          {navData.map(({ id, name, href, Icon }) => (
-            <NavLink
-              key={id}
-              name={name}
-              href={href}
-              icon={Icon}
-              theme={theme}
-              color={themeContext.color}
-            />
-          ))}
-        </Nav>
-        <Nav className="ml-auto align-items-center">
-          <Button
-            variant="link"
-            href="https://github.com/santdeleon"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-0 mr-2"
-            title="Github"
-            aria-label="Github"
-          >
-            <img src={themeVariables.githubIcon} alt="Github" />
-          </Button>
-          <Button
-            variant="link"
-            className="p-0"
-            title="Dark/Light Mode"
-            aria-label="Dark/Light Mode"
-            onClick={toggleTheme}
-          >
-            <img
-              src={themeVariables.toggleThemeIcon}
-              alt={themeVariables.altText}
-            />
-          </Button>
-        </Nav>
-      </Navbar>
-    </>
+          <img src={themeVariables.githubIcon} alt="Github" />
+        </Button>
+        <Button
+          variant="link"
+          className="p-0"
+          title="Dark/Light Mode"
+          aria-label="Dark/Light Mode"
+          onClick={toggleTheme}
+        >
+          <img
+            src={themeVariables.toggleThemeIcon}
+            alt={themeVariables.altText}
+          />
+        </Button>
+      </Nav>
+    </Navbar>
   );
 };
 

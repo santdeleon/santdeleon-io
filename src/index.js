@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,11 +14,13 @@ import { BrandProvider } from "./context/useBrand";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider>
-      <BrandProvider>
-        <App />
-      </BrandProvider>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider>
+        <BrandProvider>
+          <App />
+        </BrandProvider>
+      </ThemeProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

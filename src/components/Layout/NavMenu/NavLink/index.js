@@ -13,11 +13,11 @@ const propTypes = {
 };
 
 const NavLink = ({ icon, name, theme, href, color }) => (
-  <li>
+  <li className="mx-2">
     <Button
       variant="link"
       href={href}
-      className="custom-nav-link text-decoration-none align-items-center"
+      className="NavLink__Button text-decoration-none p-0"
       style={{ color: color }}
     >
       <span className="mr-1">{icon}</span>
