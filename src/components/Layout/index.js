@@ -14,7 +14,7 @@ const Layout = ({ theme, toggleTheme }) => (
   <>
     <NavMenu theme={theme} toggleTheme={toggleTheme} />
     <Header theme={theme} />
-    <Main theme={theme} />
+    {/* <Main theme={theme} /> */}
   </>
 );
 

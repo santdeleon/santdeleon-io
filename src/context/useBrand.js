@@ -65,15 +65,15 @@ const socialIcons = [
 const skills = [
   {
     id: 0,
-    name: "Blockchain Engineer",
+    name: "Front-end Developer",
     color: "#F76F6E",
-    Icon: <FontAwesomeIcon icon={faEthereum} />
+    Icon: <FontAwesomeIcon icon={faCode} />
   },
   {
     id: 1,
-    name: "Front-end Developer",
+    name: "Blockchain Engineer",
     color: "#FBC07A",
-    Icon: <FontAwesomeIcon icon={faCode} />
+    Icon: <FontAwesomeIcon icon={faEthereum} />
   },
   {
     id: 2,

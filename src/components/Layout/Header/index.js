@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { string } from "prop-types";
 import { Container, Row, Col } from "react-bootstrap";
 import { ThemeContext } from "styled-components";
+import cx from "classnames";
 
 import "./index.css";
 
@@ -19,52 +20,60 @@ const Header = ({ theme }) => {
   const themeContext = useContext(ThemeContext);
 
   return (
-    <header id="Header" className="Header my-5 pb-5">
-      <Container>
-        <Row>
-          <Col xs={12} md={6}>
-            <div>
-              <img
-                src={theme === "light" ? SantLight : SantDark}
-                alt={`${
-                  theme === "light" ? "Sant with Sun" : "Sant with Moon"
-                }`}
-              />
-              <h1>
-                Hello, I'm Sant. <br />
+    <Container as="header" id="Header" className="Header my-md-5">
+      <Row>
+        <Col>
+          <div>
+            <img
+              src={theme === "light" ? SantLight : SantDark}
+              alt={theme === "light" ? "Sant & Sun" : "Sant & Moon"}
+            />
+            <h1 className="display-4">
+              <span
+                className={cx({
+                  "Header__H1--rainbow-text": theme === "dark"
+                })}
+              >
+                Hello,{" "}
+              </span>
+              I'm Sant. <br />
+              <span className="d-none d-md-block">
                 Front-end & Blockchain Developer
-              </h1>
-              <h5 className="text-muted font-weight-light mt-4 mb-5">
-                with a knack for creating cutting edge products with elegance
-                and style.{" "}
-                <span role="img" aria-label="Sparkle Emoji">
-                  ✨
-                </span>
-              </h5>
+              </span>
+            </h1>
+            <h4 className="d-none d-md-block text-muted font-weight-light mt-3 mb-5">
+              with a knack for creating cutting edge products with elegance and
+              style.{" "}
+              <span role="img" aria-label="Sparkle Emoji">
+                ✨
+              </span>
+            </h4>
+            <h4 className="d-block d-md-none text-muted font-weight-light mb-4">
+              front-end developer and blockchain engineer{" "}
+            </h4>
+          </div>
+        </Col>
+      </Row>
+      <Row>
+        {skills.map(({ id, color, name, Icon }) => (
+          <Col key={id}>
+            <div className="bg-transparent">
+              <div
+                className="Header--skill-header"
+                style={{ backgroundColor: color }}
+              />
+              <div
+                className="Header--skill-body text-center py-3"
+                style={{ backgroundColor: themeContext.backgroundColor }}
+              >
+                <p className="p-0 m-0 d-none d-lg-block">{name}</p>
+                <span className="d-block d-lg-none">{Icon}</span>
+              </div>
             </div>
           </Col>
-        </Row>
-        <Row>
-          {skills.map(({ id, color, name, Icon }) => (
-            <Col key={id}>
-              <div className="bg-transparent">
-                <div
-                  className="skill-header"
-                  style={{ backgroundColor: color }}
-                />
-                <div
-                  className="skill-body text-center py-3"
-                  style={{ backgroundColor: themeContext.backgroundColor }}
-                >
-                  <p className="p-0 m-0 d-none d-md-block">{name}</p>
-                  <span className="d-block d-md-none">{Icon}</span>
-                </div>
-              </div>
-            </Col>
-          ))}
-        </Row>
-      </Container>
-    </header>
+        ))}
+      </Row>
+    </Container>
   );
 };
 

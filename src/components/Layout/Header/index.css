@@ -1,12 +1,27 @@
-.Header {
-  height: 80vh;
+/* .Header {
+  height: 100vh;
+} */
+
+.Header__H1--rainbow-text {
+  color: transparent;
+  background: linear-gradient(
+    to right,
+    #f76f6f,
+    #fcfc83,
+    #fcca67,
+    #84ffaf,
+    #83e0f7,
+    #ca67e5,
+    #ff87e1
+  );
+  background-clip: text;
 }
 
-.skill-header {
+.Header--skill-header {
   height: 4px;
   border-radius: 8px 8px 0 0;
 }
 
-.skill-body {
+.Header--skill-body {
   box-shadow: 0 7px 22px rgba(0, 0, 0, 0.2);
 }
