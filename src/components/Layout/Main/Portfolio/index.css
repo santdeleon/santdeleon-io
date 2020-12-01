@@ -1,30 +1,3 @@
-.project {
-  font-family: itc-avant-garde-gothic-pro;
-  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-  height: 275px;
-}
-
-.project:hover {
-  transform: translateY(-0.7rem);
-}
-
-.hostgator-project-card {
-  background: linear-gradient(#1f90c6, #104c68);
-}
-
-.martian-project-card {
-  background: linear-gradient(#791600, #000);
-}
-
-.terra-project-card {
-  background: linear-gradient(#b55672, #8d392b);
-}
-
-.homies-project-card {
-  background: linear-gradient(#d74b7c, #591d31);
-}
-
-.coinflip-project-card {
-  background: linear-gradient(#fade7e, #f89c92);
+.Portfolio {
+  height: 100vh;
 }

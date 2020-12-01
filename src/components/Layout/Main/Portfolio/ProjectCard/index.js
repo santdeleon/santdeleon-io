@@ -2,6 +2,8 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { number, string, object } from "prop-types";
 
+import "./index.css";
+
 const propTypes = {
   id: string.isRequired,
   url: string.isRequired,
@@ -28,7 +30,7 @@ const ProjectCard = ({
     target="_blank"
     rel="noopener noreferrer"
     id={id}
-    className={`${className} project d-flex flex-column align-items-start my-3 px-4 py-3 rounded text-left text-decoration-none text-white`}
+    className={`${className} Main__ProjectCard Main__ProjectCard--${name} d-flex flex-column align-items-start my-3 px-4 py-3 rounded text-left text-decoration-none text-white`}
     title={name}
     aria-label={name}
   >

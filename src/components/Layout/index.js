@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 
 import NavMenu from "./NavMenu";
 import Header from "./Header";
-// import Main from "./Main";
+import Main from "./Main";
 import Footer from "./Footer";
 
 const Layout = () => {
@@ -12,7 +12,7 @@ const Layout = () => {
       <NavMenu />
       <Container>
         <Header />
-        {/* <Main theme={theme} /> */}
+        <Main />
         <Footer />
       </Container>
     </>

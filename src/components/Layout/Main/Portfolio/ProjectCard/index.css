@@ -1,0 +1,30 @@
+.Main__ProjectCard {
+  font-family: itc-avant-garde-gothic-pro;
+  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  height: 275px;
+}
+
+.Main__ProjectCard:hover {
+  transform: translateY(-0.7rem);
+}
+
+.Main__ProjectCard--hostgator {
+  background: linear-gradient(#1f90c6, #104c68);
+}
+
+.Main__ProjectCard--martian {
+  background: linear-gradient(#791600, #000);
+}
+
+.Main__ProjectCard--terra {
+  background: linear-gradient(#b55672, #8d392b);
+}
+
+.Main__ProjectCard--homies {
+  background: linear-gradient(#d74b7c, #591d31);
+}
+
+.Main__ProjectCard--coinflip {
+  background: linear-gradient(#fade7e, #f89c92);
+}

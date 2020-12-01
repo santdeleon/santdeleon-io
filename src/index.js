@@ -2,15 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 
-import "./index.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-
 import App from "./App";
 
 import * as serviceWorker from "./serviceWorker";
 
 import { ThemeProvider } from "./context/useTheme";
 import { BrandProvider } from "./context/useBrand";
+
+import "./stylesheets/colors.css";
+import "./stylesheets/fonts.css";
+import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 ReactDOM.render(
   <React.StrictMode>

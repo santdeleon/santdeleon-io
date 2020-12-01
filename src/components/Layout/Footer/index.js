@@ -14,7 +14,7 @@ const Footer = () => {
       <Nav className="mr-auto">
         <p
           className={cx("font-weight-light mb-0", {
-            "rainbow-text": theme === "dark"
+            "App--rainbow-text": theme === "dark"
           })}
         >
           Made with

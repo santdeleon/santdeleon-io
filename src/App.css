@@ -1,32 +1,3 @@
-.rainbow-top {
-  background: linear-gradient(
-    to right,
-    #f76f6f,
-    #fcca67,
-    #fcfc83,
-    #84ffaf,
-    #83e0f7,
-    #ca67e5,
-    #ff87e1
-  );
-  padding: 5px;
-}
-
-.rainbow-text {
-  color: transparent;
-  background: linear-gradient(
-    to right,
-    #f76f6f,
-    #fcfc83,
-    #fcca67,
-    #84ffaf,
-    #83e0f7,
-    #ca67e5,
-    #ff87e1
-  );
-  background-clip: text;
-}
-
 .App__Particles {
   z-index: -1;
   position: absolute;

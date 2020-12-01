@@ -1,46 +1,17 @@
 import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
-import cx from "classnames";
-import { string, array } from "prop-types";
+import { Row, Col } from "react-bootstrap";
 
 import ProjectCard from "./ProjectCard";
 
+import { useBrand } from "../../../../context/useBrand";
+
 import "./index.css";
 
-const propTypes = {
-  theme: string.isRequired,
-  projects: array.isRequired
-};
+const Portfolio = () => {
+  const { projects } = useBrand();
 
-const Portfolio = ({ theme, projects }) => (
-  <div
-    id="Portfolio"
-    className={cx("Portfolio py-5", {
-      "bg-light": theme === "light"
-    })}
-    style={{ backgroundColor: theme === "dark" && "black" }}
-  >
-    <Row className="justify-content-center">
-      <Col
-        className={cx("rounded-circle", {
-          "bg-light": theme === "light"
-        })}
-        style={{
-          marginTop: "-120px",
-          backgroundColor: theme === "dark" && "black"
-        }}
-      >
-        <Button
-          variant=""
-          href="#Portfolio"
-          className="w-100 h-100 text-transparent"
-        >
-          &nbsp;
-        </Button>
-      </Col>
-    </Row>
-
-    <Container>
+  return (
+    <div id="Portfolio" className="Portfolio my-5 py-5">
       <Row>
         <Col>
           <h3 className="mb-0">Places and People</h3>
@@ -65,9 +36,8 @@ const Portfolio = ({ theme, projects }) => (
           )
         )}
       </Row>
-    </Container>
-  </div>
-);
+    </div>
+  );
+};
 
-Portfolio.propTypes = propTypes;
 export default Portfolio;
