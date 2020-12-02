@@ -1,99 +1,75 @@
-import React, { useState, useContext } from "react";
+import React from "react";
+import { Row, Col } from "react-bootstrap";
 import cx from "classnames";
-import { Container, Row, Col, Button, Badge } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle } from "@fortawesome/free-solid-svg-icons";
-import { string, array } from "prop-types";
-import { ThemeContext } from "styled-components";
 
-import Footer from "../../Footer";
+import { useBrand } from "../../../../context/useBrand";
+import { useTheme } from "../../../../context/useTheme";
 
 import "./index.css";
 
-const propTypes = {
-  theme: string.isRequired,
-  technologies: array.isRequired
-};
-
-const Tech = ({ theme, technologies }) => {
-  const themeContext = useContext(ThemeContext);
-  const [selectedTab, setSelectedTab] = useState("Frontend");
+const Tech = () => {
+  const { technologies } = useBrand();
+  const { theme } = useTheme();
 
   return (
-    <div
-      id="Tech"
-      className="Tech pt-5"
-      style={{ backgroundColor: themeContext.backgroundColor }}
-    >
-      <Container>
-        <Row>
-          <Col>
-            <h3 className="mb-0">Technologies and Skills</h3>
-            <h5 className="font-weight-light text-muted">I've developed</h5>
-          </Col>
-        </Row>
-
-        <Row className="justify-content-center my-5" noGutters>
-          <Col
-            xs={12}
-            md={8}
-            className="rounded tech-container p-1"
-            style={{ height: "250px" }}
-          >
-            <div
-              className="w-100 h-100 px-2"
-              style={{ backgroundColor: themeContext.backgroundColor }}
-            >
-              {["Frontend", "Blockchain", "Backend"].map((stack, i) => (
-                <Button key={i} variant="none" className="p-0 mt-2 mr-1">
-                  <FontAwesomeIcon
-                    key={i}
-                    icon={faCircle}
-                    className={cx({
-                      "text-dark": stack === selectedTab,
-                      "text-muted": stack !== selectedTab
+    <div id="Tech" className="Tech pt-5 px-3 px-sm-5 border-top">
+      <h5>Languages</h5>
+      <Row>
+        <Col xs={12} lg={8}>
+          <Row>
+            {technologies.map(({ id, name, languages }) => (
+              <Col key={id} xs={12} sm={3}>
+                <ul className="p-0">
+                  <li
+                    className={cx("Tech__Li font-weight-bold", {
+                      "text-dark": theme === "light",
+                      "text-light": theme === "dark"
                     })}
-                    onClick={() => setSelectedTab(stack)}
-                  />
-                </Button>
-              ))}
-              {technologies.map(
-                ({ id, name, languages }) =>
-                  name === selectedTab && (
-                    <Row key={id} className="justify-content-center" noGutters>
-                      <Col
-                        xs={12}
-                        md={10}
-                        className="my-2 pl-2 py-3 text-center"
-                      >
-                        <h3>{name} Stack</h3>
-                        {languages.map((language, i) => (
-                          <Badge
-                            key={i}
-                            pill
-                            variant="light"
-                            className="mr-1"
-                            onMouseOver={e => {
-                              e.target.className =
-                                e.target.className + " bg-warning";
-                            }}
-                            style={{ cursor: "pointer" }}
-                          >
-                            {language}
-                          </Badge>
-                        ))}
-                      </Col>
-                    </Row>
-                  )
-              )}
-            </div>
-          </Col>
-        </Row>
-        <Footer />
-      </Container>
+                  >
+                    {id === 1 ? <span>&nbsp;</span> : name}
+                  </li>
+                  {languages.map((language, i) => (
+                    <li key={i} className="Tech__Li mt-1">
+                      {language}
+                    </li>
+                  ))}
+                </ul>
+              </Col>
+            ))}
+          </Row>
+        </Col>
+        <Col xs={12} lg={4} className="text-left text-sm-right">
+          <p className="mb-0 font-weight-light">
+            Give me a shout{" "}
+            <a
+              href="mailto:sant@santdeleon.io"
+              className={cx("font-weight-bold text-decoration-none", {
+                "App--rainbow-text": theme === "dark",
+                "Tech__A--contact text-dark": theme === "light"
+              })}
+              title="Contact Sant"
+              aria-label="Contact Sant"
+            >
+              sant@santdeleon.io
+            </a>
+          </p>
+          <p className="font-weight-light">
+            Let's get{" "}
+            <span
+              className={cx("font-weight-bold", {
+                "Tech__Span--coffee": theme === "light"
+              })}
+            >
+              coffee
+            </span>{" "}
+            <span role="img" aria-label="Coffee Emoji">
+              ☕
+            </span>
+          </p>
+        </Col>
+      </Row>
     </div>
   );
 };
 
-Tech.propTypes = propTypes;
 export default Tech;

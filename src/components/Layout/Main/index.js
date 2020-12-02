@@ -1,12 +1,12 @@
 import React from "react";
 
 import Portfolio from "./Portfolio";
-// import Tech from "./Tech";
+import Tech from "./Tech";
 
 const Main = () => (
   <main className="Main">
-    <Portfolio />
-    {/* <Tech /> */}
+    {/* <Portfolio /> */}
+    <Tech />
   </main>
 );
 

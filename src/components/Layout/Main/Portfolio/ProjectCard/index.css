@@ -28,3 +28,9 @@
 .Main__ProjectCard--coinflip {
   background: linear-gradient(#fade7e, #f89c92);
 }
+
+@media only screen and (max-width: 768px) {
+  .Main__ProjectCard {
+    height: auto;
+  }
+}

@@ -1,26 +1,9 @@
-.Tech {
-  background-image: url("../../../../assets/img/pattern-tile.svg");
-  background-repeat: repeat;
-  background-size: 50%;
+.Tech__Li {
+  color: #82817d;
+  font-size: 0.9rem;
 }
 
-.tech-container {
-  font-family: "Calibre-Semibold";
-  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.2);
-
-  background: linear-gradient(
-    to right,
-    #f76f6f,
-    #fcca67,
-    #fcfc83,
-    #84ffaf,
-    #83e0f7,
-    #ca67e5,
-    #ff87e1
-  );
-}
-
-.tech-container button:focus,
-.tech-container button:active {
-  box-shadow: none;
+.Tech__A--contact,
+.Tech__Span--coffee {
+  border-bottom: 2px solid #e7e6e4;
 }

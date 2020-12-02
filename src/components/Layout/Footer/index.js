@@ -10,7 +10,7 @@ const Footer = () => {
   const { socialIcons } = useBrand();
 
   return (
-    <Navbar as="footer" fixed="bottom" className="Footer">
+    <Navbar as="footer" sticky="bottom" className="Footer">
       <Nav className="mr-auto">
         <p
           className={cx("font-weight-light mb-0", {

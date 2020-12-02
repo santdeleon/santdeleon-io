@@ -1,17 +1,15 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
 import ProjectCard from "./ProjectCard";
 
 import { useBrand } from "../../../../context/useBrand";
 
-import "./index.css";
-
 const Portfolio = () => {
   const { projects } = useBrand();
 
   return (
-    <div id="Portfolio" className="Portfolio my-5 py-5">
+    <Container id="Portfolio" className="Portfolio">
       <Row>
         <Col>
           <h3 className="mb-0">Places and People</h3>
@@ -36,7 +34,7 @@ const Portfolio = () => {
           )
         )}
       </Row>
-    </div>
+    </Container>
   );
 };
 

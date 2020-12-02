@@ -175,22 +175,7 @@ const projects = [
 
 const technologies = [
   {
-    id: 1,
-    name: "Blockchain",
-    languages: [
-      "Solidity",
-      "Web3",
-      "React",
-      "JavaScript",
-      "HTML/CSS",
-      "Chai",
-      "Mocha",
-      "@web3/react",
-      "EthersJS"
-    ]
-  },
-  {
-    id: 2,
+    id: 0,
     name: "Frontend",
     languages: [
       "HTML/CSS",
@@ -200,18 +185,34 @@ const technologies = [
       "GatsbyJS",
       "NodeJS",
       "jQuery",
-      "KnockoutJS",
+      "KnockoutJS"
+    ]
+  },
+  {
+    id: 1,
+    name: "Frontend",
+    languages: [
       "Jest",
       "Mocha",
       "Chai",
       "SCSS",
-      "PugJS",
       "Template Toolkit",
       "Bootstrap",
-      "Bulma",
-      "Materialize",
       "Storybook",
       "Lerna"
+    ]
+  },
+  {
+    id: 2,
+    name: "Blockchain",
+    languages: [
+      "Solidity",
+      "Web3",
+      "@web3/react",
+      "EthersJS",
+      "@ethersproject",
+      "Oraclize",
+      "OpenZepplin"
     ]
   },
   {
