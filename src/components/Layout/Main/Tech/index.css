@@ -3,7 +3,15 @@
   font-size: 0.9rem;
 }
 
-.Tech__A--contact,
-.Tech__Span--coffee {
+.Tech__A--contact {
+  color: #000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.Tech__A--contact:hover {
+  color: #f446e3 !important;
+}
+
+.Tech--border-bottom {
   border-bottom: 2px solid #e7e6e4;
 }

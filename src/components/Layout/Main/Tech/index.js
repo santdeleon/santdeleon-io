@@ -43,10 +43,13 @@ const Tech = () => {
             Give me a shout{" "}
             <a
               href="mailto:sant@santdeleon.io"
-              className={cx("font-weight-bold text-decoration-none", {
-                "App--rainbow-text": theme === "dark",
-                "Tech__A--contact text-dark": theme === "light"
-              })}
+              className={cx(
+                "Tech__A--contact font-weight-bold text-decoration-none",
+                {
+                  "App--rainbow-text": theme === "dark",
+                  "Tech--border-bottom": theme === "light"
+                }
+              )}
               title="Contact Sant"
               aria-label="Contact Sant"
             >
@@ -57,7 +60,8 @@ const Tech = () => {
             Let's get{" "}
             <span
               className={cx("font-weight-bold", {
-                "Tech__Span--coffee": theme === "light"
+                "Tech--border-bottom text-dark": theme === "light",
+                "text-light": theme === "dark"
               })}
             >
               coffee
