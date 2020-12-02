@@ -212,7 +212,10 @@ const technologies = [
       "EthersJS",
       "@ethersproject",
       "Oraclize",
-      "OpenZepplin"
+      "OpenZepplin",
+      "Ganache",
+      "Truffle Suite",
+      "Ethereum Testnets"
     ]
   },
   {

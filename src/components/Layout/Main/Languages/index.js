@@ -7,12 +7,12 @@ import { useTheme } from "../../../../context/useTheme";
 
 import "./index.css";
 
-const Tech = () => {
+const Languages = () => {
   const { technologies } = useBrand();
   const { theme } = useTheme();
 
   return (
-    <div id="Tech" className="Tech pt-5 px-3 px-sm-5 border-top">
+    <div id="Languages" className="Languages pt-5 px-3 px-sm-5 border-top">
       <h5>Languages</h5>
       <Row>
         <Col xs={12} lg={8}>
@@ -21,7 +21,7 @@ const Tech = () => {
               <Col key={id} xs={12} sm={3}>
                 <ul className="p-0">
                   <li
-                    className={cx("Tech__Li font-weight-bold", {
+                    className={cx("Languages__Li font-weight-bold", {
                       "text-dark": theme === "light",
                       "text-light": theme === "dark"
                     })}
@@ -29,7 +29,7 @@ const Tech = () => {
                     {id === 1 ? <span>&nbsp;</span> : name}
                   </li>
                   {languages.map((language, i) => (
-                    <li key={i} className="Tech__Li mt-1">
+                    <li key={i} className="Languages__Li mt-1">
                       {language}
                     </li>
                   ))}
@@ -44,10 +44,10 @@ const Tech = () => {
             <a
               href="mailto:sant@santdeleon.io"
               className={cx(
-                "Tech__A--contact font-weight-bold text-decoration-none",
+                "Languages__A--contact font-weight-bold text-decoration-none",
                 {
                   "App--rainbow-text": theme === "dark",
-                  "Tech--border-bottom": theme === "light"
+                  "Languages--border-bottom": theme === "light"
                 }
               )}
               title="Contact Sant"
@@ -60,7 +60,7 @@ const Tech = () => {
             Let's get{" "}
             <span
               className={cx("font-weight-bold", {
-                "Tech--border-bottom text-dark": theme === "light",
+                "Languages--border-bottom text-dark": theme === "light",
                 "text-light": theme === "dark"
               })}
             >
@@ -76,4 +76,4 @@ const Tech = () => {
   );
 };
 
-export default Tech;
+export default Languages;

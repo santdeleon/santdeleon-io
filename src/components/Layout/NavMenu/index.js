@@ -67,8 +67,8 @@ const NavMenu = () => {
         <Button
           variant="link"
           className="p-0"
-          title="Dark/Light Mode"
-          aria-label="Dark/Light Mode"
+          title={`Activate ${theme === "light" ? "Dark" : "Light"} Mode`}
+          aria-label={`Activate ${theme === "light" ? "Dark" : "Light"} Mode`}
           onClick={toggleTheme}
         >
           <img

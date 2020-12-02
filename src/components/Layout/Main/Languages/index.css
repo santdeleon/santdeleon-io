@@ -1,17 +1,17 @@
-.Tech__Li {
+.Languages__Li {
   color: #82817d;
   font-size: 0.9rem;
 }
 
-.Tech__A--contact {
+.Languages__A--contact {
   color: #000;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
 }
 
-.Tech__A--contact:hover {
+.Languages__A--contact:hover {
   color: #f446e3 !important;
 }
 
-.Tech--border-bottom {
+.Languages--border-bottom {
   border-bottom: 2px solid #e7e6e4;
 }

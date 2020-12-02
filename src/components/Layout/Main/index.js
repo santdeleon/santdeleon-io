@@ -1,12 +1,12 @@
 import React from "react";
 
 import Portfolio from "./Portfolio";
-import Tech from "./Tech";
+import Languages from "./Languages";
 
 const Main = () => (
   <main className="Main">
     {/* <Portfolio /> */}
-    <Tech />
+    <Languages />
   </main>
 );
 
