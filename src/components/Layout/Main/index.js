@@ -1,13 +1,7 @@
 import React from "react";
 
 import Portfolio from "./Portfolio";
-import Languages from "./Languages";
 
-const Main = () => (
-  <main className="Main">
-    {/* <Portfolio /> */}
-    <Languages />
-  </main>
-);
+const Main = () => <main className="Main">{/* <Portfolio /> */}</main>;
 
 export default Main;
