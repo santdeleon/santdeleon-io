@@ -102,26 +102,6 @@ const skills = [
 ];
 
 const projects = [
-  // {
-  //   id: 0,
-  //   name: "Martian Network",
-  //   href: "http://martian.network/",
-  //   img: (
-  //     <img
-  //       src={Martian}
-  //       alt="Martian Network"
-  //       style={{ width: "10rem", height: "7.5rem" }}
-  //     />
-  //   ),
-  //   color: "#fcbaba",
-  //   emoji: (
-  //     <span role="img" alt="Alien Emoji" aria-label="Alien Emoji">
-  //       👽
-  //     </span>
-  //   ),
-  //   industry: "Content Management",
-  //   role: "Front-end Developer"
-  // },
   {
     id: 1,
     name: "HostGator",
