@@ -17,11 +17,7 @@ const Header = () => {
   const { backgroundColor } = useContext(ThemeContext);
 
   return (
-    <Container
-      as="header"
-      id="Header"
-      className="Header mt-5 flex-column h-100"
-    >
+    <Container as="header" id="Header" className="Header mt-5 flex-column">
       <Row>
         <Col>
           <img

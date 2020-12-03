@@ -9,14 +9,8 @@ const Portfolio = () => {
   const { projects } = useBrand();
 
   return (
-    <Container id="Portfolio" className="Portfolio pb-5 mb-5">
-      <Row className="pb-5">
-        <Col className="text-center">
-          <h4 className="display-4">Work</h4>
-          <p className="lead text-muted">Because why not</p>
-        </Col>
-      </Row>
-      <Row>
+    <Container id="Portfolio" className="Portfolio py-5 my-5">
+      <Row className="py-5 my-5">
         {projects.map(
           ({ id, name, href, img, color, emoji, industry, role }) => (
             <ProjectCard
