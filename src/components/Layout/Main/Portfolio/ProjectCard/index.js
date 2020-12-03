@@ -1,55 +1,81 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Row, Col } from "react-bootstrap";
 import { number, string, object } from "prop-types";
+import cx from "classnames";
+import { ThemeContext } from "styled-components";
+
+import { useTheme } from "../../../../../context/useTheme";
 
 import "./index.css";
 
 const propTypes = {
-  id: string.isRequired,
-  url: string.isRequired,
-  className: string.isRequired,
+  id: number.isRequired,
+  href: string.isRequired,
   name: string.isRequired,
-  img: string.isRequired,
-  width: number.isRequired,
-  text: object.isRequired,
-  industry: string.isRequired
+  img: object.isRequired,
+  color: string.isRequired,
+  industry: string.isRequired,
+  role: string.isRequired,
+  emoji: object.isRequired
 };
 
-const ProjectCard = ({
-  name,
-  id,
-  className,
-  url,
-  img,
-  width,
-  text,
-  industry
-}) => (
-  <a
-    href={url}
-    target="_blank"
-    rel="noopener noreferrer"
-    id={id}
-    className={`${className} Main__ProjectCard Main__ProjectCard--${name} d-flex flex-column align-items-start my-3 px-4 py-3 rounded text-left text-decoration-none text-white`}
-    title={name}
-    aria-label={name}
-  >
-    <Row>
-      <Col>
-        <img src={img} width={width} alt={name} />
-      </Col>
-    </Row>
-    <Row className="my-4">
-      <Col>{text}</Col>
-    </Row>
-    <Row>
-      <Col>
-        <p className="mb-0 font-weight-bold">Industry</p>
-        <p className="m-0 font-weight-lighter">{industry}</p>
-      </Col>
-    </Row>
-  </a>
-);
+const ProjectCard = ({ id, name, href, img, color, industry, role, emoji }) => {
+  const { theme } = useTheme();
+  const { backgroundColor } = useContext(ThemeContext);
+
+  return (
+    <Col
+      xs={12}
+      md={6}
+      lg={4}
+      className={cx("ProjectCard mb-lg-0 px-2", {
+        "mb-5": id !== 3
+      })}
+    >
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cx("text-decoration-none", {
+          "text-dark": theme === "light",
+          "text-light": theme === "dark"
+        })}
+      >
+        <div
+          className={cx("ProjectCard__Div--card-wrapper p-3", {
+            "shadow border border-dark": theme === "dark"
+          })}
+          style={{ backgroundColor: backgroundColor }}
+        >
+          <h3 className="mb-0 text-truncate">{name}</h3>
+          <Row noGutters>
+            <Col xs={10}>
+              <p className="ProjectCard__P text-truncate">{industry}</p>
+            </Col>
+            <Col xs={2}>
+              <p className="text-right">{emoji}</p>
+            </Col>
+          </Row>
+
+          <div
+            className="d-flex justify-content-center rounded py-4"
+            style={{ background: color }}
+          >
+            {img}
+          </div>
+          <Row className="mt-4">
+            <Col>
+              <p className="ProjectCard__P mb-0">Role</p>
+              <p className="ProjectCard__P ProjectCard__P--gradient-text text-truncate">
+                {role}
+              </p>
+            </Col>
+          </Row>
+        </div>
+      </a>
+    </Col>
+  );
+};
 
 ProjectCard.propTypes = propTypes;
 export default ProjectCard;

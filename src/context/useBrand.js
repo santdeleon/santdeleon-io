@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngellist,
   faLinkedinIn,
-  faEthereum
+  faEthereum,
+  faGithub
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faEnvelope,
@@ -14,11 +15,10 @@ import {
   faMugHot
 } from "@fortawesome/free-solid-svg-icons";
 
-import HostGator from "../assets/img/hostgator-logo.svg";
-import Martian from "../assets/img/martian-text-logo.svg";
-import Homies from "../assets/img/homies-logo.png";
-import Terra from "../assets/img/terra-ats-logo.png";
-import Ethereum from "../assets/img/ethereum-logo.png";
+import HostGator from "../assets/img/hostgator.png";
+// import Martian from "../assets/img/martian.svg";
+import Terra from "../assets/img/terra.png";
+import Ethereum from "../assets/img/ethereum.svg";
 
 const navData = [
   {
@@ -30,7 +30,7 @@ const navData = [
   {
     id: 1,
     name: "Technologies",
-    href: "#Tech",
+    href: "#Footer",
     Icon: <Code size="20" height={16} />
   },
   {
@@ -44,18 +44,24 @@ const navData = [
 const socialIcons = [
   {
     id: 0,
+    name: "GitHub",
+    href: "https://github.com/santdeleon",
+    Icon: <FontAwesomeIcon icon={faGithub} />
+  },
+  {
+    id: 1,
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/sant-deleon/",
     Icon: <FontAwesomeIcon icon={faLinkedinIn} />
   },
   {
-    id: 1,
+    id: 2,
     name: "Angellist",
     href: "https://angel.co/santdeleon",
     Icon: <FontAwesomeIcon icon={faAngellist} />
   },
   {
-    id: 2,
+    id: 3,
     name: "Contact",
     href: "mailto:sant@santdeleon.io",
     Icon: <FontAwesomeIcon icon={faEnvelope} />
@@ -96,80 +102,71 @@ const skills = [
 ];
 
 const projects = [
+  // {
+  //   id: 0,
+  //   name: "Martian Network",
+  //   href: "http://martian.network/",
+  //   img: (
+  //     <img
+  //       src={Martian}
+  //       alt="Martian Network"
+  //       style={{ width: "10rem", height: "7.5rem" }}
+  //     />
+  //   ),
+  //   color: "#fcbaba",
+  //   emoji: (
+  //     <span role="img" alt="Alien Emoji" aria-label="Alien Emoji">
+  //       👽
+  //     </span>
+  //   ),
+  //   industry: "Content Management",
+  //   role: "Front-end Developer"
+  // },
   {
-    id: "coinflipProjectCard",
-    name: "coinflip",
-    className: "coinflip-project-card",
-    url: "https://github.com/santdeleon/coinflip",
-    img: Ethereum,
-    width: 50,
-    text: (
-      <p className="font-weight-bold m-0">
-        Decentralized gambling <br /> application built on the <br /> Ethereum
-        Network
-      </p>
+    id: 1,
+    name: "HostGator",
+    href: "https://www.hostgator.com/",
+    img: <img src={HostGator} alt="HostGator" style={{ width: "10rem" }} />,
+    color: "#FDDFA4",
+    emoji: (
+      <span role="img" alt="Crocodile Emoji" aria-label="Crocodile Emoji">
+        🐊
+      </span>
     ),
-    industry: "Blockchain, Gambling & Gaming"
+    industry: "Domain & Web Hosting",
+    role: "Software Engineer"
   },
   {
-    id: "hostgatorProjectCard",
-    name: "hostgator",
-    className: "hostgator-project-card",
-    url: "https://www.hostgator.com/",
-    img: HostGator,
-    width: 120,
-    text: (
-      <p className="font-weight-bold m-0">
-        Platform for entrepeuners <br /> & businesses to create,
-        <br /> host & manage websites
-      </p>
+    id: 2,
+    name: "Coinflip",
+    href: "https://github.com/santdeleon/coinflip",
+    img: <img src={Ethereum} alt="Ethereum" style={{ width: "7.5rem" }} />,
+    color: "#ffe8a0",
+    emoji: (
+      <span role="img" alt="Money Bag Emoji" aria-label="Money Bag Emoji">
+        💰
+      </span>
     ),
-    industry: "Domain & Web Hosting"
+    industry: "Blockchain Gaming",
+    role: "UI/UX & Blockchain Engineer"
   },
   {
-    id: "terraProjectCard",
-    name: "terra",
-    className: "terra-project-card",
-    url: "https://www.terraats.com/",
-    img: Terra,
-    width: 90,
-    text: (
-      <p className="font-weight-bold m-0">
-        Small in-house tech <br /> solution for custom <br /> software
-        applications
-      </p>
+    id: 3,
+    name: "Terra ATS",
+    href: "https://www.terraats.com/",
+    img: <img src={Terra} alt="TerraAts" style={{ width: "7.5rem" }} />,
+    color: "#10242D",
+    emoji: (
+      <span
+        role="img"
+        alt="Globe Showing Americas Emoji"
+        aria-label="Globe Showing Americas Emoji"
+      >
+        🌎
+      </span>
     ),
-    industry: "Software Services & IT Solutions"
-  },
-  {
-    id: "homiesProjectCard",
-    name: "homies",
-    className: "homies-project-card",
-    url: "#",
-    img: Homies,
-    width: 70,
-    text: (
-      <p className="font-weight-bold m-0">
-        Grassroots startup helping <br /> brands get off the ground <br /> &
-        sell online
-      </p>
-    ),
-    industry: "Branding & E-Commerce"
-  },
-  {
-    id: "martianProjectCard",
-    name: "martian",
-    className: "martian-project-card",
-    url: "http://martian.network/",
-    img: Martian,
-    width: 120,
-    text: (
-      <p className="font-weight-bold m-0">
-        Blockchain solution for <br /> monetizing, distributing <br /> & hosting
-        content
-      </p>
-    ),
-    industry: "Blockchain & Content Management"
+    industry: "IT & SaaS Solutions",
+    role: "Software Engineering Intern"
   }
 ];
 

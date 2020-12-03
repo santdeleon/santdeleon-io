@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { ThemeContext } from "styled-components";
 import cx from "classnames";
 
 import "./index.css";
@@ -14,10 +13,13 @@ import SantDark from "../../../assets/img/sant-dark.svg";
 const Header = () => {
   const { skills } = useBrand();
   const { theme } = useTheme();
-  const { backgroundColor } = useContext(ThemeContext);
 
   return (
-    <Container as="header" id="Header" className="Header mt-5 flex-column">
+    <Container
+      as="header"
+      id="Header"
+      className="Header mt-5 flex-column h-100"
+    >
       <Row>
         <Col>
           <img
@@ -56,10 +58,7 @@ const Header = () => {
                     className="Header__Div--skill-header"
                     style={{ backgroundColor: color }}
                   />
-                  <div
-                    className="Header__Div--skill-body text-center py-3"
-                    style={{ backgroundColor: backgroundColor }}
-                  >
+                  <div className="Header__Div--skill-body text-center py-3">
                     <p className="p-0 m-0 d-none d-lg-block">{name}</p>
                     <span className="d-block d-lg-none">{Icon}</span>
                   </div>

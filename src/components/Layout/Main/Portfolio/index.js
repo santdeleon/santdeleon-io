@@ -9,28 +9,27 @@ const Portfolio = () => {
   const { projects } = useBrand();
 
   return (
-    <Container id="Portfolio" className="Portfolio">
-      <Row>
-        <Col>
-          <h3 className="mb-0">Places and People</h3>
-          <h5 className="font-weight-light text-muted">I've worked with</h5>
+    <Container id="Portfolio" className="Portfolio pb-5 mb-5">
+      <Row className="pb-5">
+        <Col className="text-center">
+          <h4 className="display-4">Work</h4>
+          <p className="lead text-muted">Because why not</p>
         </Col>
       </Row>
       <Row>
         {projects.map(
-          ({ name, id, className, url, img, width, text, industry }) => (
-            <Col xs={12} md={6} lg={4} key={id}>
-              <ProjectCard
-                id={id}
-                name={name}
-                className={className}
-                url={url}
-                img={img}
-                width={width}
-                text={text}
-                industry={industry}
-              />
-            </Col>
+          ({ id, name, href, img, color, emoji, industry, role }) => (
+            <ProjectCard
+              key={id}
+              id={id}
+              name={name}
+              href={href}
+              img={img}
+              color={color}
+              emoji={emoji}
+              industry={industry}
+              role={role}
+            />
           )
         )}
       </Row>

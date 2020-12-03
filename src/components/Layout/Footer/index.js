@@ -13,7 +13,12 @@ const Footer = () => {
   const dateLastUpdated = "December 2, 2020";
 
   return (
-    <footer id="Footer" className="Footer border-top px-3 px-sm-5">
+    <footer
+      id="Footer"
+      className={cx("Footer border-top px-3 px-sm-5", {
+        "border-dark": theme === "dark"
+      })}
+    >
       <p className="mb-0 py-4">
         <small>Website last updated: {dateLastUpdated}</small>
       </p>

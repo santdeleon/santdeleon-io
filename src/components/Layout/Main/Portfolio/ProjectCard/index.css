@@ -1,36 +1,31 @@
-.Main__ProjectCard {
-  font-family: itc-avant-garde-gothic-pro;
-  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.3);
+.ProjectCard {
+  /* font-family: itc-avant-garde-gothic-pro; */
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-  height: 275px;
 }
 
-.Main__ProjectCard:hover {
+.ProjectCard:hover {
   transform: translateY(-0.7rem);
 }
 
-.Main__ProjectCard--hostgator {
-  background: linear-gradient(#1f90c6, #104c68);
+.ProjectCard__Div--card-wrapper {
+  border: 0.2rem solid #f3f1ee;
+  border-radius: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
 }
 
-.Main__ProjectCard--martian {
-  background: linear-gradient(#791600, #000);
+.ProjectCard__Div--card-wrapper:hover {
+  border: 0.2rem solid #e7e6e4;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
 }
 
-.Main__ProjectCard--terra {
-  background: linear-gradient(#b55672, #8d392b);
+.ProjectCard__P {
+  color: #82817d;
+  font-weight: 500;
+  font-size: 0.9rem;
 }
 
-.Main__ProjectCard--homies {
-  background: linear-gradient(#d74b7c, #591d31);
-}
-
-.Main__ProjectCard--coinflip {
-  background: linear-gradient(#fade7e, #f89c92);
-}
-
-@media only screen and (max-width: 768px) {
-  .Main__ProjectCard {
-    height: auto;
-  }
+.ProjectCard__P--gradient-text {
+  color: transparent;
+  background: linear-gradient(to right, #7c40ff, #ef52d1);
+  background-clip: text;
 }
