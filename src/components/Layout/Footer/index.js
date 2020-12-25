@@ -5,12 +5,14 @@ import cx from 'classnames';
 import { useBrand } from '../../../hooks/useBrand.js';
 import { useTheme } from '../../../hooks/useTheme.js';
 
+import Emoji from '../../../components/Emoji';
+
 import './index.css';
 
 const Footer = () => {
   const { theme } = useTheme();
   const { socialIcons, technologies } = useBrand();
-  const dateLastUpdated = 'December 2, 2020';
+  const dateLastUpdated = 'December 25, 2020';
 
   return (
     <footer
@@ -20,7 +22,12 @@ const Footer = () => {
       })}
     >
       <p className="mb-0 py-4">
-        <small>Website last updated: {dateLastUpdated}</small>
+        <small>
+          Website last updated: {dateLastUpdated}{' '}
+          <Emoji ariaLabel="Christmas Tree" unicode="🎄" />
+          <Emoji ariaLabel="Wrapped Gift" unicode="🎁" className="mx-1" />
+          <Emoji ariaLabel="Santa Claus" unicode="🎅" />
+        </small>
       </p>
       <h5>Languages</h5>
       <Row>
