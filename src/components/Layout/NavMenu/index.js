@@ -3,6 +3,9 @@ import { Navbar, Nav, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from 'styled-components';
 
+import Emoji from '../../Emoji';
+import ToggleSwitch from '../../ToggleSwitch';
+
 import './index.css';
 
 import NavLink from './NavLink';
@@ -17,7 +20,7 @@ import Moon from '../../../assets/img/moon.svg';
 
 const NavMenu = () => {
   const { navData } = useBrand();
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
   const { color } = useContext(ThemeContext);
 
   const themeVariables = {
@@ -35,10 +38,7 @@ const NavMenu = () => {
         title="Home"
         style={{ color: color }}
       >
-        <span role="img" aria-label="Rainbow Emoji">
-          🌈
-        </span>{' '}
-        Sant Deleon
+        <Emoji ariaLabel="Rainbow Emoji" unicode="🌈" /> Sant Deleon
       </Navbar.Brand>
       <Nav className="mr-auto d-none d-md-flex">
         {navData.map(({ id, name, href, Icon }) => (
@@ -64,18 +64,7 @@ const NavMenu = () => {
         >
           <img src={themeVariables.githubIcon} alt="Github" />
         </Button>
-        <Button
-          variant="link"
-          className="p-0"
-          title={`Activate ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
-          aria-label={`Activate ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
-          onClick={toggleTheme}
-        >
-          <img
-            src={themeVariables.toggleThemeIcon}
-            alt={themeVariables.altText}
-          />
-        </Button>
+        <ToggleSwitch />
       </Nav>
     </Navbar>
   );
