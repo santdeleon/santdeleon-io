@@ -1,18 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 
-import App from "./App";
+import App from './App';
 
-import * as serviceWorker from "./serviceWorker";
+import * as serviceWorker from './serviceWorker';
 
-import { ThemeProvider } from "./context/useTheme";
-import { BrandProvider } from "./context/useBrand";
+import { ThemeProvider } from './context/ThemeContext';
+import { BrandProvider } from './context/BrandContext';
 
-import "./stylesheets/colors.css";
-import "./stylesheets/fonts.css";
-import "./index.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import './stylesheets/colors.css';
+import './stylesheets/fonts.css';
+import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -24,7 +24,7 @@ ReactDOM.render(
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root'),
 );
 
 serviceWorker.register();

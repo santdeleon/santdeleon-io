@@ -1,9 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render, screen } from '@testing-library/react';
+import { ThemeProvider } from './context/ThemeContext';
+
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('the App component', () => {
+  it('renders with a welcome message', () => {
+    render(
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>,
+    );
+    const header = screen.getByRole('heading', { name: 'Hello, World!' });
+    expect(header).toBeInTheDocument();
+  });
 });

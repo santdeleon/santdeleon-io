@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import NavMenu from "./NavMenu";
-import Header from "./Header";
-import Main from "./Main";
-import Footer from "./Footer";
+import NavMenu from './NavMenu';
+import Header from './Header';
+import Main from './Main';
+import Footer from './Footer';
 
 const Layout = () => (
   <>

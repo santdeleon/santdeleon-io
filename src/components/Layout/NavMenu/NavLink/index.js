@@ -1,15 +1,15 @@
-import React from "react";
-import { Button } from "react-bootstrap";
-import { string, object } from "prop-types";
+import React from 'react';
+import { Button } from 'react-bootstrap';
+import { string, object } from 'prop-types';
 
-import "./index.css";
+import './index.css';
 
 const propTypes = {
   icon: object.isRequired,
   name: string.isRequired,
   theme: string.isRequired,
   href: string.isRequired,
-  color: string.isRequired
+  color: string.isRequired,
 };
 
 const NavLink = ({ icon, name, theme, href, color }) => (

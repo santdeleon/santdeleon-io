@@ -1,19 +1,19 @@
-import React, { useContext } from "react";
-import { Navbar, Nav, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { ThemeContext } from "styled-components";
+import React, { useContext } from 'react';
+import { Navbar, Nav, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { ThemeContext } from 'styled-components';
 
-import "./index.css";
+import './index.css';
 
-import NavLink from "./NavLink";
+import NavLink from './NavLink';
 
-import { useBrand } from "../../../context/useBrand";
-import { useTheme } from "../../../context/useTheme";
+import { useBrand } from '../../../hooks/useBrand';
+import { useTheme } from '../../../hooks/useTheme';
 
-import GithubLight from "../../../assets/img/github-light.svg";
-import GithubDark from "../../../assets/img/github-dark.svg";
-import Sun from "../../../assets/img/sun.svg";
-import Moon from "../../../assets/img/moon.svg";
+import GithubLight from '../../../assets/img/github-light.svg';
+import GithubDark from '../../../assets/img/github-dark.svg';
+import Sun from '../../../assets/img/sun.svg';
+import Moon from '../../../assets/img/moon.svg';
 
 const NavMenu = () => {
   const { navData } = useBrand();
@@ -21,9 +21,9 @@ const NavMenu = () => {
   const { color } = useContext(ThemeContext);
 
   const themeVariables = {
-    githubIcon: theme === "light" ? GithubLight : GithubDark,
-    toggleThemeIcon: theme === "light" ? Moon : Sun,
-    altText: theme === "light" ? "Dark Mode" : "Light Mode"
+    githubIcon: theme === 'light' ? GithubLight : GithubDark,
+    toggleThemeIcon: theme === 'light' ? Moon : Sun,
+    altText: theme === 'light' ? 'Dark Mode' : 'Light Mode',
   };
 
   return (
@@ -37,7 +37,7 @@ const NavMenu = () => {
       >
         <span role="img" aria-label="Rainbow Emoji">
           🌈
-        </span>{" "}
+        </span>{' '}
         Sant Deleon
       </Navbar.Brand>
       <Nav className="mr-auto d-none d-md-flex">
@@ -67,8 +67,8 @@ const NavMenu = () => {
         <Button
           variant="link"
           className="p-0"
-          title={`Activate ${theme === "light" ? "Dark" : "Light"} Mode`}
-          aria-label={`Activate ${theme === "light" ? "Dark" : "Light"} Mode`}
+          title={`Activate ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
+          aria-label={`Activate ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
           onClick={toggleTheme}
         >
           <img

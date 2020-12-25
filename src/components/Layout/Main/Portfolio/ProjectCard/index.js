@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
-import { Row, Col } from "react-bootstrap";
-import { number, string, object } from "prop-types";
-import cx from "classnames";
-import { ThemeContext } from "styled-components";
+import React, { useContext } from 'react';
+import { Row, Col } from 'react-bootstrap';
+import { number, string, object } from 'prop-types';
+import cx from 'classnames';
+import { ThemeContext } from 'styled-components';
 
-import { useTheme } from "../../../../../context/useTheme";
+import { useTheme } from '../../../../../hooks/useTheme.js';
 
-import "./index.css";
+import './index.css';
 
 const propTypes = {
   id: number.isRequired,
@@ -16,7 +16,7 @@ const propTypes = {
   color: string.isRequired,
   industry: string.isRequired,
   role: string.isRequired,
-  emoji: object.isRequired
+  emoji: object.isRequired,
 };
 
 const ProjectCard = ({ id, name, href, img, color, industry, role, emoji }) => {
@@ -28,22 +28,22 @@ const ProjectCard = ({ id, name, href, img, color, industry, role, emoji }) => {
       xs={12}
       md={6}
       lg={4}
-      className={cx("ProjectCard mb-lg-0 px-2", {
-        "mb-5": id !== 3
+      className={cx('ProjectCard mb-lg-0 px-2', {
+        'mb-5': id !== 3,
       })}
     >
       <a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={cx("text-decoration-none", {
-          "text-dark": theme === "light",
-          "text-light": theme === "dark"
+        className={cx('text-decoration-none', {
+          'text-dark': theme === 'light',
+          'text-light': theme === 'dark',
         })}
       >
         <div
-          className={cx("ProjectCard__Div--card-wrapper p-3", {
-            "shadow border border-dark": theme === "dark"
+          className={cx('ProjectCard__Div--card-wrapper p-3', {
+            'shadow border border-dark': theme === 'dark',
           })}
           style={{ backgroundColor: backgroundColor }}
         >

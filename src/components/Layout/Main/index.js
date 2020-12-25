@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import Portfolio from "./Portfolio";
+import Portfolio from './Portfolio';
 
 const Main = () => (
   <main className="Main">

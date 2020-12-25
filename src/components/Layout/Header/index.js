@@ -1,15 +1,15 @@
-import React, { useContext } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import cx from "classnames";
-import { ThemeContext } from "styled-components";
+import React, { useContext } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import cx from 'classnames';
+import { ThemeContext } from 'styled-components';
 
-import "./index.css";
+import './index.css';
 
-import { useBrand } from "../../../context/useBrand";
-import { useTheme } from "../../../context/useTheme";
+import { useBrand } from '../../../hooks/useBrand';
+import { useTheme } from '../../../hooks/useTheme';
 
-import SantLight from "../../../assets/img/sant-light.svg";
-import SantDark from "../../../assets/img/sant-dark.svg";
+import SantLight from '../../../assets/img/sant-light.svg';
+import SantDark from '../../../assets/img/sant-dark.svg';
 
 const Header = () => {
   const { skills } = useBrand();
@@ -21,32 +21,32 @@ const Header = () => {
       <Row>
         <Col>
           <img
-            src={theme === "light" ? SantLight : SantDark}
-            alt={theme === "light" ? "Sant & Sun" : "Sant & Moon"}
+            src={theme === 'light' ? SantLight : SantDark}
+            alt={theme === 'light' ? 'Sant & Sun' : 'Sant & Moon'}
             className="Header__Img--avatar"
           />
           <h1 className="display-4">
             <span
               className={cx({
-                "App--rainbow-text": theme === "dark"
+                'App--rainbow-text': theme === 'dark',
               })}
             >
-              Hello,{" "}
+              Hello,{' '}
             </span>
-            I'm Sant. <br />
+            I&apos;m Sant. <br />
             <span className="d-none d-md-block">
               Front-end & Blockchain Developer
             </span>
           </h1>
           <h4 className="d-none d-md-block text-muted font-weight-light mt-3 mb-5">
             with a knack for creating cutting edge products with elegance and
-            style.{" "}
+            style.{' '}
             <span role="img" aria-label="Sparkle Emoji">
               ✨
             </span>
           </h4>
           <h4 className="d-block d-md-none text-muted font-weight-light mb-4">
-            front-end developer and blockchain engineer{" "}
+            front-end developer and blockchain engineer{' '}
           </h4>
           <Row>
             {skills.map(({ id, color, name, Icon }) => (

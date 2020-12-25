@@ -2,43 +2,85 @@
   "name": "portfolio",
   "version": "2.1.0",
   "private": true,
+  "author": "Santiago Deleon",
+  "license": "MIT",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.17",
-    "@fortawesome/free-brands-svg-icons": "^5.8.1",
-    "@fortawesome/free-solid-svg-icons": "^5.8.1",
-    "@fortawesome/react-fontawesome": "^0.1.4",
-    "axios": "^0.18.0",
-    "bootstrap": "^4.5.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.5.3",
     "classnames": "^2.2.6",
-    "particlesjs": "^2.2.3",
-    "prop-types": "^15.7.2",
     "react": "^17.0.1",
-    "react-bootstrap": "^1.0.1",
+    "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
-    "react-error-boundary": "^3.0.2",
-    "react-feather": "^2.0.3",
-    "react-router": "^5.0.0",
-    "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8",
-    "styled-components": "^5.0.1"
+    "react-scripts": "4.0.1",
+    "web-vitals": "^1.0.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@jackfranklin/test-data-bot": "^1.3.0",
+    "@sheerun/mutationobserver-shim": "^0.3.3",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "12.6.0",
+    "classnames": "^2.2.6",
+    "commitizen": "^4.2.2",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-jest-dom": "^3.6.4",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-testing-library": "^3.10.1",
+    "husky": "^4.3.6",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-dom": "^4.0.0",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "jest-junit": "^12.0.0",
+    "moment": "^2.29.1",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0",
+    "prop-types": "^15.7.2",
+    "react-error-boundary": "^3.1.0",
+    "react-feather": "^2.0.9",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test:ci": "react-scripts test --ci --coverage --coverageDirectory=output/coverage/jest --reporters=default --reporters=jest-junit --testFailureExitCode=0 --silent"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "devDependencies": {
-    "@babel/helper-regex": "^7.10.5",
-    "yargs-parser": "^20.2.4"
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged --pattern '**/*.js'",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "jest-junit": {
+    "outputDirectory": "./output/coverage/juint",
+    "suiteNameTemplate": "{filepath}"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

@@ -1,9 +1,9 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React from 'react';
+import { Container, Row } from 'react-bootstrap';
 
-import ProjectCard from "./ProjectCard";
+import ProjectCard from './ProjectCard';
 
-import { useBrand } from "../../../../context/useBrand";
+import { useBrand } from '../../../../hooks/useBrand';
 
 const Portfolio = () => {
   const { projects } = useBrand();
@@ -24,7 +24,7 @@ const Portfolio = () => {
               industry={industry}
               role={role}
             />
-          )
+          ),
         )}
       </Row>
     </Container>

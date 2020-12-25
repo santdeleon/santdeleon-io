@@ -1,10 +1,10 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from 'react';
 
-export function useLocalStorage(
+export const useLocalStorage = (
   key,
-  defaultValue = "",
-  { serialize = JSON.stringify, deserialize = JSON.parse } = {}
-) {
+  defaultValue = '',
+  { serialize = JSON.stringify, deserialize = JSON.parse } = {},
+) => {
   const [state, setState] = useState(() => {
     const valueInLocalStorage = window.localStorage.getItem(key);
 
@@ -15,7 +15,7 @@ export function useLocalStorage(
         window.localStorage.removeItem(key);
       }
     }
-    return typeof defaultValue === "function" ? defaultValue() : defaultValue;
+    return typeof defaultValue === 'function' ? defaultValue() : defaultValue;
   });
 
   const prevKeyRef = useRef(key);
@@ -32,4 +32,4 @@ export function useLocalStorage(
   }, [key, state, serialize]);
 
   return [state, setState];
-}
+};
