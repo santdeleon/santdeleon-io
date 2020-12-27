@@ -24,8 +24,7 @@ exports[`the App component should match snapshot 1`] = `
         >
           🌈
         </span>
-         
-        Sant Deleon
+         Sant Deleon
       </a>
       <div
         class="mr-auto d-none d-md-flex navbar-nav"
@@ -140,17 +139,28 @@ exports[`the App component should match snapshot 1`] = `
             src="github-dark.svg"
           />
         </a>
-        <button
+        <span
+          aria-checked="false"
           aria-label="Activate Light Mode"
-          class="p-0 btn btn-link"
+          class="ToggleSwitch ToggleSwitch--dark"
+          role="checkbox"
+          tabindex="0"
           title="Activate Light Mode"
-          type="button"
         >
-          <img
-            alt="Light Mode"
-            src="sun.svg"
+          <div
+            class="ToggleSwitch__Div--track"
           />
-        </button>
+          <div
+            class="ToggleSwitch__Div--thumb ToggleSwitch__Div--thumb-dark"
+            style="transform: translateX(18px);"
+          >
+            <img
+              alt="Moon"
+              class="w-100"
+              src="moon.svg"
+            />
+          </div>
+        </span>
       </div>
     </nav>
     <header
@@ -218,7 +228,6 @@ exports[`the App component should match snapshot 1`] = `
                 />
                 <div
                   class="Header__Div--skill-body text-center py-3"
-                  style="background-color: rgb(34, 34, 34);"
                 >
                   <p
                     class="p-0 m-0 d-none d-lg-block"
@@ -259,7 +268,6 @@ exports[`the App component should match snapshot 1`] = `
                 />
                 <div
                   class="Header__Div--skill-body text-center py-3"
-                  style="background-color: rgb(34, 34, 34);"
                 >
                   <p
                     class="p-0 m-0 d-none d-lg-block"
@@ -300,7 +308,6 @@ exports[`the App component should match snapshot 1`] = `
                 />
                 <div
                   class="Header__Div--skill-body text-center py-3"
-                  style="background-color: rgb(34, 34, 34);"
                 >
                   <p
                     class="p-0 m-0 d-none d-lg-block"
@@ -341,7 +348,6 @@ exports[`the App component should match snapshot 1`] = `
                 />
                 <div
                   class="Header__Div--skill-body text-center py-3"
-                  style="background-color: rgb(34, 34, 34);"
                 >
                   <p
                     class="p-0 m-0 d-none d-lg-block"
@@ -382,7 +388,6 @@ exports[`the App component should match snapshot 1`] = `
                 />
                 <div
                   class="Header__Div--skill-body text-center py-3"
-                  style="background-color: rgb(34, 34, 34);"
                 >
                   <p
                     class="p-0 m-0 d-none d-lg-block"
@@ -436,7 +441,6 @@ exports[`the App component should match snapshot 1`] = `
             >
               <div
                 class="ProjectCard__Div--card-wrapper p-3 shadow border border-dark"
-                style="background-color: rgb(34, 34, 34);"
               >
                 <h3
                   class="mb-0 text-truncate"
@@ -513,7 +517,6 @@ exports[`the App component should match snapshot 1`] = `
             >
               <div
                 class="ProjectCard__Div--card-wrapper p-3 shadow border border-dark"
-                style="background-color: rgb(34, 34, 34);"
               >
                 <h3
                   class="mb-0 text-truncate"
@@ -590,7 +593,6 @@ exports[`the App component should match snapshot 1`] = `
             >
               <div
                 class="ProjectCard__Div--card-wrapper p-3 shadow border border-dark"
-                style="background-color: rgb(34, 34, 34);"
               >
                 <h3
                   class="mb-0 text-truncate"
@@ -668,7 +670,27 @@ exports[`the App component should match snapshot 1`] = `
       >
         <small>
           Website last updated: 
-          December 2, 2020
+          December 25, 2020
+           
+          <span
+            aria-label="Christmas Tree"
+            role="img"
+          >
+            🎄
+          </span>
+          <span
+            aria-label="Wrapped Gift"
+            class="mx-1"
+            role="img"
+          >
+            🎁
+          </span>
+          <span
+            aria-label="Santa Claus"
+            role="img"
+          >
+            🎅
+          </span>
         </small>
       </p>
       <h5>
