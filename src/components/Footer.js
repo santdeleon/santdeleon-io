@@ -39,12 +39,12 @@ const Footer = ({ ...props }) => {
           <Nav className="ml-auto d-none d-md-flex">
             commit:
             <a
-              href="##"
+              href="https://github.com/santdeleon/santdeleon-io/commit/00d683fa48a5d33f962e003fb9283418cc9a00bc"
               target="_blank"
               rel="noopener noreferrer"
               className="ml-2"
             >
-              e375ba9
+              00d683fa
             </a>
           </Nav>
         </Navbar>
@@ -65,17 +65,6 @@ const Footer = ({ ...props }) => {
               {Emoji} {name}
             </a>
           ))}
-        </Nav>
-        <Nav className="ml-auto d-none d-md-flex">
-          commit:
-          <a
-            href="##"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-2"
-          >
-            xxxxxx
-          </a>
         </Nav>
       </Navbar>
     </>
