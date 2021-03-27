@@ -1,11 +1,21 @@
 {
-  "short_name": "Portfolio",
-  "name": "Portfolio",
+  "short_name": "Sant Deleon",
+  "name": "Sant Deleon",
   "icons": [
     {
-      "src": "logo.png",
+      "src": "favicon-64.png",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/png"
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "favicon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",

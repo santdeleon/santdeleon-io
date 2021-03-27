@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/logo.png" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/shortcut-icon.png" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -10,15 +10,148 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Personal Software Engineer portfolio for Sant Deleon"
+      content="Software Engineer portfolio for Sant Deleon"
     />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="stylesheet" href="https://use.typekit.net/xff0iqu.css" />
 
-    <title>Sant | Front-end & Blockchain Engineer</title>
+    <title>Sant Deleon</title>
   </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    ::selection {
+      background: rgba(255, 77, 211, 0.3);
+    }
+
+    .NoScript {
+      font-family: Helvetica, sans-serif;
+    }
+
+    .NoScript__Container {
+      border-width: 6px 0 0 0;
+      border-style: solid;
+      border-image-slice: 1;
+      border-image-source: linear-gradient(
+        to right,
+        #e92b2b,
+        #ff9600,
+        #ffc800,
+        #6adb55,
+        #50cce2,
+        #bc3ede,
+        #ff4dd3
+      );
+    }
+
+    .NoScript__Div--content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 50vw;
+      margin: 5rem auto;
+    }
+
+    .NoScript__H1--emoji {
+      margin-bottom: 0;
+    }
+
+    .NoScript__H1--title {
+      margin-bottom: 5px;
+      color: #333232;
+    }
+
+    .NoScript__P {
+      line-height: 135%;
+      color: #777777;
+    }
+
+    .NoScript__A {
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      vertical-align: middle;
+      color: #ffffff;
+      background-color: #ff4dd3;
+      border-style: solid;
+      -webkit-border-radius: 0.5rem;
+      -moz-border-radius: 0.5rem;
+      border-radius: 0.5rem;
+      border-width: 0.125rem;
+      border-color: #dd00a6;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.5;
+      padding: 0.5rem 1.5rem;
+      overflow: visible;
+      white-space: nowrap;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+      box-shadow: 0 0.125rem 0 0 #dd00a6;
+      transform: translateY(0);
+      margin: 0.5rem 0 1.5rem 0;
+      width: 100px;
+    }
+
+    .NoScript__A:hover,
+    .NoScript__A:active {
+      background-color: #dd00a6;
+      border-color: #8a0068;
+      box-shadow: 0 0.125rem 0 0 #8a0068;
+    }
+
+    .NoScript__A:active {
+      box-shadow: 0 0 0 0 #8a0068;
+      transform: translateY(0.14rem);
+    }
+
+    .NoScript__A:focus {
+      outline: none;
+    }
+
+    .NoScript__Small {
+      color: #777777;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .NoScript__Div--content {
+        max-width: 80vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <noscript class="NoScript">
+    <div class="NoScript__Container">
+      <div class="NoScript__Div--content">
+        <h1 class="NoScript__H1--emoji">
+          <img
+            src="sant.svg"
+            alt="Sant enjoying Ice Cream"
+            aria-label="Sant enjoying Ice Cream"
+          />
+        </h1>
+        <h1 class="NoScript__H1--title">JavaScript is not available.</h1>
+        <p class="NoScript__P">
+          We’ve detected that JavaScript is disabled in this browser. Please
+          enable JavaScript or switch to a supported browser to continue using
+          santdeleon.io.
+        </p>
+        <a href="https://santdeleon.io" class="NoScript__A"
+          >Refresh</a
+        >
+        <small class="NoScript__Small">
+          Made with
+          <span role="img" aria-label="Two Hearts Emoji">💕</span> by Sant Deleon
+          <span role="img" aria-label="Copyright Emoji">©</span>, 2021
+        </small>
+      </div>
+    </div>
+  </noscript>
+  <div id="root" class="root"></div>
+</body>
 </html>

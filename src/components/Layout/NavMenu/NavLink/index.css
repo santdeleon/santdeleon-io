@@ -1,7 +1,0 @@
-.NavLink__Button {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-}
-
-.NavLink__Button:hover {
-  color: #f446e3 !important;
-}

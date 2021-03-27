@@ -1,30 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { StrictMode } from 'react';
+import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+
+import { GlobalStyles } from './theme';
+import { BrandProvider, ThemeProvider } from './context';
+import * as serviceWorker from './serviceWorker';
 
 import App from './App';
 
-import * as serviceWorker from './serviceWorker';
+import './tokens/build/tokens.css';
+import './assets/fonts/index.css';
+import './theme/utility.css';
 
-import { ThemeProvider } from './context/ThemeContext';
-import { BrandProvider } from './context/BrandContext';
-
-import './stylesheets/colors.css';
-import './stylesheets/fonts.css';
-import './index.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-ReactDOM.render(
-  <React.StrictMode>
+render(
+  <StrictMode>
     <BrowserRouter>
-      <ThemeProvider>
-        <BrandProvider>
+      <BrandProvider>
+        <ThemeProvider>
+          <GlobalStyles />
           <App />
-        </BrandProvider>
-      </ThemeProvider>
+        </ThemeProvider>
+      </BrandProvider>
     </BrowserRouter>
-  </React.StrictMode>,
+  </StrictMode>,
   document.getElementById('root'),
 );
 
-serviceWorker.register();
+serviceWorker.unregister();

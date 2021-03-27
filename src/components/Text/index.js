@@ -1,0 +1,13 @@
+export { default as Small } from './Small';
+export { default as P } from './P';
+export { default as PLead } from './PLead';
+export { default as PLeadLarge } from './PLeadLarge';
+export { default as H5 } from './H5';
+export { default as H4 } from './H4';
+export { default as H3 } from './H3';
+export { default as H2 } from './H2';
+export { default as H1 } from './H1';
+export { default as Display3 } from './Display3';
+export { default as Display2 } from './Display2';
+export { default as Display1 } from './Display1';
+export { default as Text } from './Text';
