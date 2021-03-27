@@ -1,14 +1,6 @@
 {
-<<<<<<< HEAD
   "short_name": "santdeleon-io",
   "name": "santdeleon-io",
-||||||| 3099e30
-  "short_name": "Portfolio",
-  "name": "Portfolio",
-=======
-  "short_name": "Sant Deleon",
-  "name": "Sant Deleon",
->>>>>>> develop
   "icons": [
     {
       "src": "favicon-64.png",
