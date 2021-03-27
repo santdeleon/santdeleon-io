@@ -6,7 +6,6 @@ import { BrandProvider } from './context/BrandContext';
 
 import App from './App';
 
-// TODO: Get the portfolio test coverage up to 100%
 describe('the App component', () => {
   it('should match snapshot', () => {
     const { container } = render(

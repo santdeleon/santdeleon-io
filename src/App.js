@@ -1,22 +1,16 @@
 import React from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
-import Layout from './components/Layout';
+import { Layout } from './components';
+import { Home } from './pages';
 
-import { GlobalStyles } from './context/ThemeContext';
-
-import './App.css';
-
-const App = () => {
-  window.onload = () =>
-    console.log('%c SANT WUZ HERE! ', 'background: #222; color: #bada55');
-
-  return (
-    <div className="App">
-      <div className="App__Div--rainbow-top" />
-      <GlobalStyles />
-      <Layout />
-    </div>
-  );
-};
+const App = () => (
+  <Layout>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Redirect to="/" />
+    </Switch>
+  </Layout>
+);
 
 export default App;
