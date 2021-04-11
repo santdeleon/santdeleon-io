@@ -1,5 +1,6 @@
-import { projects } from './projects.js';
-import { social } from './social.js';
-import { technologies } from './technologies.js';
+import { skills } from './skills';
+import { social } from './social';
+import { languages } from './languages';
+import { work } from './work';
 
-export { projects, social, technologies };
+export { skills, social, languages, work };

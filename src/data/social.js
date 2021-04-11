@@ -1,36 +1,33 @@
-import React from 'react';
-
-import { Emoji } from '../components';
+import {
+  faAngellist,
+  faLinkedinIn,
+  faGithub,
+} from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 export const social = [
   {
     id: 0,
-    name: 'GitHub',
+    name: 'Github',
     href: 'https://github.com/santdeleon',
-    Emoji: (
-      <Emoji alt="Cat Face Emoji" ariaLabel="Cat Face Emoji">
-        🐱
-      </Emoji>
-    ),
+    icon: faGithub,
   },
   {
     id: 1,
     name: 'LinkedIn',
     href: 'https://www.linkedin.com/in/sant-deleon/',
-    Emoji: (
-      <Emoji alt="Link Emoji" ariaLabel="Link Emoji">
-        🔗
-      </Emoji>
-    ),
+    icon: faLinkedinIn,
+  },
+  {
+    id: 2,
+    name: 'Angellist',
+    href: 'https://angel.co/santdeleon',
+    icon: faAngellist,
   },
   {
     id: 3,
-    name: 'Email',
+    name: 'Contact',
     href: 'mailto:sant@santdeleon.io',
-    Emoji: (
-      <Emoji alt="CLipboard Emoji" ariaLabel="CLipboard Emoji">
-        📋
-      </Emoji>
-    ),
+    icon: faEnvelope,
   },
 ];

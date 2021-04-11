@@ -1,15 +1,11 @@
 import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
 
-import { Layout } from './components';
-import { Home } from './pages';
+import { Layout, Languages, Work } from './components';
 
 const App = () => (
   <Layout>
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Redirect to="/" />
-    </Switch>
+    <Work />
+    <Languages />
   </Layout>
 );
 
