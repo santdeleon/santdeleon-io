@@ -1,4 +1,3 @@
-import { BrandProvider, BrandContext } from './BrandContext';
-import { ThemeProvider, ThemeContext } from './ThemeContext';
+import BrandProvider, { BrandContext } from './brand';
 
-export { BrandProvider, BrandContext, ThemeProvider, ThemeContext };
+export { BrandProvider, BrandContext };

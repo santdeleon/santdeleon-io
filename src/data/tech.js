@@ -1,7 +1,6 @@
-export const technologies = [
+export const tech = [
   {
-    id: 0,
-    name: 'Front-end',
+    name: 'Frontend',
     languages: [
       'HTML/CSS',
       'JavaScript',
@@ -9,9 +8,13 @@ export const technologies = [
       'Redux',
       'GatsbyJS',
       'NodeJS',
-      'Styled Components',
       'jQuery',
       'KnockoutJS',
+    ],
+  },
+  {
+    name: 'Frontend',
+    languages: [
       'Jest',
       'Mocha',
       'Chai',
@@ -23,7 +26,6 @@ export const technologies = [
     ],
   },
   {
-    id: 1,
     name: 'Blockchain',
     languages: [
       'Solidity',
@@ -39,7 +41,6 @@ export const technologies = [
     ],
   },
   {
-    id: 2,
     name: 'Backend',
     languages: ['Java', 'Perl'],
   },

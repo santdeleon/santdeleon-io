@@ -1,9 +1,8 @@
 import React, { createContext } from 'react';
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
-import { oneOfType, array, object, func } from 'prop-types';
+import { oneOfType, array, node, string } from 'prop-types';
 
 import { useLocalStorage } from '../hooks';
-import { media } from '../theme';
 
 export const ThemeContext = createContext();
 
@@ -17,13 +16,12 @@ export const ThemeProvider = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <StyledComponentsThemeProvider
-        theme={{ mode: theme, media: { ...media } }}
-      >
+      <StyledComponentsThemeProvider theme={{ mode: theme }}>
         {children}
       </StyledComponentsThemeProvider>
     </ThemeContext.Provider>
   );
 };
+ThemeProvider.propTypes = { children: oneOfType([array, node, string]) };
 
-ThemeProvider.propTypes = { children: oneOfType([array, object, func]) };
+export default ThemeProvider;
