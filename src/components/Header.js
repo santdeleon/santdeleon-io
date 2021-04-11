@@ -75,9 +75,9 @@ const Header = () => {
             <div className="rounded">
               <div className="rounded-top py-1" style={{ background: color }} />
               <div
-                className={cx('d-flex justify-content-center py-3', {
-                  shadow: theme === 'light',
-                  'shadow-lg': theme === 'dark',
+                className={cx('d-flex border justify-content-center py-3', {
+                  'border-light shadow-sm': theme === 'light',
+                  'border-0 shadow-lg': theme === 'dark',
                 })}
               >
                 <p className="mb-0 d-none d-lg-block">{name}</p>

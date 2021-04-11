@@ -7,17 +7,17 @@ import { Emoji } from '.';
 
 const Footer = () => {
   const { theme } = useTheme();
-  const { tech } = useBrand();
+  const { languages } = useBrand();
   const dateLastUpdated = 'April 11, 2021';
 
   return (
     <div
-      className={cx('border-top mt-5', {
+      className={cx('border-top', {
         'border-dark': theme === 'dark',
       })}
     >
       <Row className="mb-4">
-        <Col>
+        <Col className="pt-2">
           <small className="text-muted">
             Website last updated: {dateLastUpdated}
           </small>
@@ -27,7 +27,7 @@ const Footer = () => {
       <Row>
         <Col xs={12} lg={8}>
           <Row>
-            {tech.map(({ name, languages }, idx) => (
+            {languages.map(({ name, languages }, idx) => (
               <Col key={idx} xs={12} sm={3}>
                 <ul className="p-0">
                   <li className="font-weight-bold">
@@ -48,7 +48,7 @@ const Footer = () => {
             Give me a shout{' '}
             <a
               href="mailto:sant@santdeleon.io"
-              className="font-weight-bold text-decoration-none text-info"
+              className="font-weight-bold text-decoration-none text-pink"
               title="Contact Sant"
               aria-label="Contact Sant"
             >

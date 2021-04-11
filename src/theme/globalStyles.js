@@ -61,4 +61,11 @@ export const GlobalStyles = createGlobalStyle`
   ::selection {
     background: #84fbb8;
   }
+
+  .text-red {
+    color: #f76f6f !important;
+  }
+  .text-pink {
+    color: #ff87e1 !important;
+  }
 `;

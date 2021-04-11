@@ -9,7 +9,7 @@ const StyledToggleSwitch = styled.div`
   display: flex;
   ${ToggleTrack} {
     border-style: solid;
-    border-width: 3px;
+    border-width: 2px;
     border-color: ${({ on }) => {
       return on === 'true' ? '#3c1e70' : '#d1d5da';
     }};
@@ -19,7 +19,7 @@ const StyledToggleSwitch = styled.div`
   }
   ${ToggleThumb} {
     border-style: solid;
-    border-width: 3px;
+    border-width: 2px;
     transform: ${({ on }) =>
       on === 'true' ? 'translateX(18px)' : 'translateX(-2px)'};
     border-color: ${({ on }) => {

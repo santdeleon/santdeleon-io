@@ -1,5 +1,6 @@
 import { skills } from './skills';
 import { social } from './social';
-import { tech } from './tech';
+import { languages } from './languages';
+import { work } from './work';
 
-export { skills, social, tech };
+export { skills, social, languages, work };

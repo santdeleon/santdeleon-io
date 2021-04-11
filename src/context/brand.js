@@ -1,12 +1,12 @@
 import React, { createContext, useContext } from 'react';
 import { oneOfType, string, array, node } from 'prop-types';
 
-import { social, skills, tech } from '../data';
+import { social, skills, languages, work } from '../data';
 
 export const BrandContext = createContext();
 
 export const BrandProvider = ({ children }) => (
-  <BrandContext.Provider value={{ social, skills, tech }}>
+  <BrandContext.Provider value={{ social, skills, languages, work }}>
     {children}
   </BrandContext.Provider>
 );

@@ -1,4 +1,4 @@
-export const tech = [
+export const languages = [
   {
     name: 'Frontend',
     languages: [
@@ -10,6 +10,7 @@ export const tech = [
       'NodeJS',
       'jQuery',
       'KnockoutJS',
+      'styled-components',
     ],
   },
   {
