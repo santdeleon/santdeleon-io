@@ -1,9 +1,9 @@
 import React from 'react';
-import { string, oneOfType, node, array } from 'prop-types';
+import { string, oneOfType, node, arrayOf } from 'prop-types';
 
 const propTypes = {
   ariaLabel: string.isRequired,
-  children: oneOfType([string, array, node]).isRequired,
+  children: oneOfType([arrayOf(node), node]).isRequired,
 };
 
 const Emoji = ({ ariaLabel, children, ...props }) => (

@@ -6,8 +6,8 @@ import App from './App';
 
 import * as serviceWorker from './serviceWorker';
 
-import { ThemeProvider, GlobalStyles } from './theme';
-import { BrandProvider } from './context';
+import { ThemeProvider } from './theme';
+import { GlobalStyles } from './theme/globalStyles';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/fonts/index.css';
@@ -16,10 +16,8 @@ render(
   <StrictMode>
     <BrowserRouter>
       <ThemeProvider>
-        <BrandProvider>
-          <GlobalStyles />
-          <App />
-        </BrandProvider>
+        <GlobalStyles />
+        <App />
       </ThemeProvider>
     </BrowserRouter>
   </StrictMode>,

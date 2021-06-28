@@ -1,21 +1,18 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { oneOfType, array, func, object } from 'prop-types';
 
-import { Header, Main, ScrollButton, Footer } from '.';
+import Header from './Header';
+import Work from './Work';
+import Languages from './Languages';
+import Footer from './Footer';
 
-const propTypes = {
-  children: oneOfType([func, object, array]).isRequired,
-};
-
-const Layout = ({ children }) => (
+const Layout = () => (
   <Container className="pt-4">
     <Header />
-    <Main>{children}</Main>
-    <ScrollButton />
+    <Work />
+    <Languages />
     <Footer />
   </Container>
 );
 
-Layout.propTypes = propTypes;
 export default Layout;

@@ -1,21 +1,55 @@
 import React from 'react';
 import { Row, Col, Nav, Button } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  FaEthereum,
+  FaCode,
+  FaPalette,
+  FaRobot,
+  FaMugHot,
+} from 'react-icons/fa';
 import cx from 'classnames';
 
-import { Emoji, ToggleSwitch } from '.';
+import { useTheme } from '../theme';
 
-import { useBrand, useTheme } from '../hooks';
+import { routes } from '../utils/routes';
+
+import Emoji from './Emoji';
 
 import SantLight from '../assets/img/sant-light.svg';
 import SantDark from '../assets/img/sant-dark.svg';
 import GithubLight from '../assets/img/github-light.svg';
 import GithubDark from '../assets/img/github-dark.svg';
-import Moon from '../assets/img/moon.svg';
 
 const Header = () => {
-  const { skills } = useBrand();
   const { theme, toggleTheme } = useTheme();
+
+  const skills = [
+    {
+      text: 'Front-end Developer',
+      color: '#F76F6E',
+      Icon: <FaCode />,
+    },
+    {
+      text: 'Blockchain Engineer',
+      color: '#FBC07A',
+      Icon: <FaEthereum />,
+    },
+    {
+      text: 'UI/UX Designer-ish',
+      color: '#FCE073',
+      Icon: <FaPalette />,
+    },
+    {
+      text: 'Tech Enthusiast',
+      color: '#A5F29F',
+      Icon: <FaRobot />,
+    },
+    {
+      text: 'Coffee Drinker',
+      color: '#82E1F3',
+      Icon: <FaMugHot />,
+    },
+  ];
 
   return (
     <header>
@@ -25,13 +59,13 @@ const Header = () => {
             <Col className="d-flex align-items-center justify-content-between">
               <img
                 src={theme === 'light' ? SantLight : SantDark}
-                alt={theme === 'light' ? 'Sant & Sun' : 'Sant & Moon'}
+                alt={`Sant & ${theme === 'light' ? 'Sun' : 'Moon'}`}
                 width={100}
               />
               <Nav className="ml-auto align-items-center">
                 <Button
                   variant="link"
-                  href="https://github.com/santdeleon"
+                  href={routes.urlCreatorGithub}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-0 mr-3"
@@ -44,16 +78,18 @@ const Header = () => {
                   />
                 </Button>
               </Nav>
-              <ToggleSwitch
-                title={`Activate ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
-                ariaLabel={`Activate ${
-                  theme === 'light' ? 'Dark' : 'Light'
-                } Mode`}
-                on={theme === 'light' ? 'false' : 'true'}
+              <Button
+                variant="transparent"
+                className="p-0"
                 onClick={toggleTheme}
               >
-                <img src={Moon} alt="Moon" aria-label="Moon" width={25} />
-              </ToggleSwitch>
+                <Emoji
+                  ariaLabel={`${theme === 'light' ? 'Full Moon' : 'Sun'} Emoji`}
+                  className="h4"
+                >
+                  {theme === 'light' ? '🌕' : '☀️'}
+                </Emoji>
+              </Button>
             </Col>
           </Row>
           <h1 className="font-weight-light mb-0">Hello, I&apos;m Sant,</h1>
@@ -70,7 +106,7 @@ const Header = () => {
         </Col>
       </Row>
       <Row>
-        {skills.map(({ color, name, icon }, idx) => (
+        {skills.map(({ text, color, Icon }, idx) => (
           <Col key={idx}>
             <div className="rounded">
               <div className="rounded-top py-1" style={{ background: color }} />
@@ -80,8 +116,8 @@ const Header = () => {
                   'border-0 shadow-lg': theme === 'dark',
                 })}
               >
-                <p className="mb-0 d-none d-lg-block">{name}</p>
-                <FontAwesomeIcon className="d-block d-lg-none" icon={icon} />
+                <p className="mb-0 d-none d-lg-block">{text}</p>
+                <span className="d-block d-lg-none">{Icon}</span>
               </div>
             </div>
           </Col>

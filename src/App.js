@@ -1,12 +1,7 @@
 import React from 'react';
 
-import { Layout, Languages, Work } from './components';
+import Layout from './components/Layout';
 
-const App = () => (
-  <Layout>
-    <Work />
-    <Languages />
-  </Layout>
-);
+const App = () => <Layout />;
 
 export default App;
