@@ -6,7 +6,7 @@ import moment from 'moment';
 
 import { useTheme } from '../theme';
 
-import { routes } from '../utils/routes';
+import { URL_SANTDELEONIO_GITHUB_API } from '../constants';
 
 import Emoji from './Emoji';
 
@@ -16,7 +16,7 @@ const Footer = () => {
   const [
     { data, loading, error },
     refetchRepoData,
-  ] = useAxios(routes.urlGithubRepositoryAPI, { manual: true });
+  ] = useAxios(URL_SANTDELEONIO_GITHUB_API, { manual: true });
 
   const languages = [
     {

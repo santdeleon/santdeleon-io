@@ -5,7 +5,12 @@ import cx from 'classnames';
 
 import { useTheme } from '../theme';
 
-import { routes } from '../utils/routes';
+import {
+  URL_SANTDELEONIO_GITHUB_REPO,
+  URL_LINKEDIN,
+  URL_ANGELLIST,
+  URL_CONTACT,
+} from '../constants';
 
 import Emoji from './Emoji';
 
@@ -15,22 +20,22 @@ const Footer = () => {
   const links = [
     {
       title: 'Github',
-      href: routes.urlCreatorGithub,
+      href: URL_SANTDELEONIO_GITHUB_REPO,
       Icon: <FaGithub />,
     },
     {
       title: 'LinkedIn',
-      href: routes.urlCreatorLinkedIn,
+      href: URL_LINKEDIN,
       Icon: <FaLinkedin />,
     },
     {
       title: 'Angellist',
-      href: routes.urlCreatorAngelList,
+      href: URL_ANGELLIST,
       Icon: <FaAngellist />,
     },
     {
       title: 'Contact Me',
-      href: routes.urlCreatorContact,
+      href: URL_CONTACT,
       Icon: <FaEnvelope />,
     },
   ];

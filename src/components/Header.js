@@ -11,7 +11,7 @@ import cx from 'classnames';
 
 import { useTheme } from '../theme';
 
-import { routes } from '../utils/routes';
+import { URL_SANTDELEONIO_GITHUB_REPO } from '../constants';
 
 import Emoji from './Emoji';
 
@@ -65,7 +65,7 @@ const Header = () => {
               <Nav className="ml-auto align-items-center">
                 <Button
                   variant="link"
-                  href={routes.urlCreatorGithub}
+                  href={URL_SANTDELEONIO_GITHUB_REPO}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-0 mr-3"
