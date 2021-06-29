@@ -4,6 +4,8 @@ import { oneOfType, arrayOf, node } from 'prop-types';
 
 import { useLocalStorage } from '../hooks/useLocalStorage';
 
+import { media } from './media';
+
 export const ThemeContext = createContext();
 
 export const useTheme = () => useContext(ThemeContext);
@@ -18,7 +20,9 @@ export const ThemeProvider = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <StyledComponentsThemeProvider theme={{ mode: theme }}>
+      <StyledComponentsThemeProvider
+        theme={{ mode: theme, media: { ...media } }}
+      >
         {children}
       </StyledComponentsThemeProvider>
     </ThemeContext.Provider>

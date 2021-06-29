@@ -1,5 +1,4 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
 import cx from 'classnames';
 
 import { useTheme } from '../theme';
@@ -98,7 +97,7 @@ const Work = () => {
   return (
     <section className="my-5">
       <h5>Work</h5>
-      <Row>
+      {/* <Row>
         {work.map(
           ({ title, role, description, img, href, isGithubLink }, idx) => (
             <Col
@@ -147,7 +146,7 @@ const Work = () => {
             </Col>
           ),
         )}
-      </Row>
+      </Row> */}
     </section>
   );
 };

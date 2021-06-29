@@ -9,7 +9,6 @@ import * as serviceWorker from './serviceWorker';
 import { ThemeProvider } from './theme';
 import { GlobalStyles } from './theme/globalStyles';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/fonts/index.css';
 
 render(

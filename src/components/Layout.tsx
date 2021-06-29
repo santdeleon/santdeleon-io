@@ -1,17 +1,23 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import styled from 'styled-components';
 
 import Header from './Header';
 import Work from './Work';
 import Languages from './Languages';
 import Footer from './Footer';
 
+const Container = styled.div`
+  max-width: 1040px;
+  padding: 0 2rem;
+  margin: 0 auto;
+`;
+
 const Layout = () => (
-  <Container className="pt-4">
+  <Container>
     <Header />
-    <Work />
+    {/* <Work />
     <Languages />
-    <Footer />
+    <Footer /> */}
   </Container>
 );
 

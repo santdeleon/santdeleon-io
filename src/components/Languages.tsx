@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
-import { Row, Col } from 'react-bootstrap';
 import cx from 'classnames';
 import useAxios from 'axios-hooks';
 import moment from 'moment';
 
 import { useTheme } from '../theme';
 
-import { routes } from '../utils/routes';
+import { SANTDELEONIO_GITHUB_API } from '../constants';
 
 import Emoji from './Emoji';
 
@@ -16,7 +15,7 @@ const Footer = () => {
   const [
     { data, loading, error },
     refetchRepoData,
-  ] = useAxios(routes.urlGithubRepositoryAPI, { manual: true });
+  ] = useAxios(SANTDELEONIO_GITHUB_API, { manual: true });
 
   const languages = [
     {
@@ -75,7 +74,7 @@ const Footer = () => {
         'border-dark': theme === 'dark',
       })}
     >
-      <Row className="mb-4">
+      {/* <Row className="mb-4">
         <Col className="pt-2">
           <small className="text-muted">
             Website last updated:{' '}
@@ -137,7 +136,7 @@ const Footer = () => {
             <Emoji ariaLabel="Coffee Emoji">☕</Emoji>
           </p>
         </Col>
-      </Row>
+      </Row> */}
     </div>
   );
 };

@@ -39,6 +39,11 @@ export const GlobalStyles = createGlobalStyle`
     list-style: none;
   }
 
+  p {
+    margin: 0;
+    color: gray;
+  }
+
   ::-webkit-scrollbar {
     background-color: #ff87e1;
     width: 6px;
@@ -63,9 +68,10 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .text-red {
-    color: #f76f6f !important;
+    color: #f76f6f;
   }
+
   .text-pink {
-    color: #ff87e1 !important;
+    color: #ff87e1;
   }
 `;
