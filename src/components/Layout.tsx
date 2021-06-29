@@ -15,9 +15,9 @@ const Container = styled.div`
 const Layout = () => (
   <Container>
     <Header />
-    {/* <Work />
+    <Work />
     <Languages />
-    <Footer /> */}
+    <Footer />
   </Container>
 );
 

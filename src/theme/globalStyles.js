@@ -36,12 +36,21 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   ul {
-    list-style: none;
+    list-style-type: none;
+    padding: 0;
   }
 
-  p {
+  h1, h2, h3, h4, h5, h6 {
+    color: ${({ theme }) => (theme.mode === 'dark' ? '#f4f2f2' : '#302f2f')}
+  }
+
+  p, small, li {
     margin: 0;
     color: gray;
+  }
+
+  li {
+    margin-bottom: 10px;
   }
 
   ::-webkit-scrollbar {
@@ -69,9 +78,5 @@ export const GlobalStyles = createGlobalStyle`
 
   .text-red {
     color: #f76f6f;
-  }
-
-  .text-pink {
-    color: #ff87e1;
   }
 `;

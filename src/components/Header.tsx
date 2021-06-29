@@ -7,6 +7,7 @@ import {
   FaMugHot,
 } from 'react-icons/fa';
 import styled from 'styled-components';
+import cx from 'classnames';
 
 import { useTheme } from '../theme';
 
@@ -52,7 +53,6 @@ const MobileP = styled.p`
 `;
 
 const SkillCard = styled.div`
-  margin: 0 10px;
   border-radius: 6px;
   box-shadow: ${({ theme }) =>
     theme.mode === 'dark'
@@ -63,7 +63,10 @@ const SkillCard = styled.div`
   display: none;
   ${({ theme }) => theme.media.greaterThan('xs')`
     display: block;
-  `}
+  `};
+  &:not(.last-child) {
+    margin: 0 15px 0 0;
+  }
 `;
 
 const SkillCardHeader = styled.div`
@@ -162,7 +165,11 @@ const Header: React.FC = () => {
       <Row justify="space-between">
         {skills.map(({ text, color, Icon }: SkillProps, idx: number) => (
           <Col key={idx}>
-            <SkillCard>
+            <SkillCard
+              className={cx({
+                'last-child': idx === skills.length - 1,
+              })}
+            >
               <SkillCardHeader color={color} />
               <SkillCardBody align="center">
                 <DesktopP>{text}</DesktopP>
