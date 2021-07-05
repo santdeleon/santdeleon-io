@@ -1,14 +1,44 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
+import { FaEnvelope, FaGithub, FaLinkedin, FaAngellist } from 'react-icons/fa';
 import cx from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { useBrand, useTheme } from '../hooks';
-import { Emoji } from '.';
+import { useTheme } from '../theme';
+
+import {
+  URL_SANTDELEONIO_GITHUB_REPO,
+  URL_LINKEDIN,
+  URL_ANGELLIST,
+  URL_CONTACT,
+} from '../constants';
+
+import Emoji from './Emoji';
 
 const Footer = () => {
   const { theme } = useTheme();
-  const { social } = useBrand();
+
+  const links = [
+    {
+      title: 'Github',
+      href: URL_SANTDELEONIO_GITHUB_REPO,
+      Icon: <FaGithub />,
+    },
+    {
+      title: 'LinkedIn',
+      href: URL_LINKEDIN,
+      Icon: <FaLinkedin />,
+    },
+    {
+      title: 'Angellist',
+      href: URL_ANGELLIST,
+      Icon: <FaAngellist />,
+    },
+    {
+      title: 'Contact Me',
+      href: URL_CONTACT,
+      Icon: <FaEnvelope />,
+    },
+  ];
 
   return (
     <footer>
@@ -16,16 +46,16 @@ const Footer = () => {
         <Nav className="mr-auto">
           <p className="font-weight-light mb-0 text-muted">
             Made with
-            <Emoji ariaLabel="Two Hearts Emoji" className="mx-1">
+            <Emoji ariaLabel="Two Hearts Emoji" className="ml-2 mr-1">
               💕
             </Emoji>
             by Sant
           </p>
         </Nav>
         <Nav className="ml-auto">
-          {social.map(({ id, name, color, href, icon }) => (
+          {links.map(({ title, href, Icon }, idx) => (
             <Nav.Link
-              key={id}
+              key={idx}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
@@ -33,10 +63,10 @@ const Footer = () => {
                 'text-secondary': theme === 'light',
                 'text-light': theme === 'dark',
               })}
-              title={name}
-              aria-label={name}
+              title={title}
+              aria-label={title}
             >
-              <FontAwesomeIcon icon={icon} />
+              {Icon}
             </Nav.Link>
           ))}
         </Nav>

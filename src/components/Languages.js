@@ -1,14 +1,73 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import cx from 'classnames';
+import useAxios from 'axios-hooks';
+import moment from 'moment';
 
-import { useBrand, useTheme } from '../hooks';
-import { Emoji } from '.';
+import { useTheme } from '../theme';
+
+import { URL_SANTDELEONIO_GITHUB_API } from '../constants';
+
+import Emoji from './Emoji';
 
 const Footer = () => {
   const { theme } = useTheme();
-  const { languages } = useBrand();
-  const dateLastUpdated = 'April 11, 2021';
+  // Ping GitHub for santdeleon-io repo data
+  const [
+    { data, loading, error },
+    refetchRepoData,
+  ] = useAxios(URL_SANTDELEONIO_GITHUB_API, { manual: true });
+
+  const languages = [
+    {
+      name: 'Frontend',
+      languages: [
+        'HTML',
+        'CSS/SCSS',
+        'JavaScript',
+        'TypeScript',
+        'React',
+        'NodeJS',
+        'jQuery',
+        'KnockoutJS',
+        'styled-components',
+      ],
+    },
+    {
+      name: 'Frontend',
+      languages: [
+        'Jest',
+        'React Testing Library',
+        'Mocha',
+        'Chai',
+        'Bootstrap',
+        'Storybook',
+      ],
+    },
+    {
+      name: 'Blockchain',
+      languages: [
+        'Solidity',
+        'Web3',
+        '@web3/react',
+        'EthersJS',
+        '@ethersproject',
+        'OpenZepplin',
+        'Ganache',
+        'Truffle Suite',
+        'Ethereum Testnets',
+        'Solana Testnets',
+      ],
+    },
+    {
+      name: 'Backend',
+      languages: ['Java', 'Perl'],
+    },
+  ];
+
+  useEffect(() => {
+    if (!data) refetchRepoData();
+  }, [data, refetchRepoData]);
 
   return (
     <div
@@ -19,7 +78,17 @@ const Footer = () => {
       <Row className="mb-4">
         <Col className="pt-2">
           <small className="text-muted">
-            Website last updated: {dateLastUpdated}
+            Website last updated:{' '}
+            <span
+              className={cx({
+                'text-info': !error,
+                'text-danger': error,
+              })}
+            >
+              {loading && 'XXXX XX, XXXX'}
+              {data && moment(data.updated_at).format('MMMM Do, YYYY')}
+              {error && <>Hmm.. Looks like we&apos;re not sure.</>}
+            </span>
           </small>
         </Col>
       </Row>
