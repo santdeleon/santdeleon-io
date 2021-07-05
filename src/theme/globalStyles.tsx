@@ -1,7 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyles = createGlobalStyle`
+import { ThemeType } from '.';
 
+type Props = {
+  theme: ThemeType;
+};
+
+export const GlobalStyles = createGlobalStyle<Props>`
   html,
   body {
     margin: 0;
@@ -36,7 +41,21 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   ul {
-    list-style: none;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: ${({ theme }) => (theme.mode === 'dark' ? '#f4f2f2' : '#302f2f')}
+  }
+
+  p, small, li {
+    margin: 0;
+    color: gray;
+  }
+
+  li {
+    margin-bottom: 10px;
   }
 
   ::-webkit-scrollbar {
@@ -60,12 +79,5 @@ export const GlobalStyles = createGlobalStyle`
 
   ::selection {
     background: #84fbb8;
-  }
-
-  .text-red {
-    color: #f76f6f !important;
-  }
-  .text-pink {
-    color: #ff87e1 !important;
   }
 `;
