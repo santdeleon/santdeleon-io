@@ -1,7 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyles = createGlobalStyle`
+import { ThemeType } from '.';
 
+type Props = {
+  theme: ThemeType;
+};
+
+export const GlobalStyles = createGlobalStyle<Props>`
   html,
   body {
     margin: 0;
@@ -74,9 +79,5 @@ export const GlobalStyles = createGlobalStyle`
 
   ::selection {
     background: #84fbb8;
-  }
-
-  .text-red {
-    color: #f76f6f;
   }
 `;

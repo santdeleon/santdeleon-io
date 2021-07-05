@@ -1,21 +1,31 @@
-import React, { createContext, useContext } from 'react';
+import React, { FC, createContext, useContext } from 'react';
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
-import { oneOfType, arrayOf, node } from 'prop-types';
 
 import { useLocalStorage } from '../hooks/useLocalStorage';
 
 import { media } from './media';
 
-export const ThemeContext = createContext();
+type ThemeContextProps = {
+  theme: string;
+  toggleTheme: () => void;
+};
+
+export type ThemeType = {
+  mode: string;
+  media: Record<string, unknown>;
+};
+
+export const ThemeContext = createContext<Partial<ThemeContextProps>>({});
 
 export const useTheme = () => useContext(ThemeContext);
 
-export const ThemeProvider = ({ children }) => {
+export const ThemeProvider: FC = ({ children }) => {
   const prefersOSDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
   const [theme, setTheme] = useLocalStorage(
     'theme',
     prefersOSDarkTheme ? 'dark' : 'light',
   );
+
   const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
 
   return (
@@ -28,7 +38,5 @@ export const ThemeProvider = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
-
-ThemeProvider.propTypes = { children: oneOfType([arrayOf(node), node]) };
 
 export default ThemeProvider;

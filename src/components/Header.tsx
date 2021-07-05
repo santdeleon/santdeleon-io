@@ -162,7 +162,7 @@ const Header: React.FC = () => {
           </MobileP>
         </Col>
       </Row>
-      <Row justify="space-between">
+      <Row justify="space-between" margin="0 0 4rem 0">
         {skills.map(({ text, color, Icon }: SkillProps, idx: number) => (
           <Col key={idx}>
             <SkillCard

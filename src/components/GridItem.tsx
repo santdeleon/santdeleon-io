@@ -5,6 +5,7 @@ interface GridItemProps {
   justify?: string;
   column?: string;
   row?: string;
+  margin?: string;
 }
 
 export const GridItem = styled.div<GridItemProps>`
@@ -12,6 +13,7 @@ export const GridItem = styled.div<GridItemProps>`
   justify-self: ${({ justify }) => justify};
   grid-column: ${({ column }) => column};
   grid-row: ${({ row }) => row};
+  margin: ${({ margin }) => margin};
 `;
 
 export default GridItem;

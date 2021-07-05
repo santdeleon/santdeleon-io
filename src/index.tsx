@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
 
-import * as serviceWorker from './serviceWorker';
+// import * as serviceWorker from './serviceWorker';
 
 import { ThemeProvider } from './theme';
 import { GlobalStyles } from './theme/globalStyles';
@@ -23,4 +23,4 @@ render(
   document.getElementById('root'),
 );
 
-serviceWorker.register();
+// serviceWorker.register();

@@ -1,12 +1,22 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "prettier"],
+  "parserOptions": {
+    "project": "*/tsconfig.json"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "plugins": ["@typescript-eslint", "prettier", "jest"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier"
+    "plugin:prettier/recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
   ],
   "rules": {
     "prettier/prettier": 2,
@@ -16,5 +26,10 @@
       "warn",
       { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" }
     ]
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
   }
 }

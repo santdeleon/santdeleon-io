@@ -23,19 +23,19 @@ export const Grid = styled.div<GridItemProps>`
   display: grid;
   grid-template-columns: ${({ col }) => col || '1fr'};
   grid-column-gap: ${({ colGap }) =>
-    (colGap === 'sm' && 'var(--spacer-size-400-rem)') ||
-    (colGap === 'md' && 'var(--spacer-size-600-rem)') ||
-    (colGap === 'lg' && 'var(--spacer-size-800-rem)') ||
+    (colGap === 'sm' && '1rem') ||
+    (colGap === 'md' && '2rem') ||
+    (colGap === 'lg' && '3rem') ||
     colGap};
   grid-row-gap: ${({ rowGap }) =>
-    (rowGap === 'sm' && 'var(--spacer-size-400-rem)') ||
-    (rowGap === 'md' && 'var(--spacer-size-600-rem)') ||
-    (rowGap === 'lg' && 'var(--spacer-size-800-rem)') ||
+    (rowGap === 'sm' && '1rem') ||
+    (rowGap === 'md' && '2rem') ||
+    (rowGap === 'lg' && '3rem') ||
     rowGap};
   grid-gap: ${({ gap }) =>
-    (gap === 'sm' && 'var(--spacer-size-400-rem)') ||
-    (gap === 'md' && 'var(--spacer-size-600-rem)') ||
-    (gap === 'lg' && 'var(--spacer-size-800-rem)') ||
+    (gap === 'sm' && '1rem') ||
+    (gap === 'md' && '2rem') ||
+    (gap === 'lg' && '3rem') ||
     gap};
   grid-auto-columns: ${({ autoColumns }) => autoColumns};
   grid-auto-rows: ${({ autoRows }) => autoRows};
