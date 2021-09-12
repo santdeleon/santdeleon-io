@@ -142,17 +142,34 @@ const Header: React.FC = () => {
       {/* Welcome text */}
       <Row margin="0 0 2rem 0">
         <Col>
-          <Text fontSize="2rem" fontWeight="500" margin="0 0 0.3rem 0">
+          <Text
+            color={theme === 'dark' ? '#F3F2F2' : '#333232'}
+            fontSize="2rem"
+            fontWeight="500"
+            margin="0 0 0.3rem 0"
+          >
             Hello, I&apos;m Sant
           </Text>
-          <DesktopText fontSize="2rem" fontWeight="500" margin="0 0 0.5rem 0">
+          <DesktopText
+            color={theme === 'dark' ? '#F3F2F2' : '#333232'}
+            fontSize="2rem"
+            fontWeight="500"
+            margin="0 0 0.5rem 0"
+          >
             Front-end & Blockchain Engineer
           </DesktopText>
-          <DesktopText color="#999999" fontSize="1.3rem" fontWeight="300">
+          <DesktopText
+            color={theme === 'dark' ? '#A8A6A6' : '#999999'}
+            fontSize="1.3rem"
+            fontWeight="300"
+          >
             with a knack for creating cutting edge products with elegance and
             style. <Emoji ariaLabel="Sparkle Emoji">✨</Emoji>
           </DesktopText>
-          <MobileText color="#999999" fontWeight="300">
+          <MobileText
+            color={theme === 'dark' ? '#A8A6A6' : '#999999'}
+            fontWeight="300"
+          >
             Front-end & Blockchain Engineer
           </MobileText>
         </Col>
@@ -168,8 +185,15 @@ const Header: React.FC = () => {
             >
               <SkillCardHeader color={color} />
               <SkillCardBody align="center">
-                <DesktopText fontWeight="300">{text}</DesktopText>
-                <MobileText>{Icon}</MobileText>
+                <DesktopText
+                  color={theme === 'dark' ? '#999999' : '#333232'}
+                  fontWeight="300"
+                >
+                  {text}
+                </DesktopText>
+                <MobileText color={theme === 'dark' ? '#999999' : '#333232'}>
+                  {Icon}
+                </MobileText>
               </SkillCardBody>
             </SkillCard>
           </Col>

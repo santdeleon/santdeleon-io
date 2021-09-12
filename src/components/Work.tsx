@@ -8,6 +8,7 @@ import { GridItem } from './GridItem';
 import { Row } from './Row';
 import { Col } from './Col';
 import { Link } from './Link';
+import { Text } from './Text';
 
 import GithubLight from '../assets/img/github-light.svg';
 import GithubDark from '../assets/img/github-dark.svg';
@@ -40,10 +41,6 @@ const StyledCard = styled.div`
   }
 `;
 
-const StyledH4 = styled.h4`
-  margin: 0 0 0.25rem 0;
-`;
-
 const ImgContainer = styled(Row)<{ bgColor?: string }>`
   padding: 1rem 0;
   height: 150px;
@@ -51,11 +48,6 @@ const ImgContainer = styled(Row)<{ bgColor?: string }>`
   img {
     height: 80%;
   }
-`;
-
-const InDevText = styled.small`
-  color: #f76f6f;
-  margin: 0.25rem 0 0 0;
 `;
 
 const CurrentText = styled.small`
@@ -155,7 +147,12 @@ const Work: FC = () => {
               <Link href={href}>
                 <StyledCard>
                   <Row justify="space-between">
-                    <StyledH4>{title}</StyledH4>
+                    <Text
+                      color={theme === 'dark' ? '#F3F2F2' : '#333232'}
+                      margin="0 0 0.25rem 0"
+                    >
+                      {title}
+                    </Text>
                     {isGithubLink && (
                       <img
                         src={theme === 'light' ? GithubLight : GithubDark}
@@ -165,7 +162,12 @@ const Work: FC = () => {
                     )}
                   </Row>
                   <Row margin="0 0 1rem 0">
-                    <small>{role}</small>
+                    <Text
+                      fontSize="0.9rem"
+                      color={theme === 'dark' ? '#A8A6A6' : '#7777777'}
+                    >
+                      {role}
+                    </Text>
                   </Row>
                   <ImgContainer
                     justify="center"
@@ -177,7 +179,13 @@ const Work: FC = () => {
                   <Col>
                     <p>{description}</p>
                     {title === 'amoeba.com' && (
-                      <InDevText>Currently in development</InDevText>
+                      <Text
+                        color="#f76f6f"
+                        fontSize="0.825rem"
+                        margin="0.25rem 0 0 0"
+                      >
+                        In perpetual development
+                      </Text>
                     )}
                   </Col>
                 </StyledCard>

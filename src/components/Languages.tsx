@@ -12,7 +12,7 @@ import { GridItem } from './GridItem';
 import { Link } from './Link';
 
 const StyledSection = styled.section`
-  border-width: 1px 0 0 0;
+  border-width: 2px 0 0 0;
   border-style: solid;
   border-color: ${({ theme }) =>
     theme.mode === 'dark' ? '#302f2f' : '#f4f2f2'};
@@ -31,8 +31,7 @@ const languages = [
     languages: [
       'HTML',
       'CSS/SCSS',
-      'JavaScript',
-      'TypeScript',
+      'JavaScript/TypeScript',
       'React',
       'NodeJS',
       'jQuery',
@@ -59,6 +58,7 @@ const languages = [
       'Truffle Suite',
       'Ethereum Testnets',
       'Solana Testnets',
+      'Ethereum/Solana Development',
     ],
   },
   {
@@ -92,8 +92,8 @@ const Footer = () => {
       <h3>Languages</h3>
       <Grid xs={1} sm={2} md={4} gap="md">
         {languages.map(({ name, languages }, idx) => (
-          <GridItem>
-            <ul key={idx}>
+          <GridItem key={idx}>
+            <ul>
               <ListItemHeader>{name}</ListItemHeader>
               {languages.map((language, i) => (
                 <li key={i}>{language}</li>
