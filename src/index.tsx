@@ -9,8 +9,6 @@ import App from './App';
 import { ThemeProvider } from './theme';
 import { GlobalStyles } from './theme/globalStyles';
 
-import './assets/fonts/index.css';
-
 render(
   <StrictMode>
     <BrowserRouter>

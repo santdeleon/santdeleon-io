@@ -17,8 +17,7 @@
     "jsx": "react",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "noImplicitReturns": true
   },
   "include": ["src"]
 }
