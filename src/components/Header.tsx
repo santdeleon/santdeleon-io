@@ -18,34 +18,21 @@ import { Row } from './Row';
 import { Col } from './Col';
 import { Button } from './Button';
 import { Link } from './Link';
+import { Text } from './Text';
 
 import SantLight from '../assets/img/sant-light.svg';
 import SantDark from '../assets/img/sant-dark.svg';
 import GithubLight from '../assets/img/github-light.svg';
 import GithubDark from '../assets/img/github-dark.svg';
 
-const H1 = styled.h1<{
-  margin?: string;
-}>`
-  font-weight: 500;
-  margin: ${({ margin }) => margin ?? '0 0 10px 0'};
-`;
-
-const DesktopH1 = styled(H1)`
+const DesktopText = styled(Text)`
   display: none;
   ${({ theme }) => theme.media.greaterThan('md')`
     display: block;
   `}
 `;
 
-const DesktopP = styled.p`
-  display: none;
-  ${({ theme }) => theme.media.greaterThan('md')`
-    display: block;
-  `}
-`;
-
-const MobileP = styled.p`
+const MobileText = styled(Text)`
   display: block;
   ${({ theme }) => theme.media.greaterThan('md')`
     display: none;
@@ -119,6 +106,7 @@ const Header: React.FC = () => {
 
   return (
     <header>
+      {/* Navbar Brand, Github Link and Theme toggle */}
       <Row justify="space-between" margin="1rem 0">
         <img
           src={theme === 'light' ? SantLight : SantDark}
@@ -130,8 +118,6 @@ const Header: React.FC = () => {
             <Link
               margin="0 0.5rem 0 0"
               href={URL_SANTDELEONIO_GITHUB}
-              target="_blank"
-              rel="noopener noreferrer"
               title="Github"
             >
               <img
@@ -153,19 +139,25 @@ const Header: React.FC = () => {
           </Row>
         </div>
       </Row>
+      {/* Welcome text */}
       <Row margin="0 0 2rem 0">
         <Col>
-          <H1 margin="0 0 0.5rem 0">Hello, I&apos;m Sant,</H1>
-          <DesktopH1>Front-end & Blockchain Engineer</DesktopH1>
-          <DesktopP className="lead text-muted d-none d-md-block">
+          <Text fontSize="2rem" fontWeight="500" margin="0 0 0.3rem 0">
+            Hello, I&apos;m Sant
+          </Text>
+          <DesktopText fontSize="2rem" fontWeight="500" margin="0 0 0.5rem 0">
+            Front-end & Blockchain Engineer
+          </DesktopText>
+          <DesktopText color="#999999" fontSize="1.3rem" fontWeight="300">
             with a knack for creating cutting edge products with elegance and
             style. <Emoji ariaLabel="Sparkle Emoji">✨</Emoji>
-          </DesktopP>
-          <MobileP className="lead text-muted d-block d-md-none">
+          </DesktopText>
+          <MobileText color="#999999" fontWeight="300">
             Front-end & Blockchain Engineer
-          </MobileP>
+          </MobileText>
         </Col>
       </Row>
+      {/* Skill cards */}
       <Row justify="space-between" margin="0 0 4rem 0">
         {skills.map(({ text, color, Icon }: SkillProps, idx: number) => (
           <Col key={idx}>
@@ -176,8 +168,8 @@ const Header: React.FC = () => {
             >
               <SkillCardHeader color={color} />
               <SkillCardBody align="center">
-                <DesktopP>{text}</DesktopP>
-                <MobileP>{Icon}</MobileP>
+                <DesktopText fontWeight="300">{text}</DesktopText>
+                <MobileText>{Icon}</MobileText>
               </SkillCardBody>
             </SkillCard>
           </Col>
