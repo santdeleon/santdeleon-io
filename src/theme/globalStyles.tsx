@@ -1,12 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { ThemeType } from '.';
-
-type Props = {
-  theme: ThemeType;
+type Theme = {
+  mode: string;
+  media: Record<string, unknown>;
 };
 
-export const GlobalStyles = createGlobalStyle<Props>`
+type GlobalStyles = {
+  theme: Theme;
+};
+
+export const GlobalStyles = createGlobalStyle<GlobalStyles>`
   html,
   body {
     margin: 0;

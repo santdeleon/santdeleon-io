@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-interface EmojiProps {
+interface EmojiProps extends React.HTMLProps<HTMLSpanElement> {
   ariaLabel?: string;
   margin?: string;
-  className?: string;
-  children: React.ReactNodeArray | React.ReactNode;
 }
 
 const StyledEmoji = styled.span<EmojiProps>`

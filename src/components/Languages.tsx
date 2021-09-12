@@ -3,7 +3,7 @@ import useAxios from 'axios-hooks';
 import moment from 'moment';
 import styled from 'styled-components';
 
-import { SANTDELEONIO_GITHUB_API, URL_CONTACT } from '../constants';
+import { URL_SANTDELEONIO_GITHUB_API, URL_CONTACT } from '../constants';
 
 import { Emoji } from './Emoji';
 import { Row } from './Row';
@@ -71,7 +71,7 @@ const Footer = () => {
   const [
     { data, loading, error },
     refetchRepoData,
-  ] = useAxios(SANTDELEONIO_GITHUB_API, { manual: true });
+  ] = useAxios(URL_SANTDELEONIO_GITHUB_API, { manual: true });
 
   useEffect(() => {
     if (!data) refetchRepoData();

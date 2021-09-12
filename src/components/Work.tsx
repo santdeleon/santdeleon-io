@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 
 import { useTheme } from '../theme';
@@ -142,7 +142,7 @@ const work = [
   },
 ];
 
-const Work = () => {
+const Work: FC = () => {
   const { theme } = useTheme();
 
   return (

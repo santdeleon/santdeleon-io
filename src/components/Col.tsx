@@ -9,9 +9,14 @@ interface ColProps {
 export const Col = styled.div<ColProps>`
   display: flex;
   flex-direction: column;
-  align-items: ${({ align }) => align ?? 'flex-start'};
-  justify-content: ${({ justify }) => justify ?? 'flex-start'};
+  align-items: ${({ align }) => align};
+  justify-content: ${({ justify }) => justify};
   margin: ${({ margin }) => margin};
 `;
+
+Col.defaultProps = {
+  align: 'flex-start',
+  justify: 'flex-start',
+};
 
 export default Col;

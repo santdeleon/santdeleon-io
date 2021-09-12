@@ -11,12 +11,12 @@ import cx from 'classnames';
 
 import { useTheme } from '../theme';
 
-import { SANTDELEONIO_GITHUB_URL } from '../constants';
+import { URL_SANTDELEONIO_GITHUB } from '../constants';
 
 import { Emoji } from './Emoji';
 import { Row } from './Row';
 import { Col } from './Col';
-import { ButtonTransparent } from './Button';
+import { Button } from './Button';
 import { Link } from './Link';
 
 import SantLight from '../assets/img/sant-light.svg';
@@ -129,7 +129,7 @@ const Header: React.FC = () => {
           <Row>
             <Link
               margin="0 0.5rem 0 0"
-              href={SANTDELEONIO_GITHUB_URL}
+              href={URL_SANTDELEONIO_GITHUB}
               target="_blank"
               rel="noopener noreferrer"
               title="Github"
@@ -139,13 +139,17 @@ const Header: React.FC = () => {
                 alt="Github"
               />
             </Link>
-            <ButtonTransparent fontSize="1.6rem" onClick={toggleTheme}>
+            <Button
+              fontSize="1.6rem"
+              bgColor="transparent"
+              onClick={toggleTheme}
+            >
               <Emoji
                 ariaLabel={`${theme === 'light' ? 'Full Moon' : 'Sun'} Emoji`}
               >
                 {theme === 'light' ? '🌕' : '☀️'}
               </Emoji>
-            </ButtonTransparent>
+            </Button>
           </Row>
         </div>
       </Row>

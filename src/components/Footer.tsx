@@ -3,7 +3,7 @@ import { FaEnvelope, FaGithub, FaLinkedin, FaAngellist } from 'react-icons/fa';
 import styled from 'styled-components';
 
 import {
-  SANTDELEONIO_GITHUB_URL,
+  URL_SANTDELEONIO_GITHUB,
   URL_LINKEDIN,
   URL_ANGELLIST,
   URL_CONTACT,
@@ -31,7 +31,7 @@ interface LinksProps {
 const links: LinksProps[] = [
   {
     title: 'Github',
-    href: SANTDELEONIO_GITHUB_URL,
+    href: URL_SANTDELEONIO_GITHUB,
     Icon: <FaGithub />,
   },
   {

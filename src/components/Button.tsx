@@ -1,44 +1,46 @@
 import React from 'react';
 import styled from 'styled-components';
 
+type ButtonType = 'button' | 'submit' | 'reset';
+
 interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
+  type?: ButtonType;
   margin?: string;
   padding?: string;
   border?: string;
   fontSize?: string;
-  className?: string;
-  onClick?: () => void;
-  children: React.ReactNode[] | React.ReactNode;
+  bgColor?: string;
 }
 
 const ButtonBase = styled.button<ButtonProps>`
-  cursor: pointer;
   display: block;
+  cursor: pointer;
+  border: 0;
   margin: ${({ margin }) => margin};
   padding: ${({ padding }) => padding};
   font-size: ${({ fontSize }) => fontSize};
-  border: 0;
+  background-color: ${({ bgColor }) => bgColor};
 `;
 
-const Button: React.FC<ButtonProps> = ({
+export const Button: React.FC<ButtonProps> = ({
   margin,
   padding,
   fontSize,
+  bgColor,
+  type = 'button',
   className,
   onClick,
   children,
-}: ButtonProps) => (
+}) => (
   <ButtonBase
+    type={type}
     margin={margin}
     padding={padding}
     fontSize={fontSize}
+    bgColor={bgColor}
     className={className}
     onClick={onClick}
   >
     {children}
   </ButtonBase>
 );
-
-export const ButtonTransparent = styled(Button)`
-  background: transparent;
-`;

@@ -1,11 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 
 interface LinkProps extends React.HTMLProps<HTMLAnchorElement> {
-  href?: string;
   margin?: string;
-  title?: string;
-  children: React.ReactNode[] | React.ReactNode;
 }
 
 export const StyledLink = styled.a<LinkProps>`
@@ -17,10 +14,10 @@ export const StyledLink = styled.a<LinkProps>`
   }
 `;
 
-export const Link: React.FC<LinkProps> = ({
+export const Link: FC<LinkProps> = ({
+  margin,
   href,
   title,
-  margin,
   children,
 }: LinkProps) => (
   <StyledLink

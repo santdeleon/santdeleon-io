@@ -5,19 +5,23 @@ import { useLocalStorage } from '../hooks/useLocalStorage';
 
 import { media } from './media';
 
-type ThemeContextProps = {
-  theme: string;
+import { NOOP } from '../constants';
+
+type Theme = 'light' | 'dark';
+
+interface ThemeContextProps {
+  theme: Theme;
   toggleTheme: () => void;
+}
+
+const DEFAULT_THEME = {
+  theme: 'light' as Theme,
+  toggleTheme: NOOP,
 };
 
-export type ThemeType = {
-  mode: string;
-  media: Record<string, unknown>;
-};
-
-export const ThemeContext = createContext<Partial<ThemeContextProps>>({});
-
-export const useTheme = () => useContext(ThemeContext);
+export const ThemeContext = createContext<Partial<ThemeContextProps>>(
+  DEFAULT_THEME,
+);
 
 export const ThemeProvider: FC = ({ children }) => {
   const prefersOSDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
@@ -38,5 +42,7 @@ export const ThemeProvider: FC = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
+
+export const useTheme = () => useContext(ThemeContext);
 
 export default ThemeProvider;
