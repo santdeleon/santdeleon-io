@@ -21,26 +21,26 @@ interface GridItemProps {
 
 export const Grid = styled.div<GridItemProps>`
   display: grid;
-  grid-template-columns: ${({ col }) => col ?? '1fr'};
+  grid-template-columns: ${({ col }) => col || '1fr'};
   grid-column-gap: ${({ colGap }) =>
-    (colGap === 'sm' && '1rem') ??
-    (colGap === 'md' && '2rem') ??
-    (colGap === 'lg' && '3rem') ??
+    (colGap === 'sm' && '1rem') ||
+    (colGap === 'md' && '2rem') ||
+    (colGap === 'lg' && '3rem') ||
     colGap};
   grid-row-gap: ${({ rowGap }) =>
-    (rowGap === 'sm' && '1rem') ??
-    (rowGap === 'md' && '2rem') ??
-    (rowGap === 'lg' && '3rem') ??
+    (rowGap === 'sm' && '1rem') ||
+    (rowGap === 'md' && '2rem') ||
+    (rowGap === 'lg' && '3rem') ||
     rowGap};
   grid-gap: ${({ gap }) =>
-    (gap === 'sm' && '1rem') ??
-    (gap === 'md' && '2rem') ??
-    (gap === 'lg' && '3rem') ??
+    (gap === 'sm' && '1rem') ||
+    (gap === 'md' && '2rem') ||
+    (gap === 'lg' && '3rem') ||
     gap};
   grid-auto-columns: ${({ autoColumns }) => autoColumns};
   grid-auto-rows: ${({ autoRows }) => autoRows};
-  justify-items: ${({ justify }) => justify ?? 'start'};
-  align-items: ${({ align }) => align ?? 'stretch'};
+  justify-items: ${({ justify }) => justify || 'start'};
+  align-items: ${({ align }) => align || 'stretch'};
   margin: ${({ margin }) => margin};
   padding: ${({ padding }) => padding};
   ${({ theme, xs }) => theme.media.greaterThan('xs')`
