@@ -5,7 +5,6 @@ import styled from 'styled-components';
 
 import { URL_SANTDELEONIO_GITHUB_API, URL_CONTACT } from '../constants';
 
-import { Emoji } from './Emoji';
 import { Row } from './Row';
 import { Grid } from './Grid';
 import { GridItem } from './GridItem';
@@ -108,10 +107,6 @@ const Footer = () => {
               <Link href={URL_CONTACT} title="Contact Me">
                 <b>sant@santdeleon.io</b>
               </Link>
-            </li>
-            <li>
-              Let&apos;s get <span>coffee</span>{' '}
-              <Emoji ariaLabel="Coffee Emoji">☕</Emoji>
             </li>
           </ul>
         </GridItem>

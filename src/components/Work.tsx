@@ -56,7 +56,7 @@ const CurrentText = styled.small`
 
 const work = [
   {
-    title: 'santdeleon.io',
+    title: 'Portfolio',
     role: 'Creator',
     description: 'Official GitHub repository for santdeleon.io.',
     img: {
@@ -86,35 +86,37 @@ const work = [
       'Decentralized gaming application built on the Ethereum network.',
     img: {
       src: Ethereum,
-      alt: 'A custom cartoon coin of the Ethereum Logo.',
+      alt: 'Ethereum Coin',
       bgColor: '#FFE792',
     },
     href: 'https://github.com/santdeleon/coinflip',
     isGithubLink: true,
   },
   {
-    title: 'Amoeba',
+    title: 'Amoeba Library',
     role: 'Creator',
-    description: 'React based component library and design system.',
+    description:
+      'React based component library and design system built for Amoeba.',
     img: {
       src: Amoeba,
       alt: 'Amoeba',
       bgColor: '#A9EBA3',
     },
-    href: 'https://github.com/santdeleon/amoeba',
-    isGithubLink: true,
+    href: undefined,
+    isGithubLink: false,
   },
   {
-    title: 'amoeba.com',
+    title: 'Amoeba',
     role: 'Creator',
-    description: 'Official documentation site for Amoeba.',
+    description: 'An NFT marketplace built on Solana.',
     img: {
       src: AmoebaAndFriends,
-      alt: 'Amoeba.com Homepage Banner',
+      alt: 'Amoeba and Friends',
       bgColor: '#A1E4F0',
     },
-    href: 'https://github.com/santdeleon/amoeba-com',
-    isGithubLink: true,
+    href: undefined,
+    isGithubLink: false,
+    isInDev: true,
   },
   {
     title: (
@@ -142,7 +144,10 @@ const Work: FC = () => {
       <h3>Work</h3>
       <Grid xs={1} md={2} xl={3} gap="lg">
         {work.map(
-          ({ title, role, description, img, href, isGithubLink }, idx) => (
+          (
+            { title, role, description, img, href, isGithubLink, isInDev },
+            idx,
+          ) => (
             <GridItem key={idx} align="stretch" justify="stretch">
               <Link href={href}>
                 <StyledCard>
@@ -178,13 +183,13 @@ const Work: FC = () => {
                   </ImgContainer>
                   <Col>
                     <p>{description}</p>
-                    {title === 'amoeba.com' && (
+                    {isInDev && (
                       <Text
                         color="#f76f6f"
                         fontSize="0.825rem"
                         margin="0.25rem 0 0 0"
                       >
-                        In perpetual development
+                        Currently in development
                       </Text>
                     )}
                   </Col>
