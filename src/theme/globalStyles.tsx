@@ -26,8 +26,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStyles>`
   body {
     font-family: 'SF Pro Display', Helvetica, sans-serif, system;
     color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : '#000000')};
-    background: ${({ theme }) =>
-      theme.mode === 'dark' ? '#222222' : '#FFFFFF'};
+    background: ${({ theme }) => (theme.mode === 'dark' ? '#222222' : '#FFFFFF')};
     border-width: 6px 0 0 0;
     border-style: solid;
     border-image-slice: 1;

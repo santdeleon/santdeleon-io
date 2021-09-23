@@ -1,17 +1,11 @@
 import React from 'react';
-import {
-  FaEthereum,
-  FaCode,
-  FaPalette,
-  FaRobot,
-  FaMugHot,
-} from 'react-icons/fa';
+import { FaEthereum, FaCode, FaPalette, FaRobot, FaMugHot } from 'react-icons/fa';
 import styled from 'styled-components';
 import cx from 'classnames';
 
 import { useTheme } from '../theme';
 
-import { URL_SANTDELEONIO_GITHUB } from '../constants';
+import { URL_SANTDELEON_GITHUB } from '../constants';
 
 import { Emoji } from './Emoji';
 import { Row } from './Row';
@@ -42,11 +36,8 @@ const MobileText = styled(Text)`
 const SkillCard = styled.div`
   border-radius: 6px;
   box-shadow: ${({ theme }) =>
-    theme.mode === 'dark'
-      ? '0 7px 7px rgba(0, 0, 0, 0.6)'
-      : '0 7px 7px rgba(0, 0, 0, 0.2)'};
-  background-color: ${({ theme }) =>
-    theme.mode === 'dark' ? '#222222' : '#FFFFFF'};
+    theme.mode === 'dark' ? '0 7px 7px rgba(0, 0, 0, 0.6)' : '0 7px 7px rgba(0, 0, 0, 0.2)'};
+  background-color: ${({ theme }) => (theme.mode === 'dark' ? '#222222' : '#FFFFFF')};
   display: none;
   ${({ theme }) => theme.media.greaterThan('xs')`
     display: block;
@@ -115,24 +106,11 @@ const Header: React.FC = () => {
         />
         <div>
           <Row>
-            <Link
-              margin="0 0.5rem 0 0"
-              href={URL_SANTDELEONIO_GITHUB}
-              title="Github"
-            >
-              <img
-                src={theme === 'light' ? GithubLight : GithubDark}
-                alt="Github"
-              />
+            <Link margin="0 0.5rem 0 0" href={URL_SANTDELEON_GITHUB} title="Github">
+              <img src={theme === 'light' ? GithubLight : GithubDark} alt="Github" />
             </Link>
-            <Button
-              fontSize="1.6rem"
-              bgColor="transparent"
-              onClick={toggleTheme}
-            >
-              <Emoji
-                ariaLabel={`${theme === 'light' ? 'Full Moon' : 'Sun'} Emoji`}
-              >
+            <Button fontSize="1.6rem" bgColor="transparent" onClick={toggleTheme}>
+              <Emoji ariaLabel={`${theme === 'light' ? 'Full Moon' : 'Sun'} Emoji`}>
                 {theme === 'light' ? '🌕' : '☀️'}
               </Emoji>
             </Button>
@@ -142,12 +120,7 @@ const Header: React.FC = () => {
       {/* Welcome text */}
       <Row margin="0 0 2rem 0">
         <Col>
-          <Text
-            color={theme === 'dark' ? '#F3F2F2' : '#333232'}
-            fontSize="2rem"
-            fontWeight="500"
-            margin="0 0 0.3rem 0"
-          >
+          <Text color={theme === 'dark' ? '#F3F2F2' : '#333232'} fontSize="2rem" fontWeight="500" margin="0 0 0.3rem 0">
             Hello, I&apos;m Sant
           </Text>
           <DesktopText
@@ -158,18 +131,11 @@ const Header: React.FC = () => {
           >
             Front-end & Blockchain Engineer
           </DesktopText>
-          <DesktopText
-            color={theme === 'dark' ? '#A8A6A6' : '#999999'}
-            fontSize="1.3rem"
-            fontWeight="300"
-          >
-            with a knack for creating cutting edge products with elegance and
-            style. <Emoji ariaLabel="Sparkle Emoji">✨</Emoji>
+          <DesktopText color={theme === 'dark' ? '#A8A6A6' : '#999999'} fontSize="1.3rem" fontWeight="300">
+            with a knack for creating cutting edge products with elegance and style.{' '}
+            <Emoji ariaLabel="Sparkle Emoji">✨</Emoji>
           </DesktopText>
-          <MobileText
-            color={theme === 'dark' ? '#A8A6A6' : '#999999'}
-            fontWeight="300"
-          >
+          <MobileText color={theme === 'dark' ? '#A8A6A6' : '#999999'} fontWeight="300">
             Front-end & Blockchain Engineer
           </MobileText>
         </Col>
@@ -185,15 +151,10 @@ const Header: React.FC = () => {
             >
               <SkillCardHeader color={color} />
               <SkillCardBody align="center">
-                <DesktopText
-                  color={theme === 'dark' ? '#999999' : '#333232'}
-                  fontWeight="300"
-                >
+                <DesktopText color={theme === 'dark' ? '#999999' : '#333232'} fontWeight="300">
                   {text}
                 </DesktopText>
-                <MobileText color={theme === 'dark' ? '#999999' : '#333232'}>
-                  {Icon}
-                </MobileText>
+                <MobileText color={theme === 'dark' ? '#999999' : '#333232'}>{Icon}</MobileText>
               </SkillCardBody>
             </SkillCard>
           </Col>

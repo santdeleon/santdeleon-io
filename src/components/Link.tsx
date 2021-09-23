@@ -14,19 +14,8 @@ export const StyledLink = styled.a<LinkProps>`
   }
 `;
 
-export const Link: FC<LinkProps> = ({
-  margin,
-  href,
-  title,
-  children,
-}: LinkProps) => (
-  <StyledLink
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    title={title}
-    margin={margin}
-  >
+export const Link: FC<LinkProps> = ({ margin, href, title, children }: LinkProps) => (
+  <StyledLink href={href} target="_blank" rel="noopener noreferrer" title={title} margin={margin}>
     {children}
   </StyledLink>
 );

@@ -3,7 +3,7 @@ import useAxios from 'axios-hooks';
 import moment from 'moment';
 import styled from 'styled-components';
 
-import { URL_SANTDELEONIO_GITHUB_API, URL_CONTACT } from '../constants';
+import { URL_SANTDELEON_IO_GITHUB_API, URL_CONTACT } from '../constants';
 
 import { Row } from './Row';
 import { Grid } from './Grid';
@@ -13,8 +13,7 @@ import { Link } from './Link';
 const StyledSection = styled.section`
   border-width: 2px 0 0 0;
   border-style: solid;
-  border-color: ${({ theme }) =>
-    theme.mode === 'dark' ? '#302f2f' : '#f4f2f2'};
+  border-color: ${({ theme }) => (theme.mode === 'dark' ? '#302f2f' : '#f4f2f2')};
   padding-top: 1rem;
 `;
 
@@ -67,10 +66,7 @@ const languages = [
 ];
 
 const Footer = () => {
-  const [
-    { data, loading, error },
-    refetchRepoData,
-  ] = useAxios(URL_SANTDELEONIO_GITHUB_API, { manual: true });
+  const [{ data, loading, error }, refetchRepoData] = useAxios(URL_SANTDELEON_IO_GITHUB_API, { manual: true });
 
   useEffect(() => {
     if (!data) refetchRepoData();

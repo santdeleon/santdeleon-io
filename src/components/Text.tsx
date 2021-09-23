@@ -25,21 +25,8 @@ StyledText.defaultProps = {
   fontWeight: '400',
 };
 
-export const Text: FC<TextProps> = ({
-  color,
-  fontSize,
-  fontWeight,
-  margin,
-  className,
-  children,
-}) => (
-  <StyledText
-    color={color}
-    fontSize={fontSize}
-    fontWeight={fontWeight}
-    margin={margin}
-    className={className}
-  >
+export const Text: FC<TextProps> = ({ color, fontSize, fontWeight, margin, className, children }) => (
+  <StyledText color={color} fontSize={fontSize} fontWeight={fontWeight} margin={margin} className={className}>
     {children}
   </StyledText>
 );

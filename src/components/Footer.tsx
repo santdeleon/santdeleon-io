@@ -1,13 +1,8 @@
 import React, { FC } from 'react';
-import { FaEnvelope, FaGithub, FaLinkedin, FaAngellist } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 import styled from 'styled-components';
 
-import {
-  URL_SANTDELEONIO_GITHUB,
-  URL_LINKEDIN,
-  URL_ANGELLIST,
-  URL_CONTACT,
-} from '../constants';
+import { URL_SANTDELEON_GITHUB, URL_LINKEDIN, URL_CONTACT } from '../constants';
 
 import { Emoji } from './Emoji';
 import { Row } from './Row';
@@ -18,8 +13,7 @@ const StyledFooter = styled.footer`
   margin-bottom: 1rem;
   border-width: 2px 0 0 0;
   border-style: solid;
-  border-color: ${({ theme }) =>
-    theme.mode === 'dark' ? '#302f2f' : '#f4f2f2'};
+  border-color: ${({ theme }) => (theme.mode === 'dark' ? '#302f2f' : '#f4f2f2')};
   padding-top: 1rem;
 `;
 
@@ -32,18 +26,13 @@ interface LinksProps {
 const links: LinksProps[] = [
   {
     title: 'Github',
-    href: URL_SANTDELEONIO_GITHUB,
+    href: URL_SANTDELEON_GITHUB,
     Icon: <FaGithub />,
   },
   {
     title: 'LinkedIn',
     href: URL_LINKEDIN,
     Icon: <FaLinkedin />,
-  },
-  {
-    title: 'Angellist',
-    href: URL_ANGELLIST,
-    Icon: <FaAngellist />,
   },
   {
     title: 'Contact Me',
