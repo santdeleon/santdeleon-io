@@ -1,11 +1,8 @@
-import React, { FC, createContext, useContext } from 'react';
+import React, { createContext, useContext } from 'react';
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
-
-import { useLocalStorage } from '../hooks/useLocalStorage';
-
-import { media } from './media';
-
 import { NOOP } from '../constants';
+import { useLocalStorage } from '../hooks/useLocalStorage';
+import { media } from './media';
 
 type Theme = 'light' | 'dark';
 
@@ -19,24 +16,17 @@ const DEFAULT_THEME = {
   toggleTheme: NOOP,
 };
 
-export const ThemeContext = createContext<Partial<ThemeContextProps>>(
-  DEFAULT_THEME,
-);
+export const ThemeContext = createContext<Partial<ThemeContextProps>>(DEFAULT_THEME);
 
-export const ThemeProvider: FC = ({ children }) => {
+export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const prefersOSDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
-  const [theme, setTheme] = useLocalStorage(
-    'theme',
-    prefersOSDarkTheme ? 'dark' : 'light',
-  );
+  const [theme, setTheme] = useLocalStorage('theme', prefersOSDarkTheme ? 'dark' : 'light');
 
   const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <StyledComponentsThemeProvider
-        theme={{ mode: theme, media: { ...media } }}
-      >
+      <StyledComponentsThemeProvider theme={{ mode: theme, media: { ...media } }}>
         {children}
       </StyledComponentsThemeProvider>
     </ThemeContext.Provider>

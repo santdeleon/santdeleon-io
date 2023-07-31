@@ -9,14 +9,13 @@
       "version": "detect"
     }
   },
-  "plugins": ["@typescript-eslint", "prettier", "jest"],
+  "plugins": ["@typescript-eslint", "prettier", "jest", "eslint-plugin-jest"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "prettier",
-    "prettier/@typescript-eslint"
+    "prettier"
   ],
   "rules": {
     "prettier/prettier": 2,
@@ -28,8 +27,7 @@
     ]
   },
   "env": {
-    "browser": true,
     "es6": true,
-    "jest": true
+    "jest/globals": true
   }
 }

@@ -1,23 +1,20 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-
-import { useTheme } from '../theme';
-
-import { Grid } from './Grid';
-import { GridItem } from './GridItem';
-import { Row } from './Row';
-import { Col } from './Col';
-import { Link } from './Link';
-import { Text } from './Text';
-
-import GithubLight from '../assets/img/github-light.svg';
-import GithubDark from '../assets/img/github-dark.svg';
-import HostGator from '../assets/img/hostgator.png';
-import Ethereum from '../assets/img/ethereum.svg';
-import Amoeba from '../assets/img/amoeba-dynamic.svg';
 import AmoebaAndFriends from '../assets/img/amoeba-and-friends.svg';
+import Amoeba from '../assets/img/amoeba-dynamic.svg';
+import Ethereum from '../assets/img/ethereum.svg';
+import GithubDark from '../assets/img/github-dark.svg';
+import GithubLight from '../assets/img/github-light.svg';
+import HostGator from '../assets/img/hostgator.png';
 import Phantom from '../assets/img/phantom.png';
 import Sant from '../assets/img/sant.svg';
+import { useTheme } from '../theme';
+import { Col } from './Col';
+import { Grid } from './Grid';
+import { GridItem } from './GridItem';
+import { Link } from './Link';
+import { Row } from './Row';
+import { Text } from './Text';
 
 const StyledSection = styled.section`
   margin-bottom: 4rem;
@@ -29,11 +26,8 @@ const StyledCard = styled.div`
   border-radius: 6px;
   padding: 1.25rem;
   box-shadow: ${({ theme }) =>
-    theme.mode === 'dark'
-      ? '0 7px 7px rgba(0, 0, 0, 0.6)'
-      : '0 7px 7px rgba(0, 0, 0, 0.2)'};
-  background-color: ${({ theme }) =>
-    theme.mode === 'dark' ? '#222222' : '#FFFFFF'};
+    theme.mode === 'dark' ? '0 7px 7px rgba(0, 0, 0, 0.6)' : '0 7px 7px rgba(0, 0, 0, 0.2)'};
+  background-color: ${({ theme }) => (theme.mode === 'dark' ? '#222222' : '#FFFFFF')};
   transform: scale(1);
   transition: transform 0.2s ease-in;
   &:hover {
@@ -82,8 +76,7 @@ const work = [
   {
     title: 'Coinflip',
     role: 'Creator',
-    description:
-      'Decentralized gaming application built on the Ethereum network.',
+    description: 'Decentralized gaming application built on the Ethereum network.',
     img: {
       src: Ethereum,
       alt: 'Ethereum Coin',
@@ -95,8 +88,7 @@ const work = [
   {
     title: 'Amoeba Library',
     role: 'Creator',
-    description:
-      'React based component library and design system built for Amoeba.',
+    description: 'React based component library and design system built for Amoeba.',
     img: {
       src: Amoeba,
       alt: 'Amoeba',
@@ -143,61 +135,36 @@ const Work: FC = () => {
     <StyledSection>
       <h3>Work</h3>
       <Grid xs={1} md={2} xl={3} gap="lg">
-        {work.map(
-          (
-            { title, role, description, img, href, isGithubLink, isInDev },
-            idx,
-          ) => (
-            <GridItem key={idx} align="stretch" justify="stretch">
-              <Link href={href}>
-                <StyledCard>
-                  <Row justify="space-between">
-                    <Text
-                      color={theme === 'dark' ? '#F3F2F2' : '#333232'}
-                      margin="0 0 0.25rem 0"
-                    >
-                      {title}
+        {work.map(({ title, role, description, img, href, isGithubLink, isInDev }, idx) => (
+          <GridItem key={idx} align="stretch" justify="stretch">
+            <Link href={href}>
+              <StyledCard>
+                <Row justify="space-between">
+                  <Text color={theme === 'dark' ? '#F3F2F2' : '#333232'} margin="0 0 0.25rem 0">
+                    {title}
+                  </Text>
+                  {isGithubLink && <img src={theme === 'light' ? GithubLight : GithubDark} alt="Github" width={16} />}
+                </Row>
+                <Row margin="0 0 1rem 0">
+                  <Text fontSize="0.9rem" color={theme === 'dark' ? '#A8A6A6' : '#7777777'}>
+                    {role}
+                  </Text>
+                </Row>
+                <ImgContainer justify="center" margin="0 0 1rem 0" bgColor={img.bgColor}>
+                  <img src={img.src} alt={img.alt} />
+                </ImgContainer>
+                <Col>
+                  <p>{description}</p>
+                  {isInDev && (
+                    <Text color="#f76f6f" fontSize="0.825rem" margin="0.25rem 0 0 0">
+                      Currently in development
                     </Text>
-                    {isGithubLink && (
-                      <img
-                        src={theme === 'light' ? GithubLight : GithubDark}
-                        alt="Github"
-                        width={16}
-                      />
-                    )}
-                  </Row>
-                  <Row margin="0 0 1rem 0">
-                    <Text
-                      fontSize="0.9rem"
-                      color={theme === 'dark' ? '#A8A6A6' : '#7777777'}
-                    >
-                      {role}
-                    </Text>
-                  </Row>
-                  <ImgContainer
-                    justify="center"
-                    margin="0 0 1rem 0"
-                    bgColor={img.bgColor}
-                  >
-                    <img src={img.src} alt={img.alt} />
-                  </ImgContainer>
-                  <Col>
-                    <p>{description}</p>
-                    {isInDev && (
-                      <Text
-                        color="#f76f6f"
-                        fontSize="0.825rem"
-                        margin="0.25rem 0 0 0"
-                      >
-                        Currently in development
-                      </Text>
-                    )}
-                  </Col>
-                </StyledCard>
-              </Link>
-            </GridItem>
-          ),
-        )}
+                  )}
+                </Col>
+              </StyledCard>
+            </Link>
+          </GridItem>
+        ))}
       </Grid>
     </StyledSection>
   );

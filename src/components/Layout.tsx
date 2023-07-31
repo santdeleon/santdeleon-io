@@ -1,12 +1,10 @@
-import React, { FC } from 'react';
-
 import Container from './Container';
-import Header from './Header';
-import Work from './Work';
-import Languages from './Languages';
 import Footer from './Footer';
+import Header from './Header';
+import Languages from './Languages';
+import Work from './Work';
 
-const Layout: FC = () => (
+const Layout = () => (
   <Container>
     <Header />
     <Work />

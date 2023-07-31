@@ -10,18 +10,8 @@ const StyledEmoji = styled.span<EmojiProps>`
   margin: ${({ margin }) => margin};
 `;
 
-export const Emoji: React.FC<EmojiProps> = ({
-  ariaLabel,
-  margin,
-  className,
-  children,
-}: EmojiProps) => (
-  <StyledEmoji
-    role="img"
-    aria-label={ariaLabel}
-    margin={margin}
-    className={className}
-  >
+export const Emoji: React.FC<EmojiProps> = ({ ariaLabel, margin, className, children }: EmojiProps) => (
+  <StyledEmoji role="img" aria-label={ariaLabel} margin={margin} className={className}>
     {children}
   </StyledEmoji>
 );

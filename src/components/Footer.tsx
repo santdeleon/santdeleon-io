@@ -1,25 +1,17 @@
 import React, { FC } from 'react';
-import { FaEnvelope, FaGithub, FaLinkedin, FaAngellist } from 'react-icons/fa';
+import { FaAngellist, FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 import styled from 'styled-components';
-
-import {
-  URL_SANTDELEONIO_GITHUB,
-  URL_LINKEDIN,
-  URL_ANGELLIST,
-  URL_CONTACT,
-} from '../constants';
-
+import { URL_ANGELLIST, URL_CONTACT, URL_LINKEDIN, URL_SANTDELEONIO_GITHUB } from '../constants';
 import { Emoji } from './Emoji';
-import { Row } from './Row';
 import { Link } from './Link';
+import { Row } from './Row';
 import { Text } from './Text';
 
 const StyledFooter = styled.footer`
   margin-bottom: 1rem;
   border-width: 2px 0 0 0;
   border-style: solid;
-  border-color: ${({ theme }) =>
-    theme.mode === 'dark' ? '#302f2f' : '#f4f2f2'};
+  border-color: ${({ theme }) => (theme.mode === 'dark' ? '#302f2f' : '#f4f2f2')};
   padding-top: 1rem;
 `;
 
