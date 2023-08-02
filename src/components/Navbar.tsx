@@ -17,7 +17,9 @@ export const Navbar = () => {
 
   return (
     <Row>
-      <Avatar src={AvatarSant} />
+      <StyledDiv>
+        <Avatar src={AvatarSant} />
+      </StyledDiv>
       <StyledButton title={avatarAlt} onClick={toggleTheme}>
         <img src={isDark ? Moon : Sun} alt={avatarAlt} width={50} />
       </StyledButton>
@@ -35,16 +37,12 @@ const Row = styled.div`
   justify-content: space-between;
 `;
 
-const Avatar = styled.img.attrs({
-  alt: 'Avatar of Sant',
-})`
+const StyledDiv = styled.div`
   border-radius: 50%;
   border-width: 0.1875rem;
   border-style: solid;
   border-color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_10 : COLOR_NEUTRAL_0)};
-  outline-width: 0.1875rem;
-  outline-style: solid;
-  outline-color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_9 : COLOR_NEUTRAL_1)};
+  box-shadow: 0 0 0 0.1875rem ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_9 : COLOR_NEUTRAL_1)};
   width: 3.75rem;
   height: 3.75rem;
   ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
@@ -55,6 +53,13 @@ const Avatar = styled.img.attrs({
     width: 9.375rem;
     height: 9.375rem;
   `}
+`;
+
+const Avatar = styled.img.attrs({
+  alt: 'Avatar of Sant',
+})`
+  width: 100%;
+  height: auto;
 `;
 
 const StyledButton = styled.button`

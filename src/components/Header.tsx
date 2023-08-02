@@ -77,7 +77,7 @@ const PHRASES = [
   'Beast Master Hunter',
   'AI Abuser',
   'Twitter Zombie',
-  'Topo Chico Stan',
+  'Topo Chico Toddler',
   'Flowerboy',
   'Space Ghost',
   'Fashionista',
@@ -93,22 +93,21 @@ const PHRASES = [
   '',
 ];
 
+const [FIRST_PHRASE] = PHRASES;
+
 // -----------------------------------------------------------------------------
 
 const getNextPhrase = (currentPhrase: string): string => {
   const nextIndex = PHRASES.indexOf(currentPhrase) + 1;
-  return nextIndex >= PHRASES.length ? PHRASES[0] : PHRASES[nextIndex];
+  return nextIndex >= PHRASES.length - 1 ? FIRST_PHRASE : PHRASES[nextIndex];
 };
 
 // -----------------------------------------------------------------------------
 
 const Tagline = () => {
-  const [phrase, setPhrase] = useState(PHRASES[0]);
+  const [phrase, setPhrase] = useState(FIRST_PHRASE);
 
-  const changePhrase = useCallback(() => {
-    const newPhrase = getNextPhrase(phrase);
-    setPhrase(newPhrase);
-  }, [phrase]);
+  const changePhrase = useCallback(() => setPhrase(getNextPhrase(phrase)), [phrase]);
 
   // pull random phrase from phrases every 3 seconds
   useEffect(() => {
@@ -116,7 +115,7 @@ const Tagline = () => {
     return () => {
       clearInterval(interval);
     };
-  }, [phrase]);
+  }, [changePhrase]);
 
   return (
     <Column>
@@ -150,24 +149,24 @@ const Tagline = () => {
 
 const Column = styled.div`
   flex-direction: column;
+  flex-wrap: wrap;
 `;
 
 const Title = styled.h1`
   font-size: 1.75rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_1 : COLOR_NEUTRAL_9)};
   ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
     font-size: 2.25rem;
   `}
   ${({ theme }) => theme.media.greaterThan(Breakpoint.XXL)`
     font-size: 2.5rem;
   `}
-  font-weight: 500;
-  text-align: left;
-  margin: 0 0 0.5rem 0;
-  color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_1 : COLOR_NEUTRAL_9)};
 `;
 
 const Subtitle = styled.p`
-  font-size: 1rem;
+  font-size: 1.25rem;
   ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
     font-size: 1.5rem;
   `}
@@ -261,23 +260,16 @@ const MovingMotionDiv = styled(motion.div).attrs<{ $hasMarginLeft: boolean }>({
 `;
 
 const Phrase = styled.button`
-  cursor: pointer;
-  font-size: 1.75rem;
-  ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
-    font-size: 2.25rem;
-  `}
-  ${({ theme }) => theme.media.greaterThan(Breakpoint.XXL)`
-    font-size: 2.5rem;
-  `}
-  font-weight: 500;
-  text-align: left;
-  margin: 0 0 0.5rem 0;
-  color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_1 : COLOR_NEUTRAL_9)};
   display: inline-flex;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 500;
   border-width: 0 0 0.1875rem 0;
   border-style: solid;
-  background-color: transparent;
   border-radius: 0.25rem 0.25rem 0 0;
+  background-color: transparent;
   &:focus-visible {
     outline-width: 0.1875rem;
     outline-style: solid;
@@ -294,4 +286,10 @@ const Phrase = styled.button`
           border-color: ${COLOR_PURPLE_2};
         `;
   }}
+  ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
+    font-size: 2.25rem;
+  `}
+  ${({ theme }) => theme.media.greaterThan(Breakpoint.XXL)`
+    font-size: 2.5rem;
+  `}
 `;

@@ -20,6 +20,6 @@ export const Card = styled.div`
         `;
   }}
   ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
-    padding: 1.5rem;
+    padding: 1.25rem;
   `}
 `;

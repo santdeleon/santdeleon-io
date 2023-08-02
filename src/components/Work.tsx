@@ -100,9 +100,6 @@ const Grid = styled.div`
   ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
     grid-template-columns: repeat(2, 1fr);
   `}
-  ${({ theme }) => theme.media.greaterThan(Breakpoint.XXL)`
-    grid-template-columns: repeat(3, 1fr);
-  `}
 `;
 
 const GridItem = styled.div`
@@ -114,7 +111,7 @@ const CardImage = styled.img`
   margin-bottom: 1rem;
   height: 1.5rem;
   ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
-  height: 1.875rem;
+    height: 1.875rem;
   `}
 `;
 
@@ -124,7 +121,7 @@ const CardTitle = styled.p`
   font-size: 1.125rem;
   color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_1 : COLOR_NEUTRAL_9)};
   ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
-    font-size: 1.25rem;
+    font-size: 1.3125rem;
   `}
 `;
 
@@ -135,9 +132,12 @@ const CardRow = styled.div`
 `;
 
 const CardSubtitle = styled.p`
-  font-size: 1rem;
-  font-weight: 400;
   margin: 0;
+  font-weight: 500;
+  font-size: 1rem;
+  ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
+    font-size: 1.125rem;
+  `}
 `;
 
 const CardDescription = styled.p`
@@ -145,7 +145,7 @@ const CardDescription = styled.p`
   font-weight: 400;
   color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_6 : COLOR_NEUTRAL_7)};
   ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   `}
 `;
 
