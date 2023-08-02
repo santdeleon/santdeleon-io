@@ -1,5 +1,3 @@
-import Layout from './components/Layout';
+import { Layout } from './components/Layout';
 
-const App = () => <Layout />;
-
-export default App;
+export const App = () => <Layout />;

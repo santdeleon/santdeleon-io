@@ -18,7 +18,6 @@ export const Row = styled.div<RowProps>`
 Row.defaultProps = {
   align: 'center',
   justify: 'flex-start',
-  width: '100%',
 };
 
 export default Row;
