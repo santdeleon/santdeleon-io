@@ -54,7 +54,7 @@ const Text = styled.p`
   color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_6 : COLOR_NEUTRAL_7)};
   ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
     font-size: 1.25rem;
-    `}
+  `}
 `;
 
 const TextItalic = styled(Text)`

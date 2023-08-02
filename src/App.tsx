@@ -22,6 +22,7 @@ import {
   COLOR_YELLOW_4,
 } from './constants';
 import { Breakpoint, isDarkTheme } from './theme';
+import { hexToRGBA } from './utils';
 
 // =============================================================================
 // Main Component
@@ -118,10 +119,10 @@ const Badge = styled.span`
   font-weight: 500;
   margin-bottom: 1rem;
   padding: 0.5rem;
-  color: ${COLOR_PURPLE_9};
   border-radius: 0.5rem;
   line-height: 100%;
-  background-color: ${COLOR_PURPLE_2};
+  color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_PURPLE_2 : COLOR_PURPLE_9)};
+  background-color: ${({ theme }) => (isDarkTheme(theme.mode) ? hexToRGBA(COLOR_PURPLE_9, 0.2) : COLOR_PURPLE_2)};
   ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
     font-size: 1.125rem;
   `}
