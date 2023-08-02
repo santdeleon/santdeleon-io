@@ -16,6 +16,7 @@
 .DS_Store
 .env*
 .eslintcache
+.secret*
 
 npm-debug.log*
 yarn-debug.log*

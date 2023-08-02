@@ -1,19 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 
-interface EmojiProps extends React.HTMLProps<HTMLSpanElement> {
-  ariaLabel?: string;
-  margin?: string;
-}
-
-const StyledEmoji = styled.span<EmojiProps>`
-  margin: ${({ margin }) => margin};
-`;
-
-export const Emoji: React.FC<EmojiProps> = ({ ariaLabel, margin, className, children }: EmojiProps) => (
-  <StyledEmoji role="img" aria-label={ariaLabel} margin={margin} className={className}>
-    {children}
-  </StyledEmoji>
+export const Emoji = React.memo(
+  ({ ariaLabel, className, children, ...rest }: { ariaLabel: string } & React.HTMLProps<HTMLSpanElement>) => (
+    <span role="img" aria-label={ariaLabel} className={className} {...rest}>
+      {children}
+    </span>
+  ),
 );
-
-export default Emoji;

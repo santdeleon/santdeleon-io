@@ -1,4 +1,8 @@
 {
+  "importOrder": ["<THIRD_PARTY_MODULES>", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"],
   "printWidth": 120,
   "semi": true,
   "singleQuote": true,

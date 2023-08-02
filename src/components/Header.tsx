@@ -1,167 +1,297 @@
-import React from 'react';
-import { FaEthereum, FaCode, FaPalette, FaRobot, FaMugHot } from 'react-icons/fa';
-import styled from 'styled-components';
-import cx from 'classnames';
-
-import { useTheme } from '../theme';
-
-import { URL_SANTDELEON_GITHUB } from '../constants';
-
+import { motion } from 'framer-motion';
+import { useCallback, useEffect, useState } from 'react';
+import styled, { css } from 'styled-components';
+import {
+  COLOR_BLUE_6,
+  COLOR_BLUE_7,
+  COLOR_GREEN_6,
+  COLOR_GREEN_7,
+  COLOR_NEUTRAL_1,
+  COLOR_NEUTRAL_6,
+  COLOR_NEUTRAL_7,
+  COLOR_NEUTRAL_9,
+  COLOR_ORANGE_6,
+  COLOR_ORANGE_7,
+  COLOR_PINK_6,
+  COLOR_PINK_7,
+  COLOR_PURPLE_2,
+  COLOR_PURPLE_6,
+  COLOR_PURPLE_7,
+  COLOR_RED_6,
+  COLOR_RED_7,
+  COLOR_YELLOW_6,
+  COLOR_YELLOW_7,
+} from '../constants';
+import { Breakpoint, isDarkTheme } from '../theme';
 import { Emoji } from './Emoji';
-import { Row } from './Row';
-import { Col } from './Col';
-import { Button } from './Button';
-import { Link } from './Link';
-import { Text } from './Text';
 
-import SantLight from '../assets/img/sant-light.svg';
-import SantDark from '../assets/img/sant-dark.svg';
-import GithubLight from '../assets/img/github-light.svg';
-import GithubDark from '../assets/img/github-dark.svg';
+// =============================================================================
+// Header
+// =============================================================================
 
-const DesktopText = styled(Text)`
-  display: none;
-  ${({ theme }) => theme.media.greaterThan('md')`
-    display: block;
-  `}
-`;
+export const Header = () => (
+  <StyledHeader>
+    <Tagline />
+  </StyledHeader>
+);
 
-const MobileText = styled(Text)`
-  display: block;
-  ${({ theme }) => theme.media.greaterThan('md')`
-    display: none;
-  `}
-`;
+// -----------------------------------------------------------------------------
 
-const SkillCard = styled.div`
-  border-radius: 6px;
-  box-shadow: ${({ theme }) =>
-    theme.mode === 'dark' ? '0 7px 7px rgba(0, 0, 0, 0.6)' : '0 7px 7px rgba(0, 0, 0, 0.2)'};
-  background-color: ${({ theme }) => (theme.mode === 'dark' ? '#222222' : '#FFFFFF')};
-  display: none;
-  ${({ theme }) => theme.media.greaterThan('xs')`
-    display: block;
-  `};
-  &:not(.last-child) {
-    margin: 0 15px 0 0;
+const StyledHeader = styled.header`
+  > *:not(:last-child) {
+    margin-bottom: 2rem;
   }
 `;
 
-const SkillCardHeader = styled.div`
-  border-radius: 5px 5px 0 0;
-  background-color: ${({ color }) => color};
-  height: 8px;
-`;
+// =============================================================================
+// Tagline
+// =============================================================================
 
-const SkillCardBody = styled(Col)`
-  padding: 1rem;
-  text-align: center;
-`;
+const HELLO = ['H', 'e', 'l', 'l', 'o', ','];
 
-interface SkillProps {
-  text: string;
-  color: string;
-  Icon: React.ReactNode;
-}
-
-const skills: SkillProps[] = [
-  {
-    text: 'Front-end Developer',
-    color: '#F76F6E',
-    Icon: <FaCode />,
-  },
-  {
-    text: 'Blockchain Engineer',
-    color: '#FBC07A',
-    Icon: <FaEthereum />,
-  },
-  {
-    text: 'UI/UX Designer-ish',
-    color: '#FCE073',
-    Icon: <FaPalette />,
-  },
-  {
-    text: 'Tech Enthusiast',
-    color: '#A5F29F',
-    Icon: <FaRobot />,
-  },
-  {
-    text: 'Coffee Drinker',
-    color: '#82E1F3',
-    Icon: <FaMugHot />,
-  },
+const PHRASES = [
+  'Lover of Rainbows',
+  'Blockchain Developer',
+  'Coffee Drinker',
+  'Manga Lover',
+  'Anime Dweeb',
+  'Gym Goer',
+  'Tree Hugger',
+  'Stargazer',
+  'Alien Believer',
+  'Crypto-head',
+  'Art Enjooyer',
+  'Tech Enthusiast',
+  'Design Wizard',
+  'Mint Tea Maniac',
+  'Sunshine Getter',
+  'Leetcode Avoider',
+  'Holy Paladin',
+  'Motorcycle Rider',
+  'Skate-rat',
+  'Comic Geek',
+  'Philosopher',
+  'Freedom Maximalist',
+  'Poké Breeder',
+  'Music Muncher',
+  'Beast Master Hunter',
+  'AI Abuser',
+  'Twitter Zombie',
+  'Topo Chico Stan',
+  'Flowerboy',
+  'Space Ghost',
+  'Fashionista',
+  'Ocean Oyster',
+  'Neanderthal',
+  'Master Chief',
+  'Ribeye Ravager',
+  'Resto Shaman',
+  'Hendrix Fan',
+  'Feline Friend',
+  'Airbender',
+  'Southern Cowboy',
+  '',
 ];
 
-const Header: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
+// -----------------------------------------------------------------------------
+
+const getNextPhrase = (currentPhrase: string): string => {
+  const nextIndex = PHRASES.indexOf(currentPhrase) + 1;
+  return nextIndex >= PHRASES.length ? PHRASES[0] : PHRASES[nextIndex];
+};
+
+// -----------------------------------------------------------------------------
+
+const Tagline = () => {
+  const [phrase, setPhrase] = useState(PHRASES[0]);
+
+  const changePhrase = useCallback(() => {
+    const newPhrase = getNextPhrase(phrase);
+    setPhrase(newPhrase);
+  }, [phrase]);
+
+  // pull random phrase from phrases every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => changePhrase(), 3000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [phrase]);
 
   return (
-    <header>
-      {/* Navbar Brand, Github Link and Theme toggle */}
-      <Row justify="space-between" margin="1rem 0">
-        <img
-          src={theme === 'light' ? SantLight : SantDark}
-          alt={`Sant & ${theme === 'light' ? 'Sun' : 'Moon'}`}
-          width={100}
-        />
-        <div>
-          <Row>
-            <Link margin="0 0.5rem 0 0" href={URL_SANTDELEON_GITHUB} title="Github">
-              <img src={theme === 'light' ? GithubLight : GithubDark} alt="Github" />
-            </Link>
-            <Button fontSize="1.6rem" bgColor="transparent" onClick={toggleTheme}>
-              <Emoji ariaLabel={`${theme === 'light' ? 'Full Moon' : 'Sun'} Emoji`}>
-                {theme === 'light' ? '🌕' : '☀️'}
-              </Emoji>
-            </Button>
-          </Row>
-        </div>
-      </Row>
-      {/* Welcome text */}
-      <Row margin="0 0 2rem 0">
-        <Col>
-          <Text color={theme === 'dark' ? '#F3F2F2' : '#333232'} fontSize="2rem" fontWeight="500" margin="0 0 0.3rem 0">
-            Hello, I&apos;m Sant
-          </Text>
-          <DesktopText
-            color={theme === 'dark' ? '#F3F2F2' : '#333232'}
-            fontSize="2rem"
-            fontWeight="500"
-            margin="0 0 0.5rem 0"
-          >
-            Front-end & Blockchain Engineer
-          </DesktopText>
-          <DesktopText color={theme === 'dark' ? '#A8A6A6' : '#999999'} fontSize="1.3rem" fontWeight="300">
-            with a knack for creating cutting edge products with elegance and style.{' '}
-            <Emoji ariaLabel="Sparkle Emoji">✨</Emoji>
-          </DesktopText>
-          <MobileText color={theme === 'dark' ? '#A8A6A6' : '#999999'} fontWeight="300">
-            Front-end & Blockchain Engineer
-          </MobileText>
-        </Col>
-      </Row>
-      {/* Skill cards */}
-      <Row justify="space-between" margin="0 0 4rem 0">
-        {skills.map(({ text, color, Icon }: SkillProps, idx: number) => (
-          <Col key={idx}>
-            <SkillCard
-              className={cx({
-                'last-child': idx === skills.length - 1,
-              })}
-            >
-              <SkillCardHeader color={color} />
-              <SkillCardBody align="center">
-                <DesktopText color={theme === 'dark' ? '#999999' : '#333232'} fontWeight="300">
-                  {text}
-                </DesktopText>
-                <MobileText color={theme === 'dark' ? '#999999' : '#333232'}>{Icon}</MobileText>
-              </SkillCardBody>
-            </SkillCard>
-          </Col>
-        ))}
-      </Row>
-    </header>
+    <Column>
+      <Title>
+        <RainbowText>
+          {HELLO.map((letter, i) => (
+            <span key={`hello-${letter}-${i}`}>
+              <RainbowMotionDiv>{letter}</RainbowMotionDiv>
+            </span>
+          ))}
+        </RainbowText>{' '}
+        I&apos;m Sant.
+        <br /> Front-end Engineer &{' '}
+        <Phrase onClick={changePhrase}>
+          {[...phrase].map((letter, i) => (
+            <MovingMotionDiv key={`phrase-${letter}-${i}`} $hasMarginLeft={letter.charCodeAt(0) === 32}>
+              {letter}
+            </MovingMotionDiv>
+          ))}
+        </Phrase>
+      </Title>
+      <Subtitle>
+        with a knack for creating cutting edge products with elegance and style{' '}
+        <Emoji ariaLabel="Sparkle Emoji">✨</Emoji>
+      </Subtitle>
+    </Column>
   );
 };
 
-export default Header;
+// -----------------------------------------------------------------------------
+
+const Column = styled.div`
+  flex-direction: column;
+`;
+
+const Title = styled.h1`
+  font-size: 1.75rem;
+  ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
+    font-size: 2.25rem;
+  `}
+  ${({ theme }) => theme.media.greaterThan(Breakpoint.XXL)`
+    font-size: 2.5rem;
+  `}
+  font-weight: 500;
+  text-align: left;
+  margin: 0 0 0.5rem 0;
+  color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_1 : COLOR_NEUTRAL_9)};
+`;
+
+const Subtitle = styled.p`
+  font-size: 1rem;
+  ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
+    font-size: 1.5rem;
+  `}
+  ${({ theme }) => theme.media.greaterThan(Breakpoint.XXL)`
+    font-size: 1.75rem;
+  `}
+  font-weight: 300;
+  text-align: left;
+  margin: 0 0 0.5rem 0;
+  ${({ theme }) => {
+    return isDarkTheme(theme.mode)
+      ? css`
+          color: ${COLOR_NEUTRAL_6};
+        `
+      : css`
+          color: ${COLOR_NEUTRAL_7};
+        `;
+  }}
+`;
+
+const RainbowText = styled.span`
+  cursor: pointer;
+  ${({ theme }) => {
+    return isDarkTheme(theme.mode)
+      ? css`
+          span {
+            &:nth-child(1) {
+              color: ${COLOR_RED_6};
+            }
+            &:nth-child(2) {
+              color: ${COLOR_ORANGE_6};
+            }
+            &:nth-child(3) {
+              color: ${COLOR_YELLOW_6};
+            }
+            &:nth-child(4) {
+              color: ${COLOR_GREEN_6};
+            }
+            &:nth-child(5) {
+              color: ${COLOR_BLUE_6};
+            }
+            &:nth-child(6) {
+              color: ${COLOR_PURPLE_6};
+            }
+            &:nth-child(7) {
+              color: ${COLOR_PINK_6};
+            }
+          }
+        `
+      : css`
+          span {
+            &:nth-child(1) {
+              color: ${COLOR_RED_7};
+            }
+            &:nth-child(2) {
+              color: ${COLOR_ORANGE_7};
+            }
+            &:nth-child(3) {
+              color: ${COLOR_YELLOW_7};
+            }
+            &:nth-child(4) {
+              color: ${COLOR_GREEN_7};
+            }
+            &:nth-child(5) {
+              color: ${COLOR_BLUE_7};
+            }
+            &:nth-child(6) {
+              color: ${COLOR_PURPLE_7};
+            }
+            &:nth-child(7) {
+              color: ${COLOR_PINK_7};
+            }
+          }
+        `;
+  }}
+`;
+
+const RainbowMotionDiv = styled(motion.div).attrs({
+  whileHover: { scale: 1.3 },
+})`
+  display: inline-block;
+`;
+
+const MovingMotionDiv = styled(motion.div).attrs<{ $hasMarginLeft: boolean }>({
+  initial: { y: -10, opacity: 0 },
+  animate: { y: 0, opacity: 1 },
+  exit: { y: -10, opacity: 0 },
+  transition: { duration: 0.5 },
+})`
+  margin-left: ${({ $hasMarginLeft }) => ($hasMarginLeft ? '0.5rem' : undefined)};
+`;
+
+const Phrase = styled.button`
+  cursor: pointer;
+  font-size: 1.75rem;
+  ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
+    font-size: 2.25rem;
+  `}
+  ${({ theme }) => theme.media.greaterThan(Breakpoint.XXL)`
+    font-size: 2.5rem;
+  `}
+  font-weight: 500;
+  text-align: left;
+  margin: 0 0 0.5rem 0;
+  color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_1 : COLOR_NEUTRAL_9)};
+  display: inline-flex;
+  border-width: 0 0 0.1875rem 0;
+  border-style: solid;
+  background-color: transparent;
+  border-radius: 0.25rem 0.25rem 0 0;
+  &:focus-visible {
+    outline-width: 0.1875rem;
+    outline-style: solid;
+    outline-color: ${COLOR_PURPLE_7};
+  }
+  ${({ theme }) => {
+    return isDarkTheme(theme.mode)
+      ? css`
+          color: ${COLOR_PURPLE_2};
+          border-color: ${COLOR_PURPLE_7};
+        `
+      : css`
+          color: ${COLOR_PURPLE_7};
+          border-color: ${COLOR_PURPLE_2};
+        `;
+  }}
+`;
