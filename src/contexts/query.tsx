@@ -5,6 +5,8 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 // Constants
 // =============================================================================
 
+const CACHE_TIME_MS = 1000 * 60 * 5;
+
 export const queryClient = new QueryClient({
   defaultOptions: {
     mutations: {
@@ -12,8 +14,8 @@ export const queryClient = new QueryClient({
     },
     queries: {
       retry: 3,
-      cacheTime: 1000 * 60 * 5,
-      staleTime: 1000 * 60 * 5,
+      cacheTime: CACHE_TIME_MS,
+      staleTime: CACHE_TIME_MS,
       refetchOnMount: true,
       refetchOnWindowFocus: false,
       networkMode: 'offlineFirst',

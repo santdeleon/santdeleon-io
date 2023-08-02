@@ -9,7 +9,6 @@ import {
 } from '../constants';
 import { Breakpoint, isDarkTheme } from '../theme';
 import { Emoji } from './Emoji';
-import { Row } from './Row';
 
 // =============================================================================
 // Main Component
@@ -17,12 +16,12 @@ import { Row } from './Row';
 
 export const Footer = () => (
   <footer>
-    <StyledRow>
+    <Row>
       <Text>
         Made with
-        <TwoHeartsEmoji ariaLabel="Two Hearts Emoji">💕</TwoHeartsEmoji> by Sant
+        <EmojiTwoHearts ariaLabel="Two Hearts Emoji">💕</EmojiTwoHearts> by Sant
       </Text>
-      <StyledRow>
+      <Row>
         <Text>
           <Span>contact:</Span> <Link href="mailto:sant@santdeleon.io">sant@santdeleon.io</Link>
         </Text>
@@ -33,8 +32,8 @@ export const Footer = () => (
             santdeleon
           </Link>
         </Text>
-      </StyledRow>
-    </StyledRow>
+      </Row>
+    </Row>
   </footer>
 );
 
@@ -42,10 +41,10 @@ export const Footer = () => (
 // Styled Components
 // =============================================================================
 
-const StyledRow = styled(Row).attrs({
-  align: 'center',
-  justify: 'space-between',
-})`
+const Row = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   text-align: left;
 `;
@@ -60,7 +59,7 @@ const Text = styled.p`
   `}
 `;
 
-const TwoHeartsEmoji = styled(Emoji)`
+const EmojiTwoHearts = styled(Emoji)`
   margin-left: 0.25rem;
 `;
 
@@ -84,7 +83,7 @@ const Link = styled.a.attrs({
 })`
   text-decoration: none;
   color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_6 : COLOR_NEUTRAL_7)};
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   &:hover,
   &:focus-visible {
     color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_PURPLE_6 : COLOR_PURPLE_7)};

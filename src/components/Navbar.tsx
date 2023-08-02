@@ -1,12 +1,10 @@
 import styled from 'styled-components';
-import Avatar from '../assets/img/avatar-sant.svg';
+import AvatarSant from '../assets/img/avatar-sant.svg';
 import Moon from '../assets/img/sprite-moon.svg';
 import Sun from '../assets/img/sprite-sun.svg';
-import { COLOR_NEUTRAL_1, COLOR_NEUTRAL_9, COLOR_PURPLE_7 } from '../constants';
+import { COLOR_NEUTRAL_0, COLOR_NEUTRAL_1, COLOR_NEUTRAL_9, COLOR_NEUTRAL_10, COLOR_PURPLE_7 } from '../constants';
 import { Breakpoint, isDarkTheme } from '../theme';
 import { useTheme } from '../theme/context';
-import { Image } from './Image';
-import { Row } from './Row';
 
 // =============================================================================
 // Main Component
@@ -18,14 +16,12 @@ export const Navbar = () => {
   const avatarAlt = `Activate ${isDark ? 'light' : 'dark'} mode`;
 
   return (
-    <StyledRow>
-      <StyledDiv>
-        <Image src={Avatar} alt="Avatar of Sant" width="100%" />
-      </StyledDiv>
+    <Row>
+      <Avatar src={AvatarSant} />
       <StyledButton title={avatarAlt} onClick={toggleTheme}>
-        <Image src={isDark ? Moon : Sun} alt={avatarAlt} width={50} />
+        <img src={isDark ? Moon : Sun} alt={avatarAlt} width={50} />
       </StyledButton>
-    </StyledRow>
+    </Row>
   );
 };
 
@@ -33,30 +29,31 @@ export const Navbar = () => {
 // Styled Components
 // =============================================================================
 
-const StyledRow = styled(Row).attrs({
-  justify: 'space-between',
-})`
-  padding-bottom: 2rem;
-  border-width: 0 0 0.1875rem 0;
-  border-style: solid;
-  border-color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_9 : COLOR_NEUTRAL_1)};
-`;
-
-const StyledDiv = styled.div`
-  position: relative;
-  border-radius: 50%;
+const Row = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+`;
+
+const Avatar = styled.img.attrs({
+  alt: 'Avatar of Sant',
+})`
+  border-radius: 50%;
   border-width: 0.1875rem;
   border-style: solid;
-  border-color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_9 : COLOR_NEUTRAL_1)};
-  width: 60px;
+  border-color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_10 : COLOR_NEUTRAL_0)};
+  outline-width: 0.1875rem;
+  outline-style: solid;
+  outline-color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_9 : COLOR_NEUTRAL_1)};
+  width: 3.75rem;
+  height: 3.75rem;
   ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
-    width: 100px;
+    width: 6.25rem;
+    height: 6.25rem;
   `}
   ${({ theme }) => theme.media.greaterThan(Breakpoint.XXL)`
-    width: 150px;
+    width: 9.375rem;
+    height: 9.375rem;
   `}
 `;
 

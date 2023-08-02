@@ -1,3 +1,4 @@
+import React from 'react';
 import styled, { css } from 'styled-components';
 import BrandAmoeba from '../assets/img/brand-amoeba.svg';
 import BrandHostgator from '../assets/img/brand-hostgator.svg';
@@ -5,19 +6,23 @@ import BrandPhantom from '../assets/img/brand-phantom.svg';
 import {
   COLOR_NEUTRAL_0,
   COLOR_NEUTRAL_1,
-  COLOR_NEUTRAL_5,
-  COLOR_NEUTRAL_8,
+  COLOR_NEUTRAL_6,
+  COLOR_NEUTRAL_7,
   COLOR_NEUTRAL_9,
-  COLOR_NEUTRAL_10,
+  COLOR_PURPLE_2,
+  COLOR_PURPLE_7,
+  COLOR_PURPLE_8,
+  COLOR_PURPLE_9,
+  COLOR_PURPLE_10,
 } from '../constants';
 import { Breakpoint, isDarkTheme } from '../theme';
-import { Row } from './Row';
+import { Card } from './Card';
 
 // =============================================================================
-// Typedefs
+// Work
 // =============================================================================
 
-type TCard = {
+const CARDS: {
   id: number;
   category: string;
   description: string;
@@ -26,27 +31,21 @@ type TCard = {
   svg: string;
   timeframe: string;
   url: string | undefined;
-};
-
-// =============================================================================
-// Constants
-// =============================================================================
-
-const CARDS: TCard[] = [
+}[] = [
   {
     id: 0,
     category: 'Blockchain & Crypto',
-    description: "A super secret crypto startup that I can't give any details about at the moment.",
+    description: "Super secret crypto venture that I can't actually give details about yet.",
     name: 'Amoeba',
     role: 'Founder',
     svg: BrandAmoeba,
     timeframe: 'Current',
-    url: '__NULL',
+    url: undefined,
   },
   {
     id: 1,
     category: 'Blockchain & Crypto',
-    description: 'A multi-chain crypto wallet originally built on the Solana blockchain.',
+    description: 'Multi-chain crypto wallet originally built on the Solana blockchain.',
     name: 'Phantom',
     role: 'Founding Engineer',
     svg: BrandPhantom,
@@ -56,130 +55,178 @@ const CARDS: TCard[] = [
   {
     id: 2,
     category: 'Web Hosting',
-    description: 'An OG domain and web hosting company for small to large businesses.',
+    description: 'OG domain and web hosting platform for small to large businesses.',
     name: 'HostGator',
     role: 'Software Engineer',
     svg: BrandHostgator,
     timeframe: 'April 2019 - May 2021',
-
     url: 'https://hostgator.com',
   },
 ];
 
-// =============================================================================
-// Main Component
-// =============================================================================
+// -----------------------------------------------------------------------------
 
-export const Work = () => {
-  return (
-    <StyledDiv>
-      {CARDS.map(({ id, category, description, name, role, svg, timeframe, url }, idx: number) => (
-        <CardContainer key={`${id}-${idx}`}>
+export const Work = () => (
+  <Grid>
+    {CARDS.map(({ id, category, description, name, role, svg, timeframe, url }, idx: number) => {
+      const isAmoebaCard = name === 'Amoeba';
+
+      return (
+        <GridItem key={`${id}-${idx}`}>
           <Card>
-            <CardHeader>
-              <CardImage src={svg} alt={`${name} Brand Logo`} />
-              <CardCategory>{category}</CardCategory>
-              <Row align="center" justify="space-between">
-                <CardTimeframe>{role}</CardTimeframe>
-                <CardTimeframe>{timeframe}</CardTimeframe>
-              </Row>
-            </CardHeader>
-            {/* <CardDivider /> */}
+            <CardImage src={svg} alt={`${name} Brand Logo`} />
+            <CardTitle>{category}</CardTitle>
+            <CardRow>
+              <CardSubtitle>{role}</CardSubtitle>
+              <CardSubtitle>{timeframe}</CardSubtitle>
+            </CardRow>
             <CardDescription>{description}</CardDescription>
-            <CardLink href={url} $isDisabled={name === 'Amoeba'}>
+            <ButtonLink href={url} tabIndex={isAmoebaCard ? -1 : 0} disabled={isAmoebaCard}>
               View Site
-            </CardLink>
+            </ButtonLink>
           </Card>
-        </CardContainer>
-      ))}
-    </StyledDiv>
-  );
-};
+        </GridItem>
+      );
+    })}
+  </Grid>
+);
 
-// =============================================================================
-// Styled Components
-// =============================================================================
+// -----------------------------------------------------------------------------
 
-const StyledDiv = styled.div`
-  display: flex;
-  flex-direction: column;
+const Grid = styled.div`
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
   ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    grid-template-columns: repeat(2, 1fr);
+  `}
+  ${({ theme }) => theme.media.greaterThan(Breakpoint.XXL)`
+    grid-template-columns: repeat(3, 1fr);
   `}
 `;
 
-const CardContainer = styled.div`
-  &:not(last-child) {
-    margin-bottom: 2rem;
-  }
-  width: 100%;
-  ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
-    width: 45%;
-  `}
+const GridItem = styled.div`
+  align-self: stretch;
+  justify-self: stretch;
 `;
 
-const Card = styled.div`
-  position: relative;
-  padding: 1.5rem;
-  border-radius: 0.8rem;
-  border-width: 0.125rem 0.125rem 0.25rem 0.125rem;
-  border-style: solid;
-  ${({ theme }) => {
-    return isDarkTheme(theme.mode)
-      ? css`
-          border-color: ${COLOR_NEUTRAL_9};
-          background-color: ${COLOR_NEUTRAL_10};
-        `
-      : css`
-          border-color: ${COLOR_NEUTRAL_1};
-          background-color: ${COLOR_NEUTRAL_0};
-        `;
-  }}
-`;
-
-const CardHeader = styled.div``;
-
-const CardImage = styled.img.attrs({
-  height: 30,
-})`
-  height: 30;
+const CardImage = styled.img`
   margin-bottom: 1rem;
+  height: 1.5rem;
+  ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
+  height: 1.875rem;
+  `}
 `;
 
-const CardCategory = styled.p`
+const CardTitle = styled.p`
   margin: 0;
   font-weight: 500;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_1 : COLOR_NEUTRAL_9)};
+  ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
+    font-size: 1.25rem;
+  `}
 `;
 
-const CardTimeframe = styled.p`
+const CardRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const CardSubtitle = styled.p`
   font-size: 1rem;
   font-weight: 400;
   margin: 0;
 `;
 
 const CardDescription = styled.p`
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 400;
+  color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_6 : COLOR_NEUTRAL_7)};
+  ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
+    font-size: 1.25rem;
+  `}
 `;
 
-const CardLink = styled.a.attrs<{ $isDisabled: boolean }>({
+// =============================================================================
+// ButtonLink
+// =============================================================================
+
+const ButtonLink = React.memo(
+  ({ href, disabled, className, tabIndex, children }: React.HTMLProps<HTMLAnchorElement>) => (
+    <ButtonLinkPrimary href={href} className={className} tabIndex={tabIndex} $isDisabled={disabled}>
+      {children}
+    </ButtonLinkPrimary>
+  ),
+);
+
+// -----------------------------------------------------------------------------
+
+const StyledAnchor = styled.a.attrs<{ $isDisabled?: boolean }>({
   rel: 'noopener noreferrer',
   target: '_blank',
 })`
-  font-size: 1.125rem;
-  font-weight: 600;
+  position: relative;
+  padding: 0.25rem 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
   text-decoration: none;
-  color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_1 : COLOR_NEUTRAL_9)};
+  vertical-align: middle;
+  border-width: 0.125rem;
+  border-style: solid;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  overflow: visible;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  white-space: nowrap;
+  transform: translateY(0);
+  transition: all 0.1s linear;
+  font-weight: 500;
+  line-height: 140%;
+  outline-width: 0.1875rem;
+  outline-style: solid;
+  outline-color: transparent;
   ${({ $isDisabled }) => {
-    return $isDisabled
-      ? css`
-          pointer-events: none;
-          color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_8 : COLOR_NEUTRAL_5)};
-        `
-      : css``;
+    if ($isDisabled) {
+      return css`
+        opacity: 60%;
+        pointer-events: none;
+      `;
+    }
+    return css`
+      cursor: pointer;
+      &:active:not(:focus-visible),
+      &.active:not(:focus-visible) {
+        transform: translateY(0.14rem);
+      }
+    `;
   }}
+`;
+
+const ButtonLinkPrimary = styled(StyledAnchor)`
+  color: ${COLOR_NEUTRAL_0};
+  background-color: ${COLOR_PURPLE_7};
+  border-color: ${COLOR_PURPLE_9};
+  box-shadow: 0 0.125rem 0 0 ${COLOR_PURPLE_9};
+  &:focus-visible:not(:active),
+  &.focus-visible:not(:active) {
+    outline-color: ${COLOR_PURPLE_2};
+  }
+  &:hover,
+  &.hover,
+  &:focus-visible,
+  &.focus-visible {
+    background-color: ${COLOR_PURPLE_8};
+    border-color: ${COLOR_PURPLE_10};
+    box-shadow: 0 0.125rem 0 0 ${COLOR_PURPLE_10};
+  }
+  &:active,
+  &.active {
+    box-shadow: 0 0 0 0 ${COLOR_PURPLE_9};
+  }
 `;

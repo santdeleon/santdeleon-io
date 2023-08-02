@@ -2,19 +2,21 @@ import { createGlobalStyle, css } from 'styled-components';
 import { isDarkTheme } from './utils';
 import '../fonts.css';
 import {
+  COLOR_BLUE_3,
+  COLOR_GREEN_3,
   COLOR_NEUTRAL_0,
   COLOR_NEUTRAL_6,
   COLOR_NEUTRAL_7,
   COLOR_NEUTRAL_9,
   COLOR_NEUTRAL_10,
   COLOR_NEUTRAL_11,
-  COLOR_PINK_7,
+  COLOR_ORANGE_3,
+  COLOR_PINK_3,
+  COLOR_PURPLE_3,
   COLOR_PURPLE_7,
+  COLOR_RED_5,
+  COLOR_YELLOW_4,
 } from '../constants';
-
-// =============================================================================
-// Main Component
-// =============================================================================
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -46,21 +48,20 @@ export const GlobalStyles = createGlobalStyle`
   }
   ::-webkit-scrollbar {
     width: 0.375rem;
-    background-color: ${COLOR_PINK_7};
+    background-color: ${COLOR_PINK_3};
   }
   ::-webkit-scrollbar-thumb {
-    height: 10px;
+    height: 0.625rem;
     background: linear-gradient(
       to bottom,
-      pink,
-      purple,
-      blue,
-      green,
-      yellow,
-      orange,
-      red
-    );
-  }
+      ${COLOR_RED_5},
+      ${COLOR_ORANGE_3},
+      ${COLOR_YELLOW_4},
+      ${COLOR_GREEN_3},
+      ${COLOR_BLUE_3},
+      ${COLOR_PURPLE_3},
+      ${COLOR_PINK_3}
+    );  }
   ${({ theme }) => {
     if (isDarkTheme(theme.mode)) {
       return css`
