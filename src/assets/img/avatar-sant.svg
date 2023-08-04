@@ -26,6 +26,7 @@
 <rect x="25.4551" y="10.9474" width="0.888889" height="1.47368" rx="0.444444" fill="#333232"/>
 </g>
 <path d="M13.2328 21C13.2328 21 20.2378 18 25.2328 18C30.2278 18 37.2328 21 37.2328 21" stroke="#222222" stroke-width="3" stroke-linecap="round"/>
+<path d="M23 9C23 7.89543 23.8954 7 25 7V7C26.1046 7 27 7.89543 27 9V9H23V9Z" fill="#333232"/>
 <rect x="25.7328" y="19.5" width="9" height="9" rx="3.5" fill="#F3F2F2" stroke="#FFC800"/>
 <rect x="27" y="23" width="2" height="3" rx="1" fill="#333232"/>
 <rect x="-0.5" y="0.5" width="9" height="9" rx="3.5" transform="matrix(-1 0 0 1 24.2328 19)" fill="#F3F2F2" stroke="#FFC800"/>
