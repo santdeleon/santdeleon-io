@@ -6,7 +6,7 @@ export const Card = styled.div`
   position: relative;
   padding: 1rem;
   border-radius: 0.8rem;
-  border-width: 0.125rem 0.125rem 0.25rem 0.125rem;
+  border-width: 0.125rem;
   border-style: solid;
   ${({ theme }) => {
     return isDarkTheme(theme.mode)

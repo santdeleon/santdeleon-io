@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import AvatarSant from '../assets/img/avatar-sant.svg';
 import Moon from '../assets/img/sprite-moon.svg';
 import Sun from '../assets/img/sprite-sun.svg';
-import { COLOR_NEUTRAL_0, COLOR_NEUTRAL_1, COLOR_NEUTRAL_9, COLOR_NEUTRAL_10, COLOR_PURPLE_7 } from '../constants';
+import { COLOR_NEUTRAL_0, COLOR_NEUTRAL_2, COLOR_NEUTRAL_8, COLOR_NEUTRAL_10, COLOR_PURPLE_7 } from '../constants';
 import { Breakpoint, isDarkTheme } from '../theme';
 import { useTheme } from '../theme/context';
 
@@ -42,7 +42,7 @@ const StyledDiv = styled.div`
   border-width: 0.1875rem;
   border-style: solid;
   border-color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_10 : COLOR_NEUTRAL_0)};
-  box-shadow: 0 0 0 0.1875rem ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_9 : COLOR_NEUTRAL_1)};
+  box-shadow: 0 0 0 0.1875rem ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_8 : COLOR_NEUTRAL_2)};
   width: 3.75rem;
   height: 3.75rem;
   ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`

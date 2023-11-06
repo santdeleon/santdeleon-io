@@ -6,23 +6,8 @@ import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { Navbar } from './components/Navbar';
 import { Work } from './components/Work';
-import {
-  COLOR_BLUE_3,
-  COLOR_GREEN_3,
-  COLOR_NEUTRAL_0,
-  COLOR_NEUTRAL_2,
-  COLOR_NEUTRAL_9,
-  COLOR_NEUTRAL_10,
-  COLOR_ORANGE_3,
-  COLOR_PINK_3,
-  COLOR_PURPLE_2,
-  COLOR_PURPLE_3,
-  COLOR_PURPLE_9,
-  COLOR_RED_5,
-  COLOR_YELLOW_4,
-} from './constants';
+import { COLOR_NEUTRAL_0, COLOR_NEUTRAL_2, COLOR_NEUTRAL_9, COLOR_NEUTRAL_10 } from './constants';
 import { Breakpoint, isDarkTheme } from './theme';
-import { hexToRGBA } from './utils';
 
 // =============================================================================
 // Main Component
@@ -31,26 +16,26 @@ import { hexToRGBA } from './utils';
 export const App = () => (
   <Container>
     <Navbar />
-    <RainbowDivider />
+    <Divider margin="2rem 0" />
     <Header />
     <Main>
       <Section>
-        <Badge>
-          What I&apos;ve done <Emoji ariaLabel="Male Developer Emoji">👨🏽‍💻</Emoji>
-        </Badge>
+        <Heading>
+          Recent Work <Emoji ariaLabel="Male Developer Emoji">👨‍💻</Emoji>
+        </Heading>
         <Work />
       </Section>
       <Section>
-        <Badge>
-          About me <Emoji ariaLabel="Male Developer Emoji">📝</Emoji>
-        </Badge>
+        <Heading>
+          About Me <Emoji ariaLabel="Pencil & Paper Emoji">📝</Emoji>
+        </Heading>
         <About />
       </Section>
     </Main>
     <Row>
       <StyledImage src={LiquidWateringPlant} alt="Liquid watering a plant" />
     </Row>
-    <Divider />
+    <Divider margin="0 0 2rem 0" />
     <Footer />
   </Container>
 );
@@ -65,29 +50,12 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 
-const RainbowDivider = styled.div`
-  width: 100%;
-  height: 0.1875rem;
-  border-radius: 0.1875rem;
-  margin: 2rem 0;
-  background: linear-gradient(
-    to right,
-    ${COLOR_RED_5},
-    ${COLOR_ORANGE_3},
-    ${COLOR_YELLOW_4},
-    ${COLOR_GREEN_3},
-    ${COLOR_BLUE_3},
-    ${COLOR_PURPLE_3},
-    ${COLOR_PINK_3}
-  );
-`;
-
 const Section = styled.section`
   margin-bottom: 6rem;
 `;
 
-const Divider = styled.div`
-  margin-bottom: 2rem;
+const Divider = styled.div<{ margin: string }>`
+  margin: ${({ margin }) => margin};
   height: 0.1875rem;
   background-repeat: repeat-x;
   background-size: 0.6rem 0.2rem;
@@ -113,18 +81,12 @@ const Row = styled.div`
   justify-content: flex-end;
 `;
 
-const Badge = styled.span`
-  display: inline-block;
+const Heading = styled.h5`
   font-size: 1rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  line-height: 100%;
-  color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_PURPLE_2 : COLOR_PURPLE_9)};
-  background-color: ${({ theme }) => (isDarkTheme(theme.mode) ? hexToRGBA(COLOR_PURPLE_9, 0.2) : COLOR_PURPLE_2)};
+  margin: 0 0 1rem 0;
+  font-weight: 600;
   ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
-    font-size: 1.125rem;
+    font-size: 1.75rem;
   `}
 `;
 

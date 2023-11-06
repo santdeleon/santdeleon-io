@@ -19,7 +19,7 @@ export const Footer = () => (
     <Row>
       <Text>
         Made with
-        <EmojiTwoHearts ariaLabel="Two Hearts Emoji">💕</EmojiTwoHearts> by Sant
+        <EmojiTwoHearts ariaLabel="Coffee Cup Emoji">☕️</EmojiTwoHearts> by Sant
       </Text>
       <Row>
         <Text>
