@@ -13,15 +13,15 @@ import { useTheme } from '../theme/context';
 export const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
   const isDark = isDarkTheme(theme);
-  const avatarAlt = `Activate ${isDark ? 'light' : 'dark'} mode`;
+  const alt = `Activate ${isDark ? 'light' : 'dark'} mode`;
 
   return (
     <Row>
       <StyledDiv>
         <Avatar src={AvatarSant} />
       </StyledDiv>
-      <StyledButton title={avatarAlt} onClick={toggleTheme}>
-        <img src={isDark ? Moon : Sun} alt={avatarAlt} width={50} />
+      <StyledButton title={alt} onClick={toggleTheme}>
+        <img src={isDark ? Moon : Sun} alt={alt} width={50} />
       </StyledButton>
     </Row>
   );
@@ -56,7 +56,7 @@ const StyledDiv = styled.div`
 `;
 
 const Avatar = styled.img.attrs({
-  alt: 'Avatar of Sant',
+  alt: 'Sant',
 })`
   width: 100%;
   height: auto;

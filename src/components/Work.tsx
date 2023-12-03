@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import BrandAmoeba from '../assets/img/brand-amoeba.svg';
 import BrandHostgator from '../assets/img/brand-hostgator.svg';
 import BrandPhantom from '../assets/img/brand-phantom.svg';
 import {
@@ -33,28 +32,18 @@ const CARDS: {
   url: string | undefined;
 }[] = [
   {
-    id: 0,
-    category: 'Blockchain & Crypto',
-    description: "Super secret crypto venture that I can't actually give details about yet.",
-    name: 'Amoeba',
-    role: 'Founder',
-    svg: BrandAmoeba,
-    timeframe: 'Current',
-    url: undefined,
-  },
-  {
     id: 1,
     category: 'Blockchain & Crypto',
     description: 'Multi-chain crypto wallet originally built on the Solana blockchain.',
     name: 'Phantom',
-    role: 'Founding Engineer',
+    role: 'Sr. Software Engineer (Founding)',
     svg: BrandPhantom,
     timeframe: 'June 2021 - Aug 2023',
     url: 'https://phantom.app',
   },
   {
     id: 2,
-    category: 'Web Hosting',
+    category: 'Domain & Web Hosting',
     description: 'OG domain and web hosting platform for small to large businesses.',
     name: 'HostGator',
     role: 'Software Engineer',
@@ -68,26 +57,22 @@ const CARDS: {
 
 export const Work = () => (
   <Grid>
-    {CARDS.map(({ id, category, description, name, role, svg, timeframe, url }, idx: number) => {
-      const isAmoebaCard = name === 'Amoeba';
-
-      return (
-        <GridItem key={`${id}-${idx}`}>
-          <Card>
-            <CardImage src={svg} alt={`${name} Brand Logo`} />
-            <CardTitle>{category}</CardTitle>
-            <CardRow>
-              <CardSubtitle>{role}</CardSubtitle>
-              <CardSubtitle>{timeframe}</CardSubtitle>
-            </CardRow>
-            <CardDescription>{description}</CardDescription>
-            <ButtonLink href={url} tabIndex={isAmoebaCard ? -1 : 0} disabled={isAmoebaCard}>
-              View Site
-            </ButtonLink>
-          </Card>
-        </GridItem>
-      );
-    })}
+    {CARDS.map(({ id, category, description, name, role, svg, timeframe, url }, idx: number) => (
+      <GridItem key={`${id}-${idx}`}>
+        <Card>
+          <CardImage src={svg} alt={`${name} Brand Logo`} />
+          <CardTitle>{category}</CardTitle>
+          <CardRow>
+            <CardSubtitle>{role}</CardSubtitle>
+            <CardSubtitle>{timeframe}</CardSubtitle>
+          </CardRow>
+          <CardDescription>{description}</CardDescription>
+          <ButtonLink href={url} tabIndex={0}>
+            View Site
+          </ButtonLink>
+        </Card>
+      </GridItem>
+    ))}
   </Grid>
 );
 

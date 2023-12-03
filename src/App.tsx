@@ -21,15 +21,15 @@ export const App = () => (
     <Main>
       <Section>
         <Heading>
-          Recent Work <Emoji ariaLabel="Male Developer Emoji">👨‍💻</Emoji>
+          About me <Emoji ariaLabel="Male Developer Emoji">🎙️</Emoji>
         </Heading>
-        <Work />
+        <About />
       </Section>
       <Section>
         <Heading>
-          About Me <Emoji ariaLabel="Pencil & Paper Emoji">📝</Emoji>
+          Recent work <Emoji ariaLabel="Male Developer Emoji">👨‍💻</Emoji>
         </Heading>
-        <About />
+        <Work />
       </Section>
     </Main>
     <Row>
@@ -51,7 +51,7 @@ const Container = styled.div`
 `;
 
 const Section = styled.section`
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
 `;
 
 const Divider = styled.div<{ margin: string }>`
@@ -72,7 +72,7 @@ const Divider = styled.div<{ margin: string }>`
 `;
 
 const Main = styled.main`
-  margin: 4rem 0;
+  margin: 2rem 0;
 `;
 
 const Row = styled.div`
@@ -84,9 +84,9 @@ const Row = styled.div`
 const Heading = styled.h5`
   font-size: 1rem;
   margin: 0 0 1rem 0;
-  font-weight: 600;
+  font-weight: 500;
   ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   `}
 `;
 

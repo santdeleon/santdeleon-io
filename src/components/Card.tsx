@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { COLOR_NEUTRAL_0, COLOR_NEUTRAL_1, COLOR_NEUTRAL_9, COLOR_NEUTRAL_10 } from '../constants';
+import { COLOR_NEUTRAL_0, COLOR_NEUTRAL_2, COLOR_NEUTRAL_8, COLOR_NEUTRAL_10 } from '../constants';
 import { Breakpoint, isDarkTheme } from '../theme';
 
 export const Card = styled.div`
@@ -11,11 +11,11 @@ export const Card = styled.div`
   ${({ theme }) => {
     return isDarkTheme(theme.mode)
       ? css`
-          border-color: ${COLOR_NEUTRAL_9};
+          border-color: ${COLOR_NEUTRAL_8};
           background-color: ${COLOR_NEUTRAL_10};
         `
       : css`
-          border-color: ${COLOR_NEUTRAL_1};
+          border-color: ${COLOR_NEUTRAL_2};
           background-color: ${COLOR_NEUTRAL_0};
         `;
   }}
