@@ -36,10 +36,10 @@ const CARDS: {
     category: 'Blockchain & Crypto',
     description: 'Multi-chain crypto wallet originally built on the Solana blockchain.',
     name: 'Phantom',
-    role: 'Sr. Software Engineer (Founding)',
+    role: 'Sr. Software Engineer',
     svg: BrandPhantom,
     timeframe: 'June 2021 - Aug 2023',
-    url: 'https://phantom.app',
+    url: 'https://phantom.com',
   },
   {
     id: 2,

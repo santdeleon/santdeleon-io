@@ -12,7 +12,7 @@ export const About = () => (
     <Text>
       I&apos;m a programmer and blockchain enthusiast based in Houston, TX. I've spent most of my professional years as
       a music producer and audio engineer before falling down the cryptocurrency rabbit hole and teaching myself to code
-      – where I've been for the past 6 years. You can currently find me riding my motorcycle around the city and working
+      – where I've been for the past 8 years. You can currently find me riding my motorcycle around the city and working
       on personal projects in niche coffee shops.
     </Text>
   </Card>
