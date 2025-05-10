@@ -17,21 +17,21 @@ import { Emoji } from './Emoji';
 export const Footer = () => (
   <footer>
     <Row>
-      <Text>
+      <StyledP>
         Made with
         <EmojiTwoHearts ariaLabel="Coffee Cup Emoji">☕️</EmojiTwoHearts> by Sant
-      </Text>
+      </StyledP>
       <Row>
-        <Text>
+        <StyledP>
           <Span>contact:</Span> <Link href="mailto:sant@santdeleon.io">sant@santdeleon.io</Link>
-        </Text>
+        </StyledP>
         <Divider>/</Divider>
-        <Text>
+        <StyledP>
           <Span>github:</Span>{' '}
           <Link href="https://github.com/santdeleon" target="_blank">
             santdeleon
           </Link>
-        </Text>
+        </StyledP>
       </Row>
     </Row>
   </footer>
@@ -49,7 +49,7 @@ const Row = styled.div`
   text-align: left;
 `;
 
-const Text = styled.p`
+const StyledP = styled.p`
   font-size: 1rem;
   font-weight: 500;
   margin: 0;
@@ -67,7 +67,6 @@ const Span = styled.span`
   font-size: 1rem;
   font-weight: 600;
   margin: 0;
-  color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_1 : COLOR_NEUTRAL_9)};
   ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
     font-size: 1.125rem;
   `}
@@ -82,7 +81,7 @@ const Link = styled.a.attrs({
   rel: 'noopener noreferrer',
 })`
   text-decoration: none;
-  color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_6 : COLOR_NEUTRAL_7)};
+  color: ${({ theme }) => (isDarkTheme(theme.mode) ? COLOR_NEUTRAL_1 : COLOR_NEUTRAL_9)};
   border-radius: 0.25rem;
   &:hover,
   &:focus-visible {

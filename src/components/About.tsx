@@ -9,12 +9,15 @@ import { Card } from './Card';
 
 export const About = () => (
   <Card>
-    <Text>
-      I&apos;m a programmer and blockchain enthusiast based in Houston, TX. I've spent most of my professional years as
-      a music producer and audio engineer before falling down the cryptocurrency rabbit hole and teaching myself to code
-      – where I've been for the past 8 years. You can currently find me riding my motorcycle around the city and working
-      on personal projects in niche coffee shops.
-    </Text>
+    <StyledP>
+      I&apos;m a self-taught programmer based out of Houston, Texas. My early professional years were spent as a music
+      producer and audio engineer before falling down the cryptocurrency rabbit hole – where i've spent the last 8
+      years.
+      <br />
+      <br />
+      When i'm not deep in the crypto trenches i'm usually studying piano or riding my motorcycle around the city.
+      Anyway, that's a little bit of the good stuff. Give me a shout if you'd like to connect!
+    </StyledP>
   </Card>
 );
 
@@ -22,7 +25,7 @@ export const About = () => (
 // Styled Components
 // =============================================================================
 
-const Text = styled.p`
+const StyledP = styled.p`
   font-size: 1rem;
   font-weight: 400;
   margin: 0;

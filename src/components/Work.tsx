@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import BrandAmoeba from '../assets/img/brand-amoeba.svg';
 import BrandHostgator from '../assets/img/brand-hostgator.svg';
 import BrandPhantom from '../assets/img/brand-phantom.svg';
 import {
@@ -29,14 +30,24 @@ const CARDS: {
   role: string;
   svg: string;
   timeframe: string;
-  url: string | undefined;
+  url?: string | undefined;
 }[] = [
+  {
+    id: 0,
+    category: 'Blockchain & Crypto',
+    description: 'Cryptocurrency wallet and side project.',
+    name: 'Amoeba',
+    role: 'Creator',
+    svg: BrandAmoeba,
+    timeframe: 'Current',
+    url: undefined,
+  },
   {
     id: 1,
     category: 'Blockchain & Crypto',
-    description: 'Multi-chain crypto wallet originally built on the Solana blockchain.',
+    description: "The world's most popular crypto wallet.",
     name: 'Phantom',
-    role: 'Sr. Software Engineer',
+    role: 'Founding Engineer',
     svg: BrandPhantom,
     timeframe: 'June 2021 - Aug 2023',
     url: 'https://phantom.com',
@@ -44,7 +55,7 @@ const CARDS: {
   {
     id: 2,
     category: 'Domain & Web Hosting',
-    description: 'OG domain and web hosting platform for small to large businesses.',
+    description: 'OG domain and web hosting platform.',
     name: 'HostGator',
     role: 'Software Engineer',
     svg: BrandHostgator,
@@ -67,7 +78,7 @@ export const Work = () => (
             <CardSubtitle>{timeframe}</CardSubtitle>
           </CardRow>
           <CardDescription>{description}</CardDescription>
-          <ButtonLink href={url} tabIndex={0}>
+          <ButtonLink href={url} tabIndex={0} disabled={!url}>
             View Site
           </ButtonLink>
         </Card>
@@ -94,8 +105,10 @@ const GridItem = styled.div`
 
 const CardImage = styled.img`
   margin-bottom: 1rem;
+  min-height: 1.5rem;
   height: 1.5rem;
   ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
+    min-height: 1.875rem;
     height: 1.875rem;
   `}
 `;

@@ -50,21 +50,19 @@ const StyledHeader = styled.header`
 const HELLO = ['H', 'e', 'l', 'l', 'o', ','];
 
 const PHRASES = [
+  'Coffee Abuser',
   'Crypto-head',
-  'Coffee Drinker',
   'Manga Reader',
   'Stargazer',
-  'Art Worshipper',
-  'Tech Enthusiast',
-  'Design Wizard',
-  'Motorcyclist',
-  'Skate-rat',
-  'Comic Nerd',
-  'Philosopher',
-  'Freedom Lover',
-  'AI Abuser',
+  'Freedom Enjoyer',
   'Neanderthal',
+  'Music Lover',
+  'Thrill-seeker',
   'Guitar Noodler',
+  'Sunbather',
+  'Motorcyclist',
+  'Conversationalist',
+  'Steak Demolisher',
 ];
 
 const [FIRST_PHRASE] = PHRASES;
@@ -101,11 +99,15 @@ const Tagline = () => {
             </span>
           ))}
         </RainbowText>{' '}
-        I&apos;m Sant.
-        <br /> Front-end Engineer &{' '}
+        I&apos;m Sant
+        <br /> Software Engineer &{' '}
         <Phrase onClick={changePhrase}>
           {[...phrase].map((letter, i) => (
-            <MovingMotionDiv key={`phrase-${letter}-${i}`} $hasMarginLeft={letter.charCodeAt(0) === 32}>
+            <MovingMotionDiv
+              key={`phrase-${letter}-${i}`}
+              // if phrase includes a space character give it margin
+              $hasMarginLeft={letter.charCodeAt(0) === 32}
+            >
               {letter}
             </MovingMotionDiv>
           ))}

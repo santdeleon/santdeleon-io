@@ -21,13 +21,13 @@ export const App = () => (
     <Main>
       <Section>
         <Heading>
-          About me <Emoji ariaLabel="Male Developer Emoji">🎙️</Emoji>
+          About Me <Emoji ariaLabel="Male Developer Emoji">🎙️</Emoji>
         </Heading>
         <About />
       </Section>
       <Section>
         <Heading>
-          Recent work <Emoji ariaLabel="Male Developer Emoji">👨‍💻</Emoji>
+          Recent Work <Emoji ariaLabel="Male Developer Emoji">👨‍💻</Emoji>
         </Heading>
         <Work />
       </Section>
@@ -82,7 +82,7 @@ const Row = styled.div`
 `;
 
 const Heading = styled.h5`
-  font-size: 1rem;
+  font-size: 1.125rem;
   margin: 0 0 1rem 0;
   font-weight: 500;
   ${({ theme }) => theme.media.greaterThan(Breakpoint.MD)`
