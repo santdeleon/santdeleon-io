@@ -1,0 +1,20 @@
+.hr {
+  color: red;
+  background: red;
+  border: 1px solid red;
+}
+
+.p {
+  margin: 0;
+
+  line-height: 140%;
+  color: var(--color-moon);
+  font-size: var(--typography-size-500-rem);
+  font-weight: var(--typography-weight-regular);
+}
+
+@media (max-width: 768px) {
+  .p {
+    font-size: var(--typography-size-400-rem);
+  }
+}
