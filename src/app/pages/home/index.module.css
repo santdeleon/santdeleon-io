@@ -1,0 +1,32 @@
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--app-spacing);
+}
+
+.row {
+  overflow: hidden;
+  display: flex;
+  gap: var(--app-spacing);
+}
+
+.row span {
+  color: var(--color-comet);
+}
+
+.section {
+  margin-bottom: var(--spacer-1200-rem);
+}
+
+.sectionTitle {
+  color: var(--color-eclipse);
+  font-size: var(--typography-size-700-rem);
+  font-weight: var(--typography-weight-semibold);
+  margin-bottom: var(--spacer-500-rem);
+}
+
+@media (max-width: 768px) {
+  .row {
+    justify-content: center;
+  }
+}

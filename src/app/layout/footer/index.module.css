@@ -1,0 +1,38 @@
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacer-200-rem);
+  text-align: left;
+}
+
+.emoji {
+  margin-left: 0.25rem;
+}
+
+.p {
+  margin: 0;
+  color: var(--color-moon);
+  font-size: var(--typography-size-400-rem);
+  font-weight: var(--typography-weight-medium);
+}
+
+.link {
+  text-decoration: none;
+  color: var(--color-eclipse);
+  &:hover {
+    color: var(--color-gem-purple);
+  }
+}
+
+.divider {
+  margin: 0 0.25rem;
+  color: var(--color-gem-purple);
+}
+
+@media (max-width: 768px) {
+  .p {
+    font-size: var(--typography-size-300-rem);
+  }
+}
